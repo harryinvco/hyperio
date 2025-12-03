@@ -70,6 +70,26 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
 }
 
 body {
@@ -154,9 +174,9 @@ input, textarea, select {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
+    padding: 20px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    min-height: 64px;
+    min-height: 80px;
 }
 
 .admin-logo {
@@ -167,27 +187,38 @@ input, textarea, select {
 }
 
 .logo-icon {
-    width: 36px;
-    height: 36px;
+    width: 52px;
+    height: 52px;
     background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 95, 173, 0.35);
+    transition: all var(--transition-base);
+}
+
+.admin-logo:hover .logo-icon {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 95, 173, 0.45);
 }
 
 .logo-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     stroke: white;
 }
 
 .logo-text {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.5px;
     white-space: nowrap;
+    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .admin-sidebar.collapsed .logo-text {
@@ -425,8 +456,16 @@ input, textarea, select {
     justify-content: space-between;
     height: var(--header-height);
     padding: 0 32px;
-    background: var(--bg-white);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.admin-header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-bottom-color: transparent;
 }
 
 .header-left {
@@ -669,15 +708,31 @@ input, textarea, select {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    animation: fadeSlideIn 0.4s ease-out;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .page-header h1 {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.5px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .page-subtitle {
