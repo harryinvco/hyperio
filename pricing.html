@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans & Pricing - Inspektra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Pricing Specific Styles */
+        .pricing-hero {
+            padding: 100px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 95, 173, 0.04) 0%, transparent 100%);
+        }
+
+        .pricing-hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 16px;
+        }
+
+        .pricing-hero .subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+
+        .pricing-hero .badge-pill {
+            margin-bottom: 16px;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 32px;
+            font-weight: 500;
+            color: #64748B;
+        }
+
+        .toggle-switch {
+            width: 56px;
+            height: 32px;
+            background: #E2E8F0;
+            border-radius: 16px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .toggle-switch.active {
+            background: var(--primary-main);
+        }
+
+        .toggle-switch.active::after {
+            transform: translateX(24px);
+        }
+
+        .save-badge {
+            background: #DCFCE7;
+            color: #16A34A;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+            margin-bottom: 80px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary-main);
+            box-shadow: 0 20px 40px -10px rgba(0, 95, 173, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-main);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .plan-desc {
+            color: #64748B;
+            font-size: 0.875rem;
+            margin-bottom: 24px;
+            min-height: 40px;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #64748B;
+            margin-left: 4px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 40px;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: var(--primary-main);
+            font-weight: 800;
+        }
+
+        .comparison-section {
+            padding: 100px 0;
+            background: #F8FAFC;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 60px;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 24px;
+            text-align: center;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .comparison-table th:first-child, .comparison-table td:first-child {
+            text-align: left;
+            padding-left: 40px;
+            font-weight: 600;
+            color: #0F172A;
+            width: 30%;
+        }
+
+        .comparison-table th {
+            background: #F1F5F9;
+            font-size: 1.125rem;
+            color: #0F172A;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--primary-main);
+            font-weight: 800;
+        }
+
+        .dash-icon {
+            color: #CBD5E1;
+            font-weight: 800;
+        }
+
+        @media (max-width: 968px) {
+            .pricing-cards {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="why-inspektra.html">Why Inspektra</a></li>
+                <li class="dropdown">
+                    <a href="features.html">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="features/dashboard.html">Dashboard</a></li>
+                        <li><a href="features/assets.html">Assets & Locations</a></li>
+                        <li><a href="features/inspections.html">Inspections</a></li>
+                        <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="features/tasks.html">Tasks</a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog/index.html">Blog</a></li>
+                        <li><a href="webinars/index.html">Webinars</a></li>
+                        <li><a href="academy/index.html">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="#" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pricing-hero">
+        <div class="container">
+            <div class="badge-pill">Pricing</div>
+            <h1>Simple, transparent <span class="text-gradient">pricing</span></h1>
+            <p class="subtitle">Choose the plan that fits your facility size and compliance needs.</p>
+            
+            <div class="pricing-toggle">
+                <span>Monthly</span>
+                <div class="toggle-switch active"></div>
+                <span>Yearly</span>
+                <span class="save-badge">Save 20%</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="pricing-cards">
+            <!-- Starter Plan -->
+            <div class="pricing-card fade-in-up">
+                <div class="plan-name">Starter</div>
+                <div class="plan-desc">For small facilities getting started with digital compliance.</div>
+                <div class="plan-price">€299<span>/mo</span></div>
+                <ul class="plan-features">
+                    <li>Up to 5 users</li>
+                    <li>1 Facility</li>
+                    <li>Basic Asset Inventory</li>
+                    <li>Standard Inspection Templates</li>
+                    <li>Email Support</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Get Started</a>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card popular fade-in-up delay-1">
+                <div class="popular-badge">Most Popular</div>
+                <div class="plan-name">Professional</div>
+                <div class="plan-desc">For growing organizations needing advanced automation.</div>
+                <div class="plan-price">€599<span>/mo</span></div>
+                <ul class="plan-features">
+                    <li>Up to 20 users</li>
+                    <li>Up to 5 Facilities</li>
+                    <li>Advanced Asset Management</li>
+                    <li>OMS Data Integration</li>
+                    <li>Risk Assessment Tools</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card fade-in-up delay-2">
+                <div class="plan-name">Enterprise</div>
+                <div class="plan-desc">For large scale operations requiring custom solutions.</div>
+                <div class="plan-price">Custom</div>
+                <ul class="plan-features">
+                    <li>Unlimited users</li>
+                    <li>Unlimited Facilities</li>
+                    <li>Full API Access</li>
+                    <li>Custom Integrations</li>
+                    <li>Dedicated Success Manager</li>
+                    <li>SLA Guarantees</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2>Compare Plans</h2>
+                <p class="subtitle">Detailed feature breakdown</p>
+            </div>
+            
+            <table class="comparison-table fade-in-up">
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Starter</th>
+                        <th>Professional</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Users</td>
+                        <td>5</td>
+                        <td>20</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Facilities</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Asset Inventory</td>
+                        <td>Basic</td>
+                        <td>Advanced</td>
+                        <td>Advanced + Custom Fields</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile App Access</td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>OMS Integration</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Risk Assessments</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>API Access</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>SSO / SAML</td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="dash-icon">—</span></td>
+                        <td><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>Email</td>
+                        <td>Priority Email & Chat</td>
+                        <td>24/7 Dedicated</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="closing-cta">
+        <div class="container">
+            <div class="cta-box fade-in-up">
+                <h2>Still have questions?</h2>
+                <p class="subtitle">Our team is happy to help you find the right plan for your needs.</p>
+                <div class="cta-group">
+                    <a href="#" class="btn btn-white">Contact Support</a>
+                    <a href="#" class="btn btn-outline-white">Read FAQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                    <div class="powered-by-footer">
+                        Powered by OMS Prüfservice
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="features.html">Features</a>
+                        <a href="pricing.html">Pricing</a>
+                        <a href="#">Security</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="why-inspektra.html">About Us</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="imprint.html">Imprint</a>
+                        <a href="#">Cookie Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Toggle Switch Logic
+        const toggle = document.querySelector('.toggle-switch');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            // Here you would typically update prices
+        });
+    </script>
+
+</body>
+</html>

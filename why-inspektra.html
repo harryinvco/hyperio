@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Inspektra - Our Story & Mission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== WHY INSPEKTRA PAGE STYLES ===== */
+
+        /* Hero Section */
+        .story-hero {
+            padding: 140px 0 100px;
+            background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .story-hero-bg .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+        }
+
+        .story-hero-bg .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 95, 173, 0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            animation: float-orb 20s ease-in-out infinite;
+        }
+
+        .story-hero-bg .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 155, 213, 0.12) 0%, transparent 70%);
+            bottom: -100px;
+            left: -50px;
+            animation: float-orb 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float-orb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .story-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story-hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            margin-bottom: 24px;
+            color: #0F172A;
+            background: none;
+            -webkit-text-fill-color: unset;
+        }
+
+        .story-hero-content h1 span {
+            background: linear-gradient(135deg, var(--primary-main) 0%, var(--tertiary-light) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .story-hero-content .lead {
+            font-size: 1.375rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        /* Founders Image Strip */
+        .founders-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .founders-avatars {
+            display: flex;
+            gap: -12px;
+        }
+
+        .founder-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 3px solid white;
+            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-left: -12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .founder-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .founders-text {
+            text-align: left;
+        }
+
+        .founders-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.9375rem;
+        }
+
+        .founders-text span {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 120px 0;
+            background: white;
+            position: relative;
+        }
+
+        .timeline-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-main) 0%, var(--tertiary-light) 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 0;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-content {
+            padding: 32px;
+            background: #F8FAFC;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background: white;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            grid-column: 1;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            grid-column: 3;
+            text-align: left;
+        }
+
+        .timeline-marker {
+            grid-column: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--primary-main);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(0, 95, 173, 0.15);
+            z-index: 2;
+        }
+
+        .timeline-year {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--primary-main);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* Image Carousel Section */
+        .carousel-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+            overflow: hidden;
+        }
+
+        .carousel-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .carousel-header h2 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .carousel-header p {
+            color: #94A3B8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carousel-track-wrapper {
+            position: relative;
+            margin: 0 -24px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 24px;
+            animation: scroll-carousel 40s linear infinite;
+            width: max-content;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-carousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            width: 400px;
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: all 0.4s ease;
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .carousel-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+
+        .carousel-item-caption {
+            color: white;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .carousel-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #334155 0%, #475569 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748B;
+            font-size: 0.875rem;
+        }
+
+        /* Mission & Values */
+        .values-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .values-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-main) 0%, var(--tertiary-light) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(0, 155, 213, 0.1) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary-main);
+        }
+
+        .value-card h3 {
+            font-size: 1.375rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-main) 0%, var(--primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 8px;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.8) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 120px 0;
+            background: #F8FAFC;
+        }
+
+        .team-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .team-carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            margin: 0 -24px;
+            padding: 20px 0;
+        }
+
+        .team-carousel {
+            display: flex;
+            gap: 32px;
+            animation: scroll-team 30s linear infinite;
+            width: max-content;
+        }
+
+        .team-carousel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-team {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .team-card {
+            flex-shrink: 0;
+            width: 280px;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8;
+            font-size: 0.875rem;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .team-info h4 {
+            font-size: 1.125rem;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .team-info span {
+            color: var(--text-light);
+            font-size: 0.9375rem;
+        }
+
+        /* Testimonials Carousel */
+        .testimonials-section {
+            padding: 120px 0;
+            background: white;
+            overflow: hidden;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            gap: 32px;
+            animation: scroll-testimonial 35s linear infinite;
+            width: max-content;
+        }
+
+        .testimonial-carousel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-testimonial {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .testimonial-card {
+            flex-shrink: 0;
+            width: 450px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 6rem;
+            font-family: Georgia, serif;
+            color: var(--primary-light);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testimonial-quote {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-main) 0%, var(--tertiary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .testimonial-meta strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.9375rem;
+        }
+
+        .testimonial-meta span {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Office Gallery */
+        .gallery-section {
+            padding: 100px 0 120px;
+            background: #F8FAFC;
+        }
+
+        .gallery-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 200px;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-1 { grid-column: span 8; grid-row: span 2; }
+        .gallery-item-2 { grid-column: span 4; }
+        .gallery-item-3 { grid-column: span 4; }
+        .gallery-item-4 { grid-column: span 4; }
+        .gallery-item-5 { grid-column: span 4; }
+        .gallery-item-6 { grid-column: span 4; }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8;
+            font-size: 0.875rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* CTA Section */
+        .story-cta {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .story-cta-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .story-cta h2 {
+            margin-bottom: 20px;
+        }
+
+        .story-cta p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .timeline-item {
+                display: block;
+                margin-bottom: 40px;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-marker {
+                position: absolute;
+                left: 20px;
+            }
+
+            .timeline-content {
+                margin-left: 60px;
+                text-align: left !important;
+            }
+
+            .gallery-item-1 { grid-column: span 12; }
+            .gallery-item-2, .gallery-item-3, .gallery-item-4,
+            .gallery-item-5, .gallery-item-6 { grid-column: span 6; }
+        }
+
+        @media (max-width: 768px) {
+            .story-hero {
+                padding: 100px 0 60px;
+            }
+
+            .founders-strip {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .founders-text {
+                text-align: center;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .carousel-item {
+                width: 300px;
+                height: 200px;
+            }
+
+            .testimonial-card {
+                width: 320px;
+                padding: 28px;
+            }
+
+            .team-card {
+                width: 240px;
+            }
+
+            .team-photo {
+                height: 240px;
+            }
+
+            .gallery-item-2, .gallery-item-3, .gallery-item-4,
+            .gallery-item-5, .gallery-item-6 { grid-column: span 12; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="why-inspektra.html" class="active">Why Inspektra</a></li>
+                <li class="dropdown">
+                    <a href="features.html">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="features/dashboard.html">Dashboard</a></li>
+                        <li><a href="features/assets.html">Assets & Locations</a></li>
+                        <li><a href="features/inspections.html">Inspections</a></li>
+                        <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="features/tasks.html">Tasks</a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog/index.html">Blog</a></li>
+                        <li><a href="webinars/index.html">Webinars</a></li>
+                        <li><a href="academy/index.html">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="#" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="story-hero">
+        <div class="story-hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+        <div class="container">
+            <div class="story-hero-content">
+                <div class="badge-pill">
+                    <span class="badge-dot pulse"></span>
+                    Our Story
+                </div>
+                <h1>Building the future of <span>electrical safety</span></h1>
+                <p class="lead">We started with a simple mission: make compliance effortless. What began in the field with clipboards and paper has evolved into the most trusted safety platform in the DACH region.</p>
+
+                <div class="founders-strip">
+                    <div class="founders-avatars">
+                        <div class="founder-avatar">MK</div>
+                        <div class="founder-avatar">TH</div>
+                        <div class="founder-avatar">SW</div>
+                    </div>
+                    <div class="founders-text">
+                        <strong>Founded by Safety Experts</strong>
+                        <span>15+ years in electrical inspection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline-header">
+                <div class="badge-pill">Our Journey</div>
+                <h2>From field work to digital innovation</h2>
+                <p class="subtitle">Every great product starts with a real problem. Here's how we got here.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2008</div>
+                        <h3>The Beginning</h3>
+                        <p>OMS Prufservice was founded with a vision to modernize electrical safety inspections across Germany.</p>
+                    </div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h3>Digital Transformation</h3>
+                        <p>After conducting over 5 million inspections, we identified critical inefficiencies in compliance management.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3>Inspektra is Born</h3>
+                        <p>We launched Inspektra, combining our field expertise with cutting-edge technology to solve compliance challenges.</p>
+                    </div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3>Industry Recognition</h3>
+                        <p>Reached 500+ enterprise clients and crossed 12 million managed inspections across the DACH region.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Today</div>
+                        <h3>Leading the Industry</h3>
+                        <p>Continuing to innovate with AI-powered insights, predictive maintenance, and seamless integrations.</p>
+                    </div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="carousel-header">
+                <div class="badge-pill" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.1); color: white;">Behind the Scenes</div>
+                <h2>Where innovation meets safety</h2>
+                <p>From our headquarters to the field, see how we're transforming electrical compliance.</p>
+            </div>
+        </div>
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track">
+                <!-- First set -->
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Office Workspace Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Our Munich Headquarters</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Team Meeting Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Weekly Product Sprint</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Field Technician Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Real-world Testing</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Software Development Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Engineering Excellence</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Customer Workshop Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Customer Workshop</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Team Event Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Team Building</span>
+                    </div>
+                </div>
+                <!-- Duplicate set for infinite scroll -->
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Office Workspace Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Our Munich Headquarters</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Team Meeting Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Weekly Product Sprint</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Field Technician Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Real-world Testing</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Software Development Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Engineering Excellence</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Customer Workshop Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Customer Workshop</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-placeholder">Team Event Photo</div>
+                    <div class="carousel-item-overlay">
+                        <span class="carousel-item-caption">Team Building</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="values-header">
+                <div class="badge-pill">Our Values</div>
+                <h2>What drives us every day</h2>
+                <p class="subtitle">These core principles guide every decision we make and every feature we build.</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>We believe electrical safety is a fundamental right, not just a compliance checkbox. Every feature we build protects people and property.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>Good enough isn't good enough. We strive for excellence in every line of code, every customer interaction, and every inspection report.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>We build trust through clarity. Our platform provides unalterable audit trails and clear visibility, so you're always audit-ready.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Customer Focus</h3>
+                    <p>Our customers aren't just users—they're partners. We listen, learn, and iterate based on real-world feedback from safety professionals.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We challenge the status quo of paper-based inspections. We leverage AI and data analytics to bring predictive insights to facility management.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <h3>Security</h3>
+                    <p>Your data is sacred. We employ enterprise-grade security, GDPR compliance, and German-hosted servers to protect your information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12M+</div>
+                    <div class="stat-label">Inspections Conducted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-header">
+                <div class="badge-pill">Our Team</div>
+                <h2>Meet the people behind Inspektra</h2>
+                <p class="subtitle">A diverse team of engineers, safety experts, and industry veterans united by a common mission.</p>
+            </div>
+        </div>
+        <div class="team-carousel-wrapper">
+            <div class="team-carousel">
+                <!-- First set -->
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Markus Klein</h4>
+                        <span>CEO & Co-Founder</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Thomas Huber</h4>
+                        <span>CTO & Co-Founder</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Sarah Wagner</h4>
+                        <span>Head of Product</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Michael Braun</h4>
+                        <span>Head of Engineering</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Lisa Mueller</h4>
+                        <span>Head of Customer Success</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Felix Schmidt</h4>
+                        <span>Lead Safety Consultant</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Anna Weber</h4>
+                        <span>Head of Design</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>David Fischer</h4>
+                        <span>Head of Sales</span>
+                    </div>
+                </div>
+                <!-- Duplicate set for infinite scroll -->
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Markus Klein</h4>
+                        <span>CEO & Co-Founder</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Thomas Huber</h4>
+                        <span>CTO & Co-Founder</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Sarah Wagner</h4>
+                        <span>Head of Product</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Michael Braun</h4>
+                        <span>Head of Engineering</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Lisa Mueller</h4>
+                        <span>Head of Customer Success</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Felix Schmidt</h4>
+                        <span>Lead Safety Consultant</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>Anna Weber</h4>
+                        <span>Head of Design</span>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">Team Member Photo</div>
+                    <div class="team-info">
+                        <h4>David Fischer</h4>
+                        <span>Head of Sales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="badge-pill">What Our Clients Say</div>
+                <h2>Trusted by industry leaders</h2>
+                <p class="subtitle">Hear from the safety professionals who rely on Inspektra every day.</p>
+            </div>
+        </div>
+        <div class="carousel-track-wrapper">
+            <div class="testimonial-carousel">
+                <!-- First set -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Inspektra has completely transformed how we manage compliance across our 15 manufacturing sites. It's not just software; it's peace of mind."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-meta">
+                            <strong>Jurgen Davis</strong>
+                            <span>Head of Facility Management, TechCorp GmbH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The time savings are incredible. What used to take us weeks now takes hours. Our auditors are actually impressed for once."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">KM</div>
+                        <div class="testimonial-meta">
+                            <strong>Katrin Meyer</strong>
+                            <span>Safety Director, AutoParts AG</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Finally, a compliance tool built by people who actually understand electrical safety. The difference is night and day."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">PW</div>
+                        <div class="testimonial-meta">
+                            <strong>Peter Wolf</strong>
+                            <span>Operations Manager, LogiTech Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The mobile app is a game-changer for our field teams. Real-time updates, instant documentation, zero paperwork."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SB</div>
+                        <div class="testimonial-meta">
+                            <strong>Stefan Bauer</strong>
+                            <span>Technical Lead, EnergieWerk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"We passed our ISO audit with flying colors thanks to Inspektra. The audit trail feature alone is worth the investment."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LH</div>
+                        <div class="testimonial-meta">
+                            <strong>Laura Hoffmann</strong>
+                            <span>Quality Manager, MediTech Group</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate set -->
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Inspektra has completely transformed how we manage compliance across our 15 manufacturing sites. It's not just software; it's peace of mind."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-meta">
+                            <strong>Jurgen Davis</strong>
+                            <span>Head of Facility Management, TechCorp GmbH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The time savings are incredible. What used to take us weeks now takes hours. Our auditors are actually impressed for once."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">KM</div>
+                        <div class="testimonial-meta">
+                            <strong>Katrin Meyer</strong>
+                            <span>Safety Director, AutoParts AG</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Finally, a compliance tool built by people who actually understand electrical safety. The difference is night and day."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">PW</div>
+                        <div class="testimonial-meta">
+                            <strong>Peter Wolf</strong>
+                            <span>Operations Manager, LogiTech Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The mobile app is a game-changer for our field teams. Real-time updates, instant documentation, zero paperwork."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SB</div>
+                        <div class="testimonial-meta">
+                            <strong>Stefan Bauer</strong>
+                            <span>Technical Lead, EnergieWerk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"We passed our ISO audit with flying colors thanks to Inspektra. The audit trail feature alone is worth the investment."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LH</div>
+                        <div class="testimonial-meta">
+                            <strong>Laura Hoffmann</strong>
+                            <span>Quality Manager, MediTech Group</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <div class="badge-pill">Life at Inspektra</div>
+                <h2>Where great work happens</h2>
+                <p class="subtitle">A glimpse into our workspace and culture.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-item-1">
+                    <div class="gallery-placeholder">Main Office Space - Large Hero Image</div>
+                </div>
+                <div class="gallery-item gallery-item-2">
+                    <div class="gallery-placeholder">Collaboration Area</div>
+                </div>
+                <div class="gallery-item gallery-item-3">
+                    <div class="gallery-placeholder">Team Lunch</div>
+                </div>
+                <div class="gallery-item gallery-item-4">
+                    <div class="gallery-placeholder">Product Demo</div>
+                </div>
+                <div class="gallery-item gallery-item-5">
+                    <div class="gallery-placeholder">Office Lounge</div>
+                </div>
+                <div class="gallery-item gallery-item-6">
+                    <div class="gallery-placeholder">Engineering Team</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="story-cta">
+        <div class="container">
+            <div class="story-cta-content">
+                <div class="badge-pill">Join Our Journey</div>
+                <h2>Ready to transform your safety compliance?</h2>
+                <p>Discover how Inspektra can help you achieve audit-ready status with less effort and more confidence.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        Book a Demo
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="careers.html" class="btn btn-outline">
+                        View Careers
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                    <div class="powered-by-footer">
+                        Powered by OMS Prufservice
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="features.html">Features</a>
+                        <a href="pricing.html">Pricing</a>
+                        <a href="#">Security</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="why-inspektra.html">About Us</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="imprint.html">Imprint</a>
+                        <a href="#">Cookie Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .value-card, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Pause carousel on hover (handled by CSS, but keeping for potential future JS enhancements)
+    </script>
+
+</body>
+</html>

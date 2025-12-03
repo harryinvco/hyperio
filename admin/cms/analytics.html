@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Inspektra Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../admin-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Analytics Styles */
+        .analytics-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .date-range-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .date-range-btn {
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .date-range-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .date-range-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Stats Cards */
+        .analytics-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .analytics-stat-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .stat-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .stat-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+        }
+
+        .stat-icon.blue { background: var(--primary-light); color: var(--primary); }
+        .stat-icon.green { background: var(--success-light); color: var(--success); }
+        .stat-icon.purple { background: #EDE9FE; color: #7C3AED; }
+        .stat-icon.orange { background: var(--warning-light); color: var(--warning); }
+        .stat-icon.teal { background: #CCFBF1; color: #14B8A6; }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-change {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .stat-change.positive { color: var(--success); }
+        .stat-change.negative { color: var(--error); }
+
+        /* Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .chart-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .chart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .chart-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .chart-body {
+            padding: 20px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Traffic Sources */
+        .traffic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .traffic-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .traffic-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            background: var(--bg-light);
+        }
+
+        .traffic-info {
+            flex: 1;
+        }
+
+        .traffic-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .traffic-visits {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .traffic-percent {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Popular Content */
+        .content-table {
+            width: 100%;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .content-table th {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            background: var(--bg-light);
+        }
+
+        .content-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .content-table tr:hover td {
+            background: var(--bg-light);
+        }
+
+        .page-title-cell {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+        }
+
+        .page-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .page-url {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .views-cell {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Real-time */
+        .realtime-card {
+            background: linear-gradient(135deg, var(--primary) 0%, #0078D4 100%);
+            color: white;
+        }
+
+        .realtime-card .chart-header {
+            border-bottom-color: rgba(255,255,255,0.1);
+        }
+
+        .realtime-card .chart-title {
+            color: white;
+        }
+
+        .realtime-value {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0 8px;
+        }
+
+        .realtime-label {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .realtime-pages {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            padding: 16px;
+        }
+
+        .realtime-pages h4 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .realtime-page-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        .realtime-page-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .analytics-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .analytics-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .date-range-selector {
+                flex-wrap: wrap;
+            }
+
+            .analytics-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        /* Custom Date Picker Modal */
+        .date-picker-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .date-picker-modal.show {
+            display: flex;
+        }
+
+        .date-picker-content {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .date-picker-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .date-picker-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .date-picker-close {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .date-picker-close:hover {
+            background: var(--bg-light);
+            color: var(--text-primary);
+        }
+
+        .date-picker-body {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .date-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .date-input-group label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .date-input-group input {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .date-input-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .date-picker-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .date-picker-actions .btn {
+            flex: 1;
+        }
+
+        /* Conversions Section */
+        .conversions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .conversion-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+        }
+
+        .conversion-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .conversion-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+        }
+
+        .conversion-icon.contact { background: #DBEAFE; color: #2563EB; }
+        .conversion-icon.demo { background: #D1FAE5; color: #059669; }
+        .conversion-icon.download { background: #FEE2E2; color: #DC2626; }
+
+        .conversion-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .conversion-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .conversion-stats {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .conversion-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .conversion-rate {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .conversion-bar {
+            height: 8px;
+            background: var(--bg-light);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .conversion-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .conversion-bar-fill.contact { background: #2563EB; }
+        .conversion-bar-fill.demo { background: #059669; }
+        .conversion-bar-fill.download { background: #DC2626; }
+
+        .conversion-footer {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 1200px) {
+            .conversions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Stats grid update for 5 cards */
+        .analytics-stats {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media (max-width: 1400px) {
+            .analytics-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .analytics-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .analytics-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="admin-logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Inspektra</span>
+                </a>
+                <button class="sidebar-collapse-btn" id="collapseBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- Main Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Main</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="9" rx="1"/>
+                                    <rect x="14" y="3" width="7" height="5" rx="1"/>
+                                    <rect x="14" y="12" width="7" height="9" rx="1"/>
+                                    <rect x="3" y="16" width="7" height="5" rx="1"/>
+                                </svg>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="analytics.html" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"/>
+                                    <line x1="12" y1="20" x2="12" y2="4"/>
+                                    <line x1="6" y1="20" x2="6" y2="14"/>
+                                </svg>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Content</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                                <span>Blog Posts</span>
+                                <span class="nav-badge">2</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="posts.html">All Posts</a></li>
+                                <li><a href="post-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="media.html" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                                <span>Media</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Academy Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Academy</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                </svg>
+                                <span>Guides</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="guides.html">All Guides</a></li>
+                                <li><a href="guide-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="23 7 16 12 23 17 23 7"/>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                                </svg>
+                                <span>Tutorials</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="tutorials.html">All Tutorials</a></li>
+                                <li><a href="tutorial-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="23"/>
+                                    <line x1="8" y1="23" x2="16" y2="23"/>
+                                </svg>
+                                <span>Webinars</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="webinars.html">All Webinars</a></li>
+                                <li><a href="webinar-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admin Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Admin</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                </svg>
+                                <span>Settings</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="settings-general.html">General</a></li>
+                                <li><a href="settings-media.html">Media</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../../index.html" class="view-site-btn" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                    <span>View Site</span>
+                </a>
+            </div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <span class="search-shortcut">Ctrl+K</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn" title="Notifications">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </button>
+                    <div class="header-divider"></div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <button class="user-btn">
+                            <div class="user-avatar">HA</div>
+                            <div class="user-info">
+                                <span class="user-name">Harry Admin</span>
+                                <span class="user-role">Administrator</span>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">Your Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" onclick="logout()" class="dropdown-item text-danger">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="page-header">
+                    <div class="page-header-left">
+                        <h1>Analytics</h1>
+                        <p class="page-subtitle">Track your site performance and visitor insights</p>
+                    </div>
+                </div>
+
+                <!-- Date Range Selector -->
+                <div class="analytics-header">
+                    <div class="date-range-selector">
+                        <button class="date-range-btn" data-range="today">Today</button>
+                        <button class="date-range-btn active" data-range="7days">Last 7 Days</button>
+                        <button class="date-range-btn" data-range="30days">Last 30 Days</button>
+                        <button class="date-range-btn" data-range="90days">Last 90 Days</button>
+                        <button class="date-range-btn" data-range="custom" id="customDateBtn">Custom</button>
+                    </div>
+                    <button class="btn btn-outline">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Export Report
+                    </button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="analytics-stats">
+                    <div class="analytics-stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Users</span>
+                            <div class="stat-icon blue">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-value">0</div>
+                        <div class="stat-change" style="color: var(--text-muted);">
+                            - vs last period
+                        </div>
+                    </div>
+                    <div class="analytics-stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Sessions</span>
+                            <div class="stat-icon green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-value">0</div>
+                        <div class="stat-change" style="color: var(--text-muted);">
+                            - vs last period
+                        </div>
+                    </div>
+                    <div class="analytics-stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Avg. Engagement Time</span>
+                            <div class="stat-icon purple">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-value">0m 0s</div>
+                        <div class="stat-change" style="color: var(--text-muted);">
+                            - vs last period
+                        </div>
+                    </div>
+                    <div class="analytics-stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Engagement Rate</span>
+                            <div class="stat-icon orange">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-value">0%</div>
+                        <div class="stat-change" style="color: var(--text-muted);">
+                            - vs last period
+                        </div>
+                    </div>
+                    <div class="analytics-stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Event Count</span>
+                            <div class="stat-icon teal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-value">0</div>
+                        <div class="stat-change" style="color: var(--text-muted);">
+                            - vs last period
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conversions Section -->
+                <h2 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px;">Conversions</h2>
+                <div class="conversions-grid">
+                    <!-- Contact Form Submissions -->
+                    <div class="conversion-card">
+                        <div class="conversion-header">
+                            <div class="conversion-icon contact">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="conversion-title">Contact Form</div>
+                                <div class="conversion-subtitle">Form submissions</div>
+                            </div>
+                        </div>
+                        <div class="conversion-stats">
+                            <span class="conversion-value">0</span>
+                            <span class="conversion-rate" style="color: var(--text-muted);">- conv. rate</span>
+                        </div>
+                        <div class="conversion-bar">
+                            <div class="conversion-bar-fill contact" style="width: 0%;"></div>
+                        </div>
+                        <div class="conversion-footer">Goal: 240 submissions | 0% achieved</div>
+                    </div>
+
+                    <!-- Demo Requests -->
+                    <div class="conversion-card">
+                        <div class="conversion-header">
+                            <div class="conversion-icon demo">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="conversion-title">Demo Requests</div>
+                                <div class="conversion-subtitle">Product demos booked</div>
+                            </div>
+                        </div>
+                        <div class="conversion-stats">
+                            <span class="conversion-value">0</span>
+                            <span class="conversion-rate" style="color: var(--text-muted);">- conv. rate</span>
+                        </div>
+                        <div class="conversion-bar">
+                            <div class="conversion-bar-fill demo" style="width: 0%;"></div>
+                        </div>
+                        <div class="conversion-footer">Goal: 80 demos | 0% achieved</div>
+                    </div>
+
+                    <!-- Resource Downloads -->
+                    <div class="conversion-card">
+                        <div class="conversion-header">
+                            <div class="conversion-icon download">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="conversion-title">Resource Downloads</div>
+                                <div class="conversion-subtitle">Guides & whitepapers</div>
+                            </div>
+                        </div>
+                        <div class="conversion-stats">
+                            <span class="conversion-value">0</span>
+                            <span class="conversion-rate" style="color: var(--text-muted);">- conv. rate</span>
+                        </div>
+                        <div class="conversion-bar">
+                            <div class="conversion-bar-fill download" style="width: 0%;"></div>
+                        </div>
+                        <div class="conversion-footer">Goal: 1,000 downloads | 0% achieved</div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-grid">
+                    <!-- Traffic Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Traffic Overview</h3>
+                            <select class="filter-select" style="padding: 6px 28px 6px 12px; font-size: 12px;">
+                                <option>Visitors</option>
+                                <option>Page Views</option>
+                                <option>Sessions</option>
+                            </select>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-container">
+                                <canvas id="trafficChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real-time Card -->
+                    <div class="chart-card realtime-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Real-Time Users</h3>
+                            <span style="font-size: 11px; opacity: 0.8;">Live</span>
+                        </div>
+                        <div class="chart-body">
+                            <div class="realtime-value">0</div>
+                            <div class="realtime-label">Active users right now</div>
+                            <div class="realtime-pages">
+                                <h4>Top Active Pages</h4>
+                                <div class="realtime-page-item">
+                                    <span>/</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="realtime-page-item">
+                                    <span>/solutions</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="realtime-page-item">
+                                    <span>/pricing</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="realtime-page-item">
+                                    <span>/blog</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="realtime-page-item">
+                                    <span>/contact</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row -->
+                <div class="charts-grid">
+                    <!-- Traffic Sources -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Traffic Acquisition</h3>
+                        </div>
+                        <div class="chart-body">
+                            <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start;">
+                                <div class="chart-container" style="height: 200px;">
+                                    <canvas id="sourcesChart"></canvas>
+                                </div>
+                                <div class="traffic-list">
+                                    <div class="traffic-item">
+                                        <div class="traffic-icon" style="background: #E8F4FC;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005FAD" stroke-width="2">
+                                                <circle cx="11" cy="11" r="8"/>
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                            </svg>
+                                        </div>
+                                        <div class="traffic-info">
+                                            <div class="traffic-name">Organic Search</div>
+                                            <div class="traffic-visits">0 users</div>
+                                        </div>
+                                        <span class="traffic-percent">-</span>
+                                    </div>
+                                    <div class="traffic-item">
+                                        <div class="traffic-icon" style="background: #DCFCE7;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                                <polyline points="15 3 21 3 21 9"/>
+                                                <line x1="10" y1="14" x2="21" y2="3"/>
+                                            </svg>
+                                        </div>
+                                        <div class="traffic-info">
+                                            <div class="traffic-name">Direct</div>
+                                            <div class="traffic-visits">0 users</div>
+                                        </div>
+                                        <span class="traffic-percent">-</span>
+                                    </div>
+                                    <div class="traffic-item">
+                                        <div class="traffic-icon" style="background: #FEE2E2;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2">
+                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                            </svg>
+                                        </div>
+                                        <div class="traffic-info">
+                                            <div class="traffic-name">Referral</div>
+                                            <div class="traffic-visits">0 users</div>
+                                        </div>
+                                        <span class="traffic-percent">-</span>
+                                    </div>
+                                    <div class="traffic-item">
+                                        <div class="traffic-icon" style="background: #EDE9FE;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2">
+                                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="traffic-info">
+                                            <div class="traffic-name">Organic Social</div>
+                                            <div class="traffic-visits">0 users</div>
+                                        </div>
+                                        <span class="traffic-percent">-</span>
+                                    </div>
+                                    <div class="traffic-item">
+                                        <div class="traffic-icon" style="background: #DBEAFE;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"/>
+                                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="traffic-info">
+                                            <div class="traffic-name">Paid Search</div>
+                                            <div class="traffic-visits">0 users</div>
+                                        </div>
+                                        <span class="traffic-percent">-</span>
+                                    </div>
+                                    <div class="traffic-item">
+                                        <div class="traffic-icon" style="background: #FEF3C7;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                                <polyline points="22,6 12,13 2,6"/>
+                                            </svg>
+                                        </div>
+                                        <div class="traffic-info">
+                                            <div class="traffic-name">Email</div>
+                                            <div class="traffic-visits">0 users</div>
+                                        </div>
+                                        <span class="traffic-percent">-</span>
+                                    </div>
+                                    <div class="traffic-item">
+                                        <div class="traffic-icon" style="background: #CCFBF1;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                                <line x1="9" y1="21" x2="9" y2="9"/>
+                                            </svg>
+                                        </div>
+                                        <div class="traffic-info">
+                                            <div class="traffic-name">Display</div>
+                                            <div class="traffic-visits">0 users</div>
+                                        </div>
+                                        <span class="traffic-percent">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Breakdown -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Device Breakdown</h3>
+                        </div>
+                        <div class="chart-body">
+                            <div class="chart-container" style="height: 200px;">
+                                <canvas id="devicesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Popular Content Table -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Top Pages</h3>
+                        <a href="#" style="font-size: 13px; color: var(--primary); font-weight: 500;">View All</a>
+                    </div>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Page Path</th>
+                                <th>Views</th>
+                                <th>Users</th>
+                                <th>Avg. Engagement Time</th>
+                                <th>Engagement Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <div class="page-icon">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="page-name">Homepage</div>
+                                            <div class="page-url">/</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="views-cell">0</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <div class="page-icon">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                                <line x1="12" y1="17" x2="12" y2="21"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="page-name">Solutions</div>
+                                            <div class="page-url">/solutions</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="views-cell">0</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <div class="page-icon">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="page-name">Pricing</div>
+                                            <div class="page-url">/pricing</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="views-cell">0</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <div class="page-icon">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                <polyline points="14 2 14 8 20 8"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="page-name">Blog</div>
+                                            <div class="page-url">/blog</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="views-cell">0</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <div class="page-icon">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="page-name">Academy</div>
+                                            <div class="page-url">/academy</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="views-cell">0</td>
+                                <td>0</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom Date Picker Modal -->
+    <div class="date-picker-modal" id="datePickerModal">
+        <div class="date-picker-content">
+            <div class="date-picker-header">
+                <h3>Custom Date Range</h3>
+                <button class="date-picker-close" id="closeDatePicker">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="date-picker-body">
+                <div class="date-input-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate">
+                </div>
+                <div class="date-input-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate">
+                </div>
+                <div class="date-picker-actions">
+                    <button class="btn btn-outline" id="cancelDatePicker">Cancel</button>
+                    <button class="btn btn-primary" id="applyDateRange">Apply Range</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auth check
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = '../index.html';
+        }
+
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('isLoggedIn');
+            sessionStorage.removeItem('userEmail');
+            window.location.href = '../index.html';
+        }
+
+        // Sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const collapseBtn = document.getElementById('collapseBtn');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        collapseBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+        });
+
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+            sidebar.classList.add('collapsed');
+        }
+
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.add('mobile-open');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('mobile-open');
+        });
+
+        // Submenu toggle
+        document.querySelectorAll('.nav-item.has-submenu > .nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                link.parentElement.classList.toggle('open');
+            });
+        });
+
+        // User dropdown
+        const userDropdown = document.getElementById('userDropdown');
+        userDropdown.querySelector('.user-btn').addEventListener('click', () => {
+            userDropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!userDropdown.contains(e.target)) {
+                userDropdown.classList.remove('open');
+            }
+        });
+
+        // Date range buttons
+        const datePickerModal = document.getElementById('datePickerModal');
+        const customDateBtn = document.getElementById('customDateBtn');
+        const closeDatePicker = document.getElementById('closeDatePicker');
+        const cancelDatePicker = document.getElementById('cancelDatePicker');
+        const applyDateRange = document.getElementById('applyDateRange');
+        const startDateInput = document.getElementById('startDate');
+        const endDateInput = document.getElementById('endDate');
+
+        // Set default dates (last 30 days)
+        const today = new Date();
+        const thirtyDaysAgo = new Date(today);
+        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+        endDateInput.value = today.toISOString().split('T')[0];
+        startDateInput.value = thirtyDaysAgo.toISOString().split('T')[0];
+        endDateInput.max = today.toISOString().split('T')[0];
+
+        document.querySelectorAll('.date-range-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const range = btn.dataset.range;
+
+                if (range === 'custom') {
+                    // Open custom date picker modal
+                    datePickerModal.classList.add('show');
+                } else {
+                    document.querySelector('.date-range-btn.active').classList.remove('active');
+                    btn.classList.add('active');
+                    // Update display text if needed
+                    updateDateRangeDisplay(range);
+                }
+            });
+        });
+
+        // Close modal handlers
+        closeDatePicker.addEventListener('click', () => {
+            datePickerModal.classList.remove('show');
+        });
+
+        cancelDatePicker.addEventListener('click', () => {
+            datePickerModal.classList.remove('show');
+        });
+
+        datePickerModal.addEventListener('click', (e) => {
+            if (e.target === datePickerModal) {
+                datePickerModal.classList.remove('show');
+            }
+        });
+
+        // Apply custom date range
+        applyDateRange.addEventListener('click', () => {
+            const startDate = startDateInput.value;
+            const endDate = endDateInput.value;
+
+            if (!startDate || !endDate) {
+                alert('Please select both start and end dates');
+                return;
+            }
+
+            if (new Date(startDate) > new Date(endDate)) {
+                alert('Start date must be before end date');
+                return;
+            }
+
+            // Update active button
+            document.querySelector('.date-range-btn.active').classList.remove('active');
+            customDateBtn.classList.add('active');
+
+            // Format and display the custom range
+            const startFormatted = formatDate(new Date(startDate));
+            const endFormatted = formatDate(new Date(endDate));
+            customDateBtn.textContent = `${startFormatted} - ${endFormatted}`;
+
+            // Close modal
+            datePickerModal.classList.remove('show');
+
+            // Here you would typically fetch new data based on the date range
+            console.log('Custom range selected:', startDate, 'to', endDate);
+        });
+
+        function formatDate(date) {
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return `${months[date.getMonth()]} ${date.getDate()}`;
+        }
+
+        function updateDateRangeDisplay(range) {
+            // Reset custom button text if switching away from custom
+            customDateBtn.textContent = 'Custom';
+
+            // Here you would typically fetch new data based on the selected range
+            console.log('Date range selected:', range);
+        }
+
+        // Traffic Chart
+        const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+        new Chart(trafficCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Users',
+                    data: [0, 0, 0, 0, 0, 0, 0],
+                    borderColor: '#005FAD',
+                    backgroundColor: 'rgba(0, 95, 173, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#005FAD',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Sources Chart (Doughnut) - Empty state
+        const sourcesCtx = document.getElementById('sourcesChart').getContext('2d');
+        new Chart(sourcesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['No Data'],
+                datasets: [{
+                    data: [1],
+                    backgroundColor: ['#E5E7EB'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                }
+            }
+        });
+
+        // Devices Chart (Bar)
+        const devicesCtx = document.getElementById('devicesChart').getContext('2d');
+        new Chart(devicesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Desktop', 'Mobile', 'Tablet'],
+                datasets: [{
+                    label: 'Users',
+                    data: [0, 0, 0],
+                    backgroundColor: ['#005FAD', '#22C55E', '#7C3AED'],
+                    borderRadius: 8,
+                    barThickness: 40
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Real-time updates disabled until GA4 is connected
+        // setInterval(() => {
+        //     const realtimeValue = document.querySelector('.realtime-value');
+        //     const currentValue = parseInt(realtimeValue.textContent);
+        //     const change = Math.floor(Math.random() * 5) - 2;
+        //     const newValue = Math.max(15, Math.min(35, currentValue + change));
+        //     realtimeValue.textContent = newValue;
+        // }, 5000);
+    </script>
+</body>
+</html>

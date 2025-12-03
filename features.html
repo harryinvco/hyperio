@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Inspektra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --gradient-primary: linear-gradient(135deg, #005FAD 0%, #0EA5E9 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --shadow-soft: 0 4px 24px -1px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 60px rgba(0, 95, 173, 0.15);
+        }
+
+        /* Hero Section */
+        .features-hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 50%, #F8FAFC 100%);
+        }
+
+        .features-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(0, 95, 173, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .features-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Animated Grid Background */
+        .grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 95, 173, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 95, 173, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 70%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            border: 1px solid #E2E8F0;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #64748B;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-badge span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .features-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #0F172A;
+            letter-spacing: -0.02em;
+        }
+
+        .features-hero h1 .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-hero .subtitle {
+            font-size: 1.25rem;
+            color: #64748B;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Floating Stats */
+        .floating-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .floating-stat {
+            text-align: center;
+        }
+
+        .floating-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .floating-stat-label {
+            font-size: 0.875rem;
+            color: #64748B;
+            margin-top: 4px;
+        }
+
+        /* Bento Grid Section */
+        .bento-section {
+            padding: 80px 0 100px;
+            background: #FFFFFF;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary-main);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #64748B;
+            max-width: 600px;
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+            margin-top: 48px;
+        }
+
+        .bento-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #E2E8F0;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: rgba(0, 95, 173, 0.3);
+        }
+
+        .bento-card.span-8 { grid-column: span 8; }
+        .bento-card.span-6 { grid-column: span 6; }
+        .bento-card.span-4 { grid-column: span 4; }
+        .bento-card.span-12 { grid-column: span 12; }
+
+        /* Card Icon */
+        .bento-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .bento-icon.blue {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            color: #005FAD;
+        }
+
+        .bento-icon.purple {
+            background: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%);
+            color: #7C3AED;
+        }
+
+        .bento-icon.green {
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+            color: #059669;
+        }
+
+        .bento-icon.orange {
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+            color: #EA580C;
+        }
+
+        .bento-icon.cyan {
+            background: linear-gradient(135deg, #ECFEFF 0%, #CFFAFE 100%);
+            color: #0891B2;
+        }
+
+        .bento-card h3 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 12px;
+        }
+
+        .bento-card p {
+            font-size: 0.95rem;
+            color: #64748B;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .bento-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            transition: gap 0.3s ease;
+        }
+
+        .bento-card:hover .bento-link {
+            gap: 12px;
+        }
+
+        /* Card Visual Elements */
+        .bento-visual {
+            margin-top: 24px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            position: relative;
+        }
+
+        /* Dashboard Preview Visual */
+        .dashboard-preview {
+            padding: 20px;
+            min-height: 200px;
+        }
+
+        .mini-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 100px;
+            padding: 16px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(180deg, #005FAD 0%, #0EA5E9 100%);
+            border-radius: 4px 4px 0 0;
+            transition: height 0.3s ease;
+        }
+
+        .chart-bar:nth-child(1) { height: 60%; }
+        .chart-bar:nth-child(2) { height: 80%; }
+        .chart-bar:nth-child(3) { height: 45%; }
+        .chart-bar:nth-child(4) { height: 90%; }
+        .chart-bar:nth-child(5) { height: 70%; }
+        .chart-bar:nth-child(6) { height: 55%; }
+        .chart-bar:nth-child(7) { height: 85%; }
+
+        .bento-card:hover .chart-bar:nth-child(1) { height: 70%; }
+        .bento-card:hover .chart-bar:nth-child(2) { height: 90%; }
+        .bento-card:hover .chart-bar:nth-child(3) { height: 55%; }
+        .bento-card:hover .chart-bar:nth-child(4) { height: 100%; }
+        .bento-card:hover .chart-bar:nth-child(5) { height: 80%; }
+        .bento-card:hover .chart-bar:nth-child(6) { height: 65%; }
+        .bento-card:hover .chart-bar:nth-child(7) { height: 95%; }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .mini-stat {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .mini-stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0F172A;
+        }
+
+        .mini-stat-value.success { color: #059669; }
+        .mini-stat-value.warning { color: #D97706; }
+
+        .mini-stat-label {
+            font-size: 0.75rem;
+            color: #94A3B8;
+            margin-top: 4px;
+        }
+
+        /* Assets Visual */
+        .assets-visual {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .asset-item {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .bento-card:hover .asset-item:nth-child(1) { transform: translateY(-4px); }
+        .bento-card:hover .asset-item:nth-child(2) { transform: translateY(-8px); transition-delay: 0.05s; }
+        .bento-card:hover .asset-item:nth-child(3) { transform: translateY(-4px); transition-delay: 0.1s; }
+
+        .asset-icon {
+            width: 40px;
+            height: 40px;
+            background: #F1F5F9;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            color: #64748B;
+        }
+
+        .asset-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .asset-count {
+            font-size: 0.7rem;
+            color: #94A3B8;
+        }
+
+        /* Risk Matrix Visual */
+        .risk-visual {
+            padding: 20px;
+        }
+
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .risk-cell {
+            aspect-ratio: 1;
+            border-radius: 6px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .bento-card:hover .risk-cell {
+            transform: scale(1.05);
+        }
+
+        .risk-cell.green { background: #86EFAC; }
+        .risk-cell.yellow { background: #FDE047; }
+        .risk-cell.orange { background: #FB923C; }
+        .risk-cell.red { background: #F87171; }
+        .risk-cell.dark-red { background: #DC2626; }
+
+        /* Task Visual */
+        .tasks-visual {
+            padding: 20px;
+        }
+
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .task-item {
+            background: white;
+            border-radius: 10px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .bento-card:hover .task-item:nth-child(1) { transform: translateX(4px); }
+        .bento-card:hover .task-item:nth-child(2) { transform: translateX(8px); transition-delay: 0.05s; }
+        .bento-card:hover .task-item:nth-child(3) { transform: translateX(4px); transition-delay: 0.1s; }
+
+        .task-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .task-check.done {
+            background: #059669;
+            border-color: #059669;
+            color: white;
+        }
+
+        .task-text {
+            flex: 1;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+
+        .task-text.done {
+            text-decoration: line-through;
+            color: #94A3B8;
+        }
+
+        .task-priority {
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 100px;
+            font-weight: 600;
+        }
+
+        .task-priority.high { background: #FEE2E2; color: #DC2626; }
+        .task-priority.medium { background: #FEF3C7; color: #D97706; }
+        .task-priority.low { background: #DCFCE7; color: #16A34A; }
+
+        /* Inspection Visual */
+        .inspection-visual {
+            padding: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .inspection-card {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .bento-card:hover .inspection-card:nth-child(1) { transform: rotate(-2deg) translateY(-4px); }
+        .bento-card:hover .inspection-card:nth-child(2) { transform: translateY(-8px); transition-delay: 0.05s; }
+        .bento-card:hover .inspection-card:nth-child(3) { transform: rotate(2deg) translateY(-4px); transition-delay: 0.1s; }
+
+        .inspection-status {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .inspection-status.passed { background: #DCFCE7; color: #16A34A; }
+        .inspection-status.pending { background: #FEF3C7; color: #D97706; }
+        .inspection-status.scheduled { background: #DBEAFE; color: #2563EB; }
+
+        .inspection-type {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .inspection-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #334155;
+            margin-top: 4px;
+        }
+
+        /* Feature Highlight Card */
+        .highlight-card {
+            background: var(--gradient-dark);
+            border: none;
+            color: white;
+        }
+
+        .highlight-card h3,
+        .highlight-card p {
+            color: white;
+        }
+
+        .highlight-card p {
+            color: #94A3B8;
+        }
+
+        .highlight-card .bento-link {
+            color: #60A5FA;
+        }
+
+        .highlight-card .bento-icon {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Animated Background Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 95, 173, 0.3);
+            top: 20%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 200px;
+            height: 200px;
+            background: rgba(14, 165, 233, 0.3);
+            bottom: 10%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        /* Connected Platform Section */
+        .connected-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connected-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 64px;
+            position: relative;
+        }
+
+        .connected-line {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #E2E8F0 20%, #E2E8F0 80%, transparent 100%);
+            z-index: 0;
+        }
+
+        .connected-node {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .node-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .node-circle:hover {
+            transform: scale(1.1);
+            border-color: var(--primary-main);
+            box-shadow: 0 0 0 8px rgba(0, 95, 173, 0.1);
+        }
+
+        .node-circle svg {
+            color: var(--primary-main);
+        }
+
+        .node-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .node-connector {
+            width: 60px;
+            height: 2px;
+            background: #E2E8F0;
+            position: relative;
+        }
+
+        .node-connector::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left: 8px solid #CBD5E1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(0, 95, 173, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: #94A3B8;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: #0F172A;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .bento-card.span-8,
+            .bento-card.span-6,
+            .bento-card.span-4 {
+                grid-column: span 6;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .floating-stats {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .bento-card.span-8,
+            .bento-card.span-6,
+            .bento-card.span-4,
+            .bento-card.span-12 {
+                grid-column: span 12;
+            }
+
+            .connected-visual {
+                flex-direction: column;
+            }
+
+            .connected-line {
+                display: none;
+            }
+
+            .node-connector {
+                width: 2px;
+                height: 40px;
+            }
+
+            .node-connector::after {
+                right: auto;
+                top: auto;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 6px solid transparent;
+                border-top: 8px solid #CBD5E1;
+                border-left: 6px solid transparent;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="why-inspektra.html">Why Inspektra</a></li>
+                <li class="dropdown">
+                    <a href="features.html" class="active">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="features/dashboard.html">Dashboard</a></li>
+                        <li><a href="features/assets.html">Assets & Locations</a></li>
+                        <li><a href="features/inspections.html">Inspections</a></li>
+                        <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="features/tasks.html">Tasks</a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog/index.html">Blog</a></li>
+                        <li><a href="webinars/index.html">Webinars</a></li>
+                        <li><a href="academy/index.html">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="contact.html" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="features-hero">
+        <div class="grid-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    <span>Platform Overview</span>
+                </div>
+                <h1>The complete platform for <span class="gradient-text">electrical safety</span></h1>
+                <p class="subtitle">From automated inspection data to intelligent risk assessments. Everything you need to stay compliant, in one beautiful interface.</p>
+
+                <div class="floating-stats">
+                    <div class="floating-stat">
+                        <div class="floating-stat-value">75%</div>
+                        <div class="floating-stat-label">Less admin time</div>
+                    </div>
+                    <div class="floating-stat">
+                        <div class="floating-stat-value">100%</div>
+                        <div class="floating-stat-label">Audit-ready</div>
+                    </div>
+                    <div class="floating-stat">
+                        <div class="floating-stat-value">0</div>
+                        <div class="floating-stat-label">Missed deadlines</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bento Grid Features -->
+    <section class="bento-section">
+        <div class="container">
+            <div class="section-label">Features</div>
+            <h2 class="section-title">Everything you need, beautifully designed</h2>
+            <p class="section-subtitle">Built for professionals who want less admin and more control over their compliance operations.</p>
+
+            <div class="bento-grid">
+                <!-- Dashboard - Large Card -->
+                <a href="features/dashboard.html" class="bento-card span-8">
+                    <div class="bento-icon blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
+                    <h3>Real-time Dashboard</h3>
+                    <p>Get instant clarity on your compliance status across all facilities. Track inspections, monitor risks, and never miss a deadline with intelligent alerts.</p>
+                    <span class="bento-link">
+                        Explore Dashboard
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                    <div class="bento-visual dashboard-preview">
+                        <div class="mini-chart">
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                        </div>
+                        <div class="stats-row">
+                            <div class="mini-stat">
+                                <div class="mini-stat-value success">98%</div>
+                                <div class="mini-stat-label">Compliance</div>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="mini-stat-value warning">3</div>
+                                <div class="mini-stat-label">Open Tasks</div>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="mini-stat-value">12</div>
+                                <div class="mini-stat-label">This Month</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Assets Card -->
+                <a href="features/assets.html" class="bento-card span-4">
+                    <div class="bento-icon purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <h3>Assets & Locations</h3>
+                    <p>Organize every asset in a structured, searchable inventory with QR codes and document storage.</p>
+                    <span class="bento-link">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                    <div class="bento-visual assets-visual">
+                        <div class="asset-item">
+                            <div class="asset-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            </div>
+                            <div class="asset-name">Building A</div>
+                            <div class="asset-count">24 assets</div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            </div>
+                            <div class="asset-name">Building B</div>
+                            <div class="asset-count">18 assets</div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            </div>
+                            <div class="asset-name">Warehouse</div>
+                            <div class="asset-count">32 assets</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Inspections Card -->
+                <a href="features/inspections.html" class="bento-card span-6">
+                    <div class="bento-icon green">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+                    </div>
+                    <h3>Smart Inspections</h3>
+                    <p>Access OMS reports automatically, schedule in-house inspections, and get intelligent reminders. The heart of your compliance management.</p>
+                    <span class="bento-link">
+                        Explore Inspections
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                    <div class="bento-visual inspection-visual">
+                        <div class="inspection-card">
+                            <div class="inspection-status passed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div class="inspection-type">OMS Report</div>
+                            <div class="inspection-date">Nov 28, 2025</div>
+                        </div>
+                        <div class="inspection-card">
+                            <div class="inspection-status pending">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            </div>
+                            <div class="inspection-type">In-house</div>
+                            <div class="inspection-date">Due Dec 5</div>
+                        </div>
+                        <div class="inspection-card">
+                            <div class="inspection-status scheduled">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </div>
+                            <div class="inspection-type">Scheduled</div>
+                            <div class="inspection-date">Dec 15, 2025</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Risk Assessments Card -->
+                <a href="features/risk-assessments.html" class="bento-card span-6">
+                    <div class="bento-icon orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Risk Assessments</h3>
+                    <p>Evaluate risks with guided templates, define test intervals, and stay ahead of compliance with built-in hazard libraries.</p>
+                    <span class="bento-link">
+                        Explore Risk Tools
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                    <div class="bento-visual risk-visual">
+                        <div class="risk-matrix">
+                            <div class="risk-cell green"></div>
+                            <div class="risk-cell green"></div>
+                            <div class="risk-cell yellow"></div>
+                            <div class="risk-cell orange"></div>
+                            <div class="risk-cell red"></div>
+                            <div class="risk-cell green"></div>
+                            <div class="risk-cell yellow"></div>
+                            <div class="risk-cell yellow"></div>
+                            <div class="risk-cell orange"></div>
+                            <div class="risk-cell red"></div>
+                            <div class="risk-cell yellow"></div>
+                            <div class="risk-cell yellow"></div>
+                            <div class="risk-cell orange"></div>
+                            <div class="risk-cell red"></div>
+                            <div class="risk-cell dark-red"></div>
+                            <div class="risk-cell orange"></div>
+                            <div class="risk-cell orange"></div>
+                            <div class="risk-cell red"></div>
+                            <div class="risk-cell dark-red"></div>
+                            <div class="risk-cell dark-red"></div>
+                            <div class="risk-cell red"></div>
+                            <div class="risk-cell red"></div>
+                            <div class="risk-cell dark-red"></div>
+                            <div class="risk-cell dark-red"></div>
+                            <div class="risk-cell dark-red"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tasks Card -->
+                <a href="features/tasks.html" class="bento-card span-4">
+                    <div class="bento-icon cyan">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3>Task Management</h3>
+                    <p>Turn findings into action. Assign, track, and resolve issues with your team.</p>
+                    <span class="bento-link">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                    <div class="bento-visual tasks-visual">
+                        <div class="task-list">
+                            <div class="task-item">
+                                <div class="task-check done">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <span class="task-text done">Replace faulty RCD</span>
+                                <span class="task-priority low">Done</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-check"></div>
+                                <span class="task-text">Inspect cable tray B12</span>
+                                <span class="task-priority high">High</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-check"></div>
+                                <span class="task-text">Update safety labels</span>
+                                <span class="task-priority medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Collaboration Highlight Card -->
+                <div class="bento-card span-8 highlight-card">
+                    <div class="orb orb-1"></div>
+                    <div class="orb orb-2"></div>
+                    <div class="bento-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Seamless Team Collaboration</h3>
+                    <p>Work together with OMS technicians and your internal team in one secure platform. Assign tasks, share reports, track progress, and resolve issues faster than ever. Everyone stays aligned, always.</p>
+                    <a href="contact.html" class="bento-link">
+                        Get in touch
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connected Platform Section -->
+    <section class="connected-section">
+        <div class="container">
+            <div style="text-align: center;">
+                <div class="section-label" style="justify-content: center;">How It Works</div>
+                <h2 class="section-title">A connected compliance ecosystem</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Every feature works together to give you complete control over your electrical safety.</p>
+            </div>
+
+            <div class="connected-visual">
+                <div class="connected-line"></div>
+
+                <div class="connected-node">
+                    <a href="features/assets.html" class="node-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </a>
+                    <span class="node-label">Assets</span>
+                </div>
+
+                <div class="node-connector"></div>
+
+                <div class="connected-node">
+                    <a href="features/inspections.html" class="node-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                    </a>
+                    <span class="node-label">Inspections</span>
+                </div>
+
+                <div class="node-connector"></div>
+
+                <div class="connected-node">
+                    <a href="features/risk-assessments.html" class="node-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </a>
+                    <span class="node-label">Risk Assessment</span>
+                </div>
+
+                <div class="node-connector"></div>
+
+                <div class="connected-node">
+                    <a href="features/tasks.html" class="node-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </a>
+                    <span class="node-label">Tasks</span>
+                </div>
+
+                <div class="node-connector"></div>
+
+                <div class="connected-node">
+                    <a href="features/dashboard.html" class="node-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </a>
+                    <span class="node-label">Dashboard</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to simplify compliance?</h2>
+                <p>Join leading companies across DACH who trust Inspektra for their electrical safety management.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-white">
+                        Book a demo
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="pricing.html" class="btn-ghost">View pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                    <div class="powered-by-footer">
+                        Powered by OMS Prüfservice
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="features.html">Features</a>
+                        <a href="pricing.html">Pricing</a>
+                        <a href="#">Security</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="why-inspektra.html">About Us</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="imprint.html">Imprint</a>
+                        <a href="#">Cookie Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

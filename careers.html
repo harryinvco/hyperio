@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Inspektra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Careers Page Specific Styles */
+        .careers-hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 95, 173, 0.05) 0%, transparent 70%);
+        }
+
+        .culture-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .perk-card {
+            text-align: center;
+            padding: 32px;
+            background: #F8FAFC;
+            border-radius: 16px;
+            transition: transform 0.3s;
+        }
+
+        .perk-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .perk-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .perk-title {
+            font-weight: 600;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .perk-desc {
+            font-size: 0.875rem;
+            color: #64748B;
+        }
+
+        .jobs-section {
+            padding: 100px 0;
+            background-color: #F8FAFC;
+        }
+
+        .job-list {
+            max-width: 900px;
+            margin: 60px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .job-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .job-card:hover {
+            border-color: var(--primary-main);
+            box-shadow: 0 10px 30px -10px rgba(0, 95, 173, 0.15);
+            transform: translateX(8px);
+        }
+
+        .job-info h3 {
+            font-size: 1.25rem;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 16px;
+            color: #64748B;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .job-arrow {
+            width: 40px;
+            height: 40px;
+            background: #F1F5F9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-main);
+            transition: background 0.3s;
+        }
+
+        .job-card:hover .job-arrow {
+            background: var(--primary-main);
+            color: white;
+        }
+
+        @media (max-width: 968px) {
+            .perks-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .job-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .job-arrow {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="why-inspektra.html">Why Inspektra</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog/index.html">Blog</a></li>
+                        <li><a href="webinars/index.html">Webinars</a></li>
+                        <li><a href="academy/index.html">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="#" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="careers-hero">
+        <div class="container">
+            <div class="badge-pill">We are hiring</div>
+            <h1>Build the future of <br><span class="text-gradient">industrial safety</span></h1>
+            <p class="subtitle">Join a team of passionate engineers, designers, and industry experts working to protect people and infrastructure.</p>
+            <div style="margin-top: 40px;">
+                <a href="#open-roles" class="btn btn-primary">View Open Roles</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="culture-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2>Life at Inspektra</h2>
+                <p class="subtitle">We believe in autonomy, mastery, and purpose.</p>
+            </div>
+            
+            <div class="perks-grid fade-in-up">
+                <div class="perk-card">
+                    <span class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
+                    <div class="perk-title">Remote First</div>
+                    <div class="perk-desc">Work from anywhere in Europe. We trust you to manage your time.</div>
+                </div>
+                <div class="perk-card">
+                    <span class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.77 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg></span>
+                    <div class="perk-title">Growth Budget</div>
+                    <div class="perk-desc">€2,000 annual budget for conferences, courses, and books.</div>
+                </div>
+                <div class="perk-card">
+                    <span class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></span>
+                    <div class="perk-title">Health & Wellness</div>
+                    <div class="perk-desc">Comprehensive health coverage and mental health support.</div>
+                </div>
+                <div class="perk-card">
+                    <span class="perk-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg></span>
+                    <div class="perk-title">Top Gear</div>
+                    <div class="perk-desc">Latest MacBook Pro and a generous home office stipend.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="open-roles" class="jobs-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2>Open Positions</h2>
+                <p class="subtitle">Find your next challenge.</p>
+            </div>
+
+            <div class="job-list fade-in-up delay-1">
+                <!-- Engineering -->
+                <a href="#" class="job-card">
+                    <div class="job-info">
+                        <h3>Senior Frontend Engineer</h3>
+                        <div class="job-meta">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Remote (EU)</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Engineering</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Full-time</span>
+                        </div>
+                    </div>
+                    <div class="job-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </a>
+
+                <a href="#" class="job-card">
+                    <div class="job-info">
+                        <h3>Backend Developer (Python/Go)</h3>
+                        <div class="job-meta">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Berlin / Remote</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Engineering</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Full-time</span>
+                        </div>
+                    </div>
+                    <div class="job-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </a>
+
+                <!-- Product -->
+                <a href="#" class="job-card">
+                    <div class="job-info">
+                        <h3>Product Manager</h3>
+                        <div class="job-meta">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Remote (EU)</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Product</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Full-time</span>
+                        </div>
+                    </div>
+                    <div class="job-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </a>
+
+                <!-- Sales -->
+                <a href="#" class="job-card">
+                    <div class="job-info">
+                        <h3>Account Executive DACH</h3>
+                        <div class="job-meta">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Munich / Remote</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Sales</span>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Full-time</span>
+                        </div>
+                    </div>
+                    <div class="job-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing-cta">
+        <div class="container">
+            <div class="cta-box fade-in-up">
+                <h2>Don't see the right role?</h2>
+                <p class="subtitle">We are always looking for talent. Send us your CV and we'll keep you in mind.</p>
+                <div class="cta-group">
+                    <a href="mailto:careers@inspektra.com" class="btn btn-white">Email us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                    <div class="powered-by-footer">
+                        Powered by OMS Prüfservice
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="features.html">Features</a>
+                        <a href="pricing.html">Pricing</a>
+                        <a href="#">Security</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="why-inspektra.html">About Us</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="imprint.html">Imprint</a>
+                        <a href="#">Cookie Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

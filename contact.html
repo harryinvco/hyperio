@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Sales - Inspektra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Contact Page Specific Styles */
+        body {
+            background-color: #F8FAFC;
+        }
+
+        .contact-wrapper {
+            padding-top: 100px;
+            padding-bottom: 60px;
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Elements */
+        .bg-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 95, 173, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Left Column: Content & Globe */
+        .contact-info {
+            padding-right: 40px;
+        }
+
+        .contact-info h1 {
+            font-size: 2.75rem;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            color: #0F172A;
+        }
+
+        .contact-info .subtitle {
+            font-size: 1.125rem;
+            color: #64748B;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 32px;
+            opacity: 0.7;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .trust-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .trust-label {
+            font-size: 0.875rem;
+            color: #64748B;
+        }
+
+        /* CSS Globe Graphic */
+        .globe-container {
+            width: 220px;
+            height: 220px;
+            position: relative;
+            perspective: 1000px;
+            margin-top: 24px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .globe-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .location-dot {
+            filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.8));
+        }
+
+        /* Orbiting elements */
+        .orbit-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(70deg);
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            animation: rotateRing 10s linear infinite;
+            pointer-events: none;
+        }
+
+        .orbit-dot {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: #60A5FA;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #60A5FA;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotateRing {
+            0% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+            100% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+        }
+
+        /* Right Column: Form */
+        .form-card {
+            background: white;
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E2E8F0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-main);
+            box-shadow: 0 0 0 3px rgba(0, 95, 173, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary-main);
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .form-footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #64748B;
+        }
+
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .contact-info {
+                padding-right: 0;
+                text-align: center;
+            }
+            .globe-container {
+                margin: 40px auto;
+            }
+            .trust-badges {
+                justify-content: center;
+            }
+            .contact-wrapper {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="why-inspektra.html">Why Inspektra</a></li>
+                <li class="dropdown">
+                    <a href="features.html">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="features/dashboard.html">Dashboard</a></li>
+                        <li><a href="features/assets.html">Assets & Locations</a></li>
+                        <li><a href="features/inspections.html">Inspections</a></li>
+                        <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="features/tasks.html">Tasks</a></li>
+                    </ul>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="blog/index.html">Blog</a></li>
+                        <li><a href="webinars/index.html">Webinars</a></li>
+                        <li><a href="academy/index.html">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="#" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contact-wrapper">
+        <div class="bg-glow"></div>
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left Side -->
+                <div class="contact-info fade-in-up">
+                    <h1>Let's secure your <br><span class="text-gradient">infrastructure</span></h1>
+                    <p class="subtitle">Book a personalized demo to see how Inspektra can streamline your electrical safety compliance.</p>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-item">
+                            <div class="trust-number">500+</div>
+                            <div class="trust-label">Facilities Managed</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-number">98%</div>
+                            <div class="trust-label">Compliance Rate</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-number">24/7</div>
+                            <div class="trust-label">Support Access</div>
+                        </div>
+                    </div>
+
+                    <div class="globe-container">
+                        <svg viewBox="0 0 200 200" class="globe-svg">
+                            <defs>
+                                <radialGradient id="globeGradient" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                                    <stop offset="0%" stop-color="#3b82f6" />
+                                    <stop offset="100%" stop-color="#1e3a8a" />
+                                </radialGradient>
+                            </defs>
+                            
+                            <!-- Ocean Sphere -->
+                            <circle cx="100" cy="100" r="98" fill="url(#globeGradient)" stroke="#1e40af" stroke-width="1"/>
+                            
+                            <!-- Grid Lines (Longitude/Latitude) -->
+                            <path d="M100,2 A98,98 0 0,1 100,198" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                            <path d="M50,14 A98,98 0 0,1 50,186" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                            <path d="M150,14 A98,98 0 0,1 150,186" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                            <path d="M2,100 A98,98 0 0,1 198,100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                            <path d="M14,50 A98,98 0 0,1 186,50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                            <path d="M14,150 A98,98 0 0,1 186,150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+
+                            <!-- Landmasses (Stylized Europe/Africa) -->
+                            <g fill="rgba(255,255,255,0.25)">
+                                <!-- UK & Ireland -->
+                                <path d="M82,60 L88,58 L92,65 L86,70 Z" />
+                                <!-- Scandinavia -->
+                                <path d="M100,55 L110,45 L120,50 L115,65 L105,60 Z" />
+                                <!-- Mainland Europe -->
+                                <path d="M80,85 L90,70 L105,65 L125,65 L130,80 L120,95 L100,95 L90,90 Z" />
+                                <!-- Africa (North) -->
+                                <path d="M80,105 L130,105 L125,140 L85,140 Z" />
+                            </g>
+
+                            <!-- Germany Dot (Approx Central Europe) -->
+                            <circle cx="105" cy="75" r="3" fill="#EF4444" class="location-dot">
+                                <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                            
+                            <!-- Cyprus Dot (Eastern Med) -->
+                            <circle cx="135" cy="98" r="3" fill="#EF4444" class="location-dot">
+                                <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="1s" />
+                                <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" begin="1s" />
+                            </circle>
+                        </svg>
+                        
+                        <div class="orbit-ring">
+                            <div class="orbit-dot"></div>
+                        </div>
+                        <div class="orbit-ring" style="width: 200px; height: 200px; animation-duration: 8s; animation-direction: reverse;">
+                            <div class="orbit-dot" style="background: #93C5FD;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div class="form-card fade-in-up delay-1">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" placeholder="Jane">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Work Email</label>
+                            <input type="email" class="form-input" placeholder="jane@company.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Company Size</label>
+                            <select class="form-select">
+                                <option value="" disabled selected>Select employees...</option>
+                                <option value="1-50">1-50</option>
+                                <option value="51-200">51-200</option>
+                                <option value="201-1000">201-1000</option>
+                                <option value="1000+">1000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">How can we help?</label>
+                            <textarea class="form-textarea" placeholder="Tell us about your compliance needs..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Book my demo</button>
+                        
+                        <div class="form-footer">
+                            By submitting this form, you agree to our <a href="#" style="color: var(--primary-main); text-decoration: none;">Privacy Policy</a>.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                    <div class="powered-by-footer">
+                        Powered by OMS Prüfservice
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="features.html">Features</a>
+                        <a href="pricing.html">Pricing</a>
+                        <a href="#">Security</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="why-inspektra.html">About Us</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="imprint.html">Imprint</a>
+                        <a href="#">Cookie Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

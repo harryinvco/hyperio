@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessments - Inspektra Features</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .feature-hero {
+            padding: 100px 0 60px;
+            background: linear-gradient(180deg, rgba(0, 95, 173, 0.04) 0%, transparent 100%);
+        }
+
+        .feature-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .feature-hero-content h1 {
+            font-size: 2.75rem;
+            margin-bottom: 16px;
+            color: #0F172A;
+        }
+
+        .feature-hero-content .subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .feature-hero-visual {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+            border: 1px solid #E2E8F0;
+            padding: 24px;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: #F8FAFC;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary-main);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.125rem;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            color: #64748B;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Risk Matrix Section */
+        .risk-matrix-section {
+            padding: 80px 0;
+        }
+
+        .risk-matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 4px;
+            aspect-ratio: 1;
+            max-width: 300px;
+        }
+
+        .risk-cell {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .risk-low { background: #22C55E; }
+        .risk-medium { background: #F59E0B; }
+        .risk-high { background: #EF4444; }
+
+        .screenshots-section {
+            padding: 80px 0;
+            background: #F8FAFC;
+        }
+
+        .screenshot-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .screenshot-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .screenshot-row.reverse {
+            direction: rtl;
+        }
+
+        .screenshot-row.reverse > * {
+            direction: ltr;
+        }
+
+        .screenshot-content h3 {
+            font-size: 1.5rem;
+            color: #0F172A;
+            margin-bottom: 16px;
+        }
+
+        .screenshot-content p {
+            color: #64748B;
+            line-height: 1.7;
+        }
+
+        .screenshot-visual {
+            background: white;
+            border-radius: 16px;
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8;
+            font-size: 0.875rem;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            text-align: center;
+        }
+
+        .feature-cta h2 {
+            color: white;
+            font-size: 2.25rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-cta p {
+            color: #94A3B8;
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: #64748B;
+        }
+
+        .breadcrumb span {
+            color: #CBD5E1;
+        }
+
+        .breadcrumb strong {
+            color: #0F172A;
+        }
+
+        @media (max-width: 968px) {
+            .feature-hero-grid,
+            .risk-matrix-grid,
+            .screenshot-row,
+            .screenshot-row.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-hero-visual {
+                order: -1;
+            }
+            .risk-matrix {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
+                <li class="dropdown">
+                    <a href="../features.html" class="active">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="assets.html">Assets & Locations</a></li>
+                        <li><a href="inspections.html">Inspections</a></li>
+                        <li><a href="risk-assessments.html" class="active">Risk Assessments</a></li>
+                        <li><a href="tasks.html">Tasks</a></li>
+                    </ul>
+                </li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../webinars/index.html">Webinars</a></li>
+                        <li><a href="../academy/index.html">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="../contact.html" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="feature-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../features.html">Features</a>
+                <span>/</span>
+                <strong>Risk Assessments</strong>
+            </div>
+            <div class="feature-hero-grid">
+                <div class="feature-hero-content">
+                    <div class="badge-pill">Risk Assessments</div>
+                    <h1>Stay ahead of compliance</h1>
+                    <p class="subtitle">Evaluate risks, define test intervals, and implement control measures. Go beyond basic inspections with guided assessment tools.</p>
+                    <div class="cta-group">
+                        <a href="../contact.html" class="btn btn-primary">Request a demo</a>
+                        <a href="../pricing.html" class="btn btn-outline">View pricing</a>
+                    </div>
+                </div>
+                <div class="feature-hero-visual">
+                    <div class="risk-matrix">
+                        <div class="risk-cell risk-low"></div>
+                        <div class="risk-cell risk-low"></div>
+                        <div class="risk-cell risk-medium"></div>
+                        <div class="risk-cell risk-low"></div>
+                        <div class="risk-cell risk-medium"></div>
+                        <div class="risk-cell risk-high"></div>
+                        <div class="risk-cell risk-medium"></div>
+                        <div class="risk-cell risk-high"></div>
+                        <div class="risk-cell risk-high"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2>Why you'll love Risk Assessments</h2>
+                <p class="subtitle">Proactive compliance that protects your people and your business</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    </div>
+                    <h3>Guided risk templates</h3>
+                    <p>Pre-built templates for common electrical safety scenarios. Follow structured workflows to ensure nothing is missed.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <h3>Comprehensive hazard library</h3>
+                    <p>Access a database of common electrical hazards with suggested controls. Based on DGUV and VDE standards.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3>Risk matrix calculation</h3>
+                    <p>Automatically calculate risk scores based on likelihood and severity. Visual matrix makes prioritisation easy.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3>Control measure tracking</h3>
+                    <p>Document control measures and track their implementation. Ensure recommended actions are actually completed.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3>Test interval definition</h3>
+                    <p>Set inspection frequencies based on risk levels. High-risk assets get more attention, low-risk assets get less.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Audit documentation</h3>
+                    <p>Generate compliance documentation that auditors love. Prove due diligence with clear risk assessment records.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Matrix Explanation -->
+    <section class="risk-matrix-section">
+        <div class="container">
+            <div class="risk-matrix-grid">
+                <div>
+                    <h2>Visual risk prioritisation</h2>
+                    <p style="color: #64748B; line-height: 1.7; margin-bottom: 24px;">The risk matrix combines likelihood and severity to calculate an overall risk score. This helps you focus resources where they matter most.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div style="width: 24px; height: 24px; background: #22C55E; border-radius: 6px;"></div>
+                            <span><strong>Low risk</strong> – Standard inspection intervals</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div style="width: 24px; height: 24px; background: #F59E0B; border-radius: 6px;"></div>
+                            <span><strong>Medium risk</strong> – Increased monitoring</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 24px; height: 24px; background: #EF4444; border-radius: 6px;"></div>
+                            <span><strong>High risk</strong> – Immediate action required</span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="risk-matrix" style="max-width: 280px;">
+                        <div class="risk-cell risk-low">Low</div>
+                        <div class="risk-cell risk-low">Low</div>
+                        <div class="risk-cell risk-medium">Med</div>
+                        <div class="risk-cell risk-low">Low</div>
+                        <div class="risk-cell risk-medium">Med</div>
+                        <div class="risk-cell risk-high">High</div>
+                        <div class="risk-cell risk-medium">Med</div>
+                        <div class="risk-cell risk-high">High</div>
+                        <div class="risk-cell risk-high">High</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots-section">
+        <div class="container">
+            <div class="screenshot-row">
+                <div class="screenshot-content">
+                    <h3>Structured assessment workflow</h3>
+                    <p>Follow a guided process to identify hazards, assess risks, and define controls. The workflow ensures consistency across your organisation and nothing gets overlooked.</p>
+                </div>
+                <div class="screenshot-visual">
+                    Screenshot: Assessment Workflow
+                </div>
+            </div>
+
+            <div class="screenshot-row reverse">
+                <div class="screenshot-content">
+                    <h3>Hazard identification</h3>
+                    <p>Choose from a library of common electrical hazards or add your own. Each hazard comes with suggested control measures based on industry best practices.</p>
+                </div>
+                <div class="screenshot-visual">
+                    Screenshot: Hazard Library
+                </div>
+            </div>
+
+            <div class="screenshot-row">
+                <div class="screenshot-content">
+                    <h3>Action tracking</h3>
+                    <p>When a risk assessment identifies needed actions, they're automatically added to the task management system. Track progress and ensure nothing falls through the cracks.</p>
+                </div>
+                <div class="screenshot-visual">
+                    Screenshot: Action Tracking
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-cta">
+        <div class="container">
+            <h2>Ready to get ahead of compliance?</h2>
+            <p>Book a demo and see how Risk Assessments can protect your organisation.</p>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="../contact.html" class="btn btn-white">Book a demo</a>
+                <a href="tasks.html" class="btn btn-outline-white">Next: Tasks →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <img src="../inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                    <div class="powered-by-footer">
+                        Powered by OMS Prüfservice
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="../features.html">Features</a>
+                        <a href="../pricing.html">Pricing</a>
+                        <a href="#">Security</a>
+                        <a href="#">Roadmap</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="../why-inspektra.html">About Us</a>
+                        <a href="../careers.html">Careers</a>
+                        <a href="../contact.html">Contact</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="../privacy.html">Privacy Policy</a>
+                        <a href="../terms.html">Terms of Use</a>
+                        <a href="../imprint.html">Imprint</a>
+                        <a href="#">Cookie Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

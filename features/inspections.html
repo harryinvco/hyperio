@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspections - Inspektra Features</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(135deg, #005FAD 0%, #0EA5E9 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --shadow-soft: 0 4px 24px -1px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 60px rgba(0, 95, 173, 0.15);
+        }
+
+        /* Feature Hero */
+        .feature-hero {
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #EFF6FF 0%, #F8FAFC 100%);
+        }
+
+        .feature-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(0, 95, 173, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: #64748B;
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: #64748B;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-main);
+        }
+
+        .breadcrumb svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .feature-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            border: 1px solid #DBEAFE;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #005FAD;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .feature-hero h1 {
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #0F172A;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-hero h1 .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-hero .subtitle {
+            font-size: 1.25rem;
+            color: #64748B;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-primary-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 95, 173, 0.3);
+        }
+
+        .btn-primary-lg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 95, 173, 0.4);
+        }
+
+        .btn-secondary-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #0F172A;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-lg:hover {
+            border-color: var(--primary-main);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Inspection Mockup */
+        .hero-visual {
+            position: relative;
+        }
+
+        .inspection-mockup {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+
+        .mockup-header {
+            background: #F8FAFC;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .mockup-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .mockup-dot.red { background: #F87171; }
+        .mockup-dot.yellow { background: #FBBF24; }
+        .mockup-dot.green { background: #34D399; }
+
+        .mockup-body {
+            padding: 24px;
+        }
+
+        .inspection-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .inspection-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: #F8FAFC;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .inspection-item:hover {
+            background: #EFF6FF;
+        }
+
+        .inspection-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .inspection-status.passed { background: #22C55E; }
+        .inspection-status.pending { background: #F59E0B; }
+        .inspection-status.due { background: #3B82F6; }
+
+        .inspection-info {
+            flex: 1;
+        }
+
+        .inspection-title {
+            font-weight: 600;
+            color: #0F172A;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .inspection-meta {
+            font-size: 0.75rem;
+            color: #94A3B8;
+        }
+
+        .inspection-date {
+            font-size: 0.75rem;
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        /* Floating Elements */
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: 16px;
+            padding: 16px 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-card.card-1 {
+            top: -20px;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .floating-card.card-2 {
+            bottom: 40px;
+            left: -40px;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-icon.success { background: #DCFCE7; color: #16A34A; }
+        .floating-icon.warning { background: #FEF3C7; color: #D97706; }
+
+        .floating-text strong {
+            display: block;
+            font-size: 0.875rem;
+            color: #0F172A;
+        }
+
+        .floating-text span {
+            font-size: 0.75rem;
+            color: #94A3B8;
+        }
+
+        /* Inspection Types Section */
+        .types-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary-main);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .type-card {
+            background: #F8FAFC;
+            border-radius: 24px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .type-card:hover {
+            background: white;
+            border-color: #E2E8F0;
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-4px);
+        }
+
+        .type-card:hover::before {
+            opacity: 1;
+        }
+
+        .type-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            color: #005FAD;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .type-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 12px;
+        }
+
+        .type-card p {
+            font-size: 0.95rem;
+            color: #64748B;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .type-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .type-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #334155;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .type-features li svg {
+            color: #059669;
+            flex-shrink: 0;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #F8FAFC 0%, white 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid #E2E8F0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-icon.blue { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); color: #005FAD; }
+        .benefit-icon.green { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); color: #059669; }
+        .benefit-icon.purple { background: linear-gradient(135deg, #F3E8FF, #E9D5FF); color: #7C3AED; }
+        .benefit-icon.orange { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); color: #EA580C; }
+
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            font-size: 0.875rem;
+            color: #64748B;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Feature Showcase */
+        .showcase-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .showcase-grid.reverse {
+            direction: rtl;
+        }
+
+        .showcase-grid.reverse > * {
+            direction: ltr;
+        }
+
+        .showcase-content h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .showcase-content p {
+            font-size: 1.1rem;
+            color: #64748B;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: #334155;
+        }
+
+        .feature-list li svg {
+            flex-shrink: 0;
+            color: #059669;
+            margin-top: 2px;
+        }
+
+        .showcase-visual {
+            position: relative;
+        }
+
+        .showcase-image {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .showcase-inner {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Calendar Visual */
+        .calendar-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .calendar-month {
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .calendar-nav button {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #E2E8F0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748B;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border-radius: 8px;
+            color: #64748B;
+        }
+
+        .calendar-day.header {
+            font-weight: 600;
+            color: #94A3B8;
+            font-size: 0.7rem;
+        }
+
+        .calendar-day.has-event {
+            background: #DBEAFE;
+            color: #005FAD;
+            font-weight: 600;
+        }
+
+        .calendar-day.today {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Report Visual */
+        .report-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .report-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .report-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #DCFCE7, #BBF7D0);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #16A34A;
+        }
+
+        .report-info h4 {
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 4px;
+        }
+
+        .report-info span {
+            font-size: 0.75rem;
+            color: #94A3B8;
+        }
+
+        .report-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .report-stat {
+            background: #F8FAFC;
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .report-stat-label {
+            font-size: 0.7rem;
+            color: #94A3B8;
+            margin-bottom: 4px;
+        }
+
+        .report-stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .report-stat-value.green { color: #059669; }
+        .report-stat-value.orange { color: #EA580C; }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0, 95, 173, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: #94A3B8;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: #0F172A;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .showcase-grid.reverse {
+                direction: ltr;
+            }
+
+            .types-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feature-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta,
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .floating-card {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
+                <li class="dropdown">
+                    <a href="../features.html" class="active">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="assets.html">Assets & Locations</a></li>
+                        <li><a href="inspections.html" class="active">Inspections</a></li>
+                        <li><a href="risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="tasks.html">Tasks</a></li>
+                    </ul>
+                </li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../webinars/index.html">Webinars</a></li>
+                        <li><a href="../academy/index.html">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="../contact.html" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="feature-hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <nav class="breadcrumb">
+                        <a href="../features.html">Features</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>Inspections</span>
+                    </nav>
+
+                    <div class="feature-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        Inspection Management
+                    </div>
+
+                    <h1>Never miss a <span class="gradient-text">deadline again</span></h1>
+                    <p class="subtitle">Access OMS reports, plan in-house inspections, and stay on top of your schedule. The heart of your compliance management.</p>
+
+                    <div class="hero-cta">
+                        <a href="../contact.html" class="btn-primary-lg">
+                            Book a demo
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="../features.html" class="btn-secondary-lg">View all features</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="inspection-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-dot red"></div>
+                            <div class="mockup-dot yellow"></div>
+                            <div class="mockup-dot green"></div>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="inspection-list">
+                                <div class="inspection-item">
+                                    <div class="inspection-status passed"></div>
+                                    <div class="inspection-info">
+                                        <div class="inspection-title">Distribution Board #12</div>
+                                        <div class="inspection-meta">DGUV V3 Inspection</div>
+                                    </div>
+                                    <div class="inspection-date">Passed</div>
+                                </div>
+                                <div class="inspection-item">
+                                    <div class="inspection-status pending"></div>
+                                    <div class="inspection-info">
+                                        <div class="inspection-title">Server Room Equipment</div>
+                                        <div class="inspection-meta">Visual Inspection</div>
+                                    </div>
+                                    <div class="inspection-date">Due in 3 days</div>
+                                </div>
+                                <div class="inspection-item">
+                                    <div class="inspection-status due"></div>
+                                    <div class="inspection-info">
+                                        <div class="inspection-title">Production Line Motors</div>
+                                        <div class="inspection-meta">Scheduled</div>
+                                    </div>
+                                    <div class="inspection-date">Dec 15</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-1">
+                        <div class="floating-icon success">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <div class="floating-text">
+                            <strong>98% On Time</strong>
+                            <span>Inspection rate</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-2">
+                        <div class="floating-icon warning">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        </div>
+                        <div class="floating-text">
+                            <strong>5 Due This Week</strong>
+                            <span>Scheduled</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inspection Types Section -->
+    <section class="types-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Inspection Types</div>
+                <h2 class="section-title">Three ways to manage inspections</h2>
+                <p class="section-subtitle">Whether you use OMS technicians, your own team, or both - Inspektra has you covered.</p>
+            </div>
+
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-badge">Automatic</div>
+                    <h3>OMS Inspections</h3>
+                    <p>Reports from OMS Prufservice appear automatically in Inspektra. No upload, no data entry, no errors.</p>
+                    <ul class="type-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Automatic data import
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Real-time sync with OMS
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Full inspection reports
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Defect photos included
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-badge">Flexible</div>
+                    <h3>In-house Inspections</h3>
+                    <p>Conduct your own inspections using customisable templates. Perfect for visual checks, routine maintenance, and internal audits.</p>
+                    <ul class="type-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Custom inspection templates
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Mobile app for field work
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Photo documentation
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Offline capability
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-badge">Smart</div>
+                    <h3>Inspection Scheduling</h3>
+                    <p>Plan ahead with intelligent scheduling. Set recurring inspections, receive reminders, and never miss a compliance deadline.</p>
+                    <ul class="type-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Recurring schedules
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Email & in-app reminders
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Calendar integration
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Workload planning
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Benefits</div>
+                <h2 class="section-title">Why teams love Inspektra inspections</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3>Save hours weekly</h3>
+                    <p>Automated data import means no manual entry.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon green">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3>100% accuracy</h3>
+                    <p>No transcription errors from paper to digital.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3>Never miss deadlines</h3>
+                    <p>Automated reminders keep you on track.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Team collaboration</h3>
+                    <p>Assign inspections and track progress together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section 1 -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="showcase-content">
+                    <h3>Plan with the inspection calendar</h3>
+                    <p>See all upcoming inspections in a calendar view. Filter by location, asset type, or assignee. Drag and drop to reschedule. Plan your team's workload at a glance.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Monthly, weekly, and daily views
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Drag and drop rescheduling
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Filter by team member or location
+                        </li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <div class="showcase-image">
+                        <div class="showcase-inner">
+                            <div class="calendar-visual">
+                                <div class="calendar-header">
+                                    <span class="calendar-month">December 2025</span>
+                                    <div class="calendar-nav">
+                                        <button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                                        <button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                                    </div>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="calendar-day header">Mo</div>
+                                    <div class="calendar-day header">Tu</div>
+                                    <div class="calendar-day header">We</div>
+                                    <div class="calendar-day header">Th</div>
+                                    <div class="calendar-day header">Fr</div>
+                                    <div class="calendar-day header">Sa</div>
+                                    <div class="calendar-day header">Su</div>
+                                    <div class="calendar-day">1</div>
+                                    <div class="calendar-day today">2</div>
+                                    <div class="calendar-day">3</div>
+                                    <div class="calendar-day has-event">4</div>
+                                    <div class="calendar-day">5</div>
+                                    <div class="calendar-day">6</div>
+                                    <div class="calendar-day">7</div>
+                                    <div class="calendar-day has-event">8</div>
+                                    <div class="calendar-day">9</div>
+                                    <div class="calendar-day">10</div>
+                                    <div class="calendar-day">11</div>
+                                    <div class="calendar-day has-event">12</div>
+                                    <div class="calendar-day">13</div>
+                                    <div class="calendar-day">14</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section 2 -->
+    <section class="showcase-section" style="background: #F8FAFC;">
+        <div class="container">
+            <div class="showcase-grid reverse">
+                <div class="showcase-content">
+                    <h3>Detailed inspection reports</h3>
+                    <p>Every inspection generates a comprehensive report. View findings, defect photos, measurements, and recommendations. Export to PDF for sharing with stakeholders or auditors.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Complete inspection history
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Photo documentation
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            One-click PDF export
+                        </li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <div class="showcase-image">
+                        <div class="showcase-inner">
+                            <div class="report-visual">
+                                <div class="report-header">
+                                    <div class="report-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
+                                    <div class="report-info">
+                                        <h4>Inspection Report #1247</h4>
+                                        <span>Distribution Board #12 - Dec 1, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="report-stats">
+                                    <div class="report-stat">
+                                        <div class="report-stat-label">Result</div>
+                                        <div class="report-stat-value green">Passed</div>
+                                    </div>
+                                    <div class="report-stat">
+                                        <div class="report-stat-label">Findings</div>
+                                        <div class="report-stat-value">2 Minor</div>
+                                    </div>
+                                    <div class="report-stat">
+                                        <div class="report-stat-label">Duration</div>
+                                        <div class="report-stat-value">45 min</div>
+                                    </div>
+                                    <div class="report-stat">
+                                        <div class="report-stat-label">Next Due</div>
+                                        <div class="report-stat-value orange">Dec 2026</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to streamline your inspections?</h2>
+                <p>Get a personalized demo and see how Inspektra can transform your inspection process.</p>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="btn-white">
+                        Book a demo
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="risk-assessments.html" class="btn-ghost">Next: Risk Assessments</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <img src="../inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                    <div class="powered-by-footer">Powered by OMS Prufservice</div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="../features.html">Features</a>
+                        <a href="../pricing.html">Pricing</a>
+                        <a href="#">Security</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="../why-inspektra.html">About Us</a>
+                        <a href="../contact.html">Contact</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="../privacy.html">Privacy Policy</a>
+                        <a href="../terms.html">Terms of Use</a>
+                        <a href="../imprint.html">Imprint</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

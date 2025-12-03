@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Inspektra - Inspektra Academy</title>
+    <meta name="description" content="A comprehensive guide to setting up your account and workspace.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .academy-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 60px;
+            padding: 60px 0;
+            align-items: start;
+        }
+
+        .academy-sidebar {
+            position: sticky;
+            top: 100px;
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .academy-sidebar h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748B;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            color: #475569;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-link:hover {
+            color: var(--primary-main);
+            background: #F0F9FF;
+        }
+
+        .sidebar-link.active {
+            color: var(--primary-main);
+            background: #F0F9FF;
+            font-weight: 600;
+        }
+
+        .academy-content {
+            max-width: 800px;
+        }
+
+        .academy-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 40px;
+        }
+
+        .academy-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748B;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .academy-breadcrumb a {
+            color: #64748B;
+            transition: color 0.2s;
+        }
+
+        .academy-breadcrumb a:hover {
+            color: var(--primary-main);
+        }
+
+        .academy-title {
+            font-size: 3rem;
+            color: #0F172A;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .academy-meta {
+            display: flex;
+            gap: 24px;
+            color: #64748B;
+            font-size: 0.95rem;
+            align-items: center;
+        }
+
+        .academy-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Markdown Content Styles */
+        .content-body {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .content-body h2 {
+            font-size: 1.8rem;
+            color: #0F172A;
+            margin-top: 48px;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .content-body h3 {
+            font-size: 1.4rem;
+            color: #1E293B;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .content-body p {
+            margin-bottom: 24px;
+        }
+
+        .content-body ul, .content-body ol {
+            margin-bottom: 32px;
+            padding-left: 24px;
+        }
+
+        .content-body li {
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .content-body code {
+            background: #F1F5F9;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+            font-size: 0.9em;
+            color: #0F172A;
+            border: 1px solid #E2E8F0;
+        }
+
+        .content-body pre {
+            background: #1E293B;
+            color: #E2E8F0;
+            padding: 24px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 32px 0;
+            border: 1px solid #334155;
+        }
+
+        .content-body pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            border: none;
+        }
+
+        .content-body blockquote {
+            border-left: 4px solid var(--primary-main);
+            background: #F8FAFC;
+            padding: 24px 32px;
+            margin: 32px 0;
+            border-radius: 0 12px 12px 0;
+            color: #334155;
+            font-style: italic;
+        }
+
+        .content-body table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 32px 0;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .content-body th, .content-body td {
+            border-bottom: 1px solid #E2E8F0;
+            padding: 16px;
+            text-align: left;
+        }
+
+        .content-body th {
+            background: #F8FAFC;
+            font-weight: 600;
+            color: #0F172A;
+        }
+
+        .content-body tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 900px) {
+            .academy-layout {
+                grid-template-columns: 1fr;
+            }
+            .academy-sidebar {
+                display: none; /* Or move to bottom/drawer */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <img src="../../inspektra-logo.png" alt="Inspektra" height="40">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../why-inspektra.html">Why Inspektra</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="../../pricing.html">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../blog/index.html">Blog</a></li>
+                        <li><a href="../../webinars/index.html">Webinars</a></li>
+                        <li><a href="../index.html" class="active">Academy</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary">Log in</a>
+                <a href="#" class="btn btn-primary">Request a demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="academy-layout">
+            <aside class="academy-sidebar">
+                <h3>In this section</h3>
+                <nav>
+                    <a href="electrical-safety.html" class="sidebar-link ">Electrical Safety Checklist</a><a href="getting-started.html" class="sidebar-link active">Getting Started with Inspektra</a>
+                </nav>
+                
+                <div style="margin-top: 40px;">
+                    <h3>Need Help?</h3>
+                    <p style="font-size: 0.9rem; color: #64748B; margin-bottom: 16px;">Can't find what you're looking for? Contact our support team.</p>
+                    <a href="../../contact.html" class="btn btn-outline full-width" style="font-size: 0.9rem;">Contact Support</a>
+                </div>
+            </aside>
+
+            <main class="academy-content">
+                <header class="academy-header">
+                    <div class="academy-breadcrumb">
+                        <a href="../index.html">Academy</a>
+                        <span>/</span>
+                        <span>Guides</span>
+                    </div>
+                    <h1 class="academy-title">Getting Started with Inspektra</h1>
+                    <div class="academy-meta">
+                        <span>Guides</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </div>
+                </header>
+
+                <div class="content-body">
+                    
+                    <h1>Getting Started with Inspektra</h1>
+<p>Welcome to Inspektra! This guide will walk you through the initial setup of your workspace.</p>
+<h2>1. Setting up your Organization</h2>
+<p>Navigate to the <strong>Settings</strong> tab and select <strong>Organization</strong>. Here you can:</p>
+<ul>
+<li>Upload your logo</li>
+<li>Set your timezone</li>
+<li>Define user roles</li>
+</ul>
+<h2>2. Inviting Team Members</h2>
+<p>Click on <strong>Users</strong> and then <strong>Invite User</strong>. Enter their email address and assign a role.</p>
+<blockquote>
+<p><strong>Note:</strong> Admin users have full access to all settings.</p>
+</blockquote>
+<h2>3. Creating your first Site</h2>
+<p>A &quot;Site&quot; represents a physical location where inspections occur. Go to <strong>Sites</strong> &gt; <strong>Add Site</strong>.</p>
+
+                </div>
+
+                <div class="lesson-navigation">
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../../index.html" class="logo">
+                        <img src="../../inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>The digital evolution of electrical safety compliance.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="../../features.html">Features</a>
+                        <a href="../../pricing.html">Pricing</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Resources</h4>
+                        <a href="../../blog/index.html">Blog</a>
+                        <a href="../../webinars/index.html">Webinars</a>
+                        <a href="../index.html">Academy</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="../../contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

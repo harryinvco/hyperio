@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Settings - Inspektra Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../admin-styles.css">
+    <style>
+        /* Settings Styles */
+        .settings-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+        }
+
+        .settings-nav {
+            position: sticky;
+            top: 88px;
+            height: fit-content;
+        }
+
+        .settings-nav-list {
+            list-style: none;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .settings-nav-item a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+        }
+
+        .settings-nav-item:last-child a {
+            border-bottom: none;
+        }
+
+        .settings-nav-item a:hover {
+            background: var(--bg-light);
+            color: var(--text-primary);
+        }
+
+        .settings-nav-item.active a {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .settings-nav-item a svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Settings Content */
+        .settings-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .settings-section {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .section-body {
+            padding: 24px;
+        }
+
+        /* Form Fields */
+        .form-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 24px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-light);
+            align-items: start;
+        }
+
+        .form-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .form-row:first-child {
+            padding-top: 0;
+        }
+
+        .field-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding-top: 10px;
+        }
+
+        .field-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            transition: all var(--transition-fast);
+        }
+
+        .field-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .field-input.full-width {
+            max-width: 100%;
+        }
+
+        .field-textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .field-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .field-select {
+            width: auto;
+            min-width: 200px;
+            padding: 10px 36px 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            background: var(--bg-white);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .field-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .field-hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .field-hint a {
+            color: var(--primary);
+        }
+
+        .field-hint a:hover {
+            text-decoration: underline;
+        }
+
+        /* Checkbox/Radio */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checkbox-item input {
+            margin-top: 2px;
+        }
+
+        .checkbox-item label {
+            font-size: 13px;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .checkbox-item .checkbox-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Role Selector */
+        .role-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .role-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .role-option:hover {
+            border-color: var(--primary);
+        }
+
+        .role-option.selected {
+            background: var(--primary-light);
+            border-color: var(--primary);
+        }
+
+        .role-option input {
+            display: none;
+        }
+
+        .role-option span {
+            font-size: 13px;
+            color: var(--text-primary);
+        }
+
+        /* Time Selects */
+        .time-selects {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .time-selects select {
+            min-width: auto;
+        }
+
+        /* Upload Logo */
+        .logo-upload {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .current-logo {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+        }
+
+        .current-logo img {
+            max-width: 60px;
+            max-height: 60px;
+        }
+
+        .logo-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Save Button */
+        .settings-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding: 20px 24px;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Notification */
+        .save-notification {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            background: var(--success);
+            color: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all var(--transition-slow);
+            z-index: 100;
+        }
+
+        .save-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .settings-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-nav {
+                position: static;
+            }
+
+            .settings-nav-list {
+                display: flex;
+                overflow-x: auto;
+            }
+
+            .settings-nav-item a {
+                white-space: nowrap;
+                border-bottom: none;
+                border-right: 1px solid var(--border-color);
+            }
+
+            .settings-nav-item:last-child a {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .field-label {
+                padding-top: 0;
+            }
+
+            .field-input,
+            .field-textarea {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="admin-logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Inspektra</span>
+                </a>
+                <button class="sidebar-collapse-btn" id="collapseBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- Main Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Main</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="9" rx="1"/>
+                                    <rect x="14" y="3" width="7" height="5" rx="1"/>
+                                    <rect x="14" y="12" width="7" height="9" rx="1"/>
+                                    <rect x="3" y="16" width="7" height="5" rx="1"/>
+                                </svg>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="analytics.html" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"/>
+                                    <line x1="12" y1="20" x2="12" y2="4"/>
+                                    <line x1="6" y1="20" x2="6" y2="14"/>
+                                </svg>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Content</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                                <span>Blog Posts</span>
+                                <span class="nav-badge">2</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="posts.html">All Posts</a></li>
+                                <li><a href="post-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="media.html" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                                <span>Media</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Academy Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Academy</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                </svg>
+                                <span>Guides</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="guides.html">All Guides</a></li>
+                                <li><a href="guide-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="23 7 16 12 23 17 23 7"/>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                                </svg>
+                                <span>Tutorials</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="tutorials.html">All Tutorials</a></li>
+                                <li><a href="tutorial-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-submenu">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="23"/>
+                                    <line x1="8" y1="23" x2="16" y2="23"/>
+                                </svg>
+                                <span>Webinars</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="webinars.html">All Webinars</a></li>
+                                <li><a href="webinar-new.html">Add New</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Admin Section -->
+                <div class="nav-section">
+                    <span class="nav-section-title">Admin</span>
+                    <ul class="nav-menu">
+                        <li class="nav-item has-submenu open active">
+                            <a href="#" class="nav-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                </svg>
+                                <span>Settings</span>
+                                <svg class="submenu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="settings-general.html">General</a></li>
+                                <li><a href="settings-media.html">Media</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../../index.html" class="view-site-btn" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                    <span>View Site</span>
+                </a>
+            </div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search settings...">
+                        <span class="search-shortcut">Ctrl+K</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn" title="Notifications">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </button>
+                    <div class="header-divider"></div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <button class="user-btn">
+                            <div class="user-avatar">HA</div>
+                            <div class="user-info">
+                                <span class="user-name">Harry Admin</span>
+                                <span class="user-role">Administrator</span>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">Your Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" onclick="logout()" class="dropdown-item text-danger">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="page-header">
+                    <div class="page-header-left">
+                        <h1>General Settings</h1>
+                        <p class="page-subtitle">Manage your site's basic configuration</p>
+                    </div>
+                </div>
+
+                <div class="settings-layout">
+                    <!-- Settings Navigation -->
+                    <nav class="settings-nav">
+                        <ul class="settings-nav-list">
+                            <li class="settings-nav-item active">
+                                <a href="settings-general.html">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4"/>
+                                    </svg>
+                                    General
+                                </a>
+                            </li>
+                            <li class="settings-nav-item">
+                                <a href="settings-media.html">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                                        <polyline points="21 15 16 10 5 21"/>
+                                    </svg>
+                                    Media
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Settings Content -->
+                    <div class="settings-content">
+                        <!-- Site Identity -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                                <h3 class="section-title">Site Identity</h3>
+                            </div>
+                            <div class="section-body">
+                                <div class="form-row">
+                                    <label class="field-label">Site Title</label>
+                                    <div class="field-content">
+                                        <input type="text" class="field-input" value="Inspektra">
+                                        <p class="field-hint">The name of your site as it appears across the web.</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">Tagline</label>
+                                    <div class="field-content">
+                                        <input type="text" class="field-input" value="AI-Powered Quality Inspection">
+                                        <p class="field-hint">In a few words, explain what this site is about.</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">Site Logo</label>
+                                    <div class="field-content">
+                                        <div class="logo-upload">
+                                            <div class="current-logo">
+                                                <img src="https://via.placeholder.com/60x60/005FAD/FFFFFF?text=I" alt="Current logo">
+                                            </div>
+                                            <div class="logo-actions">
+                                                <button class="btn btn-outline btn-sm">Change Logo</button>
+                                                <button class="btn btn-sm" style="color: var(--error);">Remove</button>
+                                            </div>
+                                        </div>
+                                        <p class="field-hint">Upload a logo (recommended: 200x50 pixels, PNG or SVG)</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">Site Icon</label>
+                                    <div class="field-content">
+                                        <div class="logo-upload">
+                                            <div class="current-logo" style="width: 48px; height: 48px;">
+                                                <img src="https://via.placeholder.com/32x32/005FAD/FFFFFF?text=I" alt="Favicon" style="max-width: 32px;">
+                                            </div>
+                                            <div class="logo-actions">
+                                                <button class="btn btn-outline btn-sm">Change Icon</button>
+                                            </div>
+                                        </div>
+                                        <p class="field-hint">Site Icon is used as a browser tab icon (favicon). Should be 512x512 pixels.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Site Address -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                </svg>
+                                <h3 class="section-title">Site Address</h3>
+                            </div>
+                            <div class="section-body">
+                                <div class="form-row">
+                                    <label class="field-label">Site URL</label>
+                                    <div class="field-content">
+                                        <input type="url" class="field-input" value="https://inspektra.com">
+                                        <p class="field-hint">Enter the address of your site.</p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">Admin Email</label>
+                                    <div class="field-content">
+                                        <input type="email" class="field-input" value="admin@inspektra.com">
+                                        <p class="field-hint">This address is used for admin purposes, like new user notification.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Membership -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <h3 class="section-title">Membership</h3>
+                            </div>
+                            <div class="section-body">
+                                <div class="form-row">
+                                    <label class="field-label">Registration</label>
+                                    <div class="field-content">
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" class="custom-checkbox" id="anyone-register">
+                                                <label for="anyone-register">
+                                                    Anyone can register
+                                                    <div class="checkbox-desc">Allow visitors to create accounts on your site</div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">New User Default Role</label>
+                                    <div class="field-content">
+                                        <select class="field-select">
+                                            <option value="subscriber" selected>Subscriber</option>
+                                            <option value="contributor">Contributor</option>
+                                            <option value="author">Author</option>
+                                            <option value="editor">Editor</option>
+                                            <option value="administrator">Administrator</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date & Time -->
+                        <div class="settings-section">
+                            <div class="section-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <h3 class="section-title">Date & Time</h3>
+                            </div>
+                            <div class="section-body">
+                                <div class="form-row">
+                                    <label class="field-label">Timezone</label>
+                                    <div class="field-content">
+                                        <select class="field-select">
+                                            <option value="UTC">UTC+0 (Coordinated Universal Time)</option>
+                                            <option value="America/New_York">UTC-5 (Eastern Time)</option>
+                                            <option value="America/Chicago">UTC-6 (Central Time)</option>
+                                            <option value="America/Denver">UTC-7 (Mountain Time)</option>
+                                            <option value="America/Los_Angeles" selected>UTC-8 (Pacific Time)</option>
+                                            <option value="Europe/London">UTC+0 (London)</option>
+                                            <option value="Europe/Paris">UTC+1 (Paris)</option>
+                                            <option value="Asia/Tokyo">UTC+9 (Tokyo)</option>
+                                        </select>
+                                        <p class="field-hint">Current time: <strong>December 2, 2025 10:30 AM</strong></p>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">Date Format</label>
+                                    <div class="field-content">
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="radio" name="date-format" id="date-1" checked>
+                                                <label for="date-1">December 2, 2025</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="radio" name="date-format" id="date-2">
+                                                <label for="date-2">2025-12-02</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="radio" name="date-format" id="date-3">
+                                                <label for="date-3">12/02/2025</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="radio" name="date-format" id="date-4">
+                                                <label for="date-4">02/12/2025</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">Time Format</label>
+                                    <div class="field-content">
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="radio" name="time-format" id="time-1" checked>
+                                                <label for="time-1">10:30 AM (12-hour)</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="radio" name="time-format" id="time-2">
+                                                <label for="time-2">10:30 (24-hour)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="field-label">Week Starts On</label>
+                                    <div class="field-content">
+                                        <select class="field-select">
+                                            <option value="0">Sunday</option>
+                                            <option value="1" selected>Monday</option>
+                                            <option value="2">Tuesday</option>
+                                            <option value="3">Wednesday</option>
+                                            <option value="4">Thursday</option>
+                                            <option value="5">Friday</option>
+                                            <option value="6">Saturday</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings-footer">
+                                <button class="btn btn-outline">Reset to Defaults</button>
+                                <button class="btn btn-primary" id="saveSettings">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Save Notification -->
+    <div class="save-notification" id="saveNotification">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        Settings saved successfully!
+    </div>
+
+    <script>
+        // Auth check
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = '../index.html';
+        }
+
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('isLoggedIn');
+            sessionStorage.removeItem('userEmail');
+            window.location.href = '../index.html';
+        }
+
+        // Sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const collapseBtn = document.getElementById('collapseBtn');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        collapseBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+        });
+
+        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+            sidebar.classList.add('collapsed');
+        }
+
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.add('mobile-open');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('mobile-open');
+        });
+
+        // Submenu toggle
+        document.querySelectorAll('.nav-item.has-submenu > .nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                link.parentElement.classList.toggle('open');
+            });
+        });
+
+        // User dropdown
+        const userDropdown = document.getElementById('userDropdown');
+        userDropdown.querySelector('.user-btn').addEventListener('click', () => {
+            userDropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!userDropdown.contains(e.target)) {
+                userDropdown.classList.remove('open');
+            }
+        });
+
+        // Save settings
+        const saveBtn = document.getElementById('saveSettings');
+        const saveNotification = document.getElementById('saveNotification');
+
+        saveBtn.addEventListener('click', () => {
+            saveNotification.classList.add('show');
+            setTimeout(() => {
+                saveNotification.classList.remove('show');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
