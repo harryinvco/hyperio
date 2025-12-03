@@ -11,23 +11,106 @@
     <link rel="stylesheet" href="../styles.css">
     <style>
         .webinars-hero {
-            background: linear-gradient(135deg, #005FAD 0%, #003d73 100%);
-            padding: 80px 0;
+            background: linear-gradient(135deg, #005FAD 0%, #0284C7 50%, #0EA5E9 100%);
+            padding: 100px 0 120px;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .webinars-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .webinars-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .webinars-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .webinars-hero .hero-badge svg {
+            width: 16px;
+            height: 16px;
         }
 
         .webinars-hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: white !important;
+            letter-spacing: -0.02em;
         }
 
         .webinars-hero p {
             font-size: 1.25rem;
-            opacity: 0.9;
+            opacity: 0.95;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 32px;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 40px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .webinars-hero {
+                padding: 60px 0 80px;
+            }
+            .webinars-hero h1 {
+                font-size: 2.25rem;
+            }
+            .hero-stats {
+                gap: 24px;
+            }
+            .hero-stat-number {
+                font-size: 1.5rem;
+            }
         }
 
         .content-section {
@@ -40,8 +123,8 @@
 
         .section-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 16px;
             margin-bottom: 40px;
         }
 
@@ -49,15 +132,30 @@
             font-size: 2rem;
             font-weight: 700;
             color: #0F172A;
+            margin: 0;
         }
 
         .section-header .badge {
-            background: #E0F2FE;
-            color: #005FAD;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.875rem;
+            background: #005FAD;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header .badge.live {
+            background: #DC2626;
+        }
+
+        .section-header .badge.podcast {
+            background: #7C3AED;
+        }
+
+        .section-header .badge.ondemand {
+            background: #059669;
         }
 
         /* Upcoming Webinars */
@@ -218,7 +316,7 @@
 
         .podcast-cover {
             height: 180px;
-            background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+            background: linear-gradient(135deg, #005FAD 0%, #0284C7 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -336,7 +434,7 @@
         .recording-thumbnail {
             width: 160px;
             height: 90px;
-            background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+            background: linear-gradient(135deg, #005FAD 0%, #0284C7 100%);
             border-radius: 8px;
             flex-shrink: 0;
             display: flex;
@@ -393,7 +491,7 @@
 
         /* Subscribe Section */
         .subscribe-section {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            background: linear-gradient(135deg, #005FAD 0%, #0284C7 100%);
             padding: 60px;
             border-radius: 16px;
             text-align: center;
@@ -404,11 +502,13 @@
         .subscribe-section h2 {
             font-size: 1.75rem;
             margin-bottom: 12px;
+            color: white;
         }
 
         .subscribe-section p {
-            opacity: 0.8;
+            opacity: 0.9;
             margin-bottom: 24px;
+            color: white;
         }
 
         .subscribe-platforms {
@@ -499,8 +599,28 @@
     <!-- Hero Section -->
     <section class="webinars-hero">
         <div class="container">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                Learn from Industry Experts
+            </div>
             <h1>Webinars & Podcasts</h1>
-            <p>Learn from industry experts through our live webinars, podcast episodes, and on-demand recordings.</p>
+            <p>Stay ahead with live sessions, expert interviews, and on-demand content covering the latest in electrical safety and compliance.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">50+</div>
+                    <div class="hero-stat-label">Episodes</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">10k+</div>
+                    <div class="hero-stat-label">Listeners</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">25+</div>
+                    <div class="hero-stat-label">Expert Guests</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -509,7 +629,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Upcoming Webinars</h2>
-                <span class="badge">Live Events</span>
+                <span class="badge live">Live</span>
             </div>
 
             <div class="upcoming-grid">
@@ -522,14 +642,14 @@
                                 <div class="month">Jan</div>
                             </div>
                             <div class="date-info">
-                                <strong>Wednesday, January 15, 2025</strong>
+                                <strong>Wednesday, January 15, 2026</strong>
                                 2:00 PM - 3:00 PM CET
                             </div>
                         </div>
                     </div>
                     <div class="upcoming-body">
-                        <h3>2025 Electrical Safety Regulations: What You Need to Know</h3>
-                        <p>Join us for a comprehensive overview of the new safety regulations coming into effect in 2025 and how to prepare your organization.</p>
+                        <h3>2026 Electrical Safety Regulations: What You Need to Know</h3>
+                        <p>Join us for a comprehensive overview of the new safety regulations coming into effect in 2026 and how to prepare your organization.</p>
                         <div class="speaker">
                             <div class="speaker-avatar">SV</div>
                             <div class="speaker-info">
@@ -553,7 +673,7 @@
                                 <div class="month">Jan</div>
                             </div>
                             <div class="date-info">
-                                <strong>Tuesday, January 28, 2025</strong>
+                                <strong>Tuesday, January 28, 2026</strong>
                                 11:00 AM - 12:00 PM CET
                             </div>
                         </div>
@@ -583,7 +703,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Latest Podcast Episodes</h2>
-                <span class="badge">The Safety First Podcast</span>
+                <span class="badge podcast">Podcast</span>
             </div>
 
             <div class="podcast-grid">
@@ -682,7 +802,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Past Webinar Recordings</h2>
-                <span class="badge">On-Demand</span>
+                <span class="badge ondemand">On-Demand</span>
             </div>
 
             <div class="recordings-list">
