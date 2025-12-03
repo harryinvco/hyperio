@@ -267,8 +267,9 @@ a {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 40px;
 }
 
 .logo {
@@ -385,6 +386,13 @@ a {
     display: flex;
     gap: 16px;
     align-items: center;
+}
+
+/* Nav wrapper - keeps nav links and CTA in one line on desktop */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 32px;
 }
 
 /* Hero Section */
