@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="../styles.css">
     <style>
         .webinars-hero {
-            background: linear-gradient(135deg, #005FAD 0%, #0284C7 50%, #0EA5E9 100%);
-            padding: 100px 0 120px;
+            background: linear-gradient(135deg, #005FAD 0%, #004884 100%);
+            padding: 120px 0 80px;
             text-align: center;
             color: white;
             position: relative;
@@ -26,90 +26,36 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .webinars-hero .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .webinars-hero .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .webinars-hero .hero-badge svg {
-            width: 16px;
-            height: 16px;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .webinars-hero h1 {
             font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: white !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            -webkit-text-fill-color: white !important;
-            letter-spacing: -0.02em;
-        }
-
-        .webinars-hero p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto 32px;
-            color: white;
-            line-height: 1.6;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin-top: 40px;
-        }
-
-        .hero-stat {
-            text-align: center;
-        }
-
-        .hero-stat-number {
-            font-size: 2rem;
             font-weight: 700;
-            color: white;
-            line-height: 1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: #ffffff !important;
+            -webkit-text-fill-color: white !important;
+            background: none !important;
+            position: relative;
         }
 
-        .hero-stat-label {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 4px;
+        .webinars-hero .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
         }
 
         @media (max-width: 768px) {
             .webinars-hero {
-                padding: 60px 0 80px;
+                padding: 80px 0 60px;
             }
             .webinars-hero h1 {
                 font-size: 2.25rem;
-            }
-            .hero-stats {
-                gap: 24px;
-            }
-            .hero-stat-number {
-                font-size: 1.5rem;
             }
         }
 
@@ -122,28 +68,31 @@
         }
 
         .section-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
             margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E2E8F0;
         }
 
         .section-header h2 {
             font-size: 2rem;
             font-weight: 700;
             color: #0F172A;
-            margin: 0;
+            margin: 0 0 8px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .section-header .badge {
             background: #005FAD;
             color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            vertical-align: middle;
         }
 
         .section-header .badge.live {
@@ -156,6 +105,12 @@
 
         .section-header .badge.ondemand {
             background: #059669;
+        }
+
+        .section-header p {
+            color: #64748B;
+            font-size: 1rem;
+            margin: 0;
         }
 
         /* Upcoming Webinars */
@@ -556,10 +511,9 @@
                 height: 180px;
             }
 
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
+            .section-header h2 {
+                font-size: 1.5rem;
+                flex-wrap: wrap;
             }
 
             .subscribe-section {
@@ -597,39 +551,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="webinars-hero">
+    <header class="webinars-hero">
         <div class="container">
-            <div class="hero-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-                Learn from Industry Experts
-            </div>
             <h1>Webinars & Podcasts</h1>
-            <p>Stay ahead with live sessions, expert interviews, and on-demand content covering the latest in electrical safety and compliance.</p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-number">50+</div>
-                    <div class="hero-stat-label">Episodes</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">10k+</div>
-                    <div class="hero-stat-label">Listeners</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">25+</div>
-                    <div class="hero-stat-label">Expert Guests</div>
-                </div>
-            </div>
+            <p class="subtitle">Live sessions, expert interviews, and on-demand content on electrical safety and compliance.</p>
         </div>
-    </section>
+    </header>
 
     <!-- Upcoming Webinars -->
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>Upcoming Webinars</h2>
-                <span class="badge live">Live</span>
+                <h2>Upcoming Webinars <span class="badge live">Live</span></h2>
             </div>
 
             <div class="upcoming-grid">
@@ -702,8 +635,7 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>Latest Podcast Episodes</h2>
-                <span class="badge podcast">Podcast</span>
+                <h2>Latest Podcast Episodes <span class="badge podcast">Podcast</span></h2>
             </div>
 
             <div class="podcast-grid">
@@ -801,8 +733,7 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>Past Webinar Recordings</h2>
-                <span class="badge ondemand">On-Demand</span>
+                <h2>Past Webinar Recordings <span class="badge ondemand">On-Demand</span></h2>
             </div>
 
             <div class="recordings-list">
