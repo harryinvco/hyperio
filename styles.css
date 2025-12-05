@@ -247,7 +247,7 @@ a {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #000000DE;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 20px 0;
@@ -260,7 +260,7 @@ a {
 
 .navbar.scrolled {
     padding: 12px 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #000000DE;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
     border-bottom-color: transparent;
 }
@@ -399,7 +399,7 @@ a {
 /* Hero Section */
 .hero {
     padding: 120px 0 140px;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F6F7FE 100%);
+    background: #000000DE;
     position: relative;
     overflow: hidden;
 }
@@ -3210,6 +3210,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #000000DE;
     background-size: cover;
     background-position: center;
     color: white;
