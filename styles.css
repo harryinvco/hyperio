@@ -81,7 +81,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.15;
-    color: var(--text-primary);
+    color: #000000DE;
     letter-spacing: -0.025em;
     text-wrap: balance;
 }
@@ -91,10 +91,7 @@ h1 {
     font-weight: 800;
     letter-spacing: -0.035em;
     margin-bottom: var(--space-6);
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-main) 50%, var(--tertiary-light) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #000000DE;
 }
 
 h2 {
@@ -247,7 +244,7 @@ a {
 
 /* Navbar */
 .navbar {
-    background-color: #000000DE;
+    background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 20px 0;
@@ -260,7 +257,7 @@ a {
 
 .navbar.scrolled {
     padding: 12px 0;
-    background-color: #000000DE;
+    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
     border-bottom-color: transparent;
 }
@@ -399,7 +396,7 @@ a {
 /* Hero Section */
 .hero {
     padding: 120px 0 140px;
-    background: #000000DE;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F6F7FE 100%);
     position: relative;
     overflow: hidden;
 }
@@ -3210,7 +3207,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000000DE;
     background-size: cover;
     background-position: center;
     color: white;
