@@ -256,25 +256,7 @@
             <div class="nav-wrapper" id="navWrapper">
                 <ul class="nav-links">
                     <li><a href="why-inspektra.html">Why Inspektra</a></li>
-                    <li class="dropdown">
-                        <a href="features.html" class="dropdown-toggle">Features</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="features/dashboard.html">Dashboard</a></li>
-                            <li><a href="features/assets.html">Assets & Locations</a></li>
-                            <li><a href="features/inspections.html">Inspections</a></li>
-                            <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
-                            <li><a href="features/tasks.html">Tasks</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="pricing.html" class="active">Pricing</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Resources</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="blog/index.html">Blog</a></li>
-                            <li><a href="webinars/index.html">Webinars</a></li>
-                            <li><a href="academy/index.html">Academy</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="features.html">Features</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-cta">
@@ -448,32 +430,19 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>The digital evolution of electrical safety compliance.</p>
-                    <div class="powered-by-footer">
-                        Powered by OMS Prüfservice
-                    </div>
+                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Product</h4>
-                        <a href="features.html">Features</a>
-                        <a href="pricing.html">Pricing</a>
-                        <a href="#">Security</a>
-                        <a href="#">Roadmap</a>
-                    </div>
-                    <div class="nav-col">
-                        <h4>Company</h4>
-                        <a href="why-inspektra.html">About Us</a>
-                        <a href="careers.html">Careers</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="#">Blog</a>
-                    </div>
-                    <div class="nav-col">
                         <h4>Legal</h4>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
                         <a href="imprint.html">Imprint</a>
-                        <a href="#">Cookie Settings</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Support</h4>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
@@ -562,6 +531,110 @@
             toggle.classList.toggle('active');
             // Here you would typically update prices
         });
+    </script>
+
+    <!-- Request Access Modal -->
+    <div class="modal-overlay" id="requestAccessModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Request access</h2>
+                    <p>Our team will review your request and share the next steps.</p>
+                </div>
+                <form id="requestAccessForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="fullName">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="workEmail">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company name</label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                    </div>
+                    <div class="form-group">
+                        <label>What do you want to use Inspektra for?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="oms" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">OMS inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="inhouse">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="both">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Both OMS + in-house inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="notsure">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Not sure yet</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Request Access Modal
+        const modal = document.getElementById('requestAccessModal');
+        const modalClose = document.getElementById('modalClose');
+
+        function openRequestModal(e) {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRequestModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary').forEach(btn => {
+            if (btn.textContent.trim() === 'Request Access') {
+                btn.addEventListener('click', openRequestModal);
+            }
+        });
+
+        if (modalClose) modalClose.addEventListener('click', closeRequestModal);
+
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeRequestModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeRequestModal();
+        });
+
+        const requestForm = document.getElementById('requestAccessForm');
+        if (requestForm) {
+            requestForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                requestForm.innerHTML = `
+                    <div class="form-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <h3>Thank you!</h3>
+                        <p>We've received your request. Our team will be in touch shortly.</p>
+                    </div>
+                `;
+            });
+        }
     </script>
 
 </body>

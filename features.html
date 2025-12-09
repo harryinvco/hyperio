@@ -20,126 +20,31 @@
 
         /* Hero Section */
         .features-hero {
-            padding: 120px 0 80px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 50%, #F8FAFC 100%);
-        }
-
-        .features-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 80%;
-            height: 100%;
-            background: radial-gradient(ellipse, rgba(0, 95, 173, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .features-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            right: -10%;
-            width: 60%;
-            height: 80%;
-            background: radial-gradient(ellipse, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        /* Animated Grid Background */
-        .grid-bg {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(0, 95, 173, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 95, 173, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 70%, transparent 100%);
+            padding: 140px 0 80px;
+            background: white;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: white;
-            border: 1px solid #E2E8F0;
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #64748B;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .hero-badge span {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 600;
-        }
-
         .features-hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1.15;
+            margin-bottom: 24px;
             color: #0F172A;
             letter-spacing: -0.02em;
-        }
-
-        .features-hero h1 .gradient-text {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .features-hero .subtitle {
             font-size: 1.25rem;
             color: #64748B;
             line-height: 1.6;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 40px;
-        }
-
-        /* Floating Stats */
-        .floating-stats {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin-top: 48px;
-        }
-
-        .floating-stat {
-            text-align: center;
-        }
-
-        .floating-stat-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .floating-stat-label {
-            font-size: 0.875rem;
-            color: #64748B;
-            margin-top: 4px;
         }
 
         /* Bento Grid Section */
@@ -843,25 +748,7 @@
             <div class="nav-wrapper" id="navWrapper">
                 <ul class="nav-links">
                     <li><a href="why-inspektra.html">Why Inspektra</a></li>
-                    <li class="dropdown">
-                        <a href="features.html" class="dropdown-toggle active">Features</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="features/dashboard.html">Dashboard</a></li>
-                            <li><a href="features/assets.html">Assets & Locations</a></li>
-                            <li><a href="features/inspections.html">Inspections</a></li>
-                            <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
-                            <li><a href="features/tasks.html">Tasks</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Resources</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="blog/index.html">Blog</a></li>
-                            <li><a href="webinars/index.html">Webinars</a></li>
-                            <li><a href="academy/index.html">Academy</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="features.html">Features</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-cta">
@@ -874,30 +761,11 @@
 
     <!-- Hero Section -->
     <header class="features-hero">
-        <div class="grid-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                    <span>Platform Overview</span>
-                </div>
-                <h1>The complete platform for <span class="gradient-text">electrical safety</span></h1>
-                <p class="subtitle">From automated inspection data to intelligent risk assessments. Everything you need to stay compliant, in one beautiful interface.</p>
-
-                <div class="floating-stats">
-                    <div class="floating-stat">
-                        <div class="floating-stat-value">75%</div>
-                        <div class="floating-stat-label">Less admin time</div>
-                    </div>
-                    <div class="floating-stat">
-                        <div class="floating-stat-value">100%</div>
-                        <div class="floating-stat-label">Audit-ready</div>
-                    </div>
-                    <div class="floating-stat">
-                        <div class="floating-stat-value">0</div>
-                        <div class="floating-stat-label">Missed deadlines</div>
-                    </div>
-                </div>
+                <h1>Everything you need for electrical safety in one place</h1>
+                <p class="subtitle">Inspektra brings inspections, assets, risks, and documentation together in one organised, connected system built for safety teams across all sites.</p>
+                <a href="#" class="btn btn-primary btn-lg">Request Access</a>
             </div>
         </div>
     </header>
@@ -905,211 +773,110 @@
     <!-- Bento Grid Features -->
     <section class="bento-section">
         <div class="container">
-            <div class="section-label">Features</div>
-            <h2 class="section-title">Everything you need, beautifully designed</h2>
-            <p class="section-subtitle">Built for professionals who want less admin and more control over their compliance operations.</p>
-
             <div class="bento-grid">
-                <!-- Dashboard - Large Card -->
-                <a href="features/dashboard.html" class="bento-card span-8">
+                <!-- Dashboard Card -->
+                <a href="features/dashboard.html" class="bento-card span-4">
                     <div class="bento-icon blue">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                     </div>
-                    <h3>Real-time Dashboard</h3>
-                    <p>Get instant clarity on your compliance status across all facilities. Track inspections, monitor risks, and never miss a deadline with intelligent alerts.</p>
+                    <h3>Dashboard</h3>
+                    <p>See upcoming inspections, open tasks, and risk levels at a glance so you always know what needs attention.</p>
                     <span class="bento-link">
                         Explore Dashboard
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
-                    <div class="bento-visual dashboard-preview">
-                        <div class="mini-chart">
-                            <div class="chart-bar"></div>
-                            <div class="chart-bar"></div>
-                            <div class="chart-bar"></div>
-                            <div class="chart-bar"></div>
-                            <div class="chart-bar"></div>
-                            <div class="chart-bar"></div>
-                            <div class="chart-bar"></div>
-                        </div>
-                        <div class="stats-row">
-                            <div class="mini-stat">
-                                <div class="mini-stat-value success">98%</div>
-                                <div class="mini-stat-label">Compliance</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-value warning">3</div>
-                                <div class="mini-stat-label">Open Tasks</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-value">12</div>
-                                <div class="mini-stat-label">This Month</div>
-                            </div>
-                        </div>
-                    </div>
                 </a>
 
                 <!-- Assets Card -->
                 <a href="features/assets.html" class="bento-card span-4">
                     <div class="bento-icon purple">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                     </div>
-                    <h3>Assets & Locations</h3>
-                    <p>Organize every asset in a structured, searchable inventory with QR codes and document storage.</p>
+                    <h3>Assets</h3>
+                    <p>Keep all devices, machines, and installations organised in one place with clear records and inspection history.</p>
                     <span class="bento-link">
-                        Learn more
+                        Explore Assets
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
-                    <div class="bento-visual assets-visual">
-                        <div class="asset-item">
-                            <div class="asset-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                            </div>
-                            <div class="asset-name">Building A</div>
-                            <div class="asset-count">24 assets</div>
-                        </div>
-                        <div class="asset-item">
-                            <div class="asset-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                            </div>
-                            <div class="asset-name">Building B</div>
-                            <div class="asset-count">18 assets</div>
-                        </div>
-                        <div class="asset-item">
-                            <div class="asset-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                            </div>
-                            <div class="asset-name">Warehouse</div>
-                            <div class="asset-count">32 assets</div>
-                        </div>
+                </a>
+
+                <!-- Locations Card -->
+                <a href="features/locations.html" class="bento-card span-4">
+                    <div class="bento-icon green">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
+                    <h3>Locations</h3>
+                    <p>Map sites, buildings, and rooms in a navigable hierarchy that keeps your organisation structured and easy to manage.</p>
+                    <span class="bento-link">
+                        Explore Locations
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
                 </a>
 
                 <!-- Inspections Card -->
-                <a href="features/inspections.html" class="bento-card span-6">
-                    <div class="bento-icon green">
+                <a href="features/inspections.html" class="bento-card span-4">
+                    <div class="bento-icon cyan">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
-                    <h3>Smart Inspections</h3>
-                    <p>Access OMS reports automatically, schedule in-house inspections, and get intelligent reminders. The heart of your compliance management.</p>
+                    <h3>Inspections</h3>
+                    <p>Perform your own inspections and access OMS Prüferservice reports in one consistent structure.</p>
                     <span class="bento-link">
                         Explore Inspections
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
-                    <div class="bento-visual inspection-visual">
-                        <div class="inspection-card">
-                            <div class="inspection-status passed">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            </div>
-                            <div class="inspection-type">OMS Report</div>
-                            <div class="inspection-date">Nov 28, 2025</div>
-                        </div>
-                        <div class="inspection-card">
-                            <div class="inspection-status pending">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            </div>
-                            <div class="inspection-type">In-house</div>
-                            <div class="inspection-date">Due Dec 5</div>
-                        </div>
-                        <div class="inspection-card">
-                            <div class="inspection-status scheduled">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                            </div>
-                            <div class="inspection-type">Scheduled</div>
-                            <div class="inspection-date">Dec 15, 2025</div>
-                        </div>
-                    </div>
                 </a>
 
                 <!-- Risk Assessments Card -->
-                <a href="features/risk-assessments.html" class="bento-card span-6">
+                <a href="features/risk-assessments.html" class="bento-card span-4">
                     <div class="bento-icon orange">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
                     <h3>Risk Assessments</h3>
-                    <p>Evaluate risks with guided templates, define test intervals, and stay ahead of compliance with built-in hazard libraries.</p>
+                    <p>Define hazards, set test intervals, and manage risk levels across all asset groups.</p>
                     <span class="bento-link">
-                        Explore Risk Tools
+                        Explore Risk Assessment
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
-                    <div class="bento-visual risk-visual">
-                        <div class="risk-matrix">
-                            <div class="risk-cell green"></div>
-                            <div class="risk-cell green"></div>
-                            <div class="risk-cell yellow"></div>
-                            <div class="risk-cell orange"></div>
-                            <div class="risk-cell red"></div>
-                            <div class="risk-cell green"></div>
-                            <div class="risk-cell yellow"></div>
-                            <div class="risk-cell yellow"></div>
-                            <div class="risk-cell orange"></div>
-                            <div class="risk-cell red"></div>
-                            <div class="risk-cell yellow"></div>
-                            <div class="risk-cell yellow"></div>
-                            <div class="risk-cell orange"></div>
-                            <div class="risk-cell red"></div>
-                            <div class="risk-cell dark-red"></div>
-                            <div class="risk-cell orange"></div>
-                            <div class="risk-cell orange"></div>
-                            <div class="risk-cell red"></div>
-                            <div class="risk-cell dark-red"></div>
-                            <div class="risk-cell dark-red"></div>
-                            <div class="risk-cell red"></div>
-                            <div class="risk-cell red"></div>
-                            <div class="risk-cell dark-red"></div>
-                            <div class="risk-cell dark-red"></div>
-                            <div class="risk-cell dark-red"></div>
-                        </div>
-                    </div>
                 </a>
 
                 <!-- Tasks Card -->
                 <a href="features/tasks.html" class="bento-card span-4">
-                    <div class="bento-icon cyan">
+                    <div class="bento-icon blue">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
-                    <h3>Task Management</h3>
-                    <p>Turn findings into action. Assign, track, and resolve issues with your team.</p>
+                    <h3>Tasks</h3>
+                    <p>Turn findings into actions, track progress, and update asset safety status in real time.</p>
                     <span class="bento-link">
-                        Learn more
+                        Explore Tasks
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
-                    <div class="bento-visual tasks-visual">
-                        <div class="task-list">
-                            <div class="task-item">
-                                <div class="task-check done">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                </div>
-                                <span class="task-text done">Replace faulty RCD</span>
-                                <span class="task-priority low">Done</span>
-                            </div>
-                            <div class="task-item">
-                                <div class="task-check"></div>
-                                <span class="task-text">Inspect cable tray B12</span>
-                                <span class="task-priority high">High</span>
-                            </div>
-                            <div class="task-item">
-                                <div class="task-check"></div>
-                                <span class="task-text">Update safety labels</span>
-                                <span class="task-priority medium">Medium</span>
-                            </div>
-                        </div>
-                    </div>
                 </a>
 
-                <!-- Collaboration Highlight Card -->
-                <div class="bento-card span-8 highlight-card">
-                    <div class="orb orb-1"></div>
-                    <div class="orb orb-2"></div>
-                    <div class="bento-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <!-- Home Office Checks Card -->
+                <a href="features/home-office-checks.html" class="bento-card span-4">
+                    <div class="bento-icon purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
-                    <h3>Seamless Team Collaboration</h3>
-                    <p>Work together with OMS technicians and your internal team in one secure platform. Assign tasks, share reports, track progress, and resolve issues faster than ever. Everyone stays aligned, always.</p>
-                    <a href="contact.html" class="bento-link">
-                        Get in touch
+                    <h3>Home Office Checks</h3>
+                    <p>Provide protective multi-sockets and guide remote workers through quick visual checks of their company devices — all documented in Inspektra.</p>
+                    <span class="bento-link">
+                        Explore Home Office Checks
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                </div>
+                    </span>
+                </a>
+
+                <!-- Monitoring Card -->
+                <a href="features/monitoring.html" class="bento-card span-4">
+                    <div class="bento-icon orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <h3>Monitoring</h3>
+                    <p>Install sensors and monitor electrical behaviour in real time, with alerts and deviations shown directly in Inspektra.</p>
+                    <span class="bento-link">
+                        Explore Monitoring
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
@@ -1196,32 +963,19 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>The digital evolution of electrical safety compliance.</p>
-                    <div class="powered-by-footer">
-                        Powered by OMS Prüfservice
-                    </div>
+                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Product</h4>
-                        <a href="features.html">Features</a>
-                        <a href="pricing.html">Pricing</a>
-                        <a href="#">Security</a>
-                        <a href="#">Roadmap</a>
-                    </div>
-                    <div class="nav-col">
-                        <h4>Company</h4>
-                        <a href="why-inspektra.html">About Us</a>
-                        <a href="careers.html">Careers</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="#">Blog</a>
-                    </div>
-                    <div class="nav-col">
                         <h4>Legal</h4>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
                         <a href="imprint.html">Imprint</a>
-                        <a href="#">Cookie Settings</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Support</h4>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
@@ -1283,6 +1037,110 @@
                 navbar.classList.remove('scrolled');
             }
         }, { passive: true });
+    </script>
+
+    <!-- Request Access Modal -->
+    <div class="modal-overlay" id="requestAccessModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Request access</h2>
+                    <p>Our team will review your request and share the next steps.</p>
+                </div>
+                <form id="requestAccessForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="fullName">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="workEmail">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company name</label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                    </div>
+                    <div class="form-group">
+                        <label>What do you want to use Inspektra for?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="oms" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">OMS inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="inhouse">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="both">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Both OMS + in-house inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="notsure">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Not sure yet</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Request Access Modal
+        const modal = document.getElementById('requestAccessModal');
+        const modalClose = document.getElementById('modalClose');
+
+        function openRequestModal(e) {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRequestModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary').forEach(btn => {
+            if (btn.textContent.trim() === 'Request Access') {
+                btn.addEventListener('click', openRequestModal);
+            }
+        });
+
+        if (modalClose) modalClose.addEventListener('click', closeRequestModal);
+
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeRequestModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeRequestModal();
+        });
+
+        const requestForm = document.getElementById('requestAccessForm');
+        if (requestForm) {
+            requestForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                requestForm.innerHTML = `
+                    <div class="form-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <h3>Thank you!</h3>
+                        <p>We've received your request. Our team will be in touch shortly.</p>
+                    </div>
+                `;
+            });
+        }
     </script>
 
 </body>

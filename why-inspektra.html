@@ -134,9 +134,297 @@
             font-size: 0.9375rem;
         }
 
-        .founders-text span {
-            color: var(--text-light);
-            font-size: 0.875rem;
+        /* Expertise Section */
+        .expertise-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 155, 213, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
+            position: relative;
+        }
+
+        .expertise-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .expertise-content h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .expertise-description {
+            font-size: 1.25rem;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        .workflow-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .workflow-logo {
+            background: transparent;
+            padding: 0;
+        }
+
+        .workflow-logo img {
+            display: block;
+            height: 80px;
+            width: auto;
+        }
+
+        .workflow-arrow {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .workflow-tagline {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .benefits-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .benefits-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .benefits-header .subtitle {
+            font-size: 1.125rem;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.6;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 36px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(0, 155, 213, 0.1) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-main);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            font-size: 1rem;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Logo Showcase Section */
+        .logo-showcase {
+            padding: 100px 0;
+            background: #F8FAFC;
+        }
+
+        .logo-showcase-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .logo-showcase-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-showcase-header p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px 32px;
+            align-items: center;
+            justify-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+        }
+
+        .logo-item img {
+            max-width: 120px;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Compliance Section */
+        .compliance-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .compliance-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .compliance-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .compliance-header p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .compliance-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .compliance-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            border-color: transparent;
+        }
+
+        .compliance-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(0, 155, 213, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-main);
+        }
+
+        .compliance-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .compliance-card p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* CTA Box Section */
+        .cta-box-section {
+            padding: 0 0 120px;
+            background: white;
+        }
+
+        .cta-box {
+            background: rgba(0, 155, 213, 0.05);
+            border-radius: 24px;
+            padding: 64px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-box p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 32px;
         }
 
         /* Timeline Section */
@@ -747,6 +1035,10 @@
             .gallery-item-1 { grid-column: span 12; }
             .gallery-item-2, .gallery-item-3, .gallery-item-4,
             .gallery-item-5, .gallery-item-6 { grid-column: span 6; }
+
+            .compliance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -754,13 +1046,55 @@
                 padding: 100px 0 60px;
             }
 
-            .founders-strip {
-                flex-direction: column;
-                text-align: center;
+            .expertise-section {
+                padding: 60px 0;
             }
 
-            .founders-text {
-                text-align: center;
+            .workflow-visual {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .workflow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .benefits-section {
+                padding: 80px 0;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-showcase {
+                padding: 60px 0;
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px 24px;
+            }
+
+            .logo-item img {
+                max-width: 100px;
+                max-height: 50px;
+            }
+
+            .compliance-section {
+                padding: 80px 0;
+            }
+
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box-section {
+                padding: 0 0 80px;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
             }
 
             .values-grid {
@@ -814,26 +1148,8 @@
             <div class="mobile-menu-overlay" id="mobileOverlay"></div>
             <div class="nav-wrapper" id="navWrapper">
                 <ul class="nav-links">
-                    <li><a href="why-inspektra.html" class="active">Why Inspektra</a></li>
-                    <li class="dropdown">
-                        <a href="features.html" class="dropdown-toggle">Features</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="features/dashboard.html">Dashboard</a></li>
-                            <li><a href="features/assets.html">Assets & Locations</a></li>
-                            <li><a href="features/inspections.html">Inspections</a></li>
-                            <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
-                            <li><a href="features/tasks.html">Tasks</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Resources</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="blog/index.html">Blog</a></li>
-                            <li><a href="webinars/index.html">Webinars</a></li>
-                            <li><a href="academy/index.html">Academy</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="why-inspektra.html">Why Inspektra</a></li>
+                    <li><a href="features.html">Features</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-cta">
@@ -852,571 +1168,168 @@
         </div>
         <div class="container">
             <div class="story-hero-content">
-                <div class="badge-pill">
-                    <span class="badge-dot pulse"></span>
-                    Our Story
-                </div>
-                <h1>Building the future of <span>electrical safety</span></h1>
-                <p class="lead">We started with a simple mission: make compliance effortless. What began in the field with clipboards and paper has evolved into the most trusted safety platform in the DACH region.</p>
-
-                <div class="founders-strip">
-                    <div class="founders-avatars">
-                        <div class="founder-avatar">MK</div>
-                        <div class="founder-avatar">TH</div>
-                        <div class="founder-avatar">SW</div>
-                    </div>
-                    <div class="founders-text">
-                        <strong>Founded by Safety Experts</strong>
-                        <span>15+ years in electrical inspection</span>
-                    </div>
-                </div>
+                <h1>Clarity for every inspection</h1>
+                <p class="lead">Inspektra brings order to inspections, risks, and reporting — giving safety teams a clear, consistent way to stay compliant.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Request Access</a>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section class="timeline-section">
+    <!-- Expertise Section -->
+    <section class="expertise-section">
         <div class="container">
-            <div class="timeline-header">
-                <div class="badge-pill">Our Journey</div>
-                <h2>From field work to digital innovation</h2>
-                <p class="subtitle">Every great product starts with a real problem. Here's how we got here.</p>
-            </div>
+            <div class="expertise-content">
+                <h2>The expertise behind your compliance</h2>
+                <p class="expertise-description">OMS Prüfservice performs the inspections.<br>Inspektra organises the results.<br>Together, you get reliable data and one connected process.</p>
 
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2008</div>
-                        <h3>The Beginning</h3>
-                        <p>OMS Prufservice was founded with a vision to modernize electrical safety inspections across Germany.</p>
+                <div class="workflow-visual">
+                    <div class="workflow-logo">
+                        <img src="oms-logo.png" alt="OMS Prüfservice" height="40">
                     </div>
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
+                    <div class="workflow-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </div>
-                    <div></div>
-                </div>
-
-                <div class="timeline-item">
-                    <div></div>
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2015</div>
-                        <h3>Digital Transformation</h3>
-                        <p>After conducting over 5 million inspections, we identified critical inefficiencies in compliance management.</p>
+                    <div class="workflow-logo">
+                        <img src="inspektra-logo.png" alt="Inspektra" height="40">
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2019</div>
-                        <h3>Inspektra is Born</h3>
-                        <p>We launched Inspektra, combining our field expertise with cutting-edge technology to solve compliance challenges.</p>
-                    </div>
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div></div>
-                </div>
-
-                <div class="timeline-item">
-                    <div></div>
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023</div>
-                        <h3>Industry Recognition</h3>
-                        <p>Reached 500+ enterprise clients and crossed 12 million managed inspections across the DACH region.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">Today</div>
-                        <h3>Leading the Industry</h3>
-                        <p>Continuing to innovate with AI-powered insights, predictive maintenance, and seamless integrations.</p>
-                    </div>
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div></div>
-                </div>
+                <p class="workflow-tagline">One connected workflow</p>
             </div>
         </div>
     </section>
 
-    <!-- Image Carousel -->
-    <section class="carousel-section">
+    <!-- Benefits Section -->
+    <section class="benefits-section">
         <div class="container">
-            <div class="carousel-header">
-                <div class="badge-pill" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.1); color: white;">Behind the Scenes</div>
-                <h2>Where innovation meets safety</h2>
-                <p>From our headquarters to the field, see how we're transforming electrical compliance.</p>
-            </div>
-        </div>
-        <div class="carousel-track-wrapper">
-            <div class="carousel-track">
-                <!-- First set -->
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Office Workspace Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Our Munich Headquarters</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Team Meeting Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Weekly Product Sprint</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Field Technician Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Real-world Testing</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Software Development Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Engineering Excellence</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Customer Workshop Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Customer Workshop</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Team Event Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Team Building</span>
-                    </div>
-                </div>
-                <!-- Duplicate set for infinite scroll -->
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Office Workspace Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Our Munich Headquarters</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Team Meeting Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Weekly Product Sprint</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Field Technician Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Real-world Testing</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Software Development Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Engineering Excellence</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Customer Workshop Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Customer Workshop</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">Team Event Photo</div>
-                    <div class="carousel-item-overlay">
-                        <span class="carousel-item-caption">Team Building</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission & Values -->
-    <section class="values-section">
-        <div class="container">
-            <div class="values-header">
-                <div class="badge-pill">Our Values</div>
-                <h2>What drives us every day</h2>
-                <p class="subtitle">These core principles guide every decision we make and every feature we build.</p>
+            <div class="benefits-header">
+                <h2>Focused on what safety teams need</h2>
+                <p class="subtitle">Everything your organisation needs to stay organised, compliant, and in control.</p>
             </div>
 
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
                     </div>
-                    <h3>Safety First</h3>
-                    <p>We believe electrical safety is a fundamental right, not just a compliance checkbox. Every feature we build protects people and property.</p>
+                    <h3>Unified safety workspace</h3>
+                    <p>Manage assets, inspections, and documentation in one organised platform.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
                     </div>
-                    <h3>Excellence</h3>
-                    <p>Good enough isn't good enough. We strive for excellence in every line of code, every customer interaction, and every inspection report.</p>
+                    <h3>Less admin, fewer mistakes</h3>
+                    <p>Reduce manual entry and rely on automated, standardised workflows.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
-                    <h3>Transparency</h3>
-                    <p>We build trust through clarity. Our platform provides unalterable audit trails and clear visibility, so you're always audit-ready.</p>
+                    <h3>Consistent processes across all sites</h3>
+                    <p>Use the same structure everywhere — from small workshops to multi-location facilities.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </div>
-                    <h3>Customer Focus</h3>
-                    <p>Our customers aren't just users—they're partners. We listen, learn, and iterate based on real-world feedback from safety professionals.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-                    </div>
-                    <h3>Innovation</h3>
-                    <p>We challenge the status quo of paper-based inspections. We leverage AI and data analytics to bring predictive insights to facility management.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    </div>
-                    <h3>Security</h3>
-                    <p>Your data is sacred. We employ enterprise-grade security, GDPR compliance, and German-hosted servers to protect your information.</p>
+                    <h3>Built for real safety teams</h3>
+                    <p>Designed for electricians, coordinators, and safety managers who need clarity every day.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Banner -->
-    <section class="stats-banner">
+    <!-- Logo Showcase Section -->
+    <section class="logo-showcase">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years of Experience</div>
+            <div class="logo-showcase-header">
+                <h2>Trusted results, every time</h2>
+                <p>OMS and Inspektra support leading organisations across manufacturing, utilities, and services throughout DACH.</p>
+            </div>
+            <div class="logo-grid">
+                <div class="logo-item">
+                    <img src="logos/volkswagen.png" alt="Volkswagen">
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">12M+</div>
-                    <div class="stat-label">Inspections Conducted</div>
+                <div class="logo-item">
+                    <img src="logos/porsche.png" alt="Porsche">
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Enterprise Clients</div>
+                <div class="logo-item">
+                    <img src="logos/mercedes.png" alt="Mercedes-Benz">
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Customer Satisfaction</div>
+                <div class="logo-item">
+                    <img src="logos/adidas.png" alt="Adidas">
+                </div>
+                <div class="logo-item">
+                    <img src="logos/allianz.png" alt="Allianz">
+                </div>
+                <div class="logo-item">
+                    <img src="logos/pg.png" alt="P&G">
+                </div>
+                <div class="logo-item">
+                    <img src="logos/bosch.png" alt="Bosch">
+                </div>
+                <div class="logo-item">
+                    <img src="logos/siemens.png" alt="Siemens">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
+    <!-- Compliance Section -->
+    <section class="compliance-section">
         <div class="container">
-            <div class="team-header">
-                <div class="badge-pill">Our Team</div>
-                <h2>Meet the people behind Inspektra</h2>
-                <p class="subtitle">A diverse team of engineers, safety experts, and industry veterans united by a common mission.</p>
+            <div class="compliance-header">
+                <h2>Made for straightforward compliance</h2>
+                <p>Built to support safe, audit-ready operations across every location.</p>
             </div>
-        </div>
-        <div class="team-carousel-wrapper">
-            <div class="team-carousel">
-                <!-- First set -->
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Markus Klein</h4>
-                        <span>CEO & Co-Founder</span>
+
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
+                    <h3>Straightforward compliance</h3>
+                    <p>Clear, structured processes designed for safety teams — no complexity, no clutter.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Thomas Huber</h4>
-                        <span>CTO & Co-Founder</span>
+
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
+                    <h3>Secure by design</h3>
+                    <p>ISO 27001 processes, Microsoft Azure hosting, and GDPR compliance ensure safe data handling.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Sarah Wagner</h4>
-                        <span>Head of Product</span>
+
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                     </div>
+                    <h3>Mobile access, built for teams</h3>
+                    <p>Technicians and managers access inspections, tasks, and reports from any device.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Michael Braun</h4>
-                        <span>Head of Engineering</span>
+
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                     </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Lisa Mueller</h4>
-                        <span>Head of Customer Success</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Felix Schmidt</h4>
-                        <span>Lead Safety Consultant</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Anna Weber</h4>
-                        <span>Head of Design</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>David Fischer</h4>
-                        <span>Head of Sales</span>
-                    </div>
-                </div>
-                <!-- Duplicate set for infinite scroll -->
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Markus Klein</h4>
-                        <span>CEO & Co-Founder</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Thomas Huber</h4>
-                        <span>CTO & Co-Founder</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Sarah Wagner</h4>
-                        <span>Head of Product</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Michael Braun</h4>
-                        <span>Head of Engineering</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Lisa Mueller</h4>
-                        <span>Head of Customer Success</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Felix Schmidt</h4>
-                        <span>Lead Safety Consultant</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>Anna Weber</h4>
-                        <span>Head of Design</span>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">Team Member Photo</div>
-                    <div class="team-info">
-                        <h4>David Fischer</h4>
-                        <span>Head of Sales</span>
-                    </div>
+                    <h3>Digital reporting, ready for audits</h3>
+                    <p>Generate standardised documentation instantly, aligned with DACH requirements.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials-section">
+    <!-- CTA Box Section -->
+    <section class="cta-box-section">
         <div class="container">
-            <div class="testimonials-header">
-                <div class="badge-pill">What Our Clients Say</div>
-                <h2>Trusted by industry leaders</h2>
-                <p class="subtitle">Hear from the safety professionals who rely on Inspektra every day.</p>
-            </div>
-        </div>
-        <div class="carousel-track-wrapper">
-            <div class="testimonial-carousel">
-                <!-- First set -->
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Inspektra has completely transformed how we manage compliance across our 15 manufacturing sites. It's not just software; it's peace of mind."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">JD</div>
-                        <div class="testimonial-meta">
-                            <strong>Jurgen Davis</strong>
-                            <span>Head of Facility Management, TechCorp GmbH</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"The time savings are incredible. What used to take us weeks now takes hours. Our auditors are actually impressed for once."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">KM</div>
-                        <div class="testimonial-meta">
-                            <strong>Katrin Meyer</strong>
-                            <span>Safety Director, AutoParts AG</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Finally, a compliance tool built by people who actually understand electrical safety. The difference is night and day."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">PW</div>
-                        <div class="testimonial-meta">
-                            <strong>Peter Wolf</strong>
-                            <span>Operations Manager, LogiTech Solutions</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"The mobile app is a game-changer for our field teams. Real-time updates, instant documentation, zero paperwork."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">SB</div>
-                        <div class="testimonial-meta">
-                            <strong>Stefan Bauer</strong>
-                            <span>Technical Lead, EnergieWerk</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"We passed our ISO audit with flying colors thanks to Inspektra. The audit trail feature alone is worth the investment."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">LH</div>
-                        <div class="testimonial-meta">
-                            <strong>Laura Hoffmann</strong>
-                            <span>Quality Manager, MediTech Group</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Duplicate set -->
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Inspektra has completely transformed how we manage compliance across our 15 manufacturing sites. It's not just software; it's peace of mind."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">JD</div>
-                        <div class="testimonial-meta">
-                            <strong>Jurgen Davis</strong>
-                            <span>Head of Facility Management, TechCorp GmbH</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"The time savings are incredible. What used to take us weeks now takes hours. Our auditors are actually impressed for once."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">KM</div>
-                        <div class="testimonial-meta">
-                            <strong>Katrin Meyer</strong>
-                            <span>Safety Director, AutoParts AG</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Finally, a compliance tool built by people who actually understand electrical safety. The difference is night and day."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">PW</div>
-                        <div class="testimonial-meta">
-                            <strong>Peter Wolf</strong>
-                            <span>Operations Manager, LogiTech Solutions</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"The mobile app is a game-changer for our field teams. Real-time updates, instant documentation, zero paperwork."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">SB</div>
-                        <div class="testimonial-meta">
-                            <strong>Stefan Bauer</strong>
-                            <span>Technical Lead, EnergieWerk</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"We passed our ISO audit with flying colors thanks to Inspektra. The audit trail feature alone is worth the investment."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">LH</div>
-                        <div class="testimonial-meta">
-                            <strong>Laura Hoffmann</strong>
-                            <span>Quality Manager, MediTech Group</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Office Gallery -->
-    <section class="gallery-section">
-        <div class="container">
-            <div class="gallery-header">
-                <div class="badge-pill">Life at Inspektra</div>
-                <h2>Where great work happens</h2>
-                <p class="subtitle">A glimpse into our workspace and culture.</p>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item gallery-item-1">
-                    <div class="gallery-placeholder">Main Office Space - Large Hero Image</div>
-                </div>
-                <div class="gallery-item gallery-item-2">
-                    <div class="gallery-placeholder">Collaboration Area</div>
-                </div>
-                <div class="gallery-item gallery-item-3">
-                    <div class="gallery-placeholder">Team Lunch</div>
-                </div>
-                <div class="gallery-item gallery-item-4">
-                    <div class="gallery-placeholder">Product Demo</div>
-                </div>
-                <div class="gallery-item gallery-item-5">
-                    <div class="gallery-placeholder">Office Lounge</div>
-                </div>
-                <div class="gallery-item gallery-item-6">
-                    <div class="gallery-placeholder">Engineering Team</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="story-cta">
-        <div class="container">
-            <div class="story-cta-content">
-                <div class="badge-pill">Join Our Journey</div>
-                <h2>Ready to transform your safety compliance?</h2>
-                <p>Discover how Inspektra can help you achieve audit-ready status with less effort and more confidence.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary btn-lg">
-                        Book a Demo
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                    <a href="careers.html" class="btn btn-outline">
-                        View Careers
-                    </a>
-                </div>
+            <div class="cta-box">
+                <h2>Ready to streamline your safety processes?</h2>
+                <p>Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Request Access</a>
             </div>
         </div>
     </section>
@@ -1428,32 +1341,19 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>The digital evolution of electrical safety compliance.</p>
-                    <div class="powered-by-footer">
-                        Powered by OMS Prufservice
-                    </div>
+                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Product</h4>
-                        <a href="features.html">Features</a>
-                        <a href="pricing.html">Pricing</a>
-                        <a href="#">Security</a>
-                        <a href="#">Roadmap</a>
-                    </div>
-                    <div class="nav-col">
-                        <h4>Company</h4>
-                        <a href="why-inspektra.html">About Us</a>
-                        <a href="careers.html">Careers</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="#">Blog</a>
-                    </div>
-                    <div class="nav-col">
                         <h4>Legal</h4>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
                         <a href="imprint.html">Imprint</a>
-                        <a href="#">Cookie Settings</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Support</h4>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
@@ -1532,12 +1432,121 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in-up, .value-card, .timeline-item').forEach(el => {
+        document.querySelectorAll('.fade-in-up, .benefit-card, .compliance-card').forEach(el => {
             observer.observe(el);
         });
 
-        // Pause carousel on hover (handled by CSS, but keeping for potential future JS enhancements)
+        // Request Access Modal
+        const modal = document.getElementById('requestAccessModal');
+        const modalClose = document.getElementById('modalClose');
+
+        function openRequestModal(e) {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRequestModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Attach click handlers to all Request Access buttons
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary').forEach(btn => {
+            if (btn.textContent.trim() === 'Request Access') {
+                btn.addEventListener('click', openRequestModal);
+            }
+        });
+
+        if (modalClose) modalClose.addEventListener('click', closeRequestModal);
+
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeRequestModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                closeRequestModal();
+            }
+        });
+
+        // Form submission
+        const requestForm = document.getElementById('requestAccessForm');
+        if (requestForm) {
+            requestForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(requestForm);
+                console.log('Form submitted:', Object.fromEntries(formData));
+
+                requestForm.innerHTML = `
+                    <div class="form-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <h3>Thank you!</h3>
+                        <p>We've received your request. Our team will be in touch shortly.</p>
+                    </div>
+                `;
+            });
+        }
     </script>
+
+    <!-- Request Access Modal -->
+    <div class="modal-overlay" id="requestAccessModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Request access</h2>
+                    <p>Our team will review your request and share the next steps.</p>
+                </div>
+                <form id="requestAccessForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="fullName">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="workEmail">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company name</label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                    </div>
+                    <div class="form-group">
+                        <label>What do you want to use Inspektra for?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="oms" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">OMS inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="inhouse">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="both">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Both OMS + in-house inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="notsure">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Not sure yet</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Assessments - Inspektra Features</title>
+    <title>Home Office Checks - Inspektra Features</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -88,90 +88,6 @@
             margin: 0;
         }
 
-        /* Risk Matrix Section */
-        .risk-matrix-section {
-            padding: 80px 0;
-        }
-
-        .risk-matrix-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .risk-matrix {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 4px;
-            aspect-ratio: 1;
-            max-width: 300px;
-        }
-
-        .risk-cell {
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .risk-low { background: #22C55E; }
-        .risk-medium { background: #F59E0B; }
-        .risk-high { background: #EF4444; }
-
-        .screenshots-section {
-            padding: 80px 0;
-            background: #F8FAFC;
-        }
-
-        .screenshot-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .screenshot-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .screenshot-row.reverse {
-            direction: rtl;
-        }
-
-        .screenshot-row.reverse > * {
-            direction: ltr;
-        }
-
-        .screenshot-content h3 {
-            font-size: 1.5rem;
-            color: #0F172A;
-            margin-bottom: 16px;
-        }
-
-        .screenshot-content p {
-            color: #64748B;
-            line-height: 1.7;
-        }
-
-        .screenshot-visual {
-            background: white;
-            border-radius: 16px;
-            aspect-ratio: 16/10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94A3B8;
-            font-size: 0.875rem;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
         .feature-cta {
             padding: 80px 0;
             background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
@@ -190,42 +106,75 @@
             margin-bottom: 32px;
         }
 
-        .breadcrumb {
+        /* Home Office Visual */
+        .home-office-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .checklist-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.875rem;
-            margin-bottom: 24px;
+            gap: 12px;
+            padding: 16px;
+            background: #F8FAFC;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
         }
 
-        .breadcrumb a {
-            color: #64748B;
+        .checklist-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .breadcrumb span {
-            color: #CBD5E1;
+        .checklist-check.done {
+            background: #22C55E;
+            color: white;
         }
 
-        .breadcrumb strong {
+        .checklist-check.pending {
+            background: white;
+            border: 2px solid #CBD5E1;
+        }
+
+        .checklist-text {
+            flex: 1;
+            font-size: 0.9rem;
             color: #0F172A;
         }
 
+        .checklist-status {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+
+        .checklist-status.complete {
+            background: #DCFCE7;
+            color: #16A34A;
+        }
+
+        .checklist-status.pending {
+            background: #FEF3C7;
+            color: #D97706;
+        }
+
         @media (max-width: 968px) {
-            .feature-hero-grid,
-            .risk-matrix-grid,
-            .screenshot-row,
-            .screenshot-row.reverse {
+            .feature-hero-grid {
                 grid-template-columns: 1fr;
-                direction: ltr;
             }
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
             .feature-hero-visual {
                 order: -1;
-            }
-            .risk-matrix {
-                margin: 0 auto;
             }
         }
     </style>
@@ -253,25 +202,42 @@
         <div class="container">
             <div class="feature-hero-grid">
                 <div class="feature-hero-content">
-                    <div class="badge-pill">Risk Assessment</div>
-                    <h1>Clear intervals for safer planning</h1>
-                    <p class="subtitle">Define test intervals, assess risk levels, and create a structured plan that helps your sites stay compliant over time.</p>
+                    <div class="badge-pill">Home Office Checks</div>
+                    <h1>Safer home workplaces for your team</h1>
+                    <p class="subtitle">Provide protective multi-sockets and enable remote workers to perform simple visual checks of their company devices — all tracked in Inspektra.</p>
                     <div class="cta-group">
                         <a href="../contact.html" class="btn btn-primary">Request Access</a>
                         <a href="../pricing.html" class="btn btn-outline">View pricing</a>
                     </div>
                 </div>
                 <div class="feature-hero-visual">
-                    <div class="risk-matrix">
-                        <div class="risk-cell risk-low"></div>
-                        <div class="risk-cell risk-low"></div>
-                        <div class="risk-cell risk-medium"></div>
-                        <div class="risk-cell risk-low"></div>
-                        <div class="risk-cell risk-medium"></div>
-                        <div class="risk-cell risk-high"></div>
-                        <div class="risk-cell risk-medium"></div>
-                        <div class="risk-cell risk-high"></div>
-                        <div class="risk-cell risk-high"></div>
+                    <div class="home-office-visual">
+                        <div class="checklist-item">
+                            <div class="checklist-check done">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span class="checklist-text">Power cable condition</span>
+                            <span class="checklist-status complete">OK</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-check done">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span class="checklist-text">Protective multisocket connected</span>
+                            <span class="checklist-status complete">OK</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-check done">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <span class="checklist-text">No visible damage to housing</span>
+                            <span class="checklist-status complete">OK</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-check pending"></div>
+                            <span class="checklist-text">Submit photo of setup</span>
+                            <span class="checklist-status pending">Pending</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,120 +249,50 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
-                    <h3>Simple risk-based intervals</h3>
-                    <p>Set inspection intervals based on real risk levels instead of fixed schedules.</p>
+                    <h3>Clear guidance for remote workers</h3>
+                    <p>Employees complete quick visual checks on their company-provided equipment using structured steps.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><line x1="6" y1="12" x2="6" y2="12"></line><line x1="10" y1="12" x2="10" y2="12"></line><line x1="14" y1="12" x2="14" y2="12"></line><line x1="18" y1="12" x2="18" y2="12"></line></svg>
                     </div>
-                    <h3>Consistent decisions across sites</h3>
-                    <p>Apply the same assessment logic to every building and asset, so planning stays predictable.</p>
+                    <h3>Protective multisocket included</h3>
+                    <p>Each remote worker receives a certified multisocket to connect devices safely and reduce electrical risk at home.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     </div>
-                    <h3>Early visibility of high-risk areas</h3>
-                    <p>Identify devices or locations that need attention sooner and plan inspections proactively.</p>
+                    <h3>Transparent documentation</h3>
+                    <p>All submitted checks appear in Inspektra, giving safety teams insight into equipment condition across remote workplaces.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
-                    <h3>Better coordination with OMS and in-house teams</h3>
-                    <p>Use risk levels to plan OMS inspections, in-house checks, and follow-up tasks with confidence.</p>
+                    <h3>Extend compliance beyond the office</h3>
+                    <p>Maintain consistent safety standards for distributed teams without adding complexity or manual admin.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Risk Matrix Explanation -->
-    <section class="risk-matrix-section">
-        <div class="container">
-            <div class="risk-matrix-grid">
-                <div>
-                    <h2>Visual risk prioritisation</h2>
-                    <p style="color: #64748B; line-height: 1.7; margin-bottom: 24px;">The risk matrix combines likelihood and severity to calculate an overall risk score. This helps you focus resources where they matter most.</p>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                            <div style="width: 24px; height: 24px; background: #22C55E; border-radius: 6px;"></div>
-                            <span><strong>Low risk</strong> – Standard inspection intervals</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                            <div style="width: 24px; height: 24px; background: #F59E0B; border-radius: 6px;"></div>
-                            <span><strong>Medium risk</strong> – Increased monitoring</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 12px;">
-                            <div style="width: 24px; height: 24px; background: #EF4444; border-radius: 6px;"></div>
-                            <span><strong>High risk</strong> – Immediate action required</span>
-                        </li>
-                    </ul>
-                </div>
-                <div style="display: flex; justify-content: center;">
-                    <div class="risk-matrix" style="max-width: 280px;">
-                        <div class="risk-cell risk-low">Low</div>
-                        <div class="risk-cell risk-low">Low</div>
-                        <div class="risk-cell risk-medium">Med</div>
-                        <div class="risk-cell risk-low">Low</div>
-                        <div class="risk-cell risk-medium">Med</div>
-                        <div class="risk-cell risk-high">High</div>
-                        <div class="risk-cell risk-medium">Med</div>
-                        <div class="risk-cell risk-high">High</div>
-                        <div class="risk-cell risk-high">High</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshots -->
-    <section class="screenshots-section">
-        <div class="container">
-            <div class="screenshot-row">
-                <div class="screenshot-content">
-                    <h3>Structured assessment workflow</h3>
-                    <p>Follow a guided process to identify hazards, assess risks, and define controls. The workflow ensures consistency across your organisation and nothing gets overlooked.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Assessment Workflow
-                </div>
-            </div>
-
-            <div class="screenshot-row reverse">
-                <div class="screenshot-content">
-                    <h3>Hazard identification</h3>
-                    <p>Choose from a library of common electrical hazards or add your own. Each hazard comes with suggested control measures based on industry best practices.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Hazard Library
-                </div>
-            </div>
-
-            <div class="screenshot-row">
-                <div class="screenshot-content">
-                    <h3>Action tracking</h3>
-                    <p>When a risk assessment identifies needed actions, they're automatically added to the task management system. Track progress and ensure nothing falls through the cracks.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Action Tracking
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CTA Section -->
     <section class="feature-cta">
         <div class="container">
-            <h2>Ready to get ahead of compliance?</h2>
-            <p>Book a demo and see how Risk Assessments can protect your organisation.</p>
+            <h2>Ready to protect your remote workforce?</h2>
+            <p>Get a personalized demo and see how home office checks help you maintain safety standards across distributed teams.</p>
             <div class="cta-group" style="justify-content: center;">
-                <a href="../contact.html" class="btn btn-white">Request Access</a>
-                <a href="tasks.html" class="btn btn-outline-white">Next: Tasks →</a>
+                <a href="../contact.html" class="btn btn-white">
+                    Request Access
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="monitoring.html" class="btn btn-ghost">Next: Monitoring</a>
             </div>
         </div>
     </section>
@@ -426,10 +322,6 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Inspektra. All rights reserved.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
-                </div>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assets & Locations - Inspektra Features</title>
+    <title>Locations - Inspektra Features</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -45,30 +45,6 @@
         .hero-content {
             position: relative;
             z-index: 1;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.875rem;
-            color: #64748B;
-            margin-bottom: 24px;
-        }
-
-        .breadcrumb a {
-            color: #64748B;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--primary-main);
-        }
-
-        .breadcrumb svg {
-            width: 16px;
-            height: 16px;
         }
 
         .feature-badge {
@@ -152,12 +128,12 @@
             box-shadow: var(--shadow-soft);
         }
 
-        /* Asset Preview Mockup */
+        /* Location Preview Mockup */
         .hero-visual {
             position: relative;
         }
 
-        .asset-mockup {
+        .location-mockup {
             background: white;
             border-radius: 24px;
             box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.15);
@@ -208,6 +184,14 @@
             background: #EFF6FF;
         }
 
+        .tree-item.nested-1 {
+            margin-left: 24px;
+        }
+
+        .tree-item.nested-2 {
+            margin-left: 48px;
+        }
+
         .tree-icon {
             width: 36px;
             height: 36px;
@@ -217,8 +201,8 @@
             justify-content: center;
         }
 
-        .tree-icon.building { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); color: #1D4ED8; }
-        .tree-icon.floor { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); color: #059669; }
+        .tree-icon.site { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); color: #1D4ED8; }
+        .tree-icon.building { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); color: #059669; }
         .tree-icon.room { background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #D97706; }
 
         .tree-content {
@@ -305,47 +289,6 @@
             background: white;
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 64px;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary-main);
-            margin-bottom: 16px;
-        }
-
-        .section-label::before,
-        .section-label::after {
-            content: '';
-            width: 24px;
-            height: 2px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #0F172A;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: #64748B;
-            line-height: 1.6;
-        }
-
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -381,8 +324,6 @@
         .benefit-icon.green { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); color: #059669; }
         .benefit-icon.purple { background: linear-gradient(135deg, #F3E8FF, #E9D5FF); color: #7C3AED; }
         .benefit-icon.orange { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); color: #EA580C; }
-        .benefit-icon.cyan { background: linear-gradient(135deg, #ECFEFF, #CFFAFE); color: #0891B2; }
-        .benefit-icon.rose { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); color: #E11D48; }
 
         .benefit-card h3 {
             font-size: 1.25rem;
@@ -395,192 +336,6 @@
             font-size: 0.95rem;
             color: #64748B;
             line-height: 1.6;
-        }
-
-        /* Feature Showcase */
-        .showcase-section {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #F8FAFC 0%, white 100%);
-        }
-
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .showcase-grid.reverse {
-            direction: rtl;
-        }
-
-        .showcase-grid.reverse > * {
-            direction: ltr;
-        }
-
-        .showcase-content h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #0F172A;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .showcase-content p {
-            font-size: 1.1rem;
-            color: #64748B;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .feature-list {
-            list-style: none;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 16px;
-            font-size: 1rem;
-            color: #334155;
-        }
-
-        .feature-list li svg {
-            flex-shrink: 0;
-            color: #059669;
-            margin-top: 2px;
-        }
-
-        .showcase-visual {
-            position: relative;
-        }
-
-        .showcase-image {
-            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-            border-radius: 24px;
-            padding: 32px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .showcase-inner {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        /* QR Visual */
-        .qr-visual {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .qr-code {
-            width: 120px;
-            height: 120px;
-            background: #0F172A;
-            border-radius: 12px;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            gap: 2px;
-            padding: 8px;
-        }
-
-        .qr-cell {
-            background: white;
-            border-radius: 2px;
-        }
-
-        .qr-cell.dark {
-            background: #0F172A;
-        }
-
-        .qr-info {
-            flex: 1;
-        }
-
-        .qr-info h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 8px;
-        }
-
-        .qr-info p {
-            font-size: 0.875rem;
-            color: #64748B;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Asset Profile Visual */
-        .profile-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
-        .profile-avatar {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1D4ED8;
-        }
-
-        .profile-info h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 4px;
-        }
-
-        .profile-info span {
-            font-size: 0.75rem;
-            color: #94A3B8;
-        }
-
-        .profile-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .profile-stat {
-            background: #F8FAFC;
-            border-radius: 10px;
-            padding: 12px;
-            text-align: center;
-        }
-
-        .profile-stat-value {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #0F172A;
-        }
-
-        .profile-stat-value.green { color: #059669; }
-        .profile-stat-value.blue { color: #005FAD; }
-        .profile-stat-value.orange { color: #EA580C; }
-
-        .profile-stat-label {
-            font-size: 0.7rem;
-            color: #94A3B8;
-            margin-top: 2px;
         }
 
         /* CTA Section */
@@ -664,14 +419,9 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-grid,
-            .showcase-grid {
+            .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
-            }
-
-            .showcase-grid.reverse {
-                direction: ltr;
             }
 
             .benefits-grid {
@@ -686,6 +436,15 @@
 
             .benefits-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .benefit-card {
+                text-align: center;
+            }
+
+            .benefit-icon {
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .hero-cta,
@@ -724,12 +483,12 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="feature-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                        Assets
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Locations
                     </div>
 
-                    <h1>All your equipment <span class="gradient-text">in one place</span></h1>
-                    <p class="subtitle">Keep all devices, machines, and installations structured in one place, with full test history and safety status always up to date.</p>
+                    <h1>A clear structure <span class="gradient-text">for all your sites</span></h1>
+                    <p class="subtitle">Organise buildings, floors, and rooms in a simple hierarchy that keeps inspections, tests, and tasks easy to navigate.</p>
 
                     <div class="hero-cta">
                         <a href="../contact.html" class="btn-primary-lg">
@@ -741,7 +500,7 @@
                 </div>
 
                 <div class="hero-visual">
-                    <div class="asset-mockup">
+                    <div class="location-mockup">
                         <div class="mockup-header">
                             <div class="mockup-dot red"></div>
                             <div class="mockup-dot yellow"></div>
@@ -750,34 +509,44 @@
                         <div class="mockup-body">
                             <div class="location-tree">
                                 <div class="tree-item">
+                                    <div class="tree-icon site">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    </div>
+                                    <div class="tree-content">
+                                        <div class="tree-name">Munich HQ</div>
+                                        <div class="tree-meta">3 buildings</div>
+                                    </div>
+                                    <div class="tree-badge success">98%</div>
+                                </div>
+                                <div class="tree-item nested-1">
                                     <div class="tree-icon building">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
                                     </div>
                                     <div class="tree-content">
-                                        <div class="tree-name">Headquarters Building</div>
-                                        <div class="tree-meta">42 assets</div>
+                                        <div class="tree-name">Building A</div>
+                                        <div class="tree-meta">4 floors · 124 assets</div>
                                     </div>
-                                    <span class="tree-badge success">98%</span>
+                                    <div class="tree-badge success">100%</div>
                                 </div>
-                                <div class="tree-item" style="margin-left: 24px;">
-                                    <div class="tree-icon floor">
+                                <div class="tree-item nested-2">
+                                    <div class="tree-icon room">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
                                     </div>
                                     <div class="tree-content">
-                                        <div class="tree-name">Floor 2</div>
+                                        <div class="tree-name">Server Room</div>
                                         <div class="tree-meta">18 assets</div>
                                     </div>
-                                    <span class="tree-badge success">100%</span>
+                                    <div class="tree-badge warning">1 due</div>
                                 </div>
-                                <div class="tree-item" style="margin-left: 48px;">
-                                    <div class="tree-icon room">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                <div class="tree-item nested-1">
+                                    <div class="tree-icon building">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
                                     </div>
                                     <div class="tree-content">
-                                        <div class="tree-name">Server Room</div>
-                                        <div class="tree-meta">8 assets</div>
+                                        <div class="tree-name">Building B</div>
+                                        <div class="tree-meta">3 floors · 89 assets</div>
                                     </div>
-                                    <span class="tree-badge warning">87%</span>
+                                    <div class="tree-badge success">100%</div>
                                 </div>
                             </div>
                         </div>
@@ -785,11 +554,11 @@
 
                     <div class="floating-card card-1">
                         <div class="floating-icon blue">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
                         <div class="floating-text">
-                            <strong>QR Scanned</strong>
-                            <span>Asset #2847</span>
+                            <strong>12 Sites</strong>
+                            <span>All mapped</span>
                         </div>
                     </div>
 
@@ -798,8 +567,8 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </div>
                         <div class="floating-text">
-                            <strong>1,247 Assets</strong>
-                            <span>All tracked</span>
+                            <strong>Structured</strong>
+                            <span>Easy navigation</span>
                         </div>
                     </div>
                 </div>
@@ -813,156 +582,34 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon blue">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
-                    <h3>Complete asset records</h3>
-                    <p>Store every electrical device, machine, and installation in one consistent structure — with clear fields, categories, and test history.</p>
+                    <h3>One structure for every facility</h3>
+                    <p>Map your organisation into buildings, floors, and rooms so all inspections and assets follow the same layout.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon green">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     </div>
-                    <h3>Safety status at a glance</h3>
-                    <p>See the current safety status for each asset and understand immediately where attention is required.</p>
+                    <h3>Faster navigation across sites</h3>
+                    <p>Move through locations quickly and find the right equipment or inspection data without searching.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon purple">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
-                    <h3>Smart filters for faster work</h3>
-                    <p>Find critical assets quickly using filters for category, building, status, or inspection activity.</p>
+                    <h3>Visibility into open tasks</h3>
+                    <p>See how many issues exist in each location and understand where attention is needed most.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon orange">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     </div>
-                    <h3>Connected to inspections and tasks</h3>
-                    <p>Each asset shows its inspections, findings, and open tasks so you always see what has been tested, what needs follow-up, and what changed last.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Section 1 -->
-    <section class="showcase-section">
-        <div class="container">
-            <div class="showcase-grid">
-                <div class="showcase-content">
-                    <h3>Navigate your entire facility structure</h3>
-                    <p>See your entire facility structure at a glance. Drill down from company to building to floor to room. Each level shows the number of assets and their compliance status.</p>
-                    <ul class="feature-list">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Unlimited hierarchy levels
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Status rollup to parent locations
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Filter and search at any level
-                        </li>
-                    </ul>
-                </div>
-                <div class="showcase-visual">
-                    <div class="showcase-image">
-                        <div class="showcase-inner">
-                            <div class="profile-visual">
-                                <div class="profile-header">
-                                    <div class="profile-avatar">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-                                    </div>
-                                    <div class="profile-info">
-                                        <h4>Distribution Board #12</h4>
-                                        <span>Building A / Floor 3 / Server Room</span>
-                                    </div>
-                                </div>
-                                <div class="profile-stats">
-                                    <div class="profile-stat">
-                                        <div class="profile-stat-value green">100%</div>
-                                        <div class="profile-stat-label">Compliant</div>
-                                    </div>
-                                    <div class="profile-stat">
-                                        <div class="profile-stat-value blue">12</div>
-                                        <div class="profile-stat-label">Inspections</div>
-                                    </div>
-                                    <div class="profile-stat">
-                                        <div class="profile-stat-value orange">45d</div>
-                                        <div class="profile-stat-label">Next Due</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Section 2 -->
-    <section class="showcase-section" style="background: white;">
-        <div class="container">
-            <div class="showcase-grid reverse">
-                <div class="showcase-content">
-                    <h3>Instant access with QR codes</h3>
-                    <p>Print QR codes and attach them to assets. Technicians use the Inspektra mobile app to scan codes and instantly access all asset information and start inspections.</p>
-                    <ul class="feature-list">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Generate QR codes in bulk
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Print-ready label formats
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Scan to start inspection instantly
-                        </li>
-                    </ul>
-                </div>
-                <div class="showcase-visual">
-                    <div class="showcase-image">
-                        <div class="showcase-inner">
-                            <div class="qr-visual">
-                                <div class="qr-code">
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                    <div class="qr-cell dark"></div>
-                                    <div class="qr-cell"></div>
-                                </div>
-                                <div class="qr-info">
-                                    <h4>Asset #2847</h4>
-                                    <p>Scan this code with the Inspektra app to view full asset details, history, and start a new inspection.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3>Consistent reporting for audits</h3>
+                    <p>Every asset and inspection is tied to a clear location, making documentation structured and audit-ready.</p>
                 </div>
             </div>
         </div>
@@ -972,8 +619,8 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to organise your assets?</h2>
-                <p>Get a personalized demo and see how asset management can bring order to your infrastructure.</p>
+                <h2>Ready to structure your sites?</h2>
+                <p>Get a personalized demo and see how location management brings clarity to your organisation.</p>
                 <div class="cta-buttons">
                     <a href="../contact.html" class="btn-white">
                         Request Access
