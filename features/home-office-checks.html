@@ -181,19 +181,59 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
                 <img src="../inspektra-logo.png" alt="Inspektra" height="40">
             </a>
             <ul class="nav-links">
-                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
-                <li><a href="../features.html">Features</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="../contact.html" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -202,12 +242,12 @@
         <div class="container">
             <div class="feature-hero-grid">
                 <div class="feature-hero-content">
-                    <div class="badge-pill">Home Office Checks</div>
-                    <h1>Safer home workplaces for your team</h1>
-                    <p class="subtitle">Provide protective multi-sockets and enable remote workers to perform simple visual checks of their company devices — all tracked in Inspektra.</p>
+                    <div class="badge-pill" data-i18n="nav_homeoffice">Home Office Checks</div>
+                    <h1 data-i18n="home_hero_title">Safer home workplaces for your team</h1>
+                    <p class="subtitle" data-i18n="home_hero_subtitle">Provide protective multi-sockets and enable remote workers to perform simple visual checks of their company devices — all tracked in Inspektra.</p>
                     <div class="cta-group">
-                        <a href="../contact.html" class="btn btn-primary">Request Access</a>
-                        <a href="../pricing.html" class="btn btn-outline">View pricing</a>
+                        <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                        <a href="../pricing.html" class="btn btn-outline" data-i18n="view_pricing">View pricing</a>
                     </div>
                 </div>
                 <div class="feature-hero-visual">
@@ -251,32 +291,32 @@
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
-                    <h3>Clear guidance for remote workers</h3>
-                    <p>Employees complete quick visual checks on their company-provided equipment using structured steps.</p>
+                    <h3 data-i18n="home_benefit1_title">Clear guidance for remote workers</h3>
+                    <p data-i18n="home_benefit1_desc">Employees complete quick visual checks on their company-provided equipment using structured steps.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><line x1="6" y1="12" x2="6" y2="12"></line><line x1="10" y1="12" x2="10" y2="12"></line><line x1="14" y1="12" x2="14" y2="12"></line><line x1="18" y1="12" x2="18" y2="12"></line></svg>
                     </div>
-                    <h3>Protective multisocket included</h3>
-                    <p>Each remote worker receives a certified multisocket to connect devices safely and reduce electrical risk at home.</p>
+                    <h3 data-i18n="home_benefit2_title">Protective multisocket included</h3>
+                    <p data-i18n="home_benefit2_desc">Each remote worker receives a certified multisocket to connect devices safely and reduce electrical risk at home.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     </div>
-                    <h3>Transparent documentation</h3>
-                    <p>All submitted checks appear in Inspektra, giving safety teams insight into equipment condition across remote workplaces.</p>
+                    <h3 data-i18n="home_benefit3_title">Transparent documentation</h3>
+                    <p data-i18n="home_benefit3_desc">All submitted checks appear in Inspektra, giving safety teams insight into equipment condition across remote workplaces.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
-                    <h3>Extend compliance beyond the office</h3>
-                    <p>Maintain consistent safety standards for distributed teams without adding complexity or manual admin.</p>
+                    <h3 data-i18n="home_benefit4_title">Extend compliance beyond the office</h3>
+                    <p data-i18n="home_benefit4_desc">Maintain consistent safety standards for distributed teams without adding complexity or manual admin.</p>
                 </div>
             </div>
         </div>
@@ -357,6 +397,81 @@
     </div>
 
     <script>
+        // Language Switcher
+        const translations = {
+            en: {
+                announcement: "Inspektra's login page is now at <strong>app.inspektra.de</strong>",
+                nav_why: "Why Inspektra",
+                nav_features: "Features",
+                nav_contact: "Contact",
+                nav_login: "Log in",
+                nav_request: "Request Access",
+                nav_homeoffice: "Home Office Checks",
+                view_pricing: "View pricing",
+                home_hero_title: "Safer home workplaces for your team",
+                home_hero_subtitle: "Provide protective multi-sockets and enable remote workers to perform simple visual checks of their company devices — all tracked in Inspektra.",
+                home_benefit1_title: "Clear guidance for remote workers",
+                home_benefit1_desc: "Employees complete quick visual checks on their company-provided equipment using structured steps.",
+                home_benefit2_title: "Protective multisocket included",
+                home_benefit2_desc: "Each remote worker receives a certified multisocket to connect devices safely and reduce electrical risk at home.",
+                home_benefit3_title: "Transparent documentation",
+                home_benefit3_desc: "All submitted checks appear in Inspektra, giving safety teams insight into equipment condition across remote workplaces.",
+                home_benefit4_title: "Extend compliance beyond the office",
+                home_benefit4_desc: "Maintain consistent safety standards for distributed teams without adding complexity or manual admin."
+            },
+            de: {
+                announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
+                nav_why: "Warum Inspektra",
+                nav_features: "Funktionen",
+                nav_contact: "Kontakt",
+                nav_login: "Anmelden",
+                nav_request: "Zugang anfragen",
+                nav_homeoffice: "Homeoffice-Prüfungen",
+                view_pricing: "Preise ansehen",
+                home_hero_title: "Sicherere Homeoffice-Arbeitsplätze für Ihr Team",
+                home_hero_subtitle: "Stellen Sie Schutz-Steckdosenleisten bereit und ermöglichen Sie Mitarbeitenden im Homeoffice einfache Sichtprüfungen ihrer Unternehmensgeräte – vollständig dokumentiert in Inspektra.",
+                home_benefit1_title: "Klare Anleitungen für Mitarbeitende im Homeoffice",
+                home_benefit1_desc: "Mitarbeitende führen kurze Sichtprüfungen ihrer bereitgestellten Geräte durch – in klaren, strukturierten Schritten.",
+                home_benefit2_title: "Schutz-Steckdosenleiste inklusive",
+                home_benefit2_desc: "Jede remote arbeitende Person erhält eine zertifizierte Steckdosenleiste, um Geräte sicher anzuschließen und elektrische Risiken zu reduzieren.",
+                home_benefit3_title: "Transparente Dokumentation",
+                home_benefit3_desc: "Alle eingereichten Prüfungen erscheinen in Inspektra und geben Sicherheitsteams Einblick in den Zustand der Geräte im Homeoffice.",
+                home_benefit4_title: "Compliance über das Büro hinaus",
+                home_benefit4_desc: "Sicherheitsstandards bleiben auch für verteilte Teams einheitlich – ohne zusätzlichen Aufwand oder komplexe Prozesse."
+            }
+        };
+
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        setLanguage(currentLang);
+
         // Request Access Modal
         const modal = document.getElementById('requestAccessModal');
         const modalClose = document.getElementById('modalClose');

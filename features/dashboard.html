@@ -702,19 +702,59 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
                 <img src="../inspektra-logo.png" alt="Inspektra" height="40">
             </a>
             <ul class="nav-links">
-                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
-                <li><a href="../features.html">Features</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="../contact.html" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -729,15 +769,15 @@
                         Dashboard
                     </div>
 
-                    <h1>Compliance clarity <span class="gradient-text">at a glance</span></h1>
-                    <p class="subtitle">A clear view of assets, upcoming tests, and ongoing inspections, so safety teams always know what needs attention.</p>
+                    <h1 data-i18n="dash_hero_title">Compliance clarity <span class="gradient-text">at a glance</span></h1>
+                    <p class="subtitle" data-i18n="dash_hero_subtitle">A clear view of assets, upcoming tests, and ongoing inspections, so safety teams always know what needs attention.</p>
 
                     <div class="hero-cta">
                         <a href="../contact.html" class="btn-primary-lg">
-                            Request Access
+                            <span data-i18n="nav_request">Request Access</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
-                        <a href="../features.html" class="btn-secondary-lg">View all features</a>
+                        <a href="../features.html" class="btn-secondary-lg" data-i18n="dash_view_all">View all features</a>
                     </div>
                 </div>
 
@@ -807,32 +847,32 @@
                     <div class="benefit-icon blue">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                     </div>
-                    <h3>Asset overview</h3>
-                    <p>Get a clear picture of all devices, machines, and installations — with visibility into where they sit across your buildings.</p>
+                    <h3 data-i18n="dash_benefit1_title">Asset overview</h3>
+                    <p data-i18n="dash_benefit1_desc">Get a clear picture of all devices, machines, and installations — with visibility into where they sit across your buildings.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     </div>
-                    <h3>Upcoming tests</h3>
-                    <p>See which OMS tests are coming up next and use the timeline to plan your in-house inspections and follow-up work with confidence.</p>
+                    <h3 data-i18n="dash_benefit2_title">Upcoming tests</h3>
+                    <p data-i18n="dash_benefit2_desc">See which OMS tests are coming up next and use the timeline to plan your in-house inspections and follow-up work with confidence.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon purple">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     </div>
-                    <h3>OMS documents</h3>
-                    <p>Open shared OMS reports, certificates, and test results in one place, without searching through emails or folders.</p>
+                    <h3 data-i18n="dash_benefit3_title">OMS documents</h3>
+                    <p data-i18n="dash_benefit3_desc">Open shared OMS reports, certificates, and test results in one place, without searching through emails or folders.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon orange">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
-                    <h3>In-house inspections</h3>
-                    <p>Check how many internal tests are pending and start device, new-equipment, or home-office inspections directly from the dashboard.</p>
+                    <h3 data-i18n="dash_benefit4_title">In-house inspections</h3>
+                    <p data-i18n="dash_benefit4_desc">Check how many internal tests are pending and start device, new-equipment, or home-office inspections directly from the dashboard.</p>
                 </div>
             </div>
         </div>
@@ -996,23 +1036,23 @@
             </button>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Request access</h2>
-                    <p>Our team will review your request and share the next steps.</p>
+                    <h2 data-i18n="modal_title">Request access</h2>
+                    <p data-i18n="modal_desc">Our team will review your request and share the next steps.</p>
                 </div>
                 <form id="requestAccessForm" class="modal-form">
                     <div class="form-group">
-                        <label for="fullName">Full name</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                        <label for="fullName" data-i18n="modal_name">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" data-i18n-placeholder="modal_name_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="workEmail">Work email</label>
-                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                        <label for="workEmail" data-i18n="modal_email">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com" data-i18n-placeholder="modal_email_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="companyName">Company name</label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                        <label for="companyName" data-i18n="modal_company">Company name</label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Your company" data-i18n-placeholder="modal_company_placeholder">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
                 </form>
             </div>
         </div>
@@ -1065,6 +1105,101 @@
                 `;
             });
         }
+    </script>
+
+    <script>
+        // Language Switcher
+        const translations = {
+            en: {
+                announcement: 'Inspektra\'s login page is now at <strong>app.inspektra.de</strong>',
+                nav_why: 'Why Inspektra',
+                nav_features: 'Features',
+                nav_contact: 'Contact',
+                nav_login: 'Log in',
+                nav_request: 'Request Access',
+                dash_hero_title: 'Compliance clarity <span class="gradient-text">at a glance</span>',
+                dash_hero_subtitle: 'A clear view of assets, upcoming tests, and ongoing inspections, so safety teams always know what needs attention.',
+                dash_view_all: 'View all features',
+                dash_benefit1_title: 'Asset overview',
+                dash_benefit1_desc: 'Get a clear picture of all devices, machines, and installations — with visibility into where they sit across your buildings.',
+                dash_benefit2_title: 'Upcoming tests',
+                dash_benefit2_desc: 'See which OMS tests are coming up next and use the timeline to plan your in-house inspections and follow-up work with confidence.',
+                dash_benefit3_title: 'OMS documents',
+                dash_benefit3_desc: 'Open shared OMS reports, certificates, and test results in one place, without searching through emails or folders.',
+                dash_benefit4_title: 'In-house inspections',
+                dash_benefit4_desc: 'Check how many internal tests are pending and start device, new-equipment, or home-office inspections directly from the dashboard.',
+                modal_title: 'Request access',
+                modal_desc: 'Our team will review your request and share the next steps.',
+                modal_name: 'Full name',
+                modal_name_placeholder: 'Your full name',
+                modal_email: 'Work email',
+                modal_email_placeholder: 'you@company.com',
+                modal_company: 'Company name',
+                modal_company_placeholder: 'Your company',
+                modal_submit: 'Submit request'
+            },
+            de: {
+                announcement: 'Die Inspektra Login-Seite befindet sich jetzt unter <strong>app.inspektra.de</strong>',
+                nav_why: 'Warum Inspektra',
+                nav_features: 'Funktionen',
+                nav_contact: 'Kontakt',
+                nav_login: 'Login',
+                nav_request: 'Zugang anfragen',
+                dash_hero_title: '<span class="gradient-text">Compliance</span> im Blick',
+                dash_hero_subtitle: 'Ein klarer Überblick über Betriebsmittel, anstehende Prüfungen und laufende Inspektionen, damit Sicherheitsteams jederzeit wissen, was Aufmerksamkeit erfordert.',
+                dash_view_all: 'Alle Funktionen ansehen',
+                dash_benefit1_title: 'Betriebsmittelübersicht',
+                dash_benefit1_desc: 'Ein klarer Überblick über alle Geräte, Maschinen und Anlagen – inklusive ihrer Standorte in Ihren Gebäuden.',
+                dash_benefit2_title: 'Bevorstehende Prüfungen',
+                dash_benefit2_desc: 'Sehen Sie, welche OMS-Prüfungen als Nächstes anstehen, und planen Sie interne Prüfungen und Folgearbeiten zuverlässig voraus.',
+                dash_benefit3_title: 'OMS-Dokumente',
+                dash_benefit3_desc: 'Greifen Sie auf freigegebene OMS-Berichte, Zertifikate und Prüfergebnisse an einem zentralen Ort zu – ohne E-Mails oder Ordner durchsuchen zu müssen.',
+                dash_benefit4_title: 'Interne Prüfungen',
+                dash_benefit4_desc: 'Erkennen Sie anstehende interne Prüfungen und starten Sie Geräteprüfungen, Neugerätechecks oder Home-Office-Prüfungen direkt vom Dashboard aus.',
+                modal_title: 'Zugang anfragen',
+                modal_desc: 'Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden.',
+                modal_name: 'Vollständiger Name',
+                modal_name_placeholder: 'Ihr vollständiger Name',
+                modal_email: 'Geschäftliche E-Mail',
+                modal_email_placeholder: 'sie@unternehmen.de',
+                modal_company: 'Firmenname',
+                modal_company_placeholder: 'Ihr Unternehmen',
+                modal_submit: 'Anfrage senden'
+            }
+        };
+
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        setLanguage(currentLang);
     </script>
 
 </body>

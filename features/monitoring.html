@@ -217,19 +217,59 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
                 <img src="../inspektra-logo.png" alt="Inspektra" height="40">
             </a>
             <ul class="nav-links">
-                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
-                <li><a href="../features.html">Features</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="../contact.html" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -238,12 +278,12 @@
         <div class="container">
             <div class="feature-hero-grid">
                 <div class="feature-hero-content">
-                    <div class="badge-pill">Monitoring</div>
-                    <h1>Early visibility into electrical issues</h1>
-                    <p class="subtitle">Install sensors on your installations and track spikes, faults, and abnormal behaviour directly in Inspektra — so you can react before problems escalate.</p>
+                    <div class="badge-pill" data-i18n="nav_monitoring">Monitoring</div>
+                    <h1 data-i18n="mon_hero_title">Early visibility into electrical issues</h1>
+                    <p class="subtitle" data-i18n="mon_hero_subtitle">Install sensors on your installations and track spikes, faults, and abnormal behaviour directly in Inspektra — so you can react before problems escalate.</p>
                     <div class="cta-group">
-                        <a href="../contact.html" class="btn btn-primary">Request Access</a>
-                        <a href="../pricing.html" class="btn btn-outline">View pricing</a>
+                        <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                        <a href="../pricing.html" class="btn btn-outline" data-i18n="view_pricing">View pricing</a>
                     </div>
                 </div>
                 <div class="feature-hero-visual">
@@ -288,32 +328,32 @@
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                     </div>
-                    <h3>Real-time insight into your installations</h3>
-                    <p>Sensors provide continuous data on electrical behaviour, helping you detect unusual activity early.</p>
+                    <h3 data-i18n="mon_benefit1_title">Real-time insight into your installations</h3>
+                    <p data-i18n="mon_benefit1_desc">Sensors provide continuous data on electrical behaviour, helping you detect unusual activity early.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     </div>
-                    <h3>Clear alerts for faults and spikes</h3>
-                    <p>Receive structured notifications when values exceed thresholds, indicating potential risks or equipment problems.</p>
+                    <h3 data-i18n="mon_benefit2_title">Clear alerts for faults and spikes</h3>
+                    <p data-i18n="mon_benefit2_desc">Receive structured notifications when values exceed thresholds, indicating potential risks or equipment problems.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                     </div>
-                    <h3>Trends that support decisions</h3>
-                    <p>View patterns and deviations over time to understand where maintenance or follow-up inspections may be needed.</p>
+                    <h3 data-i18n="mon_benefit3_title">Trends that support decisions</h3>
+                    <p data-i18n="mon_benefit3_desc">View patterns and deviations over time to understand where maintenance or follow-up inspections may be needed.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                     </div>
-                    <h3>Seamless integration with your records</h3>
-                    <p>Monitoring events connect to assets and inspections, giving safety teams a full picture of equipment condition across sites.</p>
+                    <h3 data-i18n="mon_benefit4_title">Seamless integration with your records</h3>
+                    <p data-i18n="mon_benefit4_desc">Monitoring events connect to assets and inspections, giving safety teams a full picture of equipment condition across sites.</p>
                 </div>
             </div>
         </div>
@@ -394,6 +434,81 @@
     </div>
 
     <script>
+        // Language Switcher
+        const translations = {
+            en: {
+                announcement: "Inspektra's login page is now at <strong>app.inspektra.de</strong>",
+                nav_why: "Why Inspektra",
+                nav_features: "Features",
+                nav_contact: "Contact",
+                nav_login: "Log in",
+                nav_request: "Request Access",
+                nav_monitoring: "Monitoring",
+                view_pricing: "View pricing",
+                mon_hero_title: "Early visibility into electrical issues",
+                mon_hero_subtitle: "Install sensors on your installations and track spikes, faults, and abnormal behaviour directly in Inspektra — so you can react before problems escalate.",
+                mon_benefit1_title: "Real-time insight into your installations",
+                mon_benefit1_desc: "Sensors provide continuous data on electrical behaviour, helping you detect unusual activity early.",
+                mon_benefit2_title: "Clear alerts for faults and spikes",
+                mon_benefit2_desc: "Receive structured notifications when values exceed thresholds, indicating potential risks or equipment problems.",
+                mon_benefit3_title: "Trends that support decisions",
+                mon_benefit3_desc: "View patterns and deviations over time to understand where maintenance or follow-up inspections may be needed.",
+                mon_benefit4_title: "Seamless integration with your records",
+                mon_benefit4_desc: "Monitoring events connect to assets and inspections, giving safety teams a full picture of equipment condition across sites."
+            },
+            de: {
+                announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
+                nav_why: "Warum Inspektra",
+                nav_features: "Funktionen",
+                nav_contact: "Kontakt",
+                nav_login: "Anmelden",
+                nav_request: "Zugang anfragen",
+                nav_monitoring: "Monitoring",
+                view_pricing: "Preise ansehen",
+                mon_hero_title: "Früherkennung elektrischer Auffälligkeiten",
+                mon_hero_subtitle: "Installieren Sie Sensoren an Ihren Anlagen und überwachen Sie Spitzen, Fehler und ungewöhnliches Verhalten direkt in Inspektra – damit Sie reagieren können, bevor Probleme entstehen.",
+                mon_benefit1_title: "Echtzeit-Einblicke in Ihre Anlagen",
+                mon_benefit1_desc: "Sensoren liefern kontinuierliche Daten zum elektrischen Verhalten und ermöglichen eine frühzeitige Erkennung ungewöhnlicher Aktivitäten.",
+                mon_benefit2_title: "Klare Warnmeldungen bei Fehlern und Spitzen",
+                mon_benefit2_desc: "Erhalten Sie strukturierte Benachrichtigungen, wenn Grenzwerte überschritten werden – ein Hinweis auf mögliche Risiken oder technische Probleme.",
+                mon_benefit3_title: "Trends für fundierte Entscheidungen",
+                mon_benefit3_desc: "Verfolgen Sie Muster und Abweichungen über längere Zeiträume, um besser einschätzen zu können, wo Wartung oder Folgeprüfungen erforderlich sind.",
+                mon_benefit4_title: "Nahtlose Verbindung mit Ihren Prüf- und Betriebsdaten",
+                mon_benefit4_desc: "Monitoring-Ereignisse werden automatisch mit Betriebsmitteln und Prüfungen verknüpft, sodass Sicherheitsteams den Zustand ihrer Anlagen standortübergreifend im Blick behalten."
+            }
+        };
+
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        setLanguage(currentLang);
+
         // Request Access Modal
         const modal = document.getElementById('requestAccessModal');
         const modalClose = document.getElementById('modalClose');

@@ -701,19 +701,59 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
                 <img src="../inspektra-logo.png" alt="Inspektra" height="40">
             </a>
             <ul class="nav-links">
-                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
-                <li><a href="../features.html">Features</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="../contact.html" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -725,18 +765,18 @@
                 <div class="hero-content">
                     <div class="feature-badge">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                        Assets
+                        <span data-i18n="nav_assets">Assets</span>
                     </div>
 
-                    <h1>All your equipment <span class="gradient-text">in one place</span></h1>
-                    <p class="subtitle">Keep all devices, machines, and installations structured in one place, with full test history and safety status always up to date.</p>
+                    <h1 data-i18n="assets_hero_title">All your equipment <span class="gradient-text">in one place</span></h1>
+                    <p class="subtitle" data-i18n="assets_hero_subtitle">Keep all devices, machines, and installations structured in one place, with full test history and safety status always up to date.</p>
 
                     <div class="hero-cta">
                         <a href="../contact.html" class="btn-primary-lg">
-                            Request Access
+                            <span data-i18n="nav_request">Request Access</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
-                        <a href="../features.html" class="btn-secondary-lg">View all features</a>
+                        <a href="../features.html" class="btn-secondary-lg" data-i18n="dash_view_all">View all features</a>
                     </div>
                 </div>
 
@@ -815,32 +855,32 @@
                     <div class="benefit-icon blue">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                     </div>
-                    <h3>Complete asset records</h3>
-                    <p>Store every electrical device, machine, and installation in one consistent structure — with clear fields, categories, and test history.</p>
+                    <h3 data-i18n="assets_benefit1_title">Complete asset records</h3>
+                    <p data-i18n="assets_benefit1_desc">Store every electrical device, machine, and installation in one consistent structure — with clear fields, categories, and test history.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
-                    <h3>Safety status at a glance</h3>
-                    <p>See the current safety status for each asset and understand immediately where attention is required.</p>
+                    <h3 data-i18n="assets_benefit2_title">Safety status at a glance</h3>
+                    <p data-i18n="assets_benefit2_desc">See the current safety status for each asset and understand immediately where attention is required.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon purple">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
                     </div>
-                    <h3>Smart filters for faster work</h3>
-                    <p>Find critical assets quickly using filters for category, building, status, or inspection activity.</p>
+                    <h3 data-i18n="assets_benefit3_title">Smart filters for faster work</h3>
+                    <p data-i18n="assets_benefit3_desc">Find critical assets quickly using filters for category, building, status, or inspection activity.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon orange">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
-                    <h3>Connected to inspections and tasks</h3>
-                    <p>Each asset shows its inspections, findings, and open tasks so you always see what has been tested, what needs follow-up, and what changed last.</p>
+                    <h3 data-i18n="assets_benefit4_title">Connected to inspections and tasks</h3>
+                    <p data-i18n="assets_benefit4_desc">Each asset shows its inspections, findings, and open tasks so you always see what has been tested, what needs follow-up, and what changed last.</p>
                 </div>
             </div>
         </div>
@@ -1022,23 +1062,23 @@
             </button>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Request access</h2>
-                    <p>Our team will review your request and share the next steps.</p>
+                    <h2 data-i18n="modal_title">Request access</h2>
+                    <p data-i18n="modal_desc">Our team will review your request and share the next steps.</p>
                 </div>
                 <form id="requestAccessForm" class="modal-form">
                     <div class="form-group">
-                        <label for="fullName">Full name</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                        <label for="fullName" data-i18n="modal_name">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" data-i18n-placeholder="modal_name_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="workEmail">Work email</label>
-                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                        <label for="workEmail" data-i18n="modal_email">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com" data-i18n-placeholder="modal_email_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="companyName">Company name</label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                        <label for="companyName" data-i18n="modal_company">Company name</label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Your company" data-i18n-placeholder="modal_company_placeholder">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
                 </form>
             </div>
         </div>
@@ -1091,6 +1131,103 @@
                 `;
             });
         }
+    </script>
+
+    <script>
+        // Language Switcher
+        const translations = {
+            en: {
+                announcement: 'Inspektra\'s login page is now at <strong>app.inspektra.de</strong>',
+                nav_why: 'Why Inspektra',
+                nav_features: 'Features',
+                nav_contact: 'Contact',
+                nav_login: 'Log in',
+                nav_request: 'Request Access',
+                nav_assets: 'Assets',
+                dash_view_all: 'View all features',
+                assets_hero_title: 'All your equipment <span class="gradient-text">in one place</span>',
+                assets_hero_subtitle: 'Keep all devices, machines, and installations structured in one place, with full test history and safety status always up to date.',
+                assets_benefit1_title: 'Complete asset records',
+                assets_benefit1_desc: 'Store every electrical device, machine, and installation in one consistent structure — with clear fields, categories, and test history.',
+                assets_benefit2_title: 'Safety status at a glance',
+                assets_benefit2_desc: 'See the current safety status for each asset and understand immediately where attention is required.',
+                assets_benefit3_title: 'Smart filters for faster work',
+                assets_benefit3_desc: 'Find critical assets quickly using filters for category, building, status, or inspection activity.',
+                assets_benefit4_title: 'Connected to inspections and tasks',
+                assets_benefit4_desc: 'Each asset shows its inspections, findings, and open tasks so you always see what has been tested, what needs follow-up, and what changed last.',
+                modal_title: 'Request access',
+                modal_desc: 'Our team will review your request and share the next steps.',
+                modal_name: 'Full name',
+                modal_name_placeholder: 'Your full name',
+                modal_email: 'Work email',
+                modal_email_placeholder: 'you@company.com',
+                modal_company: 'Company name',
+                modal_company_placeholder: 'Your company',
+                modal_submit: 'Submit request'
+            },
+            de: {
+                announcement: 'Die Inspektra Login-Seite befindet sich jetzt unter <strong>app.inspektra.de</strong>',
+                nav_why: 'Warum Inspektra',
+                nav_features: 'Funktionen',
+                nav_contact: 'Kontakt',
+                nav_login: 'Login',
+                nav_request: 'Zugang anfragen',
+                nav_assets: 'Betriebsmittel',
+                dash_view_all: 'Alle Funktionen ansehen',
+                assets_hero_title: 'Alle Betriebsmittel <span class="gradient-text">an einem Ort</span>',
+                assets_hero_subtitle: 'Behalten Sie Geräte, Maschinen und Anlagen in einer klar strukturierten Übersicht, inklusive vollständiger Prüfhistorie und stets aktuellem Sicherheitsstatus.',
+                assets_benefit1_title: 'Vollständige Betriebsmittelakten',
+                assets_benefit1_desc: 'Hinterlegen Sie alle elektrischen Geräte, Maschinen und Anlagen in einer einheitlichen Struktur – mit klaren Feldern, Kategorien und vollständiger Prüfhistorie.',
+                assets_benefit2_title: 'Sicherheitsstatus auf einen Blick',
+                assets_benefit2_desc: 'Erkennen Sie sofort den aktuellen Sicherheitsstatus jedes Betriebsmittels und sehen Sie, wo Handlungsbedarf besteht.',
+                assets_benefit3_title: 'Intelligente Filter für schnelleres Arbeiten',
+                assets_benefit3_desc: 'Finden Sie kritische Betriebsmittel schnell über Filter für Kategorie, Gebäude, Status oder Prüfaktivität.',
+                assets_benefit4_title: 'Verbunden mit Prüfungen und Aufgaben',
+                assets_benefit4_desc: 'Zu jedem Betriebsmittel sehen Sie alle Prüfungen, Befunde und offenen Aufgaben – inklusive dem, was getestet wurde, was nachverfolgt werden muss und was sich zuletzt geändert hat.',
+                modal_title: 'Zugang anfragen',
+                modal_desc: 'Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden.',
+                modal_name: 'Vollständiger Name',
+                modal_name_placeholder: 'Ihr vollständiger Name',
+                modal_email: 'Geschäftliche E-Mail',
+                modal_email_placeholder: 'sie@unternehmen.de',
+                modal_company: 'Firmenname',
+                modal_company_placeholder: 'Ihr Unternehmen',
+                modal_submit: 'Anfrage senden'
+            }
+        };
+
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        setLanguage(currentLang);
     </script>
 
 </body>

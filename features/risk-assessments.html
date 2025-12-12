@@ -232,19 +232,59 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
                 <img src="../inspektra-logo.png" alt="Inspektra" height="40">
             </a>
             <ul class="nav-links">
-                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
-                <li><a href="../features.html">Features</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="../contact.html" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -253,12 +293,12 @@
         <div class="container">
             <div class="feature-hero-grid">
                 <div class="feature-hero-content">
-                    <div class="badge-pill">Risk Assessment</div>
-                    <h1>Clear intervals for safer planning</h1>
-                    <p class="subtitle">Define test intervals, assess risk levels, and create a structured plan that helps your sites stay compliant over time.</p>
+                    <div class="badge-pill" data-i18n="nav_risk">Risk Assessment</div>
+                    <h1 data-i18n="risk_hero_title">Clear intervals for safer planning</h1>
+                    <p class="subtitle" data-i18n="risk_hero_subtitle">Define test intervals, assess risk levels, and create a structured plan that helps your sites stay compliant over time.</p>
                     <div class="cta-group">
-                        <a href="../contact.html" class="btn btn-primary">Request Access</a>
-                        <a href="../pricing.html" class="btn btn-outline">View pricing</a>
+                        <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                        <a href="../pricing.html" class="btn btn-outline" data-i18n="view_pricing">View pricing</a>
                     </div>
                 </div>
                 <div class="feature-hero-visual">
@@ -285,32 +325,32 @@
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     </div>
-                    <h3>Simple risk-based intervals</h3>
-                    <p>Set inspection intervals based on real risk levels instead of fixed schedules.</p>
+                    <h3 data-i18n="risk_benefit1_title">Simple risk-based intervals</h3>
+                    <p data-i18n="risk_benefit1_desc">Set inspection intervals based on real risk levels instead of fixed schedules.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
-                    <h3>Consistent decisions across sites</h3>
-                    <p>Apply the same assessment logic to every building and asset, so planning stays predictable.</p>
+                    <h3 data-i18n="risk_benefit2_title">Consistent decisions across sites</h3>
+                    <p data-i18n="risk_benefit2_desc">Apply the same assessment logic to every building and asset, so planning stays predictable.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     </div>
-                    <h3>Early visibility of high-risk areas</h3>
-                    <p>Identify devices or locations that need attention sooner and plan inspections proactively.</p>
+                    <h3 data-i18n="risk_benefit3_title">Early visibility of high-risk areas</h3>
+                    <p data-i18n="risk_benefit3_desc">Identify devices or locations that need attention sooner and plan inspections proactively.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </div>
-                    <h3>Better coordination with OMS and in-house teams</h3>
-                    <p>Use risk levels to plan OMS inspections, in-house checks, and follow-up tasks with confidence.</p>
+                    <h3 data-i18n="risk_benefit4_title">Better coordination with OMS and in-house teams</h3>
+                    <p data-i18n="risk_benefit4_desc">Use risk levels to plan OMS inspections, in-house checks, and follow-up tasks with confidence.</p>
                 </div>
             </div>
         </div>
@@ -465,6 +505,81 @@
     </div>
 
     <script>
+        // Language Switcher
+        const translations = {
+            en: {
+                announcement: "Inspektra's login page is now at <strong>app.inspektra.de</strong>",
+                nav_why: "Why Inspektra",
+                nav_features: "Features",
+                nav_contact: "Contact",
+                nav_login: "Log in",
+                nav_request: "Request Access",
+                nav_risk: "Risk Assessment",
+                view_pricing: "View pricing",
+                risk_hero_title: "Clear intervals for safer planning",
+                risk_hero_subtitle: "Define test intervals, assess risk levels, and create a structured plan that helps your sites stay compliant over time.",
+                risk_benefit1_title: "Simple risk-based intervals",
+                risk_benefit1_desc: "Set inspection intervals based on real risk levels instead of fixed schedules.",
+                risk_benefit2_title: "Consistent decisions across sites",
+                risk_benefit2_desc: "Apply the same assessment logic to every building and asset, so planning stays predictable.",
+                risk_benefit3_title: "Early visibility of high-risk areas",
+                risk_benefit3_desc: "Identify devices or locations that need attention sooner and plan inspections proactively.",
+                risk_benefit4_title: "Better coordination with OMS and in-house teams",
+                risk_benefit4_desc: "Use risk levels to plan OMS inspections, in-house checks, and follow-up tasks with confidence."
+            },
+            de: {
+                announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
+                nav_why: "Warum Inspektra",
+                nav_features: "Funktionen",
+                nav_contact: "Kontakt",
+                nav_login: "Anmelden",
+                nav_request: "Zugang anfragen",
+                nav_risk: "Gefährdungsbeurteilung",
+                view_pricing: "Preise ansehen",
+                risk_hero_title: "Klare Intervalle für sichere Planung",
+                risk_hero_subtitle: "Legen Sie Prüfintervalle fest, bewerten Sie Risiken und erstellen Sie einen strukturierten Plan, der Ihre Standorte dauerhaft regelkonform hält.",
+                risk_benefit1_title: "Einfache, risikobasierte Intervalle",
+                risk_benefit1_desc: "Legen Sie Prüfintervalle anhand tatsächlicher Risikostufen fest – statt starrer Zeitpläne.",
+                risk_benefit2_title: "Einheitliche Entscheidungen an allen Standorten",
+                risk_benefit2_desc: "Nutzen Sie die gleiche Bewertungslogik für jedes Gebäude und jedes Betriebsmittel, damit die Planung verlässlich bleibt.",
+                risk_benefit3_title: "Frühe Sichtbarkeit kritischer Bereiche",
+                risk_benefit3_desc: "Erkennen Sie Geräte oder Standorte mit erhöhtem Risiko frühzeitig und planen Sie Prüfungen vorausschauend.",
+                risk_benefit4_title: "Bessere Abstimmung mit OMS und internen Teams",
+                risk_benefit4_desc: "Nutzen Sie Risikostufen, um OMS-Prüfungen, interne Checks und Folgeaufgaben gezielt und sicher zu planen."
+            }
+        };
+
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        setLanguage(currentLang);
+
         // Request Access Modal
         const modal = document.getElementById('requestAccessModal');
         const modalClose = document.getElementById('modalClose');

@@ -21,6 +21,46 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
@@ -40,30 +80,30 @@
             <!-- Navigation -->
             <div class="nav-wrapper" id="navWrapper">
                 <ul class="nav-links">
-                    <li><a href="why-inspektra.html">Why Inspektra</a></li>
+                    <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
                     <li class="dropdown">
-                        <a href="features.html" class="dropdown-toggle">Features</a>
+                        <a href="features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
                         <ul class="dropdown-menu">
-                            <li><a href="features/dashboard.html">Dashboard</a></li>
-                            <li><a href="features/assets.html">Assets</a></li>
-                            <li><a href="features/locations.html">Locations</a></li>
-                            <li><a href="features/inspections.html">Inspections</a></li>
-                            <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
-                            <li><a href="features/tasks.html">Tasks</a></li>
-                            <li><a href="features/home-office-checks.html">Home Office Checks</a></li>
-                            <li><a href="features/monitoring.html">Monitoring</a></li>
+                            <li><a href="features/dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                            <li><a href="features/assets.html" data-i18n="nav_assets">Assets</a></li>
+                            <li><a href="features/locations.html" data-i18n="nav_locations">Locations</a></li>
+                            <li><a href="features/inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                            <li><a href="features/risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                            <li><a href="features/tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                            <li><a href="features/home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                            <li><a href="features/monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                 </ul>
                 <div class="nav-cta-mobile">
-                    <a href="#" class="btn btn-secondary">Log in</a>
-                    <a href="#" class="btn btn-primary">Request Access</a>
+                    <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
                 </div>
             </div>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="#" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -73,13 +113,13 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="badge-pill">
-                    <span class="badge-dot pulse"></span> Powered by OMS Prüfservice
+                    <span class="badge-dot pulse"></span> <span data-i18n="hero_badge">Powered by OMS Prüfservice</span>
                 </div>
-                <h1>Move electrical safety forward.</h1>
-                <p class="subtitle">Confidently manage inspections and risks in one digital platform, trusted across DACH.</p>
+                <h1 data-i18n="hero_title">Move electrical safety forward.</h1>
+                <p class="subtitle" data-i18n="hero_subtitle">Confidently manage inspections and risks in one digital platform, trusted across DACH.</p>
 
                 <div class="cta-group">
-                    <a href="#" class="btn btn-primary btn-lg">Request Access</a>
+                    <a href="#" class="btn btn-primary btn-lg" data-i18n="hero_cta">Request Access</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -133,20 +173,20 @@
                     <div class="oms-logo-placeholder">
                         <span>OMS</span>
                     </div>
-                    <p>Powered by OMS's trusted expertise, now in one reliable digital platform.</p>
+                    <p data-i18n="stats_desc">Powered by OMS's trusted expertise, now in one reliable digital platform.</p>
                 </div>
                 <div class="stats-numbers">
                     <div class="stat-item">
                         <span class="stat-number" data-target="15">0</span>
-                        <span class="stat-label">years of experience</span>
+                        <span class="stat-label" data-i18n="stats_years">years of experience</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-target="12" data-suffix="M+">0</span>
-                        <span class="stat-label">inspections yearly</span>
+                        <span class="stat-label" data-i18n="stats_inspections">inspections yearly</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-target="150" data-suffix="K+">0</span>
-                        <span class="stat-label">prevented risks yearly</span>
+                        <span class="stat-label" data-i18n="stats_risks">prevented risks yearly</span>
                     </div>
                 </div>
             </div>
@@ -161,8 +201,8 @@
         </div>
         <div class="container">
             <div class="why-header fade-in-up">
-                <h2>Why teams choose Inspektra</h2>
-                <p class="subtitle">Designed for teams that want safer operations with less administrative effort.</p>
+                <h2 data-i18n="why_title">Why teams choose Inspektra</h2>
+                <p class="subtitle" data-i18n="why_subtitle">Designed for teams that want safer operations with less administrative effort.</p>
             </div>
 
             <!-- Modern Bento Grid -->
@@ -174,8 +214,8 @@
                             <div class="why-card-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
-                            <h3>Compliance, simplified</h3>
-                            <p>Stay audit-ready and meet electrical safety requirements with minimal effort.</p>
+                            <h3 data-i18n="why_compliance_title">Compliance, simplified</h3>
+                            <p data-i18n="why_compliance_desc">Stay audit-ready and meet electrical safety requirements with minimal effort.</p>
                             <a href="features.html" class="why-card-link">
                                 Explore compliance features
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -224,8 +264,8 @@
                     <div class="why-card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                     </div>
-                    <h3>Mobile workflows</h3>
-                    <p>Perform inspections, resolve tasks, and view reports from anywhere.</p>
+                    <h3 data-i18n="why_mobile_title">Mobile workflows</h3>
+                    <p data-i18n="why_mobile_desc">Perform inspections, resolve tasks, and view reports from anywhere.</p>
                     <div class="why-card-decoration">
                         <div class="phone-mockup">
                             <div class="phone-screen">
@@ -245,8 +285,8 @@
                         <div class="why-card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                         </div>
-                        <h3>Reliable safety data</h3>
-                        <p>Secure, standardised reporting for peace of mind.</p>
+                        <h3 data-i18n="why_data_title">Reliable safety data</h3>
+                        <p data-i18n="why_data_desc">Secure, standardised reporting for peace of mind.</p>
                     </div>
                     <div class="why-card-decoration">
                         <div class="data-visual">
@@ -267,8 +307,8 @@
                             <div class="why-card-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                             </div>
-                            <h3>Seamless collaboration</h3>
-                            <p>Work together with OMS technicians and your team in one secure platform.</p>
+                            <h3 data-i18n="why_collab_title">Seamless collaboration</h3>
+                            <p data-i18n="why_collab_desc">Work together with OMS technicians and your team in one secure platform.</p>
                         </div>
                         <div class="why-card-visual collab-visual">
                             <div class="collab-demo">
@@ -304,66 +344,66 @@
     <section class="key-features">
         <div class="container">
             <div class="section-header fade-in-up">
-                <h2>All your safety workflows in one platform</h2>
-                <p class="subtitle">Explore the modules that keep inspections, assets, risks, and documentation organised and under control.</p>
+                <h2 data-i18n="features_title">All your safety workflows in one platform</h2>
+                <p class="subtitle" data-i18n="features_subtitle">Explore the modules that keep inspections, assets, risks, and documentation organised and under control.</p>
             </div>
-            
+
             <div class="feature-showcase">
                 <div class="feature-nav">
                     <button class="feature-btn active" onclick="showFeature(0)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Dashboard</span>
-                            <span class="f-desc">See upcoming inspections, open tasks, and risk levels at a glance.</span>
+                            <span class="f-title" data-i18n="feat_dashboard_title">Dashboard</span>
+                            <span class="f-desc" data-i18n="feat_dashboard_desc">See upcoming inspections, open tasks, and risk levels at a glance.</span>
                         </div>
                     </button>
                     <button class="feature-btn" onclick="showFeature(1)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="22.01"></line><line x1="15" y1="22" x2="15" y2="22.01"></line><line x1="12" y1="22" x2="12" y2="22.01"></line><line x1="12" y1="2" x2="12" y2="22"></line><line x1="4" y1="10" x2="20" y2="10"></line><line x1="4" y1="14" x2="20" y2="14"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Assets</span>
-                            <span class="f-desc">Keep all devices, machines, and installations organised in one place.</span>
+                            <span class="f-title" data-i18n="feat_assets_title">Assets</span>
+                            <span class="f-desc" data-i18n="feat_assets_desc">Keep all devices, machines, and installations organised in one place.</span>
                         </div>
                     </button>
                     <button class="feature-btn" onclick="showFeature(2)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Locations</span>
-                            <span class="f-desc">Map sites, buildings, and rooms in a clear, navigable hierarchy.</span>
+                            <span class="f-title" data-i18n="feat_locations_title">Locations</span>
+                            <span class="f-desc" data-i18n="feat_locations_desc">Map sites, buildings, and rooms in a clear, navigable hierarchy.</span>
                         </div>
                     </button>
                     <button class="feature-btn" onclick="showFeature(3)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Inspections</span>
-                            <span class="f-desc">Perform your own inspections and access OMS reports in one consistent structure.</span>
+                            <span class="f-title" data-i18n="feat_inspections_title">Inspections</span>
+                            <span class="f-desc" data-i18n="feat_inspections_desc">Perform your own inspections and access OMS reports in one consistent structure.</span>
                         </div>
                     </button>
                     <button class="feature-btn" onclick="showFeature(4)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Risk Assessments</span>
-                            <span class="f-desc">Define hazards and test intervals for each area and asset group.</span>
+                            <span class="f-title" data-i18n="feat_risk_title">Risk Assessments</span>
+                            <span class="f-desc" data-i18n="feat_risk_desc">Define hazards and test intervals for each area and asset group.</span>
                         </div>
                     </button>
                     <button class="feature-btn" onclick="showFeature(5)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Tasks</span>
-                            <span class="f-desc">Turn findings into actions, track progress, and update asset safety status.</span>
+                            <span class="f-title" data-i18n="feat_tasks_title">Tasks</span>
+                            <span class="f-desc" data-i18n="feat_tasks_desc">Turn findings into actions, track progress, and update asset safety status.</span>
                         </div>
                     </button>
                     <button class="feature-btn" onclick="showFeature(6)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Home Office Checks</span>
-                            <span class="f-desc">Support remote workers with safe equipment setups and simple device checks.</span>
+                            <span class="f-title" data-i18n="feat_homeoffice_title">Home Office Checks</span>
+                            <span class="f-desc" data-i18n="feat_homeoffice_desc">Support remote workers with safe equipment setups and simple device checks.</span>
                         </div>
                     </button>
                     <button class="feature-btn" onclick="showFeature(7)">
                         <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
                         <div class="f-text">
-                            <span class="f-title">Monitoring</span>
-                            <span class="f-desc">Track sensors, see alerts, and detect electrical issues early.</span>
+                            <span class="f-title" data-i18n="feat_monitoring_title">Monitoring</span>
+                            <span class="f-desc" data-i18n="feat_monitoring_desc">Track sensors, see alerts, and detect electrical issues early.</span>
                         </div>
                     </button>
                 </div>
@@ -435,36 +475,7 @@
                     </div>
                 </div>
                 <div class="security-visual">
-                    <div class="security-3d-scene">
-                        <div class="security-shield-3d">
-                            <div class="shield-layer-back"></div>
-                            <div class="shield-layer-middle"></div>
-                            <div class="shield-layer-front">
-                                <div class="shield-content">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                </div>
-                                <div class="shield-gloss"></div>
-                            </div>
-                            
-                            <!-- Floating Elements -->
-                            <div class="floating-badge lock">
-                                <div class="fb-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                </div>
-                            </div>
-                            <div class="floating-badge check">
-                                <div class="fb-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                </div>
-                            </div>
-                            <div class="floating-badge server">
-                                <div class="fb-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shield-shadow-3d"></div>
-                    </div>
+                    <img src="security.png" alt="Security" class="security-image">
                 </div>
             </div>
         </div>
@@ -473,8 +484,8 @@
     <section class="how-it-works">
         <div class="container">
             <div class="section-header fade-in-up">
-                <h2>How Inspektra Works</h2>
-                <p class="subtitle">A clear path from risk assessment to completed inspections.</p>
+                <h2 data-i18n="how_title">How Inspektra Works</h2>
+                <p class="subtitle" data-i18n="how_subtitle">A clear path from risk assessment to completed inspections.</p>
             </div>
             <div class="process-flow">
                 <div class="process-track">
@@ -485,162 +496,107 @@
                 <div class="process-steps">
                     <div class="process-step" data-step="1">
                         <div class="step-node">
-                            <div class="node-outer-ring"></div>
                             <div class="node-ring">
                                 <div class="node-core">
                                     <span>1</span>
                                 </div>
                             </div>
-                            <div class="node-pulse"></div>
-                            <div class="node-pulse-2"></div>
-                            <div class="node-particles">
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                            </div>
                         </div>
                         <div class="step-card">
-                            <div class="card-glow"></div>
-                            <div class="card-shimmer"></div>
-                            <span class="card-step-badge">Step 01</span>
+                            <span class="card-step-badge" data-i18n="step_01">Step 01</span>
                             <div class="card-content">
                                 <div class="card-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                                 </div>
                                 <div class="card-text">
-                                    <h3>Define risks and test intervals</h3>
-                                    <p>Set up your asset groups, hazards, and testing intervals based on your internal requirements.</p>
+                                    <h3 data-i18n="step1_title">Define risks and test intervals</h3>
+                                    <p data-i18n="step1_desc">Set up your asset groups, hazards, and testing intervals based on your internal requirements.</p>
                                 </div>
                             </div>
-                            <div class="card-decoration"></div>
                         </div>
                     </div>
                     <div class="process-step" data-step="2">
                         <div class="step-node">
-                            <div class="node-outer-ring"></div>
                             <div class="node-ring">
                                 <div class="node-core">
                                     <span>2</span>
                                 </div>
                             </div>
-                            <div class="node-pulse"></div>
-                            <div class="node-pulse-2"></div>
-                            <div class="node-particles">
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                            </div>
                         </div>
                         <div class="step-card">
-                            <div class="card-glow"></div>
-                            <div class="card-shimmer"></div>
-                            <span class="card-step-badge">Step 02</span>
+                            <span class="card-step-badge" data-i18n="step_02">Step 02</span>
                             <div class="card-content">
                                 <div class="card-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                                 </div>
                                 <div class="card-text">
-                                    <h3>Receive OMS inspection results</h3>
-                                    <p>OMS Prüfservice conducts professional on-site inspections. Results appear in Inspektra automatically.</p>
+                                    <h3 data-i18n="step2_title">Receive OMS inspection results</h3>
+                                    <p data-i18n="step2_desc">OMS Prüfservice conducts professional on-site inspections. Results appear in Inspektra automatically.</p>
                                 </div>
                             </div>
-                            <div class="card-decoration"></div>
                         </div>
                     </div>
                     <div class="process-step" data-step="3">
                         <div class="step-node">
-                            <div class="node-outer-ring"></div>
                             <div class="node-ring">
                                 <div class="node-core">
                                     <span>3</span>
                                 </div>
                             </div>
-                            <div class="node-pulse"></div>
-                            <div class="node-pulse-2"></div>
-                            <div class="node-particles">
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                            </div>
                         </div>
                         <div class="step-card">
-                            <div class="card-glow"></div>
-                            <div class="card-shimmer"></div>
-                            <span class="card-step-badge">Step 03</span>
+                            <span class="card-step-badge" data-i18n="step_03">Step 03</span>
                             <div class="card-content">
                                 <div class="card-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                                 </div>
                                 <div class="card-text">
-                                    <h3>Perform your own tests</h3>
-                                    <p>Carry out in-house inspections such as PAT testing, new device checks, and home-office testing.</p>
+                                    <h3 data-i18n="step3_title">Perform your own tests</h3>
+                                    <p data-i18n="step3_desc">Carry out in-house inspections such as PAT testing, new device checks, and home-office testing.</p>
                                 </div>
                             </div>
-                            <div class="card-decoration"></div>
                         </div>
                     </div>
                     <div class="process-step" data-step="4">
                         <div class="step-node">
-                            <div class="node-outer-ring"></div>
                             <div class="node-ring">
                                 <div class="node-core">
                                     <span>4</span>
                                 </div>
                             </div>
-                            <div class="node-pulse"></div>
-                            <div class="node-pulse-2"></div>
-                            <div class="node-particles">
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                            </div>
                         </div>
                         <div class="step-card">
-                            <div class="card-glow"></div>
-                            <div class="card-shimmer"></div>
-                            <span class="card-step-badge">Step 04</span>
+                            <span class="card-step-badge" data-i18n="step_04">Step 04</span>
                             <div class="card-content">
                                 <div class="card-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                                 </div>
                                 <div class="card-text">
-                                    <h3>Review findings and take action</h3>
-                                    <p>Incidents automatically become tasks. Assign, resolve, and update each asset's safety status.</p>
+                                    <h3 data-i18n="step4_title">Review findings and take action</h3>
+                                    <p data-i18n="step4_desc">Incidents automatically become tasks. Assign, resolve, and update each asset's safety status.</p>
                                 </div>
                             </div>
-                            <div class="card-decoration"></div>
                         </div>
                     </div>
                     <div class="process-step" data-step="5">
                         <div class="step-node">
-                            <div class="node-outer-ring"></div>
                             <div class="node-ring">
                                 <div class="node-core">
                                     <span>5</span>
                                 </div>
                             </div>
-                            <div class="node-pulse"></div>
-                            <div class="node-pulse-2"></div>
-                            <div class="node-particles">
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                                <div class="node-particle"></div>
-                            </div>
                         </div>
                         <div class="step-card">
-                            <div class="card-glow"></div>
-                            <div class="card-shimmer"></div>
-                            <span class="card-step-badge">Step 05</span>
+                            <span class="card-step-badge" data-i18n="step_05">Step 05</span>
                             <div class="card-content">
                                 <div class="card-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                                 </div>
                                 <div class="card-text">
-                                    <h3>Stay compliant across all sites</h3>
-                                    <p>Track deadlines, risks, and open items on the dashboard. Keep every asset up to date.</p>
+                                    <h3 data-i18n="step5_title">Stay compliant across all sites</h3>
+                                    <p data-i18n="step5_desc">Track deadlines, risks, and open items on the dashboard. Keep every asset up to date.</p>
                                 </div>
                             </div>
-                            <div class="card-decoration"></div>
                         </div>
                     </div>
                 </div>
@@ -651,10 +607,10 @@
     <section class="closing-cta">
         <div class="container">
             <div class="cta-box fade-in-up">
-                <h2>Ready to streamline your safety processes?</h2>
-                <p class="subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
+                <h2 data-i18n="cta_title">Ready to streamline your safety processes?</h2>
+                <p class="subtitle" data-i18n="cta_subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
                 <div class="cta-group">
-                    <a href="#" class="btn btn-white">Request Access</a>
+                    <a href="#" class="btn btn-white" data-i18n="cta_button">Request Access</a>
                 </div>
             </div>
         </div>
@@ -667,24 +623,24 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Legal</h4>
-                        <a href="privacy.html">Privacy</a>
-                        <a href="terms.html">Terms</a>
-                        <a href="imprint.html">Imprint</a>
+                        <h4 data-i18n="footer_legal">Legal</h4>
+                        <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
+                        <a href="terms.html" data-i18n="footer_terms">Terms</a>
+                        <a href="imprint.html" data-i18n="footer_imprint">Imprint</a>
                     </div>
                     <div class="nav-col">
-                        <h4>Support</h4>
-                        <a href="contact.html">Contact</a>
+                        <h4 data-i18n="footer_support">Support</h4>
+                        <a href="contact.html" data-i18n="nav_contact">Contact</a>
                         <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
                 <div class="social-icons">
                     <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
                     <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
@@ -950,6 +906,245 @@
                 }
             }, { passive: true });
         }
+
+        // Language Switcher
+        const translations = {
+            en: {
+                // Announcement
+                announcement: 'Inspektra\'s login page is now at <strong>app.inspektra.de</strong>',
+                // Navigation
+                nav_why: 'Why Inspektra',
+                nav_features: 'Features',
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Assets',
+                nav_locations: 'Locations',
+                nav_inspections: 'Inspections',
+                nav_risk: 'Risk Assessments',
+                nav_tasks: 'Tasks',
+                nav_homeoffice: 'Home Office Checks',
+                nav_monitoring: 'Monitoring',
+                nav_contact: 'Contact',
+                nav_login: 'Log in',
+                nav_request: 'Request Access',
+                // Hero
+                hero_badge: 'Powered by OMS Prüfservice',
+                hero_title: 'Move electrical safety forward.',
+                hero_subtitle: 'Confidently manage inspections and risks in one digital platform, trusted across DACH.',
+                hero_cta: 'Request Access',
+                // Stats
+                stats_desc: 'Powered by OMS\'s trusted expertise, now in one reliable digital platform.',
+                stats_years: 'years of experience',
+                stats_inspections: 'inspections yearly',
+                stats_risks: 'prevented risks yearly',
+                // Why Choose
+                why_title: 'Why teams choose Inspektra',
+                why_subtitle: 'Designed for teams that want safer operations with less administrative effort.',
+                why_compliance_title: 'Compliance, simplified',
+                why_compliance_desc: 'Stay audit-ready and meet electrical safety requirements with minimal effort.',
+                why_mobile_title: 'Mobile workflows',
+                why_mobile_desc: 'Perform inspections, resolve tasks, and view reports from anywhere.',
+                why_data_title: 'Reliable safety data',
+                why_data_desc: 'Secure, standardised reporting for peace of mind.',
+                why_collab_title: 'Seamless collaboration',
+                why_collab_desc: 'Work together with OMS technicians and your team in one secure platform.',
+                // Key Features
+                features_title: 'All your safety workflows in one platform',
+                features_subtitle: 'Explore the modules that keep inspections, assets, risks, and documentation organised and under control.',
+                feat_dashboard_title: 'Dashboard',
+                feat_dashboard_desc: 'See upcoming inspections, open tasks, and risk levels at a glance.',
+                feat_assets_title: 'Assets',
+                feat_assets_desc: 'Keep all devices, machines, and installations organised in one place.',
+                feat_locations_title: 'Locations',
+                feat_locations_desc: 'Map sites, buildings, and rooms in a clear, navigable hierarchy.',
+                feat_inspections_title: 'Inspections',
+                feat_inspections_desc: 'Perform your own inspections and access OMS reports in one consistent structure.',
+                feat_risk_title: 'Risk Assessments',
+                feat_risk_desc: 'Define hazards and test intervals for each area and asset group.',
+                feat_tasks_title: 'Tasks',
+                feat_tasks_desc: 'Turn findings into actions, track progress, and update asset safety status.',
+                feat_homeoffice_title: 'Home Office Checks',
+                feat_homeoffice_desc: 'Support remote workers with safe equipment setups and simple device checks.',
+                feat_monitoring_title: 'Monitoring',
+                feat_monitoring_desc: 'Track sensors, see alerts, and detect electrical issues early.',
+                // How It Works
+                how_title: 'How Inspektra Works',
+                how_subtitle: 'A clear path from risk assessment to completed inspections.',
+                step_01: 'Step 01',
+                step_02: 'Step 02',
+                step_03: 'Step 03',
+                step_04: 'Step 04',
+                step_05: 'Step 05',
+                step1_title: 'Define risks and test intervals',
+                step1_desc: 'Set up your asset groups, hazards, and testing intervals based on your internal requirements.',
+                step2_title: 'Receive OMS inspection results',
+                step2_desc: 'OMS Prüfservice conducts professional on-site inspections. Results appear in Inspektra automatically.',
+                step3_title: 'Perform your own tests',
+                step3_desc: 'Carry out in-house inspections such as PAT testing, new device checks, and home-office testing.',
+                step4_title: 'Review findings and take action',
+                step4_desc: 'Incidents automatically become tasks. Assign, resolve, and update each asset\'s safety status.',
+                step5_title: 'Stay compliant across all sites',
+                step5_desc: 'Track deadlines, risks, and open items on the dashboard. Keep every asset up to date.',
+                // CTA
+                cta_title: 'Ready to streamline your safety processes?',
+                cta_subtitle: 'Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.',
+                cta_button: 'Request Access',
+                // Modal
+                modal_title: 'Request access',
+                modal_desc: 'Our team will review your request and share the next steps.',
+                modal_name: 'Full name',
+                modal_name_placeholder: 'Your full name',
+                modal_email: 'Work email',
+                modal_email_placeholder: 'you@company.com',
+                modal_company: 'Company name',
+                modal_company_placeholder: 'Your company',
+                modal_submit: 'Submit request',
+                // Footer
+                footer_tagline: 'Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Legal',
+                footer_privacy: 'Privacy',
+                footer_terms: 'Terms',
+                footer_imprint: 'Imprint',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. All rights reserved.'
+            },
+            de: {
+                // Announcement
+                announcement: 'Die Inspektra Login-Seite befindet sich jetzt unter <strong>app.inspektra.de</strong>',
+                // Navigation
+                nav_why: 'Warum Inspektra',
+                nav_features: 'Funktionen',
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Betriebsmittel',
+                nav_locations: 'Standorte',
+                nav_inspections: 'Prüfungen',
+                nav_risk: 'Gefährdungsbeurteilung',
+                nav_tasks: 'Aufgaben',
+                nav_homeoffice: 'Home Office Checks',
+                nav_monitoring: 'Monitoring',
+                nav_contact: 'Kontakt',
+                nav_login: 'Login',
+                nav_request: 'Zugang anfragen',
+                // Hero
+                hero_badge: 'Powered by OMS Prüfservice',
+                hero_title: 'Elektrische Sicherheit voranbringen.',
+                hero_subtitle: 'Prüfungen und Risiken zentral verwalten – in einer digitalen Plattform, der Unternehmen in der DACH-Region vertrauen.',
+                hero_cta: 'Zugang anfragen',
+                // Stats
+                stats_desc: 'Gestützt auf die langjährige Expertise von OMS Prüfservice – jetzt in einer zuverlässigen digitalen Plattform.',
+                stats_years: 'Jahre Erfahrung',
+                stats_inspections: 'Prüfungen pro Jahr',
+                stats_risks: 'verhinderte Risiken pro Jahr',
+                // Why Choose
+                why_title: 'Warum sich Teams für Inspektra entscheiden',
+                why_subtitle: 'Für Teams, die sicherer arbeiten möchten und dabei ihren administrativen Aufwand reduzieren wollen.',
+                why_compliance_title: 'Compliance, vereinfacht',
+                why_compliance_desc: 'Bleiben Sie prüfbereit und erfüllen Sie elektrische Sicherheitsanforderungen mit minimalem Aufwand.',
+                why_mobile_title: 'Mobile Workflows',
+                why_mobile_desc: 'Führen Sie Prüfungen durch, bearbeiten Sie Aufgaben und greifen Sie von überall auf Berichte zu.',
+                why_data_title: 'Zuverlässige Sicherheitsdaten',
+                why_data_desc: 'Sichere, standardisierte Berichte für volle Transparenz.',
+                why_collab_title: 'Nahtlose Zusammenarbeit',
+                why_collab_desc: 'Arbeiten Sie mit OMS-Technikerinnen und -Technikern sowie Ihrem Team auf einer sicheren Plattform zusammen.',
+                // Key Features
+                features_title: 'Alle Sicherheitsprozesse in einer Plattform vereint',
+                features_subtitle: 'Entdecken Sie die Module, die Prüfungen, Betriebsmittel, Risiken und Dokumentation strukturiert und unter Kontrolle halten.',
+                feat_dashboard_title: 'Dashboard',
+                feat_dashboard_desc: 'Alle anstehenden Prüfungen, offenen Aufgaben und Risikostufen auf einen Blick sehen.',
+                feat_assets_title: 'Betriebsmittel',
+                feat_assets_desc: 'Alle Geräte, Maschinen und Installationen zentral und übersichtlich verwalten.',
+                feat_locations_title: 'Standorte',
+                feat_locations_desc: 'Standorte, Gebäude und Räume in einer klaren, leicht navigierbaren Struktur abbilden.',
+                feat_inspections_title: 'Prüfungen',
+                feat_inspections_desc: 'Eigene Prüfungen durchführen und OMS-Berichte in einer einheitlichen Übersicht einsehen.',
+                feat_risk_title: 'Gefährdungsbeurteilung',
+                feat_risk_desc: 'Gefährdungen und Prüfintervalle für Bereiche und Gerätegruppen definieren.',
+                feat_tasks_title: 'Aufgaben',
+                feat_tasks_desc: 'Feststellungen in Maßnahmen überführen, Fortschritt verfolgen und Sicherheitsstatus aktualisieren.',
+                feat_homeoffice_title: 'Home Office Checks',
+                feat_homeoffice_desc: 'Remote-Arbeitsplätze mit sicheren Gerätesetups und einfachen Geräteprüfungen unterstützen.',
+                feat_monitoring_title: 'Monitoring',
+                feat_monitoring_desc: 'Sensoren überwachen, Warnmeldungen erkennen und elektrische Probleme frühzeitig feststellen.',
+                // How It Works
+                how_title: 'So funktioniert Inspektra',
+                how_subtitle: 'Ein klarer Weg von der Gefährdungsbeurteilung bis zur abgeschlossenen Prüfung.',
+                step_01: 'Schritt 01',
+                step_02: 'Schritt 02',
+                step_03: 'Schritt 03',
+                step_04: 'Schritt 04',
+                step_05: 'Schritt 05',
+                step1_title: 'Risiken und Prüfintervalle definieren',
+                step1_desc: 'Legen Sie Gerätegruppen, Gefährdungen und Prüfintervalle nach Ihren internen Vorgaben fest.',
+                step2_title: 'OMS-Prüfergebnisse erhalten',
+                step2_desc: 'OMS Prüfservice führt die professionellen Vor-Ort-Prüfungen durch. Die Ergebnisse erscheinen automatisch in Inspektra.',
+                step3_title: 'Eigene Prüfungen durchführen',
+                step3_desc: 'Führen Sie interne Prüfungen durch, wie zum Beispiel Geräteprüfungen (PAT), Neugeräte-Checks oder Home-Office-Prüfungen.',
+                step4_title: 'Ergebnisse prüfen und Maßnahmen einleiten',
+                step4_desc: 'Festgestellte Abweichungen werden automatisch zu Aufgaben. Weisen Sie Verantwortliche zu und aktualisieren Sie den Sicherheitsstatus.',
+                step5_title: 'Standortübergreifend normgerecht bleiben',
+                step5_desc: 'Verfolgen Sie Fristen, Risiken und offene Punkte zentral im Dashboard. Halten Sie jedes Betriebsmittel aktuell.',
+                // CTA
+                cta_title: 'Bereit, Ihre Sicherheitsprozesse zu vereinfachen?',
+                cta_subtitle: 'Schließen Sie sich Organisationen in der DACH-Region an, die Inspektra nutzen, um Prüfungen, Risiken und Dokumentation in einem System zu verwalten.',
+                cta_button: 'Zugang anfragen',
+                // Modal
+                modal_title: 'Zugang anfragen',
+                modal_desc: 'Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden.',
+                modal_name: 'Vollständiger Name',
+                modal_name_placeholder: 'Ihr vollständiger Name',
+                modal_email: 'Geschäftliche E-Mail',
+                modal_email_placeholder: 'sie@unternehmen.de',
+                modal_company: 'Firmenname',
+                modal_company_placeholder: 'Ihr Unternehmen',
+                modal_submit: 'Anfrage senden',
+                // Footer
+                footer_tagline: 'Elektrische Sicherheit. Strukturiert und unter Kontrolle.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Rechtliches',
+                footer_privacy: 'Datenschutzerklärung',
+                footer_terms: 'Nutzungsbedingungen',
+                footer_imprint: 'Impressum',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. Alle Rechte vorbehalten.'
+            }
+        };
+
+        // Initialize language from localStorage or default to 'en'
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        // Language button click handlers
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Initialize language on page load
+        setLanguage(currentLang);
     </script>
 
     <!-- Request Access Modal -->
@@ -960,48 +1155,23 @@
             </button>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Request access</h2>
-                    <p>Our team will review your request and share the next steps.</p>
+                    <h2 data-i18n="modal_title">Request access</h2>
+                    <p data-i18n="modal_desc">Our team will review your request and share the next steps.</p>
                 </div>
                 <form id="requestAccessForm" class="modal-form">
                     <div class="form-group">
-                        <label for="fullName">Full name</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                        <label for="fullName" data-i18n="modal_name">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" data-i18n-placeholder="modal_name_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="workEmail">Work email</label>
-                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                        <label for="workEmail" data-i18n="modal_email">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com" data-i18n-placeholder="modal_email_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="companyName">Company name</label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                        <label for="companyName" data-i18n="modal_company">Company name</label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Your company" data-i18n-placeholder="modal_company_placeholder">
                     </div>
-                    <div class="form-group">
-                        <label>What do you want to use Inspektra for?</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="oms" required>
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">OMS inspections</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="inhouse">
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="both">
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">Both OMS + in-house inspections</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="notsure">
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">Not sure yet</span>
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
                 </form>
             </div>
         </div>

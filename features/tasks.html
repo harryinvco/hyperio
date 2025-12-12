@@ -251,19 +251,59 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
                 <img src="../inspektra-logo.png" alt="Inspektra" height="40">
             </a>
             <ul class="nav-links">
-                <li><a href="../why-inspektra.html">Why Inspektra</a></li>
-                <li><a href="../features.html">Features</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="../contact.html" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -272,12 +312,12 @@
         <div class="container">
             <div class="feature-hero-grid">
                 <div class="feature-hero-content">
-                    <div class="badge-pill">Tasks</div>
-                    <h1>From findings to clear follow-up</h1>
-                    <p class="subtitle">Turn inspection comments into actionable tasks, track what needs attention, and keep every asset's safety status up to date.</p>
+                    <div class="badge-pill" data-i18n="nav_tasks">Tasks</div>
+                    <h1 data-i18n="tasks_hero_title">From findings to clear follow-up</h1>
+                    <p class="subtitle" data-i18n="tasks_hero_subtitle">Turn inspection comments into actionable tasks, track what needs attention, and keep every asset's safety status up to date.</p>
                     <div class="cta-group">
-                        <a href="../contact.html" class="btn btn-primary">Request Access</a>
-                        <a href="../pricing.html" class="btn btn-outline">View pricing</a>
+                        <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                        <a href="../pricing.html" class="btn btn-outline" data-i18n="view_pricing">View pricing</a>
                     </div>
                 </div>
                 <div class="feature-hero-visual">
@@ -316,32 +356,32 @@
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
-                    <h3>Automatic tasks from inspections</h3>
-                    <p>Findings from OMS and in-house inspections become tasks instantly, with severity and type already assigned.</p>
+                    <h3 data-i18n="tasks_benefit1_title">Automatic tasks from inspections</h3>
+                    <p data-i18n="tasks_benefit1_desc">Findings from OMS and in-house inspections become tasks instantly, with severity and type already assigned.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
-                    <h3>Clear safety impact</h3>
-                    <p>Each task updates the asset's safety status, so you always know which issues are critical, high-risk, or minor.</p>
+                    <h3 data-i18n="tasks_benefit2_title">Clear safety impact</h3>
+                    <p data-i18n="tasks_benefit2_desc">Each task updates the asset's safety status, so you always know which issues are critical, high-risk, or minor.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
-                    <h3>Structured resolution workflow</h3>
-                    <p>Assign tasks, set due dates, add comments or files, and document every step with a consistent, audit-ready process.</p>
+                    <h3 data-i18n="tasks_benefit3_title">Structured resolution workflow</h3>
+                    <p data-i18n="tasks_benefit3_desc">Assign tasks, set due dates, add comments or files, and document every step with a consistent, audit-ready process.</p>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     </div>
-                    <h3>One place to track all follow-up work</h3>
-                    <p>See all open and completed tasks, filter by severity or location, and make sure nothing gets overlooked.</p>
+                    <h3 data-i18n="tasks_benefit4_title">One place to track all follow-up work</h3>
+                    <p data-i18n="tasks_benefit4_desc">See all open and completed tasks, filter by severity or location, and make sure nothing gets overlooked.</p>
                 </div>
             </div>
         </div>
@@ -493,6 +533,81 @@
     </div>
 
     <script>
+        // Language Switcher
+        const translations = {
+            en: {
+                announcement: "Inspektra's login page is now at <strong>app.inspektra.de</strong>",
+                nav_why: "Why Inspektra",
+                nav_features: "Features",
+                nav_contact: "Contact",
+                nav_login: "Log in",
+                nav_request: "Request Access",
+                nav_tasks: "Tasks",
+                view_pricing: "View pricing",
+                tasks_hero_title: "From findings to clear follow-up",
+                tasks_hero_subtitle: "Turn inspection comments into actionable tasks, track what needs attention, and keep every asset's safety status up to date.",
+                tasks_benefit1_title: "Automatic tasks from inspections",
+                tasks_benefit1_desc: "Findings from OMS and in-house inspections become tasks instantly, with severity and type already assigned.",
+                tasks_benefit2_title: "Clear safety impact",
+                tasks_benefit2_desc: "Each task updates the asset's safety status, so you always know which issues are critical, high-risk, or minor.",
+                tasks_benefit3_title: "Structured resolution workflow",
+                tasks_benefit3_desc: "Assign tasks, set due dates, add comments or files, and document every step with a consistent, audit-ready process.",
+                tasks_benefit4_title: "One place to track all follow-up work",
+                tasks_benefit4_desc: "See all open and completed tasks, filter by severity or location, and make sure nothing gets overlooked."
+            },
+            de: {
+                announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
+                nav_why: "Warum Inspektra",
+                nav_features: "Funktionen",
+                nav_contact: "Kontakt",
+                nav_login: "Anmelden",
+                nav_request: "Zugang anfragen",
+                nav_tasks: "Aufgaben",
+                view_pricing: "Preise ansehen",
+                tasks_hero_title: "Von Befunden zu klaren Maßnahmen",
+                tasks_hero_subtitle: "Wandeln Sie Prüfbemerkungen in konkrete Aufgaben um, verfolgen Sie offene Punkte und halten Sie den Sicherheitsstatus jedes Betriebsmittels jederzeit aktuell.",
+                tasks_benefit1_title: "Automatische Aufgaben aus Prüfungen",
+                tasks_benefit1_desc: "Befunde aus OMS- und internen Prüfungen werden sofort zu Aufgaben, inklusive Schweregrad und Typ.",
+                tasks_benefit2_title: "Klarer Einfluss auf die Sicherheit",
+                tasks_benefit2_desc: "Jede Aufgabe aktualisiert den Sicherheitsstatus des Betriebsmittels. So erkennen Sie sofort, welche Punkte kritisch, risikobehaftet oder geringfügig sind.",
+                tasks_benefit3_title: "Strukturierter Erledigungsprozess",
+                tasks_benefit3_desc: "Weisen Sie Aufgaben zu, setzen Sie Fälligkeiten, ergänzen Sie Kommentare oder Dateien und dokumentieren Sie jeden Schritt in einem einheitlichen, auditfähigen Ablauf.",
+                tasks_benefit4_title: "Zentrale Übersicht aller Folgearbeiten",
+                tasks_benefit4_desc: "Sehen Sie offene und erledigte Aufgaben auf einen Blick, filtern Sie nach Schweregrad oder Standort und stellen Sie sicher, dass nichts übersehen wird."
+            }
+        };
+
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        setLanguage(currentLang);
+
         // Request Access Modal
         const modal = document.getElementById('requestAccessModal');
         const modalClose = document.getElementById('modalClose');

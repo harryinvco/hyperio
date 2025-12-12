@@ -734,6 +734,46 @@
 </head>
 <body>
 
+    <!-- Language Selector Bar -->
+    <div class="language-bar">
+        <div class="container">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en" title="English">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
+                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                        <g clip-path="url(#s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </g>
+                    </svg>
+                    <span>EN</span>
+                </button>
+                <button class="lang-btn" data-lang="de" title="Deutsch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
+                        <rect width="5" height="3" fill="#FFCE00"/>
+                        <rect width="5" height="2" fill="#DD0000"/>
+                        <rect width="5" height="1" fill="#000"/>
+                    </svg>
+                    <span>DE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -747,30 +787,30 @@
             <div class="mobile-menu-overlay" id="mobileOverlay"></div>
             <div class="nav-wrapper" id="navWrapper">
                 <ul class="nav-links">
-                    <li><a href="why-inspektra.html">Why Inspektra</a></li>
+                    <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
                     <li class="dropdown">
-                        <a href="features.html" class="dropdown-toggle">Features</a>
+                        <a href="features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
                         <ul class="dropdown-menu">
-                            <li><a href="features/dashboard.html">Dashboard</a></li>
-                            <li><a href="features/assets.html">Assets</a></li>
-                            <li><a href="features/locations.html">Locations</a></li>
-                            <li><a href="features/inspections.html">Inspections</a></li>
-                            <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
-                            <li><a href="features/tasks.html">Tasks</a></li>
-                            <li><a href="features/home-office-checks.html">Home Office Checks</a></li>
-                            <li><a href="features/monitoring.html">Monitoring</a></li>
+                            <li><a href="features/dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                            <li><a href="features/assets.html" data-i18n="nav_assets">Assets</a></li>
+                            <li><a href="features/locations.html" data-i18n="nav_locations">Locations</a></li>
+                            <li><a href="features/inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                            <li><a href="features/risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                            <li><a href="features/tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                            <li><a href="features/home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                            <li><a href="features/monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                 </ul>
                 <div class="nav-cta-mobile">
-                    <a href="#" class="btn btn-secondary">Log in</a>
-                    <a href="#" class="btn btn-primary">Request Access</a>
+                    <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
                 </div>
             </div>
             <div class="nav-cta">
-                <a href="#" class="btn btn-secondary">Log in</a>
-                <a href="#" class="btn btn-primary">Request Access</a>
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </nav>
@@ -779,9 +819,9 @@
     <header class="features-hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Everything you need for electrical safety in one place</h1>
-                <p class="subtitle">Inspektra brings inspections, assets, risks, and documentation together in one organised, connected system built for safety teams across all sites.</p>
-                <a href="#" class="btn btn-primary btn-lg">Request Access</a>
+                <h1 data-i18n="fp_hero_title">Everything you need for electrical safety in one place</h1>
+                <p class="subtitle" data-i18n="fp_hero_subtitle">Inspektra brings inspections, assets, risks, and documentation together in one organised, connected system built for safety teams across all sites.</p>
+                <a href="#" class="btn btn-primary btn-lg" data-i18n="nav_request">Request Access</a>
             </div>
         </div>
     </header>
@@ -795,10 +835,10 @@
                     <div class="bento-icon blue">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                     </div>
-                    <h3>Dashboard</h3>
-                    <p>See upcoming inspections, open tasks, and risk levels at a glance so you always know what needs attention.</p>
+                    <h3 data-i18n="nav_dashboard">Dashboard</h3>
+                    <p data-i18n="fp_dashboard_desc">See upcoming inspections, open tasks, and risk levels at a glance so you always know what needs attention.</p>
                     <span class="bento-link">
-                        Explore Dashboard
+                        <span data-i18n="fp_explore_dashboard">Explore Dashboard</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -808,10 +848,10 @@
                     <div class="bento-icon purple">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                     </div>
-                    <h3>Assets</h3>
-                    <p>Keep all devices, machines, and installations organised in one place with clear records and inspection history.</p>
+                    <h3 data-i18n="nav_assets">Assets</h3>
+                    <p data-i18n="fp_assets_desc">Keep all devices, machines, and installations organised in one place with clear records and inspection history.</p>
                     <span class="bento-link">
-                        Explore Assets
+                        <span data-i18n="fp_explore_assets">Explore Assets</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -821,10 +861,10 @@
                     <div class="bento-icon green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
-                    <h3>Locations</h3>
-                    <p>Map sites, buildings, and rooms in a navigable hierarchy that keeps your organisation structured and easy to manage.</p>
+                    <h3 data-i18n="nav_locations">Locations</h3>
+                    <p data-i18n="fp_locations_desc">Map sites, buildings, and rooms in a navigable hierarchy that keeps your organisation structured and easy to manage.</p>
                     <span class="bento-link">
-                        Explore Locations
+                        <span data-i18n="fp_explore_locations">Explore Locations</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -834,10 +874,10 @@
                     <div class="bento-icon cyan">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
-                    <h3>Inspections</h3>
-                    <p>Perform your own inspections and access OMS Prüferservice reports in one consistent structure.</p>
+                    <h3 data-i18n="nav_inspections">Inspections</h3>
+                    <p data-i18n="fp_inspections_desc">Perform your own inspections and access OMS Prüferservice reports in one consistent structure.</p>
                     <span class="bento-link">
-                        Explore Inspections
+                        <span data-i18n="fp_explore_inspections">Explore Inspections</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -847,10 +887,10 @@
                     <div class="bento-icon orange">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
-                    <h3>Risk Assessments</h3>
-                    <p>Define hazards, set test intervals, and manage risk levels across all asset groups.</p>
+                    <h3 data-i18n="nav_risk">Risk Assessments</h3>
+                    <p data-i18n="fp_risk_desc">Define hazards, set test intervals, and manage risk levels across all asset groups.</p>
                     <span class="bento-link">
-                        Explore Risk Assessment
+                        <span data-i18n="fp_explore_risk">Explore Risk Assessment</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -860,10 +900,10 @@
                     <div class="bento-icon blue">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
-                    <h3>Tasks</h3>
-                    <p>Turn findings into actions, track progress, and update asset safety status in real time.</p>
+                    <h3 data-i18n="nav_tasks">Tasks</h3>
+                    <p data-i18n="fp_tasks_desc">Turn findings into actions, track progress, and update asset safety status in real time.</p>
                     <span class="bento-link">
-                        Explore Tasks
+                        <span data-i18n="fp_explore_tasks">Explore Tasks</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -873,10 +913,10 @@
                     <div class="bento-icon purple">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
-                    <h3>Home Office Checks</h3>
-                    <p>Provide protective multi-sockets and guide remote workers through quick visual checks of their company devices — all documented in Inspektra.</p>
+                    <h3 data-i18n="nav_homeoffice">Home Office Checks</h3>
+                    <p data-i18n="fp_homeoffice_desc">Provide protective multi-sockets and guide remote workers through quick visual checks of their company devices — all documented in Inspektra.</p>
                     <span class="bento-link">
-                        Explore Home Office Checks
+                        <span data-i18n="fp_explore_homeoffice">Explore Home Office Checks</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -886,10 +926,10 @@
                     <div class="bento-icon orange">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                     </div>
-                    <h3>Monitoring</h3>
-                    <p>Install sensors and monitor electrical behaviour in real time, with alerts and deviations shown directly in Inspektra.</p>
+                    <h3 data-i18n="nav_monitoring">Monitoring</h3>
+                    <p data-i18n="fp_monitoring_desc">Install sensors and monitor electrical behaviour in real time, with alerts and deviations shown directly in Inspektra.</p>
                     <span class="bento-link">
-                        Explore Monitoring
+                        <span data-i18n="fp_explore_monitoring">Explore Monitoring</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </span>
                 </a>
@@ -1063,48 +1103,23 @@
             </button>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Request access</h2>
-                    <p>Our team will review your request and share the next steps.</p>
+                    <h2 data-i18n="modal_title">Request access</h2>
+                    <p data-i18n="modal_desc">Our team will review your request and share the next steps.</p>
                 </div>
                 <form id="requestAccessForm" class="modal-form">
                     <div class="form-group">
-                        <label for="fullName">Full name</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                        <label for="fullName" data-i18n="modal_name">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" data-i18n-placeholder="modal_name_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="workEmail">Work email</label>
-                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                        <label for="workEmail" data-i18n="modal_email">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com" data-i18n-placeholder="modal_email_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="companyName">Company name</label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                        <label for="companyName" data-i18n="modal_company">Company name</label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="Your company" data-i18n-placeholder="modal_company_placeholder">
                     </div>
-                    <div class="form-group">
-                        <label>What do you want to use Inspektra for?</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="oms" required>
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">OMS inspections</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="inhouse">
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="both">
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">Both OMS + in-house inspections</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="useCase" value="notsure">
-                                <span class="radio-custom"></span>
-                                <span class="radio-label">Not sure yet</span>
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
                 </form>
             </div>
         </div>
@@ -1157,6 +1172,131 @@
                 `;
             });
         }
+    </script>
+
+    <script>
+        // Language Switcher
+        const translations = {
+            en: {
+                announcement: 'Inspektra\'s login page is now at <strong>app.inspektra.de</strong>',
+                nav_why: 'Why Inspektra',
+                nav_features: 'Features',
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Assets',
+                nav_locations: 'Locations',
+                nav_inspections: 'Inspections',
+                nav_risk: 'Risk Assessments',
+                nav_tasks: 'Tasks',
+                nav_homeoffice: 'Home Office Checks',
+                nav_monitoring: 'Monitoring',
+                nav_contact: 'Contact',
+                nav_login: 'Log in',
+                nav_request: 'Request Access',
+                fp_hero_title: 'Everything you need for electrical safety in one place',
+                fp_hero_subtitle: 'Inspektra brings inspections, assets, risks, and documentation together in one organised, connected system built for safety teams across all sites.',
+                fp_dashboard_desc: 'See upcoming inspections, open tasks, and risk levels at a glance so you always know what needs attention.',
+                fp_assets_desc: 'Keep all devices, machines, and installations organised in one place with clear records and inspection history.',
+                fp_locations_desc: 'Map sites, buildings, and rooms in a navigable hierarchy that keeps your organisation structured and easy to manage.',
+                fp_inspections_desc: 'Perform your own inspections and access OMS Prüferservice reports in one consistent structure.',
+                fp_risk_desc: 'Define hazards, set test intervals, and manage risk levels across all asset groups.',
+                fp_tasks_desc: 'Turn findings into actions, track progress, and update asset safety status in real time.',
+                fp_homeoffice_desc: 'Provide protective multi-sockets and guide remote workers through quick visual checks of their company devices — all documented in Inspektra.',
+                fp_monitoring_desc: 'Install sensors and monitor electrical behaviour in real time, with alerts and deviations shown directly in Inspektra.',
+                fp_explore_dashboard: 'Explore Dashboard',
+                fp_explore_assets: 'Explore Assets',
+                fp_explore_locations: 'Explore Locations',
+                fp_explore_inspections: 'Explore Inspections',
+                fp_explore_risk: 'Explore Risk Assessment',
+                fp_explore_tasks: 'Explore Tasks',
+                fp_explore_homeoffice: 'Explore Home Office Checks',
+                fp_explore_monitoring: 'Explore Monitoring',
+                modal_title: 'Request access',
+                modal_desc: 'Our team will review your request and share the next steps.',
+                modal_name: 'Full name',
+                modal_name_placeholder: 'Your full name',
+                modal_email: 'Work email',
+                modal_email_placeholder: 'you@company.com',
+                modal_company: 'Company name',
+                modal_company_placeholder: 'Your company',
+                modal_submit: 'Submit request'
+            },
+            de: {
+                announcement: 'Die Inspektra Login-Seite befindet sich jetzt unter <strong>app.inspektra.de</strong>',
+                nav_why: 'Warum Inspektra',
+                nav_features: 'Funktionen',
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Betriebsmittel',
+                nav_locations: 'Standorte',
+                nav_inspections: 'Prüfungen',
+                nav_risk: 'Gefährdungsbeurteilungen',
+                nav_tasks: 'Aufgaben',
+                nav_homeoffice: 'Home-Office-Checks',
+                nav_monitoring: 'Monitoring',
+                nav_contact: 'Kontakt',
+                nav_login: 'Login',
+                nav_request: 'Zugang anfragen',
+                fp_hero_title: 'Alles für Ihre elektrische Sicherheit an einem Ort',
+                fp_hero_subtitle: 'Inspektra bündelt Prüfungen, Betriebsmittel, Risiken und Dokumentation in einem strukturierten, vernetzten System für Sicherheitsteams über alle Standorte hinweg.',
+                fp_dashboard_desc: 'Behalten Sie anstehende Prüfungen, offene Aufgaben und Risikostufen auf einen Blick im Blick — so wissen Sie jederzeit, was Ihre Aufmerksamkeit benötigt.',
+                fp_assets_desc: 'Halten Sie alle Geräte, Maschinen und Installationen strukturiert an einem Ort — mit klaren Datensätzen und vollständiger Prüfhistorie.',
+                fp_locations_desc: 'Abbilden von Standorten, Gebäuden und Räumen in einer klaren, navigierbaren Struktur, die Ihre Organisation übersichtlich und leicht verwaltbar macht.',
+                fp_inspections_desc: 'Führen Sie Ihre eigenen Prüfungen durch und greifen Sie auf Berichte von OMS Prüfservice in einer einheitlichen Struktur zu.',
+                fp_risk_desc: 'Definieren Sie Gefährdungen, legen Sie Prüfintervalle fest und verwalten Sie Risikostufen über alle Betriebsmittelgruppen hinweg.',
+                fp_tasks_desc: 'Wandeln Sie Befunde in Aktionen um, verfolgen Sie den Fortschritt und aktualisieren Sie den Sicherheitsstatus von Betriebsmitteln in Echtzeit.',
+                fp_homeoffice_desc: 'Stellen Sie Schutzsteckdosenleisten bereit und führen Sie Mitarbeitende im Home Office durch einfache Sichtprüfungen ihrer Arbeitsgeräte — vollständig in Inspektra dokumentiert.',
+                fp_monitoring_desc: 'Installieren Sie Sensoren und überwachen Sie das elektrische Verhalten in Echtzeit — mit Meldungen und Abweichungen direkt in Inspektra.',
+                fp_explore_dashboard: 'Dashboard entdecken',
+                fp_explore_assets: 'Betriebsmittel entdecken',
+                fp_explore_locations: 'Standorte entdecken',
+                fp_explore_inspections: 'Prüfungen entdecken',
+                fp_explore_risk: 'Gefährdungsbeurteilung entdecken',
+                fp_explore_tasks: 'Aufgaben entdecken',
+                fp_explore_homeoffice: 'Home-Office-Checks entdecken',
+                fp_explore_monitoring: 'Monitoring entdecken',
+                modal_title: 'Zugang anfragen',
+                modal_desc: 'Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden.',
+                modal_name: 'Vollständiger Name',
+                modal_name_placeholder: 'Ihr vollständiger Name',
+                modal_email: 'Geschäftliche E-Mail',
+                modal_email_placeholder: 'sie@unternehmen.de',
+                modal_company: 'Firmenname',
+                modal_company_placeholder: 'Ihr Unternehmen',
+                modal_submit: 'Anfrage senden'
+            }
+        };
+
+        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('inspektra-lang', lang);
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        setLanguage(currentLang);
     </script>
 
 </body>
