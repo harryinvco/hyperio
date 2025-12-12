@@ -17,12 +17,18 @@
         }
 
         .pricing-hero h1 {
-            font-size: 2.75rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 56px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
             margin-bottom: 16px;
         }
 
         .pricing-hero .subtitle {
-            font-size: 1.125rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
             margin-bottom: 0;
         }
 
@@ -279,6 +285,21 @@
             <div class="nav-cta">
                 <a href="#" class="btn btn-secondary">Log in</a>
                 <a href="#" class="btn btn-primary">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-en"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -353,8 +374,8 @@
     <section class="comparison-section">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <h2>Compare Plans</h2>
-                <p class="subtitle">Detailed feature breakdown</p>
+                <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 44px; font-weight: 600; color: rgba(0, 0, 0, 0.87);">Compare Plans</h2>
+                <p class="subtitle" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 18px; font-weight: 400; color: rgba(0, 0, 0, 0.6);">Detailed feature breakdown</p>
             </div>
             
             <table class="comparison-table fade-in-up">
@@ -429,8 +450,8 @@
     <section class="closing-cta">
         <div class="container">
             <div class="cta-box fade-in-up">
-                <h2>Still have questions?</h2>
-                <p class="subtitle">Our team is happy to help you find the right plan for your needs.</p>
+                <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 44px; font-weight: 600; color: rgba(0, 0, 0, 0.87);">Still have questions?</h2>
+                <p class="subtitle" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 18px; font-weight: 400; color: rgba(0, 0, 0, 0.6);">Our team is happy to help you find the right plan for your needs.</p>
                 <div class="cta-group">
                     <a href="#" class="btn btn-white">Contact Support</a>
                     <a href="#" class="btn btn-outline-white">Read FAQ</a>
@@ -595,8 +616,10 @@
             document.body.style.overflow = '';
         }
 
-        document.querySelectorAll('a.btn-primary, a.btn.btn-primary').forEach(btn => {
-            if (btn.textContent.trim() === 'Request Access') {
+        // Attach click handlers to all Request Access buttons
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text === 'Request Access' || text === 'Zugang anfragen') {
                 btn.addEventListener('click', openRequestModal);
             }
         });

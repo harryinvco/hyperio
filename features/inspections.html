@@ -87,10 +87,11 @@
         }
 
         .feature-hero h1 {
-            font-size: 3.25rem;
-            font-weight: 800;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 56px;
+            font-weight: 600;
             line-height: 1.1;
-            color: #0F172A;
+            color: rgba(0, 0, 0, 0.87);
             margin-bottom: 20px;
             letter-spacing: -0.02em;
         }
@@ -103,8 +104,10 @@
         }
 
         .feature-hero .subtitle {
-            font-size: 1.25rem;
-            color: #64748B;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
             line-height: 1.6;
             margin-bottom: 32px;
         }
@@ -294,137 +297,6 @@
             color: #94A3B8;
         }
 
-        /* Inspection Types Section */
-        .types-section {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 64px;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary-main);
-            margin-bottom: 16px;
-        }
-
-        .section-label::before,
-        .section-label::after {
-            content: '';
-            width: 24px;
-            height: 2px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #0F172A;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: #64748B;
-            line-height: 1.6;
-        }
-
-        .types-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .type-card {
-            background: #F8FAFC;
-            border-radius: 24px;
-            padding: 32px;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .type-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .type-card:hover {
-            background: white;
-            border-color: #E2E8F0;
-            box-shadow: var(--shadow-glow);
-            transform: translateY(-4px);
-        }
-
-        .type-card:hover::before {
-            opacity: 1;
-        }
-
-        .type-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
-            color: #005FAD;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .type-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 12px;
-        }
-
-        .type-card p {
-            font-size: 0.95rem;
-            color: #64748B;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .type-features {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .type-features li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #334155;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-
-        .type-features li svg {
-            color: #059669;
-            flex-shrink: 0;
-        }
-
         /* Benefits Section */
         .benefits-section {
             padding: 100px 0;
@@ -437,350 +309,79 @@
             gap: 24px;
         }
 
-        .benefit-card {
-            background: white;
-            border-radius: 20px;
-            padding: 28px;
-            border: 1px solid #E2E8F0;
+                .benefit-card {
+            background: #F8FAFC;
+            border-radius: 16px;
+            padding: 32px;
             text-align: center;
-            transition: all 0.3s ease;
         }
 
-        .benefit-card:hover {
-            box-shadow: var(--shadow-glow);
-            transform: translateY(-4px);
-        }
 
-        .benefit-icon {
+                .benefit-icon {
             width: 56px;
             height: 56px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-
-        .benefit-icon.blue { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); color: #005FAD; }
-        .benefit-icon.green { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); color: #059669; }
-        .benefit-icon.purple { background: linear-gradient(135deg, #F3E8FF, #E9D5FF); color: #7C3AED; }
-        .benefit-icon.orange { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); color: #EA580C; }
-
-        .benefit-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 8px;
-        }
-
-        .benefit-card p {
-            font-size: 0.875rem;
-            color: #64748B;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Feature Showcase */
-        .showcase-section {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .showcase-grid.reverse {
-            direction: rtl;
-        }
-
-        .showcase-grid.reverse > * {
-            direction: ltr;
-        }
-
-        .showcase-content h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #0F172A;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .showcase-content p {
-            font-size: 1.1rem;
-            color: #64748B;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .feature-list {
-            list-style: none;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 16px;
-            font-size: 1rem;
-            color: #334155;
-        }
-
-        .feature-list li svg {
-            flex-shrink: 0;
-            color: #059669;
-            margin-top: 2px;
-        }
-
-        .showcase-visual {
-            position: relative;
-        }
-
-        .showcase-image {
-            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-            border-radius: 24px;
-            padding: 32px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .showcase-inner {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Calendar Visual */
-        .calendar-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .calendar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
-        .calendar-month {
-            font-weight: 700;
-            color: #0F172A;
-        }
-
-        .calendar-nav {
-            display: flex;
-            gap: 8px;
-        }
-
-        .calendar-nav button {
-            width: 28px;
-            height: 28px;
-            border: 1px solid #E2E8F0;
-            background: white;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748B;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-        }
-
-        .calendar-day {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            border-radius: 8px;
-            color: #64748B;
-        }
-
-        .calendar-day.header {
-            font-weight: 600;
-            color: #94A3B8;
-            font-size: 0.7rem;
-        }
-
-        .calendar-day.has-event {
-            background: #DBEAFE;
-            color: #005FAD;
-            font-weight: 600;
-        }
-
-        .calendar-day.today {
-            background: var(--gradient-primary);
-            color: white;
-            font-weight: 600;
-        }
-
-        /* Report Visual */
-        .report-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .report-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
-        .report-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #DCFCE7, #BBF7D0);
+            background: rgba(0, 155, 213, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #16A34A;
+            margin: 0 auto 20px;
+            color: var(--primary-main);
         }
 
-        .report-info h4 {
-            font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 4px;
+        
+        
+        
+        
+
+                .benefit-card h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 12px;
         }
 
-        .report-info span {
-            font-size: 0.75rem;
-            color: #94A3B8;
+                .benefit-card p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.6;
+            margin: 0;
         }
-
-        .report-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        .report-stat {
-            background: #F8FAFC;
-            border-radius: 10px;
-            padding: 14px;
-        }
-
-        .report-stat-label {
-            font-size: 0.7rem;
-            color: #94A3B8;
-            margin-bottom: 4px;
-        }
-
-        .report-stat-value {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0F172A;
-        }
-
-        .report-stat-value.green { color: #059669; }
-        .report-stat-value.orange { color: #EA580C; }
 
         /* CTA Section */
-        .cta-section {
+        .feature-cta {
             padding: 100px 0;
-            background: var(--gradient-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(0, 95, 173, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.2) 0%, transparent 50%);
-            pointer-events: none;
+            background: rgba(0, 155, 213, 0.05);
         }
 
         .cta-content {
-            position: relative;
-            z-index: 1;
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: white;
+        .feature-cta h2 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
             margin-bottom: 16px;
         }
 
-        .cta-section p {
-            font-size: 1.125rem;
-            color: #94A3B8;
+        .feature-cta p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
             margin-bottom: 40px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-        }
-
-        .btn-white {
-            background: white;
-            color: #0F172A;
-            padding: 16px 32px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 16px 32px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-ghost:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-grid,
-            .showcase-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .showcase-grid.reverse {
-                direction: ltr;
-            }
-
-            .types-grid {
+            .hero-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -798,8 +399,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero-cta,
-            .cta-buttons {
+            .hero-cta {
                 flex-direction: column;
             }
 
@@ -810,36 +410,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Language Selector Bar -->
-    <div class="language-bar">
-        <div class="container">
-            <div class="language-selector">
-                <button class="lang-btn active" data-lang="en" title="English">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
-                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
-                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
-                        <g clip-path="url(#s)">
-                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-                        </g>
-                    </svg>
-                    <span>EN</span>
-                </button>
-                <button class="lang-btn" data-lang="de" title="Deutsch">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
-                        <rect width="5" height="3" fill="#FFCE00"/>
-                        <rect width="5" height="2" fill="#DD0000"/>
-                        <rect width="5" height="1" fill="#000"/>
-                    </svg>
-                    <span>DE</span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -858,12 +428,39 @@
             </a>
             <ul class="nav-links">
                 <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
-                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li class="dropdown">
+                    <a href="../features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                        <li><a href="assets.html" data-i18n="nav_assets">Assets</a></li>
+                        <li><a href="locations.html" data-i18n="nav_locations">Locations</a></li>
+                        <li><a href="inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                        <li><a href="risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                        <li><a href="tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                        <li><a href="home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                        <li><a href="monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
+                    </ul>
+                </li>
                 <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                 <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-en"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -951,122 +548,37 @@
         </div>
     </header>
 
-    <!-- Inspection Types Section -->
-    <section class="types-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Inspection Types</div>
-                <h2 class="section-title">Three ways to manage inspections</h2>
-                <p class="section-subtitle">Whether you use OMS technicians, your own team, or both - Inspektra has you covered.</p>
-            </div>
-
-            <div class="types-grid">
-                <div class="type-card">
-                    <div class="type-badge">Automatic</div>
-                    <h3>OMS Inspections</h3>
-                    <p>Reports from OMS Prufservice appear automatically in Inspektra. No upload, no data entry, no errors.</p>
-                    <ul class="type-features">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Automatic data import
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Real-time sync with OMS
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Full inspection reports
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Defect photos included
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="type-card">
-                    <div class="type-badge">Flexible</div>
-                    <h3>In-house Inspections</h3>
-                    <p>Conduct your own inspections using customisable templates. Perfect for visual checks, routine maintenance, and internal audits.</p>
-                    <ul class="type-features">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Custom inspection templates
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Mobile app for field work
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Photo documentation
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Offline capability
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="type-card">
-                    <div class="type-badge">Smart</div>
-                    <h3>Inspection Scheduling</h3>
-                    <p>Plan ahead with intelligent scheduling. Set recurring inspections, receive reminders, and never miss a compliance deadline.</p>
-                    <ul class="type-features">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Recurring schedules
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Email & in-app reminders
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Calendar integration
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Workload planning
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Benefits Section -->
     <section class="benefits-section">
         <div class="container">
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon blue">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                     </div>
                     <h3 data-i18n="insp_benefit1_title">OMS results when they're shared</h3>
                     <p data-i18n="insp_benefit1_desc">Receive inspection results, reports, and certificates directly from OMS without manual uploads or email handling.</p>
                 </div>
 
                 <div class="benefit-card">
-                    <div class="benefit-icon green">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
                     <h3 data-i18n="insp_benefit2_title">Perform your own tests</h3>
                     <p data-i18n="insp_benefit2_desc">Carry out in-house inspections, PAT tests, new device checks, and home-office assessments with the same clear workflow.</p>
                 </div>
 
                 <div class="benefit-card">
-                    <div class="benefit-icon purple">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     </div>
                     <h3 data-i18n="insp_benefit3_title">Plan upcoming work</h3>
                     <p data-i18n="insp_benefit3_desc">See which inspections are due soon so you can coordinate OMS visits, prepare follow-ups, or schedule internal tests.</p>
                 </div>
 
                 <div class="benefit-card">
-                    <div class="benefit-icon orange">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
                     <h3 data-i18n="insp_benefit4_title">Full documentation in one place</h3>
                     <p data-i18n="insp_benefit4_desc">All inspections — OMS and in-house — follow the same structure, making results easy to compare, track, and present during audits.</p>
@@ -1075,144 +587,13 @@
         </div>
     </section>
 
-    <!-- Showcase Section 1 -->
-    <section class="showcase-section">
-        <div class="container">
-            <div class="showcase-grid">
-                <div class="showcase-content">
-                    <h3>Plan with the inspection calendar</h3>
-                    <p>See all upcoming inspections in a calendar view. Filter by location, asset type, or assignee. Drag and drop to reschedule. Plan your team's workload at a glance.</p>
-                    <ul class="feature-list">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Monthly, weekly, and daily views
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Drag and drop rescheduling
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Filter by team member or location
-                        </li>
-                    </ul>
-                </div>
-                <div class="showcase-visual">
-                    <div class="showcase-image">
-                        <div class="showcase-inner">
-                            <div class="calendar-visual">
-                                <div class="calendar-header">
-                                    <span class="calendar-month">December 2025</span>
-                                    <div class="calendar-nav">
-                                        <button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-                                        <button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-                                    </div>
-                                </div>
-                                <div class="calendar-grid">
-                                    <div class="calendar-day header">Mo</div>
-                                    <div class="calendar-day header">Tu</div>
-                                    <div class="calendar-day header">We</div>
-                                    <div class="calendar-day header">Th</div>
-                                    <div class="calendar-day header">Fr</div>
-                                    <div class="calendar-day header">Sa</div>
-                                    <div class="calendar-day header">Su</div>
-                                    <div class="calendar-day">1</div>
-                                    <div class="calendar-day today">2</div>
-                                    <div class="calendar-day">3</div>
-                                    <div class="calendar-day has-event">4</div>
-                                    <div class="calendar-day">5</div>
-                                    <div class="calendar-day">6</div>
-                                    <div class="calendar-day">7</div>
-                                    <div class="calendar-day has-event">8</div>
-                                    <div class="calendar-day">9</div>
-                                    <div class="calendar-day">10</div>
-                                    <div class="calendar-day">11</div>
-                                    <div class="calendar-day has-event">12</div>
-                                    <div class="calendar-day">13</div>
-                                    <div class="calendar-day">14</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Section 2 -->
-    <section class="showcase-section" style="background: #F8FAFC;">
-        <div class="container">
-            <div class="showcase-grid reverse">
-                <div class="showcase-content">
-                    <h3>Detailed inspection reports</h3>
-                    <p>Every inspection generates a comprehensive report. View findings, defect photos, measurements, and recommendations. Export to PDF for sharing with stakeholders or auditors.</p>
-                    <ul class="feature-list">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Complete inspection history
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Photo documentation
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            One-click PDF export
-                        </li>
-                    </ul>
-                </div>
-                <div class="showcase-visual">
-                    <div class="showcase-image">
-                        <div class="showcase-inner">
-                            <div class="report-visual">
-                                <div class="report-header">
-                                    <div class="report-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <div class="report-info">
-                                        <h4>Inspection Report #1247</h4>
-                                        <span>Distribution Board #12 - Dec 1, 2025</span>
-                                    </div>
-                                </div>
-                                <div class="report-stats">
-                                    <div class="report-stat">
-                                        <div class="report-stat-label">Result</div>
-                                        <div class="report-stat-value green">Passed</div>
-                                    </div>
-                                    <div class="report-stat">
-                                        <div class="report-stat-label">Findings</div>
-                                        <div class="report-stat-value">2 Minor</div>
-                                    </div>
-                                    <div class="report-stat">
-                                        <div class="report-stat-label">Duration</div>
-                                        <div class="report-stat-value">45 min</div>
-                                    </div>
-                                    <div class="report-stat">
-                                        <div class="report-stat-label">Next Due</div>
-                                        <div class="report-stat-value orange">Dec 2026</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="feature-cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to streamline your inspections?</h2>
-                <p>Get a personalized demo and see how Inspektra can transform your inspection process.</p>
-                <div class="cta-buttons">
-                    <a href="../contact.html" class="btn-white">
-                        Request Access
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                    <a href="risk-assessments.html" class="btn-ghost">Next: Risk Assessments</a>
-                </div>
+                <h2>Ready to get started?</h2>
+                <p>Join leading companies using Inspektra for electrical safety management.</p>
+                <a href="#" class="btn btn-primary btn-lg">Request Access</a>
             </div>
         </div>
     </section>
@@ -1327,10 +708,18 @@
             currentLang = lang;
             localStorage.setItem('inspektra-lang', lang);
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            // Update current flag display
+            const currentFlag = document.querySelector('.lang-current .flag-icon');
+            if (currentFlag) {
+                currentFlag.className = 'flag-icon flag-' + lang;
+            }
+
+            // Update active option state
+            document.querySelectorAll('.lang-option').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
 
+            // Update all translatable elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (translations[lang] && translations[lang][key]) {
@@ -1338,18 +727,44 @@
                 }
             });
 
+            // Update placeholders
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.dataset.i18nPlaceholder;
                 if (translations[lang] && translations[lang][key]) {
                     el.placeholder = translations[lang][key];
                 }
             });
+
+            // Close dropdown
+            document.querySelector('.lang-dropdown')?.classList.remove('open');
         }
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        // Language dropdown toggle
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.querySelector('.lang-dropdown');
+
+        if (langToggle && langDropdown) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!langDropdown.contains(e.target)) {
+                    langDropdown.classList.remove('open');
+                }
+            });
+        }
+
+        // Language option click handlers
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
         });
 
+        // Initialize language on page load
         setLanguage(currentLang);
 
         // Request Access Modal
@@ -1367,8 +782,10 @@
             document.body.style.overflow = '';
         }
 
-        document.querySelectorAll('a.btn-primary, a.btn.btn-primary').forEach(btn => {
-            if (btn.textContent.trim() === 'Request Access') {
+        // Attach click handlers to all Request Access buttons
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text === 'Request Access' || text === 'Zugang anfragen') {
                 btn.addEventListener('click', openRequestModal);
             }
         });

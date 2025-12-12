@@ -22,13 +22,21 @@
         }
 
         .feature-hero-content h1 {
-            font-size: 2.75rem;
-            margin-bottom: 16px;
-            color: #0F172A;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
         }
 
         .feature-hero-content .subtitle {
-            font-size: 1.125rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.6;
             margin-bottom: 32px;
             max-width: 500px;
         }
@@ -56,154 +64,102 @@
             gap: 24px;
         }
 
-        .benefit-card {
-            background: white;
+                .benefit-card {
+            background: #F8FAFC;
             border-radius: 16px;
             padding: 32px;
-            border: 1px solid #E2E8F0;
+            text-align: center;
         }
 
-        .benefit-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-light);
+                .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(0, 155, 213, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            margin: 0 auto 20px;
             color: var(--primary-main);
         }
 
-        .benefit-card h3 {
-            font-size: 1.125rem;
-            color: #0F172A;
-            margin-bottom: 8px;
+                .benefit-card h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 12px;
         }
 
-        .benefit-card p {
-            color: #64748B;
-            font-size: 0.95rem;
+                .benefit-card p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
             line-height: 1.6;
             margin: 0;
         }
 
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Workflow Section */
-        .workflow-section {
-            padding: 80px 0;
-        }
+        
 
-        .workflow-steps {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-top: 48px;
-            flex-wrap: wrap;
-        }
+        
 
-        .workflow-step {
-            text-align: center;
-            max-width: 200px;
-        }
+        
 
-        .workflow-step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-main);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin: 0 auto 16px;
-        }
+        
 
-        .workflow-step h4 {
-            font-size: 1rem;
-            color: #0F172A;
-            margin-bottom: 8px;
-        }
-
-        .workflow-step p {
-            font-size: 0.875rem;
-            color: #64748B;
-            line-height: 1.5;
-        }
-
-        .workflow-arrow {
-            display: flex;
-            align-items: center;
-            color: #CBD5E1;
-            font-size: 24px;
-        }
-
-        .screenshots-section {
-            padding: 80px 0;
-            background: #F8FAFC;
-        }
-
-        .screenshot-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .screenshot-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .screenshot-row.reverse {
-            direction: rtl;
-        }
-
-        .screenshot-row.reverse > * {
-            direction: ltr;
-        }
-
-        .screenshot-content h3 {
-            font-size: 1.5rem;
-            color: #0F172A;
-            margin-bottom: 16px;
-        }
-
-        .screenshot-content p {
-            color: #64748B;
-            line-height: 1.7;
-        }
-
-        .screenshot-visual {
-            background: white;
-            border-radius: 16px;
-            aspect-ratio: 16/10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94A3B8;
-            font-size: 0.875rem;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
+        
 
         .feature-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            padding: 100px 0;
+            background: rgba(0, 155, 213, 0.05);
             text-align: center;
         }
 
         .feature-cta h2 {
-            color: white;
-            font-size: 2.25rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
             margin-bottom: 16px;
         }
 
         .feature-cta p {
-            color: #94A3B8;
-            font-size: 1.125rem;
-            margin-bottom: 32px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .feature-cta .btn-white {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 14px rgba(0, 95, 173, 0.3);
+        }
+
+        .feature-cta .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 95, 173, 0.4);
+        }
+
+        .feature-cta .btn-outline-white {
+            background: white;
+            color: #0F172A;
+            border: 1px solid #E2E8F0;
+        }
+
+        .feature-cta .btn-outline-white:hover {
+            border-color: var(--primary-main);
+            box-shadow: var(--shadow-soft);
         }
 
         .breadcrumb {
@@ -228,58 +184,19 @@
 
         @media (max-width: 968px) {
             .feature-hero-grid,
-            .screenshot-row,
-            .screenshot-row.reverse {
-                grid-template-columns: 1fr;
-                direction: ltr;
-            }
+            
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
             .feature-hero-visual {
                 order: -1;
             }
-            .workflow-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-            .workflow-arrow {
-                transform: rotate(90deg);
-            }
+            
+            
         }
     </style>
 </head>
 <body>
-
-    <!-- Language Selector Bar -->
-    <div class="language-bar">
-        <div class="container">
-            <div class="language-selector">
-                <button class="lang-btn active" data-lang="en" title="English">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
-                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
-                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
-                        <g clip-path="url(#s)">
-                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-                        </g>
-                    </svg>
-                    <span>EN</span>
-                </button>
-                <button class="lang-btn" data-lang="de" title="Deutsch">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
-                        <rect width="5" height="3" fill="#FFCE00"/>
-                        <rect width="5" height="2" fill="#DD0000"/>
-                        <rect width="5" height="1" fill="#000"/>
-                    </svg>
-                    <span>DE</span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -298,12 +215,39 @@
             </a>
             <ul class="nav-links">
                 <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
-                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li class="dropdown">
+                    <a href="../features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                        <li><a href="assets.html" data-i18n="nav_assets">Assets</a></li>
+                        <li><a href="locations.html" data-i18n="nav_locations">Locations</a></li>
+                        <li><a href="inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                        <li><a href="risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                        <li><a href="tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                        <li><a href="home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                        <li><a href="monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
+                    </ul>
+                </li>
                 <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                 <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-en"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -387,84 +331,13 @@
         </div>
     </section>
 
-    <!-- Workflow Section -->
-    <section class="workflow-section">
-        <div class="container">
-            <div class="section-header" style="text-align: center;">
-                <h2>From finding to fixed</h2>
-                <p class="subtitle">A streamlined workflow that closes the loop on every defect</p>
-            </div>
-
-            <div class="workflow-steps">
-                <div class="workflow-step">
-                    <div class="workflow-step-number">1</div>
-                    <h4>Defect Found</h4>
-                    <p>Inspection identifies an issue that needs attention</p>
-                </div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">
-                    <div class="workflow-step-number">2</div>
-                    <h4>Task Created</h4>
-                    <p>Task automatically generated with all details</p>
-                </div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">
-                    <div class="workflow-step-number">3</div>
-                    <h4>Assigned</h4>
-                    <p>Right person notified and deadline set</p>
-                </div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">
-                    <div class="workflow-step-number">4</div>
-                    <h4>Resolved</h4>
-                    <p>Work completed and verified with evidence</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshots -->
-    <section class="screenshots-section">
-        <div class="container">
-            <div class="screenshot-row">
-                <div class="screenshot-content">
-                    <h3>Task list view</h3>
-                    <p>See all open tasks across your organisation. Filter by status, priority, assignee, or location. Sort by due date to focus on what's most urgent.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Task List
-                </div>
-            </div>
-
-            <div class="screenshot-row reverse">
-                <div class="screenshot-content">
-                    <h3>Task detail view</h3>
-                    <p>Every task shows the full context: what the issue is, where it is, who found it, and what needs to be done. Attachments, comments, and history are all in one place.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Task Detail
-                </div>
-            </div>
-
-            <div class="screenshot-row">
-                <div class="screenshot-content">
-                    <h3>Mobile task completion</h3>
-                    <p>Technicians can update tasks from the field. Mark tasks complete, add photos of the fix, and capture notes—all from their mobile device.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Mobile Task View
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CTA Section -->
     <section class="feature-cta">
         <div class="container">
-            <h2>Ready to close the loop on every issue?</h2>
-            <p>Book a demo and see how Task Management can streamline your operations.</p>
-            <div class="cta-group" style="justify-content: center;">
-                <a href="../contact.html" class="btn btn-white">Request Access</a>
-                <a href="../features.html" class="btn btn-outline-white">← Back to all features</a>
+            <div class="cta-content">
+                <h2>Ready to get started?</h2>
+                <p>Join leading companies using Inspektra for electrical safety management.</p>
+                <a href="#" class="btn btn-primary btn-lg">Request Access</a>
             </div>
         </div>
     </section>
@@ -583,10 +456,18 @@
             currentLang = lang;
             localStorage.setItem('inspektra-lang', lang);
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            // Update current flag display
+            const currentFlag = document.querySelector('.lang-current .flag-icon');
+            if (currentFlag) {
+                currentFlag.className = 'flag-icon flag-' + lang;
+            }
+
+            // Update active option state
+            document.querySelectorAll('.lang-option').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
 
+            // Update all translatable elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (translations[lang] && translations[lang][key]) {
@@ -594,18 +475,44 @@
                 }
             });
 
+            // Update placeholders
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.dataset.i18nPlaceholder;
                 if (translations[lang] && translations[lang][key]) {
                     el.placeholder = translations[lang][key];
                 }
             });
+
+            // Close dropdown
+            document.querySelector('.lang-dropdown')?.classList.remove('open');
         }
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        // Language dropdown toggle
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.querySelector('.lang-dropdown');
+
+        if (langToggle && langDropdown) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!langDropdown.contains(e.target)) {
+                    langDropdown.classList.remove('open');
+                }
+            });
+        }
+
+        // Language option click handlers
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
         });
 
+        // Initialize language on page load
         setLanguage(currentLang);
 
         // Request Access Modal
@@ -623,8 +530,10 @@
             document.body.style.overflow = '';
         }
 
-        document.querySelectorAll('a.btn-primary, a.btn.btn-primary').forEach(btn => {
-            if (btn.textContent.trim() === 'Request Access') {
+        // Attach click handlers to all Request Access buttons
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text === 'Request Access' || text === 'Zugang anfragen') {
                 btn.addEventListener('click', openRequestModal);
             }
         });

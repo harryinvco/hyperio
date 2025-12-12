@@ -22,13 +22,21 @@
         }
 
         .feature-hero-content h1 {
-            font-size: 2.75rem;
-            margin-bottom: 16px;
-            color: #0F172A;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
         }
 
         .feature-hero-content .subtitle {
-            font-size: 1.125rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.6;
             margin-bottom: 32px;
             max-width: 500px;
         }
@@ -56,138 +64,91 @@
             gap: 24px;
         }
 
-        .benefit-card {
-            background: white;
+                .benefit-card {
+            background: #F8FAFC;
             border-radius: 16px;
             padding: 32px;
-            border: 1px solid #E2E8F0;
+            text-align: center;
         }
 
-        .benefit-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-light);
+                .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(0, 155, 213, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            margin: 0 auto 20px;
             color: var(--primary-main);
         }
 
-        .benefit-card h3 {
-            font-size: 1.125rem;
-            color: #0F172A;
-            margin-bottom: 8px;
+                .benefit-card h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 12px;
         }
 
-        .benefit-card p {
-            color: #64748B;
-            font-size: 0.95rem;
+                .benefit-card p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
             line-height: 1.6;
             margin: 0;
         }
 
-        /* Risk Matrix Section */
-        .risk-matrix-section {
-            padding: 80px 0;
-        }
-
-        .risk-matrix-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .risk-matrix {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 4px;
-            aspect-ratio: 1;
-            max-width: 300px;
-        }
-
-        .risk-cell {
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .risk-low { background: #22C55E; }
-        .risk-medium { background: #F59E0B; }
-        .risk-high { background: #EF4444; }
-
-        .screenshots-section {
-            padding: 80px 0;
-            background: #F8FAFC;
-        }
-
-        .screenshot-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .screenshot-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .screenshot-row.reverse {
-            direction: rtl;
-        }
-
-        .screenshot-row.reverse > * {
-            direction: ltr;
-        }
-
-        .screenshot-content h3 {
-            font-size: 1.5rem;
-            color: #0F172A;
-            margin-bottom: 16px;
-        }
-
-        .screenshot-content p {
-            color: #64748B;
-            line-height: 1.7;
-        }
-
-        .screenshot-visual {
-            background: white;
-            border-radius: 16px;
-            aspect-ratio: 16/10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94A3B8;
-            font-size: 0.875rem;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .feature-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            padding: 100px 0;
+            background: rgba(0, 155, 213, 0.05);
             text-align: center;
         }
 
         .feature-cta h2 {
-            color: white;
-            font-size: 2.25rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
             margin-bottom: 16px;
         }
 
         .feature-cta p {
-            color: #94A3B8;
-            font-size: 1.125rem;
-            margin-bottom: 32px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .feature-cta .btn-white {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 14px rgba(0, 95, 173, 0.3);
+        }
+
+        .feature-cta .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 95, 173, 0.4);
+        }
+
+        .feature-cta .btn-outline-white {
+            background: white;
+            color: #0F172A;
+            border: 1px solid #E2E8F0;
+        }
+
+        .feature-cta .btn-outline-white:hover {
+            border-color: var(--primary-main);
+            box-shadow: var(--shadow-soft);
         }
 
         .breadcrumb {
@@ -212,55 +173,15 @@
 
         @media (max-width: 968px) {
             .feature-hero-grid,
-            .risk-matrix-grid,
-            .screenshot-row,
-            .screenshot-row.reverse {
-                grid-template-columns: 1fr;
-                direction: ltr;
-            }
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
+            
             .feature-hero-visual {
                 order: -1;
             }
-            .risk-matrix {
-                margin: 0 auto;
-            }
+            
         }
     </style>
 </head>
 <body>
-
-    <!-- Language Selector Bar -->
-    <div class="language-bar">
-        <div class="container">
-            <div class="language-selector">
-                <button class="lang-btn active" data-lang="en" title="English">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
-                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
-                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
-                        <g clip-path="url(#s)">
-                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-                        </g>
-                    </svg>
-                    <span>EN</span>
-                </button>
-                <button class="lang-btn" data-lang="de" title="Deutsch">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
-                        <rect width="5" height="3" fill="#FFCE00"/>
-                        <rect width="5" height="2" fill="#DD0000"/>
-                        <rect width="5" height="1" fill="#000"/>
-                    </svg>
-                    <span>DE</span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -279,12 +200,39 @@
             </a>
             <ul class="nav-links">
                 <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
-                <li><a href="../features.html" data-i18n="nav_features">Features</a></li>
+                <li class="dropdown">
+                    <a href="../features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                        <li><a href="assets.html" data-i18n="nav_assets">Assets</a></li>
+                        <li><a href="locations.html" data-i18n="nav_locations">Locations</a></li>
+                        <li><a href="inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                        <li><a href="risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                        <li><a href="tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                        <li><a href="home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                        <li><a href="monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
+                    </ul>
+                </li>
                 <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                 <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-en"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -356,87 +304,13 @@
         </div>
     </section>
 
-    <!-- Risk Matrix Explanation -->
-    <section class="risk-matrix-section">
-        <div class="container">
-            <div class="risk-matrix-grid">
-                <div>
-                    <h2>Visual risk prioritisation</h2>
-                    <p style="color: #64748B; line-height: 1.7; margin-bottom: 24px;">The risk matrix combines likelihood and severity to calculate an overall risk score. This helps you focus resources where they matter most.</p>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                            <div style="width: 24px; height: 24px; background: #22C55E; border-radius: 6px;"></div>
-                            <span><strong>Low risk</strong> – Standard inspection intervals</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                            <div style="width: 24px; height: 24px; background: #F59E0B; border-radius: 6px;"></div>
-                            <span><strong>Medium risk</strong> – Increased monitoring</span>
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 12px;">
-                            <div style="width: 24px; height: 24px; background: #EF4444; border-radius: 6px;"></div>
-                            <span><strong>High risk</strong> – Immediate action required</span>
-                        </li>
-                    </ul>
-                </div>
-                <div style="display: flex; justify-content: center;">
-                    <div class="risk-matrix" style="max-width: 280px;">
-                        <div class="risk-cell risk-low">Low</div>
-                        <div class="risk-cell risk-low">Low</div>
-                        <div class="risk-cell risk-medium">Med</div>
-                        <div class="risk-cell risk-low">Low</div>
-                        <div class="risk-cell risk-medium">Med</div>
-                        <div class="risk-cell risk-high">High</div>
-                        <div class="risk-cell risk-medium">Med</div>
-                        <div class="risk-cell risk-high">High</div>
-                        <div class="risk-cell risk-high">High</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshots -->
-    <section class="screenshots-section">
-        <div class="container">
-            <div class="screenshot-row">
-                <div class="screenshot-content">
-                    <h3>Structured assessment workflow</h3>
-                    <p>Follow a guided process to identify hazards, assess risks, and define controls. The workflow ensures consistency across your organisation and nothing gets overlooked.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Assessment Workflow
-                </div>
-            </div>
-
-            <div class="screenshot-row reverse">
-                <div class="screenshot-content">
-                    <h3>Hazard identification</h3>
-                    <p>Choose from a library of common electrical hazards or add your own. Each hazard comes with suggested control measures based on industry best practices.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Hazard Library
-                </div>
-            </div>
-
-            <div class="screenshot-row">
-                <div class="screenshot-content">
-                    <h3>Action tracking</h3>
-                    <p>When a risk assessment identifies needed actions, they're automatically added to the task management system. Track progress and ensure nothing falls through the cracks.</p>
-                </div>
-                <div class="screenshot-visual">
-                    Screenshot: Action Tracking
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CTA Section -->
     <section class="feature-cta">
         <div class="container">
-            <h2>Ready to get ahead of compliance?</h2>
-            <p>Book a demo and see how Risk Assessments can protect your organisation.</p>
-            <div class="cta-group" style="justify-content: center;">
-                <a href="../contact.html" class="btn btn-white">Request Access</a>
-                <a href="tasks.html" class="btn btn-outline-white">Next: Tasks →</a>
+            <div class="cta-content">
+                <h2>Ready to get started?</h2>
+                <p>Join leading companies using Inspektra for electrical safety management.</p>
+                <a href="../contact.html" class="btn btn-primary btn-lg">Request Access</a>
             </div>
         </div>
     </section>
@@ -555,10 +429,18 @@
             currentLang = lang;
             localStorage.setItem('inspektra-lang', lang);
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            // Update current flag display
+            const currentFlag = document.querySelector('.lang-current .flag-icon');
+            if (currentFlag) {
+                currentFlag.className = 'flag-icon flag-' + lang;
+            }
+
+            // Update active option state
+            document.querySelectorAll('.lang-option').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
 
+            // Update all translatable elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (translations[lang] && translations[lang][key]) {
@@ -566,18 +448,44 @@
                 }
             });
 
+            // Update placeholders
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.dataset.i18nPlaceholder;
                 if (translations[lang] && translations[lang][key]) {
                     el.placeholder = translations[lang][key];
                 }
             });
+
+            // Close dropdown
+            document.querySelector('.lang-dropdown')?.classList.remove('open');
         }
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        // Language dropdown toggle
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.querySelector('.lang-dropdown');
+
+        if (langToggle && langDropdown) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!langDropdown.contains(e.target)) {
+                    langDropdown.classList.remove('open');
+                }
+            });
+        }
+
+        // Language option click handlers
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
         });
 
+        // Initialize language on page load
         setLanguage(currentLang);
 
         // Request Access Modal
@@ -595,8 +503,10 @@
             document.body.style.overflow = '';
         }
 
-        document.querySelectorAll('a.btn-primary, a.btn.btn-primary').forEach(btn => {
-            if (btn.textContent.trim() === 'Request Access') {
+        // Attach click handlers to all Request Access buttons
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text === 'Request Access' || text === 'Zugang anfragen') {
                 btn.addEventListener('click', openRequestModal);
             }
         });

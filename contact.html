@@ -15,39 +15,39 @@
         }
 
         .contact-wrapper {
-            padding-top: 120px;
-            padding-bottom: 80px;
+            padding-top: 80px;
+            padding-bottom: 50px;
             min-height: calc(100vh - 200px);
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        /* Left Column: Form */
+        /* Centered Form */
         .form-panel {
             background: white;
-            padding: 48px;
+            padding: 40px 80px;
             border-radius: 24px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
             border: 1px solid #E2E8F0;
+            max-width: 860px;
+            margin: 0 auto;
         }
 
         .form-panel h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #0F172A;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
             margin-bottom: 12px;
+            text-align: center;
         }
 
         .form-panel .subtitle {
-            font-size: 1rem;
-            color: #64748B;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
             margin-bottom: 32px;
             line-height: 1.6;
+            text-align: center;
         }
 
         .form-group {
@@ -178,66 +178,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Right Column: Info */
-        .info-panel {
-            padding: 48px 0 48px 40px;
-        }
-
-        .info-section {
-            margin-bottom: 40px;
-        }
-
-        .info-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #64748B;
-            margin-bottom: 8px;
-        }
-
-        .info-value {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #0F172A;
-        }
-
-        .info-value a {
-            color: var(--primary-main);
-            text-decoration: none;
-        }
-
-        .info-value a:hover {
-            text-decoration: underline;
-        }
-
-        .info-detail {
-            font-size: 0.9375rem;
-            color: #64748B;
-            margin-top: 4px;
-        }
-
         @media (max-width: 968px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .info-panel {
-                padding: 0;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
-            }
-
-            .info-section {
-                margin-bottom: 0;
-            }
-
             .contact-wrapper {
                 padding-top: 100px;
             }
@@ -252,43 +193,17 @@
         }
 
         @media (max-width: 480px) {
-            .info-panel {
-                grid-template-columns: 1fr;
+            .form-panel {
+                padding: 24px;
+            }
+
+            .form-panel h1 {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- Language Selector Bar -->
-    <div class="language-bar">
-        <div class="container">
-            <div class="language-selector">
-                <button class="lang-btn active" data-lang="en" title="English">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
-                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
-                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
-                        <g clip-path="url(#s)">
-                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-                        </g>
-                    </svg>
-                    <span>EN</span>
-                </button>
-                <button class="lang-btn" data-lang="de" title="Deutsch">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
-                        <rect width="5" height="3" fill="#FFCE00"/>
-                        <rect width="5" height="2" fill="#DD0000"/>
-                        <rect width="5" height="1" fill="#000"/>
-                    </svg>
-                    <span>DE</span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -337,15 +252,28 @@
             <div class="nav-cta">
                 <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                 <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-en"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="contact-wrapper">
         <div class="container">
-            <div class="contact-grid">
-                <!-- Left Side: Form -->
-                <div class="form-panel">
+            <div class="form-panel">
                     <div class="form-content">
                         <h1 data-i18n="contact_title">Get in touch</h1>
                         <p class="subtitle" data-i18n="contact_subtitle">Whether you have a question about inspections, setup, or how Inspektra fits your organisation, our team will respond as soon as possible.</p>
@@ -385,29 +313,14 @@
                         </form>
                     </div>
 
-                    <div class="confirmation-message" id="confirmationMessage">
-                        <div class="confirmation-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3 data-i18n="confirm_title">Thank you for your message</h3>
-                        <p data-i18n="confirm_message">We will review your request and get back to you shortly.</p>
+                <div class="confirmation-message" id="confirmationMessage">
+                    <div class="confirmation-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
                     </div>
-                </div>
-
-                <!-- Right Side: Info -->
-                <div class="info-panel">
-                    <div class="info-section">
-                        <div class="info-label" data-i18n="info_email_label">Support email</div>
-                        <div class="info-value"><a href="mailto:support@inspektra.de">support@inspektra.de</a></div>
-                    </div>
-
-                    <div class="info-section">
-                        <div class="info-label" data-i18n="info_hours_label">Availability</div>
-                        <div class="info-value" data-i18n="info_hours_days">Monday–Friday</div>
-                        <div class="info-detail" data-i18n="info_hours_time">9:00–18:00</div>
-                    </div>
+                    <h3 data-i18n="confirm_title">Thank you for your message</h3>
+                    <p data-i18n="confirm_message">We will review your request and get back to you shortly.</p>
                 </div>
             </div>
         </div>
@@ -505,10 +418,18 @@
             currentLang = lang;
             localStorage.setItem('inspektra-lang', lang);
 
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            // Update current flag display
+            const currentFlag = document.querySelector('.lang-current .flag-icon');
+            if (currentFlag) {
+                currentFlag.className = 'flag-icon flag-' + lang;
+            }
+
+            // Update active option state
+            document.querySelectorAll('.lang-option').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
 
+            // Update all translatable elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.dataset.i18n;
                 if (translations[lang] && translations[lang][key]) {
@@ -516,18 +437,44 @@
                 }
             });
 
+            // Update placeholders
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.dataset.i18nPlaceholder;
                 if (translations[lang] && translations[lang][key]) {
                     el.placeholder = translations[lang][key];
                 }
             });
+
+            // Close dropdown
+            document.querySelector('.lang-dropdown')?.classList.remove('open');
         }
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        // Language dropdown toggle
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.querySelector('.lang-dropdown');
+
+        if (langToggle && langDropdown) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!langDropdown.contains(e.target)) {
+                    langDropdown.classList.remove('open');
+                }
+            });
+        }
+
+        // Language option click handlers
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
         });
 
+        // Initialize language on page load
         setLanguage(currentLang);
 
         // Mobile Menu

@@ -21,36 +21,6 @@
 </head>
 <body>
 
-    <!-- Language Selector Bar -->
-    <div class="language-bar">
-        <div class="container">
-            <div class="language-selector">
-                <button class="lang-btn active" data-lang="en" title="English">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 60 30">
-                        <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
-                        <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
-                        <g clip-path="url(#s)">
-                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-                        </g>
-                    </svg>
-                    <span>EN</span>
-                </button>
-                <button class="lang-btn" data-lang="de" title="Deutsch">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 5 3">
-                        <rect width="5" height="3" fill="#FFCE00"/>
-                        <rect width="5" height="2" fill="#DD0000"/>
-                        <rect width="5" height="1" fill="#000"/>
-                    </svg>
-                    <span>DE</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="container">
@@ -104,6 +74,21 @@
             <div class="nav-cta">
                 <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                 <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-en"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -194,32 +179,22 @@
     </section>
 
     <section class="why-choose" id="why-choose">
-        <div class="why-choose-bg">
-            <div class="why-gradient-orb orb-1"></div>
-            <div class="why-gradient-orb orb-2"></div>
-            <div class="why-grid-pattern"></div>
-        </div>
         <div class="container">
-            <div class="why-header fade-in-up">
+            <div class="why-header">
                 <h2 data-i18n="why_title">Why teams choose Inspektra</h2>
                 <p class="subtitle" data-i18n="why_subtitle">Designed for teams that want safer operations with less administrative effort.</p>
             </div>
 
-            <!-- Modern Bento Grid -->
-            <div class="why-bento">
-                <!-- Hero Card - Large -->
-                <div class="why-card why-card-hero fade-in-up delay-1">
+            <div class="why-bento why-bento-static">
+                <!-- Hero Card - Compliance -->
+                <div class="why-card why-card-hero">
                     <div class="why-card-inner">
                         <div class="why-card-content">
                             <div class="why-card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
                             <h3 data-i18n="why_compliance_title">Compliance, simplified</h3>
                             <p data-i18n="why_compliance_desc">Stay audit-ready and meet electrical safety requirements with minimal effort.</p>
-                            <a href="features.html" class="why-card-link">
-                                Explore compliance features
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
                         </div>
                         <div class="why-card-visual">
                             <div class="compliance-stack">
@@ -228,38 +203,38 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                     </div>
                                     <div class="compliance-info">
-                                        <span class="compliance-name">DIN VDE 0100-600</span>
-                                        <span class="compliance-status">Compliant</span>
+                                        <span class="compliance-name">DGUV V3</span>
+                                        <span class="compliance-status">Last checked: Today</span>
                                     </div>
-                                    <div class="compliance-badge success">Passed</div>
+                                    <span class="compliance-badge success">Passed</span>
                                 </div>
-                                <div class="compliance-item active">
+                                <div class="compliance-item">
                                     <div class="compliance-check">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                     </div>
                                     <div class="compliance-info">
-                                        <span class="compliance-name">DGUV Vorschrift 3</span>
-                                        <span class="compliance-status">Compliant</span>
+                                        <span class="compliance-name">ISO 45001</span>
+                                        <span class="compliance-status">Last checked: 2 days ago</span>
                                     </div>
-                                    <div class="compliance-badge success">Passed</div>
+                                    <span class="compliance-badge success">Passed</span>
                                 </div>
                                 <div class="compliance-item">
                                     <div class="compliance-check pending">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
                                     </div>
                                     <div class="compliance-info">
                                         <span class="compliance-name">BetrSichV</span>
-                                        <span class="compliance-status">Due in 5 days</span>
+                                        <span class="compliance-status">Due: Next week</span>
                                     </div>
-                                    <div class="compliance-badge pending">Pending</div>
+                                    <span class="compliance-badge pending">Pending</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Feature Card - Mobile (spans 2 rows) -->
-                <div class="why-card why-card-feature fade-in-up delay-2">
+                <!-- Feature Card - Mobile -->
+                <div class="why-card why-card-feature">
                     <div class="why-card-glow"></div>
                     <div class="why-card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
@@ -271,16 +246,13 @@
                             <div class="phone-screen">
                                 <div class="phone-header"></div>
                                 <div class="phone-card"></div>
-                                <div class="phone-card"></div>
-                                <div class="phone-card"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Bottom Left - Data -->
-                <div class="why-card why-card-bottom-left fade-in-up delay-3">
-                    <div class="why-card-glow"></div>
+                <div class="why-card why-card-bottom-left">
                     <div class="why-card-content">
                         <div class="why-card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
@@ -290,18 +262,17 @@
                     </div>
                     <div class="why-card-decoration">
                         <div class="data-visual">
-                            <div class="data-bar" style="--height: 60%"></div>
-                            <div class="data-bar" style="--height: 80%"></div>
-                            <div class="data-bar" style="--height: 45%"></div>
-                            <div class="data-bar" style="--height: 90%"></div>
-                            <div class="data-bar" style="--height: 70%"></div>
-                            <div class="data-bar" style="--height: 55%"></div>
+                            <div class="data-bar" style="--height: 40px;"></div>
+                            <div class="data-bar" style="--height: 65px;"></div>
+                            <div class="data-bar" style="--height: 50px;"></div>
+                            <div class="data-bar" style="--height: 80px;"></div>
+                            <div class="data-bar" style="--height: 60px;"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Bottom Right - Collaboration -->
-                <div class="why-card why-card-bottom-right fade-in-up delay-4">
+                <div class="why-card why-card-bottom-right">
                     <div class="why-card-inner">
                         <div class="why-card-content">
                             <div class="why-card-icon">
@@ -310,27 +281,26 @@
                             <h3 data-i18n="why_collab_title">Seamless collaboration</h3>
                             <p data-i18n="why_collab_desc">Work together with OMS technicians and your team in one secure platform.</p>
                         </div>
-                        <div class="why-card-visual collab-visual">
+                        <div class="why-card-visual">
                             <div class="collab-demo">
                                 <div class="collab-avatars-modern">
-                                    <div class="collab-avatar" style="--i: 0; --color: #3B82F6;">
-                                        <span>TM</span>
-                                    </div>
-                                    <div class="collab-avatar" style="--i: 1; --color: #10B981;">
-                                        <span>SK</span>
-                                    </div>
-                                    <div class="collab-avatar" style="--i: 2; --color: #F59E0B;">
-                                        <span>JD</span>
-                                    </div>
+                                    <div class="collab-avatar" style="--color: #3B82F6; --i: 0;">JK</div>
+                                    <div class="collab-avatar" style="--color: #10B981; --i: 1;">MH</div>
+                                    <div class="collab-avatar" style="--color: #8B5CF6; --i: 2;">LS</div>
                                     <div class="collab-avatar-add">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                                     </div>
                                 </div>
                                 <div class="collab-activity">
                                     <div class="activity-item">
-                                        <div class="activity-dot success"></div>
-                                        <span>Task completed by TM</span>
+                                        <span class="activity-dot success"></span>
+                                        <span>Inspection completed</span>
                                         <span class="activity-time">2m ago</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-dot info"></span>
+                                        <span>Task assigned to MH</span>
+                                        <span class="activity-time">15m ago</span>
                                     </div>
                                 </div>
                             </div>
@@ -1114,8 +1084,14 @@
             currentLang = lang;
             localStorage.setItem('inspektra-lang', lang);
 
-            // Update active button state
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            // Update current flag display
+            const currentFlag = document.querySelector('.lang-current .flag-icon');
+            if (currentFlag) {
+                currentFlag.className = 'flag-icon flag-' + lang;
+            }
+
+            // Update active option state
+            document.querySelectorAll('.lang-option').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
 
@@ -1134,10 +1110,31 @@
                     el.placeholder = translations[lang][key];
                 }
             });
+
+            // Close dropdown
+            document.querySelector('.lang-dropdown')?.classList.remove('open');
         }
 
-        // Language button click handlers
-        document.querySelectorAll('.lang-btn').forEach(btn => {
+        // Language dropdown toggle
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.querySelector('.lang-dropdown');
+
+        if (langToggle && langDropdown) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!langDropdown.contains(e.target)) {
+                    langDropdown.classList.remove('open');
+                }
+            });
+        }
+
+        // Language option click handlers
+        document.querySelectorAll('.lang-option').forEach(btn => {
             btn.addEventListener('click', () => {
                 setLanguage(btn.dataset.lang);
             });
