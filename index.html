@@ -375,28 +375,44 @@
                 
                 <div class="feature-display fade-in-up delay-2">
                     <div class="feature-screen active" id="feature-0">
-                        <img src="pics/Android Medium - Dashboard.png" alt="Dashboard" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Android Medium - Dashboard.png" alt="Dashboard" class="feature-phone-img">
+                        </div>
                     </div>
                     <div class="feature-screen" id="feature-1" style="display:none;">
-                        <img src="pics/Android Medium - Assets.png" alt="Assets" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Android Medium - Assets.png" alt="Assets" class="feature-phone-img">
+                        </div>
                     </div>
                     <div class="feature-screen" id="feature-2" style="display:none;">
-                        <img src="pics/Android Medium - Locations.png" alt="Locations" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Android Medium - Locations.png" alt="Locations" class="feature-phone-img">
+                        </div>
                     </div>
                     <div class="feature-screen" id="feature-3" style="display:none;">
-                        <img src="pics/Android Medium - Inspections.png" alt="Inspections" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Android Medium - Inspections.png" alt="Inspections" class="feature-phone-img">
+                        </div>
                     </div>
                     <div class="feature-screen" id="feature-4" style="display:none;">
-                        <img src="pics/Android Medium - Risk assessment.png" alt="Risk Assessments" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Android Medium - Risk assessment.png" alt="Risk Assessments" class="feature-phone-img">
+                        </div>
                     </div>
                     <div class="feature-screen" id="feature-5" style="display:none;">
-                        <img src="pics/Android Medium - Tasks.png" alt="Tasks" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Android Medium - Tasks.png" alt="Tasks" class="feature-phone-img">
+                        </div>
                     </div>
                     <div class="feature-screen" id="feature-6" style="display:none;">
-                        <img src="pics/Public Home Office -ENG.png" alt="Home Office Checks" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Public Home Office -ENG.png" alt="Home Office Checks" class="feature-phone-img">
+                        </div>
                     </div>
                     <div class="feature-screen" id="feature-7" style="display:none;">
-                        <img src="pics/Android Medium - Monitoring.png" alt="Monitoring" class="feature-phone-img">
+                        <div class="feature-phone-frame">
+                            <img src="pics/Android Medium - Monitoring.png" alt="Monitoring" class="feature-phone-img">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -750,24 +766,73 @@
         });
 
         // Feature Tab Logic
+        let currentFeatureIndex = 0;
+        const totalFeatures = 8; // Dashboard to Monitoring
+
         function showFeature(index) {
+            currentFeatureIndex = index;
+
             // Update buttons
             document.querySelectorAll('.feature-btn').forEach((btn, i) => {
                 if (i === index) btn.classList.add('active');
                 else btn.classList.remove('active');
             });
-            
-            // Update screens (Simulated for the demo visual)
+
+            // Update screens
             const screens = document.querySelectorAll('.feature-screen');
             screens.forEach(s => s.style.display = 'none');
-            
-            // For this demo, we just toggle between two visual styles to show interactivity
-            // In a real app, we'd have unique content for each
-            const target = index % 2 === 0 ? screens[0] : screens[1];
-            target.style.display = 'block';
-            target.classList.add('fade-in-quick');
-            setTimeout(() => target.classList.remove('fade-in-quick'), 300);
+
+            const target = screens[index];
+            if (target) {
+                target.style.display = 'flex';
+                target.classList.add('fade-in-quick');
+                setTimeout(() => target.classList.remove('fade-in-quick'), 300);
+            }
         }
+
+        // Scroll-based feature progression
+        const featureSection = document.querySelector('.key-features');
+        let scrollFeatureEnabled = true;
+
+        function handleFeatureScroll() {
+            if (!featureSection || !scrollFeatureEnabled) return;
+
+            const rect = featureSection.getBoundingClientRect();
+            const sectionHeight = featureSection.offsetHeight;
+            const viewportHeight = window.innerHeight;
+
+            // Calculate how far through the section we've scrolled
+            // Start when section enters viewport, end when it leaves
+            const sectionTop = rect.top;
+            const sectionBottom = rect.bottom;
+
+            // Only animate when section is in view
+            if (sectionBottom < 0 || sectionTop > viewportHeight) return;
+
+            // Calculate progress through the section (0 to 1)
+            const scrollStart = viewportHeight * 0.5; // Start halfway into viewport
+            const scrollEnd = -sectionHeight + viewportHeight * 0.5;
+            const progress = Math.max(0, Math.min(1, (scrollStart - sectionTop) / (scrollStart - scrollEnd)));
+
+            // Map progress to feature index (0 to 7 for 8 features)
+            const newIndex = Math.min(Math.floor(progress * totalFeatures), totalFeatures - 1);
+
+            if (newIndex !== currentFeatureIndex && newIndex >= 0) {
+                showFeature(newIndex);
+            }
+        }
+
+        window.addEventListener('scroll', handleFeatureScroll, { passive: true });
+
+        // Allow manual clicks to override scroll temporarily
+        document.querySelectorAll('.feature-btn').forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                scrollFeatureEnabled = false;
+                showFeature(i);
+                // Re-enable scroll after 3 seconds
+                setTimeout(() => { scrollFeatureEnabled = true; }, 3000);
+            });
+        });
 
         // Request Access Modal
         const modal = document.getElementById('requestAccessModal');
