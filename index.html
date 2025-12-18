@@ -306,112 +306,151 @@
         </div>
     </section>
 
-    <section class="key-features">
+    <section class="features-showcase-section">
         <div class="container">
             <div class="section-header fade-in-up">
                 <h2 data-i18n="features_title">All your safety workflows in one platform</h2>
                 <p class="subtitle" data-i18n="features_subtitle">Explore the modules that keep inspections, assets, risks, and documentation organised and under control.</p>
             </div>
 
-            <div class="feature-showcase">
-                <div class="feature-nav">
-                    <button class="feature-btn active" onclick="showFeature(0)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_dashboard_title">Dashboard</span>
-                            <span class="f-desc" data-i18n="feat_dashboard_desc">See upcoming inspections, open tasks, and risk levels at a glance.</span>
-                        </div>
-                    </button>
-                    <button class="feature-btn" onclick="showFeature(1)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="22.01"></line><line x1="15" y1="22" x2="15" y2="22.01"></line><line x1="12" y1="22" x2="12" y2="22.01"></line><line x1="12" y1="2" x2="12" y2="22"></line><line x1="4" y1="10" x2="20" y2="10"></line><line x1="4" y1="14" x2="20" y2="14"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_assets_title">Assets</span>
-                            <span class="f-desc" data-i18n="feat_assets_desc">Keep all devices, machines, and installations organised in one place.</span>
-                        </div>
-                    </button>
-                    <button class="feature-btn" onclick="showFeature(2)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_locations_title">Locations</span>
-                            <span class="f-desc" data-i18n="feat_locations_desc">Map sites, buildings, and rooms in a clear, navigable hierarchy.</span>
-                        </div>
-                    </button>
-                    <button class="feature-btn" onclick="showFeature(3)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_inspections_title">Inspections</span>
-                            <span class="f-desc" data-i18n="feat_inspections_desc">Perform your own inspections and access OMS reports in one consistent structure.</span>
-                        </div>
-                    </button>
-                    <button class="feature-btn" onclick="showFeature(4)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_risk_title">Risk Assessments</span>
-                            <span class="f-desc" data-i18n="feat_risk_desc">Define hazards and test intervals for each area and asset group.</span>
-                        </div>
-                    </button>
-                    <button class="feature-btn" onclick="showFeature(5)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_tasks_title">Tasks</span>
-                            <span class="f-desc" data-i18n="feat_tasks_desc">Turn findings into actions, track progress, and update asset safety status.</span>
-                        </div>
-                    </button>
-                    <button class="feature-btn" onclick="showFeature(6)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_homeoffice_title">Home Office Checks</span>
-                            <span class="f-desc" data-i18n="feat_homeoffice_desc">Support remote workers with safe equipment setups and simple device checks.</span>
-                        </div>
-                    </button>
-                    <button class="feature-btn" onclick="showFeature(7)">
-                        <span class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
-                        <div class="f-text">
-                            <span class="f-title" data-i18n="feat_monitoring_title">Monitoring</span>
-                            <span class="f-desc" data-i18n="feat_monitoring_desc">Track sensors, see alerts, and detect electrical issues early.</span>
-                        </div>
-                    </button>
+            <div class="features-showcase fade-in-up">
+                <div class="features-tabs">
+                    <button class="feature-tab active" data-feature="dashboard" data-i18n="feat_dashboard_title">Dashboard</button>
+                    <button class="feature-tab" data-feature="assets" data-i18n="feat_assets_title">Assets</button>
+                    <button class="feature-tab" data-feature="locations" data-i18n="feat_locations_title">Locations</button>
+                    <button class="feature-tab" data-feature="inspections" data-i18n="feat_inspections_title">Inspections</button>
+                    <button class="feature-tab" data-feature="risk" data-i18n="feat_risk_title">Risk Assessments</button>
+                    <button class="feature-tab" data-feature="tasks" data-i18n="feat_tasks_title">Tasks</button>
+                    <button class="feature-tab" data-feature="homeoffice" data-i18n="feat_homeoffice_title">Home Office</button>
+                    <button class="feature-tab" data-feature="monitoring" data-i18n="feat_monitoring_title">Monitoring</button>
                 </div>
-                
-                <div class="feature-display fade-in-up delay-2">
-                    <div class="feature-screen active" id="feature-0">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Android Medium - Dashboard.png" alt="Dashboard" class="feature-phone-img">
+
+                <div class="features-display">
+                    <div class="feature-panel active" data-feature="dashboard">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_dashboard_title">Dashboard</h3>
+                            <p data-i18n="feat_dashboard_desc">See upcoming inspections, open tasks, and risk levels at a glance.</p>
+                            <a href="features/dashboard.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Android Medium - Dashboard.png" alt="Dashboard">
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-screen" id="feature-1" style="display:none;">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Android Medium - Assets.png" alt="Assets" class="feature-phone-img">
+
+                    <div class="feature-panel" data-feature="assets">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_assets_title">Assets</h3>
+                            <p data-i18n="feat_assets_desc">Keep all devices, machines, and installations organised in one place.</p>
+                            <a href="features/assets.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Android Medium - Assets.png" alt="Assets">
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-screen" id="feature-2" style="display:none;">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Android Medium - Locations.png" alt="Locations" class="feature-phone-img">
+
+                    <div class="feature-panel" data-feature="locations">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_locations_title">Locations</h3>
+                            <p data-i18n="feat_locations_desc">Map sites, buildings, and rooms in a clear, navigable hierarchy.</p>
+                            <a href="features/locations.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Android Medium - Locations.png" alt="Locations">
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-screen" id="feature-3" style="display:none;">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Android Medium - Inspections.png" alt="Inspections" class="feature-phone-img">
+
+                    <div class="feature-panel" data-feature="inspections">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_inspections_title">Inspections</h3>
+                            <p data-i18n="feat_inspections_desc">Perform your own inspections and access OMS reports in one consistent structure.</p>
+                            <a href="features/inspections.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Android Medium - Inspections.png" alt="Inspections">
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-screen" id="feature-4" style="display:none;">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Android Medium - Risk assessment.png" alt="Risk Assessments" class="feature-phone-img">
+
+                    <div class="feature-panel" data-feature="risk">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_risk_title">Risk Assessments</h3>
+                            <p data-i18n="feat_risk_desc">Define hazards and test intervals for each area and asset group.</p>
+                            <a href="features/risk-assessments.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Android Medium - Risk assessment.png" alt="Risk Assessments">
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-screen" id="feature-5" style="display:none;">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Android Medium - Tasks.png" alt="Tasks" class="feature-phone-img">
+
+                    <div class="feature-panel" data-feature="tasks">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_tasks_title">Tasks</h3>
+                            <p data-i18n="feat_tasks_desc">Turn findings into actions, track progress, and update asset safety status.</p>
+                            <a href="features/tasks.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Android Medium - Tasks.png" alt="Tasks">
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-screen" id="feature-6" style="display:none;">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Public Home Office -ENG.png" alt="Home Office Checks" class="feature-phone-img">
+
+                    <div class="feature-panel" data-feature="homeoffice">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_homeoffice_title">Home Office</h3>
+                            <p data-i18n="feat_homeoffice_desc">Support remote workers with safe equipment setups and simple device checks.</p>
+                            <a href="features/home-office-checks.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Public Home Office -ENG.png" alt="Home Office">
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-screen" id="feature-7" style="display:none;">
-                        <div class="feature-phone-frame">
-                            <img src="pics/Android Medium - Monitoring.png" alt="Monitoring" class="feature-phone-img">
+
+                    <div class="feature-panel" data-feature="monitoring">
+                        <div class="feature-info">
+                            <h3 data-i18n="feat_monitoring_title">Monitoring</h3>
+                            <p data-i18n="feat_monitoring_desc">Track sensors, see alerts, and detect electrical issues early.</p>
+                            <a href="features/monitoring.html" class="feature-link">
+                                <span data-i18n="learn_more">Learn more</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="feature-device">
+                            <div class="device-frame">
+                                <img src="pics/Android Medium - Monitoring.png" alt="Monitoring">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -765,72 +804,25 @@
             observer.observe(el);
         });
 
-        // Feature Tab Logic
-        let currentFeatureIndex = 0;
-        const totalFeatures = 8; // Dashboard to Monitoring
+        // Feature Tabs
+        const featureTabs = document.querySelectorAll('.feature-tab');
+        const featurePanels = document.querySelectorAll('.feature-panel');
 
-        function showFeature(index) {
-            currentFeatureIndex = index;
+        featureTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const feature = tab.dataset.feature;
 
-            // Update buttons
-            document.querySelectorAll('.feature-btn').forEach((btn, i) => {
-                if (i === index) btn.classList.add('active');
-                else btn.classList.remove('active');
-            });
+                // Update tabs
+                featureTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
 
-            // Update screens
-            const screens = document.querySelectorAll('.feature-screen');
-            screens.forEach(s => s.style.display = 'none');
-
-            const target = screens[index];
-            if (target) {
-                target.style.display = 'flex';
-                target.classList.add('fade-in-quick');
-                setTimeout(() => target.classList.remove('fade-in-quick'), 300);
-            }
-        }
-
-        // Scroll-based feature progression
-        const featureSection = document.querySelector('.key-features');
-        let scrollFeatureEnabled = true;
-
-        function handleFeatureScroll() {
-            if (!featureSection || !scrollFeatureEnabled) return;
-
-            const rect = featureSection.getBoundingClientRect();
-            const sectionHeight = featureSection.offsetHeight;
-            const viewportHeight = window.innerHeight;
-
-            // Calculate how far through the section we've scrolled
-            // Start when section enters viewport, end when it leaves
-            const sectionTop = rect.top;
-            const sectionBottom = rect.bottom;
-
-            // Only animate when section is in view
-            if (sectionBottom < 0 || sectionTop > viewportHeight) return;
-
-            // Calculate progress through the section (0 to 1)
-            const scrollStart = viewportHeight * 0.5; // Start halfway into viewport
-            const scrollEnd = -sectionHeight + viewportHeight * 0.5;
-            const progress = Math.max(0, Math.min(1, (scrollStart - sectionTop) / (scrollStart - scrollEnd)));
-
-            // Map progress to feature index (0 to 7 for 8 features)
-            const newIndex = Math.min(Math.floor(progress * totalFeatures), totalFeatures - 1);
-
-            if (newIndex !== currentFeatureIndex && newIndex >= 0) {
-                showFeature(newIndex);
-            }
-        }
-
-        window.addEventListener('scroll', handleFeatureScroll, { passive: true });
-
-        // Allow manual clicks to override scroll temporarily
-        document.querySelectorAll('.feature-btn').forEach((btn, i) => {
-            btn.addEventListener('click', () => {
-                scrollFeatureEnabled = false;
-                showFeature(i);
-                // Re-enable scroll after 3 seconds
-                setTimeout(() => { scrollFeatureEnabled = true; }, 3000);
+                // Update panels
+                featurePanels.forEach(panel => {
+                    panel.classList.remove('active');
+                    if (panel.dataset.feature === feature) {
+                        panel.classList.add('active');
+                    }
+                });
             });
         });
 
@@ -1044,6 +1036,7 @@
                 feat_homeoffice_desc: 'Support remote workers with safe equipment setups and simple device checks.',
                 feat_monitoring_title: 'Monitoring',
                 feat_monitoring_desc: 'Track sensors, see alerts, and detect electrical issues early.',
+                learn_more: 'Learn more',
                 // How It Works
                 how_title: 'How Inspektra Works',
                 how_subtitle: 'A clear path from risk assessment to completed inspections.',
@@ -1149,6 +1142,7 @@
                 feat_monitoring_title: 'Monitoring',
                 feat_monitoring_subtitle: 'Sensoren, Warnmeldungen und elektrische Zustände im Blick',
                 feat_monitoring_desc: 'Sensoren überwachen, Fehler erkennen und elektrische Probleme frühzeitig feststellen.',
+                learn_more: 'Mehr erfahren',
                 // How It Works
                 how_title: 'So funktioniert Inspektra',
                 how_subtitle: 'Ein klarer Weg von der Gefährdungsbeurteilung bis zur abgeschlossenen Prüfung.',

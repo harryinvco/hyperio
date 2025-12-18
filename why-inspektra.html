@@ -1375,52 +1375,52 @@
             </button>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Request access</h2>
-                    <p>Our team will review your request and share the next steps.</p>
+                    <h2 data-i18n="modal_title">Request access</h2>
+                    <p data-i18n="modal_desc">Our team will review your request and share the next steps.</p>
                 </div>
                 <form id="requestAccessForm" class="modal-form">
                     <div class="form-group">
-                        <label for="fullName">Full name</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                        <label for="fullName" data-i18n="modal_name">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" data-i18n-placeholder="modal_name_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="workEmail">Work email</label>
-                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
+                        <label for="workEmail" data-i18n="modal_email">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com" data-i18n-placeholder="modal_email_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone number <span class="optional">(optional)</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="+49 123 456 7890">
+                        <label for="phone" data-i18n="modal_phone">Phone number <span class="optional">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+49 123 456 7890" data-i18n-placeholder="modal_phone_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="companyName">Company name <span class="optional">(optional)</span></label>
-                        <input type="text" id="companyName" name="companyName" placeholder="Your company">
+                        <label for="companyName" data-i18n="modal_company">Company name <span class="optional">(optional)</span></label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Your company" data-i18n-placeholder="modal_company_placeholder">
                     </div>
                     <div class="form-group">
-                        <label>What do you want to use Inspektra for?</label>
+                        <label data-i18n="modal_use_case">What do you want to use Inspektra for?</label>
                         <div class="radio-group">
                             <label class="radio-option">
                                 <input type="radio" name="useCase" value="oms" required>
                                 <span class="radio-custom"></span>
-                                <span class="radio-label">OMS inspections</span>
+                                <span class="radio-label" data-i18n="modal_use_oms">OMS inspections</span>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="useCase" value="inhouse">
                                 <span class="radio-custom"></span>
-                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
+                                <span class="radio-label" data-i18n="modal_use_inhouse">In-house inspections (e.g., PAT, new device checks)</span>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="useCase" value="both">
                                 <span class="radio-custom"></span>
-                                <span class="radio-label">Both OMS + in-house inspections</span>
+                                <span class="radio-label" data-i18n="modal_use_both">Both OMS + in-house inspections</span>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="useCase" value="not_sure">
                                 <span class="radio-custom"></span>
-                                <span class="radio-label">Not sure yet</span>
+                                <span class="radio-label" data-i18n="modal_use_not_sure">Not sure yet</span>
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
                 </form>
             </div>
         </div>
