@@ -121,19 +121,18 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--gradient-primary);
+            background: #005FAD;
             color: white;
             padding: 16px 32px;
             border-radius: 100px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(0, 95, 173, 0.3);
+            transition: background 0.2s ease;
+            box-shadow: none;
         }
 
         .btn-primary-lg:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 95, 173, 0.4);
+            background: #004a8a;
         }
 
         .btn-secondary-lg {
@@ -158,6 +157,12 @@
         /* Asset Preview Mockup */
         .hero-visual {
             position: relative;
+        }
+
+        .hero-screenshot {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.15);
         }
 
         .asset-mockup {
@@ -377,15 +382,15 @@
 
         .benefit-card h3 {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 22px;
-            font-weight: 600;
+            font-size: 1.375rem;
+            font-weight: 650;
             color: rgba(0, 0, 0, 0.87);
             margin-bottom: 12px;
         }
 
         .benefit-card p {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 18px;
+            font-size: 1rem;
             font-weight: 400;
             color: rgba(0, 0, 0, 0.6);
             line-height: 1.6;
@@ -526,67 +531,7 @@
                 </div>
 
                 <div class="hero-visual">
-                    <div class="asset-mockup">
-                        <div class="mockup-header">
-                            <div class="mockup-dot red"></div>
-                            <div class="mockup-dot yellow"></div>
-                            <div class="mockup-dot green"></div>
-                        </div>
-                        <div class="mockup-body">
-                            <div class="location-tree">
-                                <div class="tree-item">
-                                    <div class="tree-icon building">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-                                    </div>
-                                    <div class="tree-content">
-                                        <div class="tree-name">Headquarters Building</div>
-                                        <div class="tree-meta">42 assets</div>
-                                    </div>
-                                    <span class="tree-badge success">98%</span>
-                                </div>
-                                <div class="tree-item" style="margin-left: 24px;">
-                                    <div class="tree-icon floor">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
-                                    </div>
-                                    <div class="tree-content">
-                                        <div class="tree-name">Floor 2</div>
-                                        <div class="tree-meta">18 assets</div>
-                                    </div>
-                                    <span class="tree-badge success">100%</span>
-                                </div>
-                                <div class="tree-item" style="margin-left: 48px;">
-                                    <div class="tree-icon room">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                                    </div>
-                                    <div class="tree-content">
-                                        <div class="tree-name">Server Room</div>
-                                        <div class="tree-meta">8 assets</div>
-                                    </div>
-                                    <span class="tree-badge warning">87%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="floating-card card-1">
-                        <div class="floating-icon blue">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                        </div>
-                        <div class="floating-text">
-                            <strong>QR Scanned</strong>
-                            <span>Asset #2847</span>
-                        </div>
-                    </div>
-
-                    <div class="floating-card card-2">
-                        <div class="floating-icon green">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </div>
-                        <div class="floating-text">
-                            <strong>1,247 Assets</strong>
-                            <span>All tracked</span>
-                        </div>
-                    </div>
+                    <img src="../pics/Assets-ENG.jpg" alt="Inspektra Assets" class="hero-screenshot">
                 </div>
             </div>
         </div>
@@ -632,12 +577,14 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="feature-cta">
+    <section class="closing-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to get started?</h2>
-                <p>Join leading companies using Inspektra for electrical safety management.</p>
-                <a href="#" class="btn btn-primary btn-lg">Request Access</a>
+            <div class="cta-box">
+                <h2 data-i18n="cta_title">Ready to streamline your safety processes?</h2>
+                <p class="subtitle" data-i18n="cta_subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
+                <div class="cta-group">
+                    <a href="../contact.html" class="btn btn-white" data-i18n="cta_button">Request Access</a>
+                </div>
             </div>
         </div>
     </section>
@@ -649,24 +596,25 @@
                     <a href="../index.html" class="logo">
                         <img src="../inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Legal</h4>
-                        <a href="../privacy.html">Privacy</a>
-                        <a href="../terms.html">Terms</a>
-                        <a href="../imprint.html">Imprint</a>
+                        <h4 data-i18n="footer_legal">Legal</h4>
+                        <a href="../privacy.html" data-i18n="footer_privacy">Privacy</a>
+                        <a href="../terms.html" data-i18n="footer_terms">Terms</a>
+                        <a href="../imprint.html" data-i18n="footer_imprint">Imprint</a>
+                        <a href="../sitemap.html" data-i18n="footer_sitemap">Sitemap</a>
                     </div>
                     <div class="nav-col">
-                        <h4>Support</h4>
-                        <a href="../contact.html">Contact</a>
+                        <h4 data-i18n="footer_support">Support</h4>
+                        <a href="../contact.html" data-i18n="nav_contact">Contact</a>
                         <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -684,18 +632,47 @@
                 </div>
                 <form id="requestAccessForm" class="modal-form">
                     <div class="form-group">
-                        <label for="fullName" data-i18n="modal_name">Full name</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" data-i18n-placeholder="modal_name_placeholder">
+                        <label for="fullName">Full name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
                     </div>
                     <div class="form-group">
-                        <label for="workEmail" data-i18n="modal_email">Work email</label>
-                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com" data-i18n-placeholder="modal_email_placeholder">
+                        <label for="workEmail">Work email</label>
+                        <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
                     </div>
                     <div class="form-group">
-                        <label for="companyName" data-i18n="modal_company">Company name</label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="Your company" data-i18n-placeholder="modal_company_placeholder">
+                        <label for="phone">Phone number <span class="optional">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+49 123 456 7890">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
+                    <div class="form-group">
+                        <label for="companyName">Company name <span class="optional">(optional)</span></label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Your company">
+                    </div>
+                    <div class="form-group">
+                        <label>What do you want to use Inspektra for?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="oms" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">OMS inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="inhouse">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="both">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Both OMS + in-house inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="not_sure">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Not sure yet</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Submit request</button>
                 </form>
             </div>
         </div>
@@ -718,9 +695,9 @@
         }
 
         // Attach click handlers to all Request Access buttons
-        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg').forEach(btn => {
-            const text = btn.textContent.trim();
-            if (text === 'Request Access' || text === 'Zugang anfragen') {
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg, .nav-cta a.btn-primary, .nav-cta-mobile a.btn-primary').forEach(btn => {
+            const text = btn.textContent.trim().toLowerCase();
+            if (text.includes('request access') || text.includes('zugang anfragen') || btn.getAttribute('data-i18n') === 'nav_request' || btn.getAttribute('data-i18n') === 'hero_cta' || btn.getAttribute('data-i18n') === 'cta_button') {
                 btn.addEventListener('click', openRequestModal);
             }
         });

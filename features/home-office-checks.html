@@ -42,15 +42,13 @@
         }
 
         .feature-hero-visual {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
-            border: 1px solid #E2E8F0;
-            padding: 24px;
-            aspect-ratio: 4/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
+        }
+
+        .hero-screenshot {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.15);
         }
 
         .benefits-section {
@@ -85,15 +83,15 @@
 
                 .benefit-card h3 {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 22px;
-            font-weight: 600;
+            font-size: 1.375rem;
+            font-weight: 650;
             color: rgba(0, 0, 0, 0.87);
             margin-bottom: 12px;
         }
 
                 .benefit-card p {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 18px;
+            font-size: 1rem;
             font-weight: 400;
             color: rgba(0, 0, 0, 0.6);
             line-height: 1.6;
@@ -129,15 +127,14 @@
         }
 
         .feature-cta .btn-white {
-            background: var(--gradient-primary);
+            background: #005FAD;
             color: white;
             border: none;
-            box-shadow: 0 4px 14px rgba(0, 95, 173, 0.3);
+            box-shadow: none;
         }
 
         .feature-cta .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 95, 173, 0.4);
+            background: #004a8a;
         }
 
         .feature-cta .btn-ghost {
@@ -293,34 +290,7 @@
                     </div>
                 </div>
                 <div class="feature-hero-visual">
-                    <div class="home-office-visual">
-                        <div class="checklist-item">
-                            <div class="checklist-check done">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            </div>
-                            <span class="checklist-text">Power cable condition</span>
-                            <span class="checklist-status complete">OK</span>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-check done">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            </div>
-                            <span class="checklist-text">Protective multisocket connected</span>
-                            <span class="checklist-status complete">OK</span>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-check done">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            </div>
-                            <span class="checklist-text">No visible damage to housing</span>
-                            <span class="checklist-status complete">OK</span>
-                        </div>
-                        <div class="checklist-item">
-                            <div class="checklist-check pending"></div>
-                            <span class="checklist-text">Submit photo of setup</span>
-                            <span class="checklist-status pending">Pending</span>
-                        </div>
-                    </div>
+                    <img src="../pics/Public Home Office -ENG.png" alt="Inspektra Home Office Checks" class="hero-screenshot">
                 </div>
             </div>
         </div>
@@ -365,13 +335,14 @@
     </section>
 
         <!-- CTA Section -->
-        <!-- CTA Section -->
-    <section class="feature-cta">
+    <section class="closing-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to get started?</h2>
-                <p>Join leading companies using Inspektra for electrical safety management.</p>
-                <a href="../contact.html" class="btn btn-primary btn-lg">Request Access</a>
+            <div class="cta-box">
+                <h2 data-i18n="cta_title">Ready to streamline your safety processes?</h2>
+                <p class="subtitle" data-i18n="cta_subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
+                <div class="cta-group">
+                    <a href="../contact.html" class="btn btn-white" data-i18n="cta_button">Request Access</a>
+                </div>
             </div>
         </div>
     </section>
@@ -383,24 +354,25 @@
                     <a href="../index.html" class="logo">
                         <img src="../inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Legal</h4>
-                        <a href="../privacy.html">Privacy</a>
-                        <a href="../terms.html">Terms</a>
-                        <a href="../imprint.html">Imprint</a>
+                        <h4 data-i18n="footer_legal">Legal</h4>
+                        <a href="../privacy.html" data-i18n="footer_privacy">Privacy</a>
+                        <a href="../terms.html" data-i18n="footer_terms">Terms</a>
+                        <a href="../imprint.html" data-i18n="footer_imprint">Imprint</a>
+                        <a href="../sitemap.html" data-i18n="footer_sitemap">Sitemap</a>
                     </div>
                     <div class="nav-col">
-                        <h4>Support</h4>
-                        <a href="../contact.html">Contact</a>
+                        <h4 data-i18n="footer_support">Support</h4>
+                        <a href="../contact.html" data-i18n="nav_contact">Contact</a>
                         <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -426,8 +398,37 @@
                         <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
                     </div>
                     <div class="form-group">
-                        <label for="companyName">Company name</label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                        <label for="phone">Phone number <span class="optional">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+49 123 456 7890">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company name <span class="optional">(optional)</span></label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Your company">
+                    </div>
+                    <div class="form-group">
+                        <label>What do you want to use Inspektra for?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="oms" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">OMS inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="inhouse">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="both">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Both OMS + in-house inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="not_sure">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Not sure yet</span>
+                            </label>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">Submit request</button>
                 </form>
@@ -561,9 +562,9 @@
         }
 
         // Attach click handlers to all Request Access buttons
-        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg').forEach(btn => {
-            const text = btn.textContent.trim();
-            if (text === 'Request Access' || text === 'Zugang anfragen') {
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg, .nav-cta a.btn-primary, .nav-cta-mobile a.btn-primary').forEach(btn => {
+            const text = btn.textContent.trim().toLowerCase();
+            if (text.includes('request access') || text.includes('zugang anfragen') || btn.getAttribute('data-i18n') === 'nav_request' || btn.getAttribute('data-i18n') === 'hero_cta' || btn.getAttribute('data-i18n') === 'cta_button') {
                 btn.addEventListener('click', openRequestModal);
             }
         });

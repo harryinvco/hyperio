@@ -450,11 +450,10 @@
     <section class="closing-cta">
         <div class="container">
             <div class="cta-box fade-in-up">
-                <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 44px; font-weight: 600; color: rgba(0, 0, 0, 0.87);">Still have questions?</h2>
-                <p class="subtitle" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 18px; font-weight: 400; color: rgba(0, 0, 0, 0.6);">Our team is happy to help you find the right plan for your needs.</p>
+                <h2 data-i18n="cta_title">Ready to streamline your safety processes?</h2>
+                <p class="subtitle" data-i18n="cta_subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
                 <div class="cta-group">
-                    <a href="#" class="btn btn-white">Contact Support</a>
-                    <a href="#" class="btn btn-outline-white">Read FAQ</a>
+                    <a href="contact.html" class="btn btn-white" data-i18n="cta_button">Request Access</a>
                 </div>
             </div>
         </div>
@@ -467,28 +466,25 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Legal</h4>
-                        <a href="privacy.html">Privacy</a>
-                        <a href="terms.html">Terms</a>
-                        <a href="imprint.html">Imprint</a>
+                        <h4 data-i18n="footer_legal">Legal</h4>
+                        <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
+                        <a href="terms.html" data-i18n="footer_terms">Terms</a>
+                        <a href="imprint.html" data-i18n="footer_imprint">Imprint</a>
+                        <a href="sitemap.html" data-i18n="footer_sitemap">Sitemap</a>
                     </div>
                     <div class="nav-col">
-                        <h4>Support</h4>
-                        <a href="contact.html">Contact</a>
+                        <h4 data-i18n="footer_support">Support</h4>
+                        <a href="contact.html" data-i18n="nav_contact">Contact</a>
                         <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
-                </div>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -532,13 +528,17 @@
             }
         });
 
-        // Navbar scroll effect
+        // Navbar scroll effect with hysteresis to prevent flashing
         const navbar = document.querySelector('.navbar');
+        let isScrolled = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            const currentScroll = window.scrollY;
+            if (!isScrolled && currentScroll > 50) {
                 navbar.classList.add('scrolled');
-            } else {
+                isScrolled = true;
+            } else if (isScrolled && currentScroll < 20) {
                 navbar.classList.remove('scrolled');
+                isScrolled = false;
             }
         }, { passive: true });
 
@@ -591,8 +591,37 @@
                         <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com">
                     </div>
                     <div class="form-group">
-                        <label for="companyName">Company name</label>
-                        <input type="text" id="companyName" name="companyName" required placeholder="Your company">
+                        <label for="phone">Phone number <span class="optional">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+49 123 456 7890">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company name <span class="optional">(optional)</span></label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Your company">
+                    </div>
+                    <div class="form-group">
+                        <label>What do you want to use Inspektra for?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="oms" required>
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">OMS inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="inhouse">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">In-house inspections (e.g., PAT, new device checks)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="both">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Both OMS + in-house inspections</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="useCase" value="not_sure">
+                                <span class="radio-custom"></span>
+                                <span class="radio-label">Not sure yet</span>
+                            </label>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">Submit request</button>
                 </form>
@@ -617,9 +646,9 @@
         }
 
         // Attach click handlers to all Request Access buttons
-        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg').forEach(btn => {
-            const text = btn.textContent.trim();
-            if (text === 'Request Access' || text === 'Zugang anfragen') {
+        document.querySelectorAll('a.btn-primary, a.btn.btn-primary, a.btn.btn-white, a.btn-primary-lg, .nav-cta a.btn-primary, .nav-cta-mobile a.btn-primary').forEach(btn => {
+            const text = btn.textContent.trim().toLowerCase();
+            if (text.includes('request access') || text.includes('zugang anfragen') || btn.getAttribute('data-i18n') === 'nav_request' || btn.getAttribute('data-i18n') === 'hero_cta' || btn.getAttribute('data-i18n') === 'cta_button') {
                 btn.addEventListener('click', openRequestModal);
             }
         });
