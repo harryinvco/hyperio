@@ -62,6 +62,12 @@
             margin-bottom: 8px;
         }
 
+        .form-label .optional {
+            font-weight: 400;
+            color: #94A3B8;
+            font-size: 0.8125rem;
+        }
+
         .form-input, .form-textarea {
             width: 100%;
             padding: 12px 16px;
@@ -300,6 +306,17 @@
                                 <input type="text" class="form-input" name="company" required>
                             </div>
 
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label"><span data-i18n="form_contact_name">Contact name</span> <span class="optional" data-i18n="form_optional">(optional)</span></label>
+                                    <input type="text" class="form-input" name="contactName">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"><span data-i18n="form_contact_phone">Phone number</span> <span class="optional" data-i18n="form_optional">(optional)</span></label>
+                                    <input type="tel" class="form-input" name="contactPhone" placeholder="+49 123 456 7890">
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label class="form-label" data-i18n="form_message">Message</label>
                                 <textarea class="form-textarea" name="message" data-i18n-placeholder="form_message_placeholder" placeholder="How can we support your request?"></textarea>
@@ -367,6 +384,9 @@
                 form_lastname: "Last name",
                 form_email: "Work email",
                 form_company: "Company name",
+                form_contact_name: "Contact name",
+                form_contact_phone: "Phone number",
+                form_optional: "(optional)",
                 form_message: "Message",
                 form_message_placeholder: "How can we support your request?",
                 form_submit: "Send message",
@@ -391,6 +411,9 @@
                 form_lastname: "Nachname",
                 form_email: "Geschäftliche E-Mail",
                 form_company: "Unternehmensname",
+                form_contact_name: "Ansprechpartner",
+                form_contact_phone: "Telefonnummer",
+                form_optional: "(optional)",
                 form_message: "Nachricht",
                 form_message_placeholder: "Wie können wir Ihr Anliegen unterstützen?",
                 form_submit: "Nachricht senden",
