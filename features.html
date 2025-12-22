@@ -61,7 +61,7 @@
             align-items: center;
             gap: 8px;
             font-size: 0.75rem;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--primary-main);
@@ -134,8 +134,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             position: relative;
+            flex-shrink: 0;
+        }
+
+        .bento-icon::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+            border-radius: 15px;
+            z-index: 0;
+        }
+
+        .bento-icon svg {
+            position: relative;
+            z-index: 1;
         }
 
         .bento-icon.blue {
@@ -165,15 +180,15 @@
 
         .bento-card h3 {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 28px;
-            font-weight: 600;
+            font-size: 1.375rem;
+            font-weight: 650;
             color: rgba(0, 0, 0, 0.87);
             margin-bottom: 12px;
         }
 
         .bento-card p {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 18px;
+            font-size: 1rem;
             font-weight: 400;
             color: rgba(0, 0, 0, 0.6);
             line-height: 1.6;
@@ -746,7 +761,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="inspektra-logo.png" alt="Inspektra" height="48">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="48">
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
@@ -817,7 +832,7 @@
                 <!-- Dashboard Card -->
                 <a href="features/dashboard.html" class="bento-card span-4">
                     <div class="bento-icon blue">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                     </div>
                     <h3 data-i18n="nav_dashboard">Dashboard</h3>
                     <p data-i18n="fp_dashboard_desc">See upcoming inspections, open tasks, and risk levels at a glance so you always know what needs attention.</p>
@@ -830,7 +845,7 @@
                 <!-- Assets Card -->
                 <a href="features/assets.html" class="bento-card span-4">
                     <div class="bento-icon purple">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                     </div>
                     <h3 data-i18n="nav_assets">Assets</h3>
                     <p data-i18n="fp_assets_desc">Keep all devices, machines, and installations organised in one place with clear records and inspection history.</p>
@@ -843,7 +858,7 @@
                 <!-- Locations Card -->
                 <a href="features/locations.html" class="bento-card span-4">
                     <div class="bento-icon green">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
                     <h3 data-i18n="nav_locations">Locations</h3>
                     <p data-i18n="fp_locations_desc">Map sites, buildings, and rooms in a navigable hierarchy that keeps your organisation structured and easy to manage.</p>
@@ -856,7 +871,7 @@
                 <!-- Inspections Card -->
                 <a href="features/inspections.html" class="bento-card span-4">
                     <div class="bento-icon cyan">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
                     </div>
                     <h3 data-i18n="nav_inspections">Inspections</h3>
                     <p data-i18n="fp_inspections_desc">Perform your own inspections and access OMS Prüferservice reports in one consistent structure.</p>
@@ -869,7 +884,7 @@
                 <!-- Risk Assessments Card -->
                 <a href="features/risk-assessments.html" class="bento-card span-4">
                     <div class="bento-icon orange">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
                     <h3 data-i18n="nav_risk">Risk Assessments</h3>
                     <p data-i18n="fp_risk_desc">Define hazards, set test intervals, and manage risk levels across all asset groups.</p>
@@ -882,7 +897,7 @@
                 <!-- Tasks Card -->
                 <a href="features/tasks.html" class="bento-card span-4">
                     <div class="bento-icon blue">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
                     <h3 data-i18n="nav_tasks">Tasks</h3>
                     <p data-i18n="fp_tasks_desc">Turn findings into actions, track progress, and update asset safety status in real time.</p>
@@ -895,7 +910,7 @@
                 <!-- Home Office Checks Card -->
                 <a href="features/home-office-checks.html" class="bento-card span-4">
                     <div class="bento-icon purple">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
                     <h3 data-i18n="nav_homeoffice">Home Office Checks</h3>
                     <p data-i18n="fp_homeoffice_desc">Provide protective multi-sockets and guide remote workers through quick visual checks of their company devices — all documented in Inspektra.</p>
@@ -908,7 +923,7 @@
                 <!-- Monitoring Card -->
                 <a href="features/monitoring.html" class="bento-card span-4">
                     <div class="bento-icon orange">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                     </div>
                     <h3 data-i18n="nav_monitoring">Monitoring</h3>
                     <p data-i18n="fp_monitoring_desc">Install sensors and monitor electrical behaviour in real time, with alerts and deviations shown directly in Inspektra.</p>
@@ -922,14 +937,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="closing-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2 data-i18n="fp_cta_title">Ready to simplify compliance?</h2>
-                <p data-i18n="fp_cta_desc">Join leading companies across DACH who trust Inspektra for their electrical safety management.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary btn-lg" data-i18n="nav_request">Request Access</a>
-                    <a href="pricing.html" class="btn-cta-outline" data-i18n="fp_cta_pricing">View pricing</a>
+            <div class="cta-box">
+                <h2 data-i18n="cta_title">Ready to streamline your safety processes?</h2>
+                <p class="subtitle" data-i18n="cta_subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
+                <div class="cta-group">
+                    <a href="#" class="btn btn-white" data-i18n="cta_button">Request Access</a>
                 </div>
             </div>
         </div>
@@ -940,7 +954,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                        <img src="inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
                     <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
@@ -1043,6 +1057,7 @@
                         <input type="text" id="companyName" name="companyName" required placeholder="Your company" data-i18n-placeholder="modal_company_placeholder">
                     </div>
                     <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
+                    <p class="form-consent" data-i18n="form_consent" style="font-size: 11px; line-height: 1.4; color: #888; margin-top: 12px;">By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used.</p>
                 </form>
             </div>
         </div>
@@ -1143,7 +1158,8 @@
                 modal_email_placeholder: 'you@company.com',
                 modal_company: 'Company name',
                 modal_company_placeholder: 'Your company',
-                modal_submit: 'Submit request'
+                modal_submit: 'Submit request',
+                form_consent: 'By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used.'
             },
             de: {
                 announcement: 'Die Inspektra Login-Seite befindet sich jetzt unter <strong>app.inspektra.de</strong>',
@@ -1155,7 +1171,7 @@
                 nav_inspections: 'Prüfungen',
                 nav_risk: 'Gefährdungsbeurteilungen',
                 nav_tasks: 'Aufgaben',
-                nav_homeoffice: 'Home-Office-Checks',
+                nav_homeoffice: 'Homeoffices',
                 nav_monitoring: 'Monitoring',
                 nav_contact: 'Kontakt',
                 nav_login: 'Login',
@@ -1176,7 +1192,7 @@
                 fp_explore_inspections: 'Prüfungen entdecken',
                 fp_explore_risk: 'Gefährdungsbeurteilung entdecken',
                 fp_explore_tasks: 'Aufgaben entdecken',
-                fp_explore_homeoffice: 'Home-Office-Checks entdecken',
+                fp_explore_homeoffice: 'Homeoffices entdecken',
                 fp_explore_monitoring: 'Monitoring entdecken',
                 modal_title: 'Zugang anfragen',
                 modal_desc: 'Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden.',
@@ -1186,7 +1202,8 @@
                 modal_email_placeholder: 'sie@unternehmen.de',
                 modal_company: 'Firmenname',
                 modal_company_placeholder: 'Ihr Unternehmen',
-                modal_submit: 'Anfrage senden'
+                modal_submit: 'Anfrage senden',
+                form_consent: 'Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden.'
             }
         };
 

@@ -9,256 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .feature-hero {
-            padding: 100px 0 60px;
-            background: linear-gradient(180deg, rgba(0, 95, 173, 0.04) 0%, transparent 100%);
-        }
-
-        .feature-hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .feature-hero-content h1 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 56px;
-            font-weight: 600;
-            line-height: 1.1;
-            color: rgba(0, 0, 0, 0.87);
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .feature-hero-content .subtitle {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 0.6);
-            line-height: 1.6;
-            margin-bottom: 32px;
-            max-width: 500px;
-        }
-
-        /* Hero Visual - iPad Device Frame */
-        .feature-hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .device-frame {
-            position: relative;
-            background: #1a1a1a;
-            border-radius: 32px;
-            padding: 20px;
-            box-shadow:
-                0 25px 80px -12px rgba(0, 0, 0, 0.2),
-                0 0 0 1px rgba(0, 0, 0, 0.05),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-        }
-
-        .device-frame::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 50px;
-            background: #2a2a2a;
-            border-radius: 2px;
-        }
-
-        .device-frame::after {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 8px;
-            height: 8px;
-            background: #2a2a2a;
-            border-radius: 50%;
-        }
-
-        .device-frame img {
-            display: block;
-            width: 100%;
-            max-width: 480px;
-            height: auto;
-            border-radius: 16px;
-            background: #ffffff;
-        }
-
-        .benefits-section {
-            padding: 80px 0;
-            background: #F8FAFC;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-                .benefit-card {
-            background: #F8FAFC;
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-        }
-
-                .benefit-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(0, 155, 213, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary-main);
-        }
-
-                .benefit-card h3 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 1.375rem;
-            font-weight: 650;
-            color: rgba(0, 0, 0, 0.87);
-            margin-bottom: 12px;
-        }
-
-                .benefit-card p {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 0.6);
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .feature-cta {
-            padding: 100px 0;
-            background: rgba(0, 155, 213, 0.05);
-            text-align: center;
-        }
-
-        .feature-cta h2 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 44px;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 0.87);
-            margin-bottom: 16px;
-        }
-
-        .feature-cta p {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 0.6);
-            margin-bottom: 40px;
-        }
-
-        .feature-cta .btn-white {
-            background: #005FAD;
-            color: white;
-            border: none;
-            box-shadow: none;
-        }
-
-        .feature-cta .btn-white:hover {
-            background: #004a8a;
-        }
-
-        .feature-cta .btn-ghost {
-            background: white;
-            color: #0F172A;
-            border: 1px solid #E2E8F0;
-        }
-
-        .feature-cta .btn-ghost:hover {
-            border-color: var(--primary-main);
-            box-shadow: var(--shadow-soft);
-        }
-
-        /* Home Office Visual */
-        .home-office-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            width: 100%;
-        }
-
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px;
-            background: #F8FAFC;
-            border-radius: 12px;
-            border: 1px solid #E2E8F0;
-        }
-
-        .checklist-check {
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .checklist-check.done {
-            background: #22C55E;
-            color: white;
-        }
-
-        .checklist-check.pending {
-            background: white;
-            border: 2px solid #CBD5E1;
-        }
-
-        .checklist-text {
-            flex: 1;
-            font-size: 0.9rem;
-            color: #0F172A;
-        }
-
-        .checklist-status {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 100px;
-        }
-
-        .checklist-status.complete {
-            background: #DCFCE7;
-            color: #16A34A;
-        }
-
-        .checklist-status.pending {
-            background: #FEF3C7;
-            color: #D97706;
-        }
-
-        @media (max-width: 968px) {
-            .feature-hero-grid {
-                grid-template-columns: 1fr;
-            }
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            .feature-hero-visual {
-                order: -1;
-            }
+        /* Page-specific styles - common styles are in styles.css */
+        .floating-card {
+            display: none;
         }
     </style>
 </head>
@@ -277,7 +30,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
-                <img src="../inspektra-logo.png" alt="Inspektra" height="40">
+                <img src="../inspektra-logo.svg" alt="Inspektra" height="40">
             </a>
             <ul class="nav-links">
                 <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
@@ -331,8 +84,8 @@
                     </div>
                 </div>
                 <div class="feature-hero-visual">
-                    <div class="device-frame">
-                        <img src="../pics/Public Home Office -ENG.png" alt="Inspektra Home Office Checks">
+                    <div class="screenshot-frame">
+                        <img src="../Feautures- Micropages Images/Public Home Office - NO ATTENTION (1).png" alt="Inspektra Home Office Checks">
                     </div>
                 </div>
             </div>
@@ -377,14 +130,14 @@
         </div>
     </section>
 
-        <!-- CTA Section -->
+    <!-- CTA Section -->
     <section class="closing-cta">
         <div class="container">
             <div class="cta-box">
                 <h2 data-i18n="cta_title">Ready to streamline your safety processes?</h2>
                 <p class="subtitle" data-i18n="cta_subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
                 <div class="cta-group">
-                    <a href="../contact.html" class="btn btn-white" data-i18n="cta_button">Request Access</a>
+                    <a href="#" class="btn btn-white" data-i18n="cta_button">Request Access</a>
                 </div>
             </div>
         </div>
@@ -395,27 +148,26 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="../index.html" class="logo">
-                        <img src="../inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                        <img src="../inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4 data-i18n="footer_legal">Legal</h4>
-                        <a href="../privacy.html" data-i18n="footer_privacy">Privacy</a>
-                        <a href="../terms.html" data-i18n="footer_terms">Terms</a>
-                        <a href="../imprint.html" data-i18n="footer_imprint">Imprint</a>
-                        <a href="../sitemap.html" data-i18n="footer_sitemap">Sitemap</a>
+                        <h4>Legal</h4>
+                        <a href="../privacy.html">Privacy</a>
+                        <a href="../terms.html">Terms</a>
+                        <a href="../imprint.html">Imprint</a>
                     </div>
                     <div class="nav-col">
-                        <h4 data-i18n="footer_support">Support</h4>
-                        <a href="../contact.html" data-i18n="nav_contact">Contact</a>
+                        <h4>Support</h4>
+                        <a href="../contact.html">Contact</a>
                         <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -474,6 +226,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
+                    <p class="form-consent" data-i18n="form_consent" style="font-size: 11px; line-height: 1.4; color: #888; margin-top: 12px;">By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used.</p>
                 </form>
             </div>
         </div>
@@ -500,7 +253,9 @@
                 home_benefit3_title: "Transparent documentation",
                 home_benefit3_desc: "All submitted checks appear in Inspektra, giving safety teams insight into equipment condition across remote workplaces.",
                 home_benefit4_title: "Extend compliance beyond the office",
-                home_benefit4_desc: "Maintain consistent safety standards for distributed teams without adding complexity or manual admin."
+                home_benefit4_desc: "Maintain consistent safety standards for distributed teams without adding complexity or manual admin.",
+                modal_submit: "Submit request",
+                form_consent: "By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used."
             },
             de: {
                 announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
@@ -509,7 +264,7 @@
                 nav_contact: "Kontakt",
                 nav_login: "Anmelden",
                 nav_request: "Zugang anfragen",
-                nav_homeoffice: "Homeoffice-Prüfungen",
+                nav_homeoffice: "Homeoffices",
                 view_pricing: "Preise ansehen",
                 home_hero_title: "Sicherere Homeoffice-Arbeitsplätze für Ihr Team",
                 home_hero_subtitle: "Stellen Sie Schutz-Steckdosenleisten bereit und ermöglichen Sie Mitarbeitenden im Homeoffice einfache Sichtprüfungen ihrer Unternehmensgeräte – vollständig dokumentiert in Inspektra.",
@@ -520,7 +275,9 @@
                 home_benefit3_title: "Transparente Dokumentation",
                 home_benefit3_desc: "Alle eingereichten Prüfungen erscheinen in Inspektra und geben Sicherheitsteams Einblick in den Zustand der Geräte im Homeoffice.",
                 home_benefit4_title: "Compliance über das Büro hinaus",
-                home_benefit4_desc: "Sicherheitsstandards bleiben auch für verteilte Teams einheitlich – ohne zusätzlichen Aufwand oder komplexe Prozesse."
+                home_benefit4_desc: "Sicherheitsstandards bleiben auch für verteilte Teams einheitlich – ohne zusätzlichen Aufwand oder komplexe Prozesse.",
+                modal_submit: "Anfrage senden",
+                form_consent: "Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden."
             }
         };
 

@@ -57,12 +57,67 @@
             66% { transform: translate(-20px, 20px) scale(0.95); }
         }
 
+        .story-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
         .story-hero-content {
             position: relative;
             z-index: 1;
-            text-align: center;
+            text-align: left;
             max-width: 900px;
-            margin: 0 auto;
+        }
+
+        .story-hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .story-hero-visual .screenshot-frame {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .story-hero-visual .screenshot-frame:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 32px 100px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .story-hero-visual .screenshot-frame img {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 24px;
+        }
+
+        @media (max-width: 968px) {
+            .story-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .story-hero-content {
+                text-align: center;
+            }
+
+            .story-hero-visual {
+                order: -1;
+            }
+
+            .story-hero-visual .screenshot-frame img {
+                max-width: 260px;
+            }
         }
 
         .story-hero-content h1 {
@@ -501,7 +556,7 @@
 
         .timeline-year {
             font-size: 0.875rem;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--primary-main);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -1138,7 +1193,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="inspektra-logo.png" alt="Inspektra" height="48">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="48">
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
@@ -1198,10 +1253,17 @@
             <div class="orb orb-2"></div>
         </div>
         <div class="container">
-            <div class="story-hero-content">
-                <h1 data-i18n="why_hero_title">Clarity for every inspection</h1>
-                <p class="lead" data-i18n="why_hero_subtitle">Inspektra brings order to inspections, risks, and reporting — giving safety teams a clear, consistent way to stay compliant.</p>
-                <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="nav_request">Request Access</a>
+            <div class="story-hero-grid">
+                <div class="story-hero-content">
+                    <h1 data-i18n="why_hero_title">Clarity for every inspection</h1>
+                    <p class="lead" data-i18n="why_hero_subtitle">Inspektra brings order to inspections, risks, and reporting — giving safety teams a clear, consistent way to stay compliant.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="nav_request">Request Access</a>
+                </div>
+                <div class="story-hero-visual">
+                    <div class="screenshot-frame">
+                        <img src="Home - Feautures Images/Android Medium - Test result.png" alt="Inspektra Test Result">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1215,7 +1277,7 @@
                     <p class="expertise-description" data-i18n="why_expertise_desc">OMS Prüfservice performs the inspections. Inspektra organises the results. Together, you get reliable data and one connected process.</p>
                 </div>
                 <div class="expertise-screenshot">
-                    <span class="screenshot-placeholder">Screenshot placeholder</span>
+                    <img src="Feautures- Micropages Images/Dashboard (1).jpg" alt="Inspektra Dashboard">
                 </div>
             </div>
         </div>
@@ -1274,7 +1336,7 @@
                     <p data-i18n="why_results_desc">Inspektra supports leading organisations across manufacturing, utilities, and services throughout DACH. Our platform delivers clarity and consistency for safety teams managing inspections across multiple sites.</p>
                 </div>
                 <div class="results-icon">
-                    <img src="trusted_results.png" alt="Trusted Results">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-main);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
                 </div>
             </div>
         </div>
@@ -1331,7 +1393,7 @@
                 <h2 data-i18n="cta_title">Ready to streamline your safety processes?</h2>
                 <p class="subtitle" data-i18n="cta_subtitle">Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.</p>
                 <div class="cta-group">
-                    <a href="contact.html" class="btn btn-white" data-i18n="cta_button">Request Access</a>
+                    <a href="#" class="btn btn-white" data-i18n="cta_button">Request Access</a>
                 </div>
             </div>
         </div>
@@ -1342,27 +1404,30 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="inspektra-logo.png" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                        <img src="inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4 data-i18n="footer_legal">Legal</h4>
-                        <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
-                        <a href="terms.html" data-i18n="footer_terms">Terms</a>
-                        <a href="imprint.html" data-i18n="footer_imprint">Imprint</a>
-                        <a href="sitemap.html" data-i18n="footer_sitemap">Sitemap</a>
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="imprint.html">Imprint</a>
                     </div>
                     <div class="nav-col">
-                        <h4 data-i18n="footer_support">Support</h4>
-                        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+                        <h4>Support</h4>
+                        <a href="contact.html">Contact</a>
                         <a href="#">AI Assistant</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1421,6 +1486,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full" data-i18n="modal_submit">Submit request</button>
+                    <p class="form-consent" data-i18n="form_consent" style="font-size: 11px; line-height: 1.4; color: #888; margin-top: 12px;">By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used.</p>
                 </form>
             </div>
         </div>
@@ -1461,7 +1527,9 @@
                 why_comp3_title: "Mobile access, built for teams",
                 why_comp3_desc: "Technicians and managers access inspections, tasks, and reports from any device.",
                 why_comp4_title: "Digital reporting, ready for audits",
-                why_comp4_desc: "Generate standardised documentation instantly, aligned with DACH requirements."
+                why_comp4_desc: "Generate standardised documentation instantly, aligned with DACH requirements.",
+                modal_submit: "Submit request",
+                form_consent: "By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used."
             },
             de: {
                 announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
@@ -1495,7 +1563,9 @@
                 why_comp3_title: "Mobiler Zugriff für Ihr Team",
                 why_comp3_desc: "Techniker und Verantwortliche greifen von jedem Gerät auf Prüfungen, Aufgaben und Berichte zu.",
                 why_comp4_title: "Digitale Prüfberichte, auditbereit",
-                why_comp4_desc: "Erstellen Sie standardisierte Dokumentation – sofort und nach DACH-Vorgaben."
+                why_comp4_desc: "Erstellen Sie standardisierte Dokumentation – sofort und nach DACH-Vorgaben.",
+                modal_submit: "Anfrage senden",
+                form_consent: "Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden."
             }
         };
 
