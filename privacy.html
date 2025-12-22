@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Inspektra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-page {
+            padding: 120px 0 80px;
+            background: #F8FAFC;
+            min-height: 100vh;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 48px 64px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 1px solid #E2E8F0;
+        }
+
+        .legal-content h1 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 32px;
+        }
+
+        .legal-content h2 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        .legal-content h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .legal-content p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.7);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .legal-content ul, .legal-content ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .legal-content li {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.7);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .legal-content strong {
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .legal-content a {
+            color: var(--primary-main);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-block {
+            background: #F8FAFC;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin: 16px 0;
+        }
+
+        .contact-block p {
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-page {
+                padding: 100px 0 60px;
+            }
+
+            .legal-content {
+                padding: 32px 24px;
+                margin: 0 16px;
+            }
+
+            .legal-content h1 {
+                font-size: 28px;
+            }
+
+            .legal-content h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="48">
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+            <div class="nav-wrapper" id="navWrapper">
+                <ul class="nav-links">
+                    <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                    <li class="dropdown">
+                        <a href="features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="features/dashboard.html">Dashboard</a></li>
+                            <li><a href="features/assets.html">Assets</a></li>
+                            <li><a href="features/locations.html">Locations</a></li>
+                            <li><a href="features/inspections.html">Inspections</a></li>
+                            <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
+                            <li><a href="features/tasks.html">Tasks</a></li>
+                            <li><a href="features/home-office-checks.html">Home Office Checks</a></li>
+                            <li><a href="features/monitoring.html">Monitoring</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta-mobile">
+                    <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-en"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="legal-page">
+        <div class="container">
+            <div class="legal-content">
+                <h1>Privacy Policy</h1>
+
+                <h2>1. Introduction</h2>
+                <p>With the following information, we would like to provide you, as the "data subject", with an overview of the processing of your personal data by us and your rights under data protection laws. Use of our website is generally possible without providing personal data. However, if you wish to make use of special services offered by our company via our website, the processing of personal data may be required. Where the processing of personal data is necessary and there is no statutory basis for such processing, we generally obtain your consent.</p>
+                <p>The processing of personal data, such as your name, address or email address, is always carried out in accordance with the General Data Protection Regulation (GDPR) and in compliance with the country-specific data protection regulations applicable to OMS Prüfservice GmbH. By means of this Privacy Policy, we would like to inform you about the scope and purpose of the personal data collected, used and processed by us.</p>
+                <p>As the controller, we have implemented numerous technical and organisational measures to ensure the most complete protection possible of personal data processed via this website. Nevertheless, internet-based data transmissions may generally have security vulnerabilities, so absolute protection cannot be guaranteed. For this reason, you are free to transmit personal data to us via alternative means, for example by telephone or post.</p>
+                <p>You can also take simple and effective measures yourself to protect your data from unauthorised third-party access. We therefore provide the following guidance on the secure handling of your data:</p>
+                <ul>
+                    <li>Protect your account (login, user or customer account) and your IT systems (computer, laptop, tablet or mobile device) with secure passwords.</li>
+                    <li>Only you should have access to your passwords.</li>
+                    <li>Ensure that you use each password for only one account.</li>
+                    <li>Do not use the same password for multiple websites, applications or online services.</li>
+                    <li>Especially when using publicly accessible or shared IT systems, always log out after each session.</li>
+                </ul>
+                <p>Passwords should consist of at least 12 characters and should not be easy to guess. They should not contain common words, personal names or names of relatives, but should include a combination of uppercase and lowercase letters, numbers and special characters.</p>
+
+                <h2>2. Controller</h2>
+                <p>The controller within the meaning of the GDPR is:</p>
+                <div class="contact-block">
+                    <p><strong>OMS Prüfservice GmbH</strong></p>
+                    <p>Mühlstraße 90</p>
+                    <p>73547 Lorch-Waldhausen</p>
+                    <p>Germany</p>
+                    <p>Phone: +49 (0)7172 / 1839218</p>
+                    <p>Fax: +49 (0)7172 / 18392-22</p>
+                    <p>Representative of the controller: Micha Erz</p>
+                </div>
+
+                <h2>3. Data Protection Officer</h2>
+                <p>You can contact our Data Protection Officer as follows:</p>
+                <div class="contact-block">
+                    <p><strong>Kai Ochmann</strong></p>
+                    <p>Phone: +49 7134 / 90894-0</p>
+                    <p>Email: <a href="mailto:datenschutz@oms-pruefservice.de">datenschutz@oms-pruefservice.de</a></p>
+                </div>
+                <p>You may contact our Data Protection Officer at any time with questions or suggestions regarding data protection.</p>
+
+                <h2>4. Definitions</h2>
+                <p>This Privacy Policy is based on the terminology used by the European legislator in the GDPR. To ensure clarity and comprehensibility, the following definitions apply:</p>
+                <ul>
+                    <li><strong>Personal data:</strong> Any information relating to an identified or identifiable natural person.</li>
+                    <li><strong>Data subject:</strong> Any identified or identifiable natural person whose personal data is processed by the controller.</li>
+                    <li><strong>Processing:</strong> Any operation performed on personal data, with or without automated means.</li>
+                    <li><strong>Restriction of processing:</strong> The marking of stored personal data with the aim of restricting future processing.</li>
+                    <li><strong>Profiling:</strong> Any automated processing used to evaluate personal aspects relating to a natural person.</li>
+                    <li><strong>Pseudonymisation:</strong> Processing personal data so that it can no longer be attributed to a specific data subject without additional information.</li>
+                    <li><strong>Processor:</strong> A natural or legal person that processes personal data on behalf of the controller.</li>
+                    <li><strong>Recipient:</strong> A natural or legal person to whom personal data is disclosed.</li>
+                    <li><strong>Third party:</strong> Any entity other than the data subject, controller, processor, or authorised persons.</li>
+                    <li><strong>Consent:</strong> Any freely given, specific, informed and unambiguous indication of the data subject's wishes.</li>
+                </ul>
+
+                <h2>5. Legal Basis for Processing</h2>
+                <p>Processing is carried out on the following legal bases:</p>
+                <ul>
+                    <li>Art. 6(1)(a) GDPR in conjunction with § 25(1) TTDSG for consent-based processing.</li>
+                    <li>Art. 6(1)(b) GDPR for contract performance or pre-contractual measures.</li>
+                    <li>Art. 6(1)(c) GDPR for compliance with legal obligations.</li>
+                    <li>Art. 6(1)(d) GDPR to protect vital interests.</li>
+                    <li>Art. 6(1)(f) GDPR for legitimate interests, provided the data subject's rights do not prevail.</li>
+                </ul>
+                <p>Our services are generally intended for adults. Persons under 16 may not submit personal data without parental consent. We do not knowingly collect or process data from children.</p>
+
+                <h2>6. Transfer of Data to Third Parties</h2>
+                <p>Personal data is only transferred to third parties if:</p>
+                <ul>
+                    <li>You have given explicit consent (Art. 6(1)(a) GDPR),</li>
+                    <li>The transfer is necessary to protect legitimate interests (Art. 6(1)(f) GDPR),</li>
+                    <li>There is a legal obligation (Art. 6(1)(c) GDPR), or</li>
+                    <li>It is required for contractual performance (Art. 6(1)(b) GDPR).</li>
+                </ul>
+                <p>Where data is transferred to third countries, appropriate safeguards are applied, including EU Standard Contractual Clauses or adequacy decisions under Art. 45 GDPR. Transfers to the USA occur only where the recipient is certified under the EU-US Data Privacy Framework.</p>
+
+                <h2>7. Technology</h2>
+
+                <h3>7.1 SSL/TLS Encryption</h3>
+                <p>This website uses SSL/TLS encryption to protect confidential content such as login data or contact requests.</p>
+
+                <h3>7.2 Data Collection When Visiting the Website</h3>
+                <p>When using the website for informational purposes only, server log files may collect:</p>
+                <ul>
+                    <li>Browser type and version</li>
+                    <li>Operating system</li>
+                    <li>Referrer URL</li>
+                    <li>Subpages accessed</li>
+                    <li>Date and time of access</li>
+                    <li>IP address</li>
+                    <li>Internet service provider</li>
+                </ul>
+                <p>This data is processed on the basis of Art. 6(1)(f) GDPR for system security, functionality and statistical evaluation.</p>
+
+                <h2>8. Cookies</h2>
+
+                <h3>8.1 General Information</h3>
+                <p>Cookies are small files stored on your device to improve usability and functionality.</p>
+
+                <h3>8.2 Legal Basis</h3>
+                <ul>
+                    <li><strong>Technically necessary cookies:</strong> Art. 6(1)(f) GDPR</li>
+                    <li><strong>All other cookies:</strong> Art. 6(1)(a) GDPR via consent banner</li>
+                </ul>
+
+                <h3>8.3 Browser Settings</h3>
+                <p>You may delete or block cookies via your browser settings at any time.</p>
+
+                <h2>9. Website Content</h2>
+
+                <h3>9.1 User Registration</h3>
+                <p>Registration involves the processing of personal data for internal purposes. IP address, date and time of registration are stored for security reasons. Legal basis: Art. 6(1)(f) GDPR.</p>
+
+                <h3>9.2 Contact Requests</h3>
+                <p>Personal data submitted via contact forms or email is processed solely to respond to your enquiry. Legal basis: Art. 6(1)(f) GDPR, or Art. 6(1)(b) GDPR where contractual.</p>
+
+                <h2>10. Web Analytics</h2>
+
+                <h3>10.1 Google Analytics (Universal)</h3>
+                <p>Google Analytics is used only with explicit consent (Art. 6(1)(a) GDPR). IP anonymisation is enabled. Data may be transferred to the USA under the EU-US Data Privacy Framework.</p>
+
+                <h2>11. Plugins and Services</h2>
+
+                <h3>11.1 Google Web Fonts</h3>
+                <p>Fonts are hosted locally to avoid data transfers.</p>
+
+                <h3>11.2 Google Tag Manager</h3>
+                <p>Used only with explicit consent (Art. 6(1)(a) GDPR). Google LLC is certified under the EU-US Data Privacy Framework.</p>
+
+                <h2>12. Rights of the Data Subject</h2>
+                <p>You have the following rights under the GDPR:</p>
+                <ul>
+                    <li>Right to confirmation (Art. 15)</li>
+                    <li>Right of access (Art. 15)</li>
+                    <li>Right to rectification (Art. 16)</li>
+                    <li>Right to erasure (Art. 17)</li>
+                    <li>Right to restriction (Art. 18)</li>
+                    <li>Right to data portability (Art. 20)</li>
+                    <li>Right to object (Art. 21)</li>
+                    <li>Right to withdraw consent</li>
+                    <li>Right to lodge a complaint with a supervisory authority</li>
+                </ul>
+
+                <h2>13. Routine Storage and Deletion</h2>
+                <p>Personal data is stored only for as long as necessary or required by law, after which it is deleted or restricted.</p>
+
+                <h2>14. Storage Duration</h2>
+                <p>The storage duration is determined by statutory retention periods. Data is deleted once these periods expire unless required for contractual purposes.</p>
+
+                <h2>15. Validity and Amendments</h2>
+                <p>This Privacy Policy is currently valid and dated April 2024.</p>
+                <p>It may be updated due to legal or technical changes. The latest version is available at: <a href="https://www.inspektra.de/privacy">www.inspektra.de/privacy</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="imprint.html">Imprint</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Support</h4>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">AI Assistant</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navWrapper = document.getElementById('navWrapper');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                navWrapper.classList.toggle('active');
+                mobileOverlay.classList.toggle('active');
+                document.body.style.overflow = navWrapper.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileOverlay.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navWrapper.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Language Dropdown
+        const langToggle = document.getElementById('langToggle');
+        const langMenu = document.getElementById('langMenu');
+
+        if (langToggle && langMenu) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.classList.toggle('active');
+            });
+
+            document.addEventListener('click', () => {
+                langMenu.classList.remove('active');
+            });
+        }
+    </script>
+
+</body>
+</html>
