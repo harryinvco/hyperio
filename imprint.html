@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Notice - Inspektra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <style>
+        .legal-page {
+            padding: 120px 0 80px;
+            background: #F8FAFC;
+            min-height: 100vh;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 48px 64px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 1px solid #E2E8F0;
+        }
+
+        .legal-content h1 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-bottom: 32px;
+        }
+
+        .legal-content h2 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        .legal-content h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .legal-content p {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.7);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .legal-content ul, .legal-content ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .legal-content li {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.7);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .legal-content strong {
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .legal-content a {
+            color: var(--primary-main);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-block {
+            background: #F8FAFC;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin: 16px 0;
+        }
+
+        .contact-block p {
+            margin-bottom: 4px;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .legal-page {
+                padding: 100px 0 60px;
+            }
+
+            .legal-content {
+                padding: 32px 24px;
+                margin: 0 16px;
+            }
+
+            .legal-content h1 {
+                font-size: 28px;
+            }
+
+            .legal-content h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <a href="https://app.inspektra.de" target="_blank" rel="noopener" class="announcement-link">
+                <span data-i18n="announcement">Inspektra's login page is now at <strong>app.inspektra.de</strong></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="36">
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+            <div class="nav-wrapper" id="navWrapper">
+                <div class="mobile-nav-logo">
+                    <img src="inspektra-logo.svg" alt="Inspektra" height="32">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                    <li class="dropdown">
+                        <a href="features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="features/dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                            <li><a href="features/assets.html" data-i18n="nav_assets">Assets</a></li>
+                            <li><a href="features/locations.html" data-i18n="nav_locations">Locations</a></li>
+                            <li><a href="features/inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                            <li><a href="features/risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                            <li><a href="features/tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                            <li><a href="features/home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                            <li><a href="features/monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta-mobile">
+                    <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                    
+                    <!-- Mobile Language Selector -->
+                    <div class="lang-selector-mobile">
+                        <button class="lang-option" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option active" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-de"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option active" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="legal-page">
+        <div class="container">
+            <div class="legal-content">
+
+                <!-- English Version -->
+                <div class="lang-content active" id="content-en">
+                    <h1>Legal Notice</h1>
+
+                    <h2>Company Information</h2>
+                    <div class="contact-block">
+                        <p><strong>OMS Prüfservice GmbH</strong></p>
+                        <p>Mühlstraße 90</p>
+                        <p>73547 Lorch-Waldhausen</p>
+                        <p>Baden-Württemberg, Germany</p>
+                        <p>&nbsp;</p>
+                        <p>Phone: +49 (0)511 / 48971 500</p>
+                        <p>Website: <a href="https://oms-pruefservice.de" target="_blank" rel="noopener">oms-pruefservice.de</a></p>
+                        <p>&nbsp;</p>
+                        <p>Managing Director: Micha Erz</p>
+                        <p>Registry Court: Amtsgericht Ulm</p>
+                        <p>Commercial Register: HRB 725496</p>
+                        <p>VAT ID: DE 272879622</p>
+                    </div>
+
+                    <h2>Disclaimer</h2>
+
+                    <h3>Liability for Content</h3>
+                    <p>As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to Section 7 (1) of the German Telemedia Act (TMG). However, according to Sections 8 to 10 TMG, we are not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p>
+                    <p>Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the time of knowledge of a specific infringement. Upon becoming aware of corresponding legal violations, we will remove this content immediately.</p>
+
+                    <h3>Liability for Links</h3>
+                    <p>Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot accept any liability for this external content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognisable at the time of linking.</p>
+                    <p>However, permanent content control of the linked pages is not reasonable without concrete evidence of a legal violation. Upon becoming aware of legal violations, we will remove such links immediately.</p>
+
+                    <h3>Copyright</h3>
+                    <p>The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.</p>
+                    <p>Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of legal violations, we will remove such content immediately.</p>
+                </div>
+
+                <!-- German Version -->
+                <div class="lang-content" id="content-de">
+                    <h1>Impressum</h1>
+
+                    <h2>Angaben gemäß § 5 TMG</h2>
+                    <div class="contact-block">
+                        <p><strong>OMS Prüfservice GmbH</strong></p>
+                        <p>Mühlstraße 90</p>
+                        <p>73547 Lorch-Waldhausen</p>
+                        <p>Baden-Württemberg</p>
+                        <p>&nbsp;</p>
+                        <p>Tel.: +49 (0)511 / 48971 500</p>
+                        <p>Internet: <a href="https://oms-pruefservice.de" target="_blank" rel="noopener">oms-pruefservice.de</a></p>
+                        <p>&nbsp;</p>
+                        <p>Geschäftsführer: Micha Erz</p>
+                        <p>Registergericht: Amtsgericht Ulm</p>
+                        <p>Handelsregister: HRB 725496</p>
+                        <p>Umsatzsteuer-Identifikationsnummer: DE 272879622</p>
+                    </div>
+
+                    <h2>Haftungshinweis</h2>
+
+                    <h3>Haftung für Inhalte</h3>
+                    <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                    <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+                    <h3>Haftung für Links</h3>
+                    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+                    <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+                    <h3>Urheberrecht</h3>
+                    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+                    <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4 data-i18n="footer_legal">Legal</h4>
+                        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+                        <a href="imprint.html" data-i18n="footer_imprint">Legal Notice</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4 data-i18n="footer_support">Support</h4>
+                        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navWrapper = document.getElementById('navWrapper');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                navWrapper.classList.toggle('active');
+                mobileOverlay.classList.toggle('active');
+                document.body.style.overflow = navWrapper.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileOverlay.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navWrapper.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Mobile dropdown toggle
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 968) {
+                    e.preventDefault();
+                    const parent = toggle.parentElement;
+                    const rect = toggle.getBoundingClientRect();
+                    // Check if click is on the right side (arrow area - approx 60px)
+                    const isArrowClick = (e.clientX - rect.left) > (rect.width - 60);
+                    
+                    if (isArrowClick) {
+                        // Toggle behavior
+                        parent.classList.toggle('open');
+                    } else {
+                        // Navigation behavior
+                        window.location.href = toggle.getAttribute('href');
+                    }
+                }
+            });
+        });
+
+        // Language Dropdown
+        const langToggle = document.getElementById('langToggle');
+        const langMenu = document.getElementById('langMenu');
+
+        if (langToggle && langMenu) {
+            langToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.classList.toggle('active');
+            });
+
+            document.addEventListener('click', () => {
+                langMenu.classList.remove('active');
+            });
+        }
+
+        // Language Content Switching
+        const langOptions = document.querySelectorAll('.lang-option');
+        const contentEn = document.getElementById('content-en');
+        const contentDe = document.getElementById('content-de');
+        const flagIcon = document.querySelector('.lang-current .flag-icon');
+
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('inspektra-lang') || 'de';
+        switchLanguage(savedLang);
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.dataset.lang;
+                switchLanguage(lang);
+                localStorage.setItem('inspektra-lang', lang);
+
+                // Update active state
+                langOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+
+                // Close menu
+                langMenu.classList.remove('active');
+            });
+        });
+
+        function switchLanguage(lang) {
+            if (lang === 'de') {
+                contentEn.classList.remove('active');
+                contentDe.classList.add('active');
+                if (flagIcon) {
+                    flagIcon.className = 'flag-icon flag-de';
+                }
+                document.documentElement.lang = 'de';
+                document.title = 'Impressum - Inspektra';
+            } else {
+                contentDe.classList.remove('active');
+                contentEn.classList.add('active');
+                if (flagIcon) {
+                    flagIcon.className = 'flag-icon flag-en';
+                }
+                document.documentElement.lang = 'en';
+                document.title = 'Legal Notice - Inspektra';
+            }
+
+            // Update active lang option
+            langOptions.forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === lang);
+            });
+
+            // Update translatable elements
+            const translations = {
+                en: {
+                    announcement: "Inspektra's login page is now at <strong>app.inspektra.de</strong>",
+                    nav_why: "Why Inspektra",
+                    nav_features: "Features",
+                    nav_dashboard: 'Dashboard',
+                    nav_assets: 'Assets',
+                    nav_locations: 'Locations',
+                    nav_inspections: 'Inspections',
+                    nav_risk: 'Risk Assessments',
+                    nav_tasks: 'Tasks',
+                    nav_homeoffice: 'Home Office Checks',
+                    nav_monitoring: 'Monitoring',
+                    nav_contact: "Contact",
+                    nav_login: "Log in",
+                    nav_request: "Request Access",
+                    footer_tagline: 'Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.',
+                    footer_legal: 'Legal',
+                    footer_privacy: 'Privacy Policy',
+                    footer_imprint: 'Legal Notice',
+                    footer_support: 'Support',
+                    footer_copyright: '© 2025 Inspektra. All rights reserved.'
+                },
+                de: {
+                    announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
+                    nav_why: "Warum Inspektra",
+                    nav_features: "Funktionen",
+                    nav_dashboard: 'Dashboard',
+                    nav_assets: 'Betriebsmittel',
+                    nav_locations: 'Standorte',
+                    nav_inspections: 'Prüfungen',
+                    nav_risk: 'Gefährdungsbeurteilung',
+                    nav_tasks: 'Aufgaben',
+                    nav_homeoffice: 'Homeoffices',
+                    nav_monitoring: 'Monitoring',
+                    nav_contact: "Kontakt",
+                    nav_login: "Anmelden",
+                    nav_request: "Zugang anfragen",
+                    footer_tagline: 'Elektrische Sicherheit. Strukturiert und unter Kontrolle.<br>Powered by OMS Prüfservice.',
+                    footer_legal: 'Rechtliches',
+                    footer_privacy: 'Datenschutzerklärung',
+                    footer_imprint: 'Impressum',
+                    footer_support: 'Support',
+                    footer_copyright: '© 2025 Inspektra. Alle Rechte vorbehalten.'
+                }
+            };
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

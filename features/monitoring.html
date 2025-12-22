@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoring - Inspektra Features</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
     <style>
         /* Page-specific styles - common styles are in styles.css */
         .floating-card {
@@ -30,38 +28,69 @@
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">
-                <img src="../inspektra-logo.svg" alt="Inspektra" height="40">
+                <img src="../inspektra-logo.svg" alt="Inspektra" height="36">
             </a>
-            <ul class="nav-links">
-                <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
-                <li class="dropdown">
-                    <a href="../features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
-                        <li><a href="assets.html" data-i18n="nav_assets">Assets</a></li>
-                        <li><a href="locations.html" data-i18n="nav_locations">Locations</a></li>
-                        <li><a href="inspections.html" data-i18n="nav_inspections">Inspections</a></li>
-                        <li><a href="risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
-                        <li><a href="tasks.html" data-i18n="nav_tasks">Tasks</a></li>
-                        <li><a href="home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
-                        <li><a href="monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
-                    </ul>
-                </li>
-                <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
-                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                <div class="lang-dropdown">
-                    <button class="lang-current" id="langToggle" aria-label="Change language">
-                        <span class="flag-icon flag-en"></span>
-                    </button>
-                    <div class="lang-menu" id="langMenu">
-                        <button class="lang-option active" data-lang="en">
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+            <!-- Navigation -->
+            <div class="nav-wrapper" id="navWrapper">
+                <div class="mobile-nav-logo">
+                    <img src="../inspektra-logo.svg" alt="Inspektra" height="32">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
+                    <li class="dropdown">
+                        <a href="../features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                            <li><a href="assets.html" data-i18n="nav_assets">Assets</a></li>
+                            <li><a href="locations.html" data-i18n="nav_locations">Locations</a></li>
+                            <li><a href="inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                            <li><a href="risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                            <li><a href="tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                            <li><a href="home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                            <li><a href="monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta-mobile">
+                    <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>                    
+                    <!-- Mobile Language Selector -->
+                    <div class="lang-selector-mobile">
+                        <button class="lang-option" data-lang="en">
                             <span class="flag-icon flag-en"></span>
                             <span>English</span>
                         </button>
-                        <button class="lang-option" data-lang="de">
+                        <button class="lang-option active" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-de"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option active" data-lang="de">
                             <span class="flag-icon flag-de"></span>
                             <span>Deutsch</span>
                         </button>
@@ -73,19 +102,28 @@
 
     <header class="feature-hero">
         <div class="container">
-            <div class="feature-hero-grid">
-                <div class="feature-hero-content">
-                    <div class="badge-pill" data-i18n="nav_monitoring">Monitoring</div>
-                    <h1 data-i18n="mon_hero_title">Early visibility into electrical issues</h1>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="feature-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        Monitoring
+                    </div>
+
+                    <h1 data-i18n="mon_hero_title">Early visibility into <span class="gradient-text">electrical issues</span></h1>
                     <p class="subtitle" data-i18n="mon_hero_subtitle">Install sensors on your installations and track spikes, faults, and abnormal behaviour directly in Inspektra — so you can react before problems escalate.</p>
-                    <div class="cta-group">
-                        <a href="../contact.html" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                        <a href="../pricing.html" class="btn btn-outline" data-i18n="view_pricing">View pricing</a>
+
+                    <div class="hero-cta">
+                        <a href="../contact.html" class="btn-primary-lg">
+                            <span data-i18n="nav_request">Request Access</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="../features.html" class="btn-secondary-lg" data-i18n="dash_view_all">View all features</a>
                     </div>
                 </div>
-                <div class="feature-hero-visual">
+
+                <div class="hero-visual">
                     <div class="screenshot-frame">
-                        <img src="../Feautures- Micropages Images/Events.jpg" alt="Inspektra Monitoring">
+                        <img src="../Feautures- Micropages Images - German/Events.jpg" alt="Inspektra Monitoring" data-i18n-img-en="../Feautures- Micropages Images/Events.jpg" data-i18n-img-de="../Feautures- Micropages Images - German/Events.jpg">
                     </div>
                 </div>
             </div>
@@ -150,7 +188,7 @@
                     <a href="../index.html" class="logo">
                         <img src="../inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
@@ -165,7 +203,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -231,6 +269,61 @@
     </div>
 
     <script>
+        // Mobile Menu Logic
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navWrapper = document.getElementById('navWrapper');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const body = document.body;
+
+        function toggleMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            navWrapper.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        }
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', toggleMenu);
+        }
+        
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', toggleMenu);
+        }
+
+        // Close menu when clicking a link (optional, but good UX)
+        const navLinks = document.querySelectorAll('.nav-links a:not(.dropdown-toggle)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navWrapper && navWrapper.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Dropdown Logic for Mobile
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            
+            if (toggle) {
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 968) {
+                        e.preventDefault();
+                        const rect = toggle.getBoundingClientRect();
+                        // Check if click is on the right side (arrow area - approx 60px)
+                        const isArrowClick = (e.clientX - rect.left) > (rect.width - 60);
+                        
+                        if (isArrowClick) {
+                            // Toggle behavior
+                            dropdown.classList.toggle('open');
+                        } else {
+                            // Navigation behavior
+                            window.location.href = toggle.getAttribute('href');
+                        }
+                    }
+                });
+            }
+        });
         // Language Switcher
         const translations = {
             en: {
@@ -240,9 +333,16 @@
                 nav_contact: "Contact",
                 nav_login: "Log in",
                 nav_request: "Request Access",
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Assets',
+                nav_locations: 'Locations',
+                nav_inspections: 'Inspections',
+                nav_risk: 'Risk Assessments',
+                nav_tasks: 'Tasks',
+                nav_homeoffice: 'Home Office Checks',
                 nav_monitoring: "Monitoring",
                 view_pricing: "View pricing",
-                mon_hero_title: "Early visibility into electrical issues",
+                mon_hero_title: 'Early visibility into <span class="gradient-text">electrical issues</span>',
                 mon_hero_subtitle: "Install sensors on your installations and track spikes, faults, and abnormal behaviour directly in Inspektra — so you can react before problems escalate.",
                 mon_benefit1_title: "Real-time insight into your installations",
                 mon_benefit1_desc: "Sensors provide continuous data on electrical behaviour, helping you detect unusual activity early.",
@@ -252,6 +352,30 @@
                 mon_benefit3_desc: "View patterns and deviations over time to understand where maintenance or follow-up inspections may be needed.",
                 mon_benefit4_title: "Seamless integration with your records",
                 mon_benefit4_desc: "Monitoring events connect to assets and inspections, giving safety teams a full picture of equipment condition across sites.",
+                cta_title: 'Ready to streamline your safety processes?',
+                cta_subtitle: 'Join organisations across DACH using Inspektra to manage inspections, risks, and documentation in one system.',
+                cta_button: 'Request Access',
+                footer_tagline: 'Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Legal',
+                footer_privacy: 'Privacy Policy',
+                footer_imprint: 'Legal Notice',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. All rights reserved.',
+                modal_title: 'Request access',
+                modal_desc: 'Our team will review your request and share the next steps.',
+                modal_name: 'Full name',
+                modal_name_placeholder: 'Your full name',
+                modal_email: 'Work email',
+                modal_email_placeholder: 'you@company.com',
+                modal_phone: 'Phone number <span class="optional">(optional)</span>',
+                modal_phone_placeholder: '+49 123 456 7890',
+                modal_company: 'Company name <span class="optional">(optional)</span>',
+                modal_company_placeholder: 'Your company',
+                modal_use_case: 'What do you want to use Inspektra for?',
+                modal_use_oms: 'OMS inspections',
+                modal_use_inhouse: 'In-house inspections (e.g., PAT, new device checks)',
+                modal_use_both: 'Both OMS + in-house inspections',
+                modal_use_not_sure: 'Not sure yet',
                 modal_submit: "Submit request",
                 form_consent: "By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used."
             },
@@ -262,9 +386,16 @@
                 nav_contact: "Kontakt",
                 nav_login: "Anmelden",
                 nav_request: "Zugang anfragen",
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Betriebsmittel',
+                nav_locations: 'Standorte',
+                nav_inspections: 'Prüfungen',
+                nav_risk: 'Gefährdungsbeurteilung',
+                nav_tasks: 'Aufgaben',
+                nav_homeoffice: 'Homeoffices',
                 nav_monitoring: "Monitoring",
                 view_pricing: "Preise ansehen",
-                mon_hero_title: "Früherkennung elektrischer Auffälligkeiten",
+                mon_hero_title: 'Früherkennung <span class="gradient-text">elektrischer Auffälligkeiten</span>',
                 mon_hero_subtitle: "Installieren Sie Sensoren an Ihren Anlagen und überwachen Sie Spitzen, Fehler und ungewöhnliches Verhalten direkt in Inspektra – damit Sie reagieren können, bevor Probleme entstehen.",
                 mon_benefit1_title: "Echtzeit-Einblicke in Ihre Anlagen",
                 mon_benefit1_desc: "Sensoren liefern kontinuierliche Daten zum elektrischen Verhalten und ermöglichen eine frühzeitige Erkennung ungewöhnlicher Aktivitäten.",
@@ -274,12 +405,36 @@
                 mon_benefit3_desc: "Verfolgen Sie Muster und Abweichungen über längere Zeiträume, um besser einschätzen zu können, wo Wartung oder Folgeprüfungen erforderlich sind.",
                 mon_benefit4_title: "Nahtlose Verbindung mit Ihren Prüf- und Betriebsdaten",
                 mon_benefit4_desc: "Monitoring-Ereignisse werden automatisch mit Betriebsmitteln und Prüfungen verknüpft, sodass Sicherheitsteams den Zustand ihrer Anlagen standortübergreifend im Blick behalten.",
+                cta_title: 'Bereit, Ihre Sicherheitsprozesse zu vereinfachen?',
+                cta_subtitle: 'Schließen Sie sich Organisationen in der DACH-Region an, die Inspektra nutzen, um Prüfungen, Risiken und Dokumentation in einem einzigen System zu verwalten.',
+                cta_button: 'Zugang anfragen',
+                footer_tagline: 'Elektrische Sicherheit. Strukturiert und unter Kontrolle.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Rechtliches',
+                footer_privacy: 'Datenschutzerklärung',
+                footer_imprint: 'Impressum',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. Alle Rechte vorbehalten.',
+                modal_title: 'Zugang anfragen',
+                modal_desc: 'Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden.',
+                modal_name: 'Vollständiger Name',
+                modal_name_placeholder: 'Ihr vollständiger Name',
+                modal_email: 'Geschäftliche E-Mail',
+                modal_email_placeholder: 'sie@unternehmen.de',
+                modal_phone: 'Telefonnummer <span class="optional">(optional)</span>',
+                modal_phone_placeholder: '+49 123 456 7890',
+                modal_company: 'Firmenname <span class="optional">(optional)</span>',
+                modal_company_placeholder: 'Ihr Unternehmen',
+                modal_use_case: 'Wofür möchten Sie Inspektra nutzen?',
+                modal_use_oms: 'OMS-Prüfungen',
+                modal_use_inhouse: 'Interne Prüfungen (z.B. Geräteprüfung, Neugeräte-Check)',
+                modal_use_both: 'OMS- und interne Prüfungen',
+                modal_use_not_sure: 'Noch nicht sicher',
                 modal_submit: "Anfrage senden",
                 form_consent: "Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden."
             }
         };
 
-        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+        let currentLang = localStorage.getItem('inspektra-lang') || 'de';
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -309,6 +464,14 @@
                 const key = el.dataset.i18nPlaceholder;
                 if (translations[lang] && translations[lang][key]) {
                     el.placeholder = translations[lang][key];
+                }
+            });
+
+            // Update images based on language
+            document.querySelectorAll('[data-i18n-img-' + lang + ']').forEach(el => {
+                const imgSrc = el.getAttribute('data-i18n-img-' + lang);
+                if (imgSrc) {
+                    el.src = imgSrc;
                 }
             });
 

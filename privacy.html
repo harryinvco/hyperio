@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Inspektra</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <style>
         .legal-page {
             padding: 120px 0 80px;
@@ -141,7 +139,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="inspektra-logo.svg" alt="Inspektra" height="48">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="36">
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
@@ -150,6 +148,9 @@
             </button>
             <div class="mobile-menu-overlay" id="mobileOverlay"></div>
             <div class="nav-wrapper" id="navWrapper">
+                <div class="mobile-nav-logo">
+                    <img src="inspektra-logo.svg" alt="Inspektra" height="32">
+                </div>
                 <ul class="nav-links">
                     <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
                     <li class="dropdown">
@@ -168,23 +169,35 @@
                     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                 </ul>
                 <div class="nav-cta-mobile">
-                    <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                     <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                </div>
-            </div>
-            <div class="nav-cta">
-                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
-                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                <div class="lang-dropdown">
-                    <button class="lang-current" id="langToggle" aria-label="Change language">
-                        <span class="flag-icon flag-en"></span>
-                    </button>
-                    <div class="lang-menu" id="langMenu">
-                        <button class="lang-option active" data-lang="en">
+                    
+                    <!-- Mobile Language Selector -->
+                    <div class="lang-selector-mobile">
+                        <button class="lang-option" data-lang="en">
                             <span class="flag-icon flag-en"></span>
                             <span>English</span>
                         </button>
-                        <button class="lang-option" data-lang="de">
+                        <button class="lang-option active" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-de"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option active" data-lang="de">
                             <span class="flag-icon flag-de"></span>
                             <span>Deutsch</span>
                         </button>
@@ -536,7 +549,7 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
@@ -551,7 +564,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -578,6 +591,27 @@
             });
         }
 
+        // Mobile dropdown toggle
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 968) {
+                    e.preventDefault();
+                    const parent = toggle.parentElement;
+                    const rect = toggle.getBoundingClientRect();
+                    // Check if click is on the right side (arrow area - approx 60px)
+                    const isArrowClick = (e.clientX - rect.left) > (rect.width - 60);
+                    
+                    if (isArrowClick) {
+                        // Toggle behavior
+                        parent.classList.toggle('open');
+                    } else {
+                        // Navigation behavior
+                        window.location.href = toggle.getAttribute('href');
+                    }
+                }
+            });
+        });
+
         // Language Dropdown
         const langToggle = document.getElementById('langToggle');
         const langMenu = document.getElementById('langMenu');
@@ -600,7 +634,7 @@
         const flagIcon = document.querySelector('.lang-current .flag-icon');
 
         // Check for saved language preference
-        const savedLang = localStorage.getItem('inspektra-lang') || 'en';
+        const savedLang = localStorage.getItem('inspektra-lang') || 'de';
         switchLanguage(savedLang);
 
         langOptions.forEach(option => {

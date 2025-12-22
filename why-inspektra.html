@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Inspektra - Our Story & Mission</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <style>
         /* ===== WHY INSPEKTRA PAGE STYLES ===== */
 
@@ -79,7 +77,12 @@
             align-items: center;
         }
 
-        .story-hero-visual .screenshot-frame {
+        .story-hero-visual-mobile {
+            display: none;
+        }
+
+        .story-hero-visual .screenshot-frame,
+        .story-hero-visual-mobile .screenshot-frame {
             position: relative;
             border-radius: 24px;
             overflow: hidden;
@@ -112,11 +115,17 @@
             }
 
             .story-hero-visual {
-                order: -1;
+                display: none;
             }
 
-            .story-hero-visual .screenshot-frame img {
-                max-width: 260px;
+            .story-hero-visual-mobile {
+                display: flex;
+                justify-content: center;
+                margin: 32px 0;
+            }
+
+            .story-hero-visual-mobile .screenshot-frame img {
+                max-width: 220px;
             }
         }
 
@@ -1193,7 +1202,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="inspektra-logo.svg" alt="Inspektra" height="48">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="36">
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
@@ -1202,41 +1211,56 @@
             </button>
             <div class="mobile-menu-overlay" id="mobileOverlay"></div>
             <div class="nav-wrapper" id="navWrapper">
+                <div class="mobile-nav-logo">
+                    <img src="inspektra-logo.svg" alt="Inspektra" height="32">
+                </div>
                 <ul class="nav-links">
                     <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
                     <li class="dropdown">
                         <a href="features.html" class="dropdown-toggle" data-i18n="nav_features">Features</a>
                         <ul class="dropdown-menu">
-                            <li><a href="features/dashboard.html">Dashboard</a></li>
-                            <li><a href="features/assets.html">Assets</a></li>
-                            <li><a href="features/locations.html">Locations</a></li>
-                            <li><a href="features/inspections.html">Inspections</a></li>
-                            <li><a href="features/risk-assessments.html">Risk Assessments</a></li>
-                            <li><a href="features/tasks.html">Tasks</a></li>
-                            <li><a href="features/home-office-checks.html">Home Office Checks</a></li>
-                            <li><a href="features/monitoring.html">Monitoring</a></li>
+                            <li><a href="features/dashboard.html" data-i18n="nav_dashboard">Dashboard</a></li>
+                            <li><a href="features/assets.html" data-i18n="nav_assets">Assets</a></li>
+                            <li><a href="features/locations.html" data-i18n="nav_locations">Locations</a></li>
+                            <li><a href="features/inspections.html" data-i18n="nav_inspections">Inspections</a></li>
+                            <li><a href="features/risk-assessments.html" data-i18n="nav_risk">Risk Assessments</a></li>
+                            <li><a href="features/tasks.html" data-i18n="nav_tasks">Tasks</a></li>
+                            <li><a href="features/home-office-checks.html" data-i18n="nav_homeoffice">Home Office Checks</a></li>
+                            <li><a href="features/monitoring.html" data-i18n="nav_monitoring">Monitoring</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                 </ul>
                 <div class="nav-cta-mobile">
-                    <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                     <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                </div>
-            </div>
-            <div class="nav-cta">
-                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
-                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                <div class="lang-dropdown">
-                    <button class="lang-current" id="langToggle" aria-label="Change language">
-                        <span class="flag-icon flag-en"></span>
-                    </button>
-                    <div class="lang-menu" id="langMenu">
-                        <button class="lang-option active" data-lang="en">
+                    
+                    <!-- Mobile Language Selector -->
+                    <div class="lang-selector-mobile">
+                        <button class="lang-option" data-lang="en">
                             <span class="flag-icon flag-en"></span>
                             <span>English</span>
                         </button>
-                        <button class="lang-option" data-lang="de">
+                        <button class="lang-option active" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-de"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option active" data-lang="de">
                             <span class="flag-icon flag-de"></span>
                             <span>Deutsch</span>
                         </button>
@@ -1256,6 +1280,11 @@
             <div class="story-hero-grid">
                 <div class="story-hero-content">
                     <h1 data-i18n="why_hero_title">Clarity for every inspection</h1>
+                    <div class="story-hero-visual-mobile">
+                        <div class="screenshot-frame">
+                            <img src="Home - Feautures Images/Android Medium - Test result.png" alt="Inspektra Test Result">
+                        </div>
+                    </div>
                     <p class="lead" data-i18n="why_hero_subtitle">Inspektra brings order to inspections, risks, and reporting — giving safety teams a clear, consistent way to stay compliant.</p>
                     <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="nav_request">Request Access</a>
                 </div>
@@ -1391,22 +1420,22 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Legal</h4>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="imprint.html">Legal Notice</a>
+                        <h4 data-i18n="footer_legal">Legal</h4>
+                        <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+                        <a href="imprint.html" data-i18n="footer_imprint">Legal Notice</a>
                     </div>
                     <div class="nav-col">
-                        <h4>Support</h4>
-                        <a href="contact.html">Contact</a>
+                        <h4 data-i18n="footer_support">Support</h4>
+                        <a href="contact.html" data-i18n="nav_contact">Contact</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1478,6 +1507,14 @@
                 announcement: "Inspektra's login page is now at <strong>app.inspektra.de</strong>",
                 nav_why: "Why Inspektra",
                 nav_features: "Features",
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Assets',
+                nav_locations: 'Locations',
+                nav_inspections: 'Inspections',
+                nav_risk: 'Risk Assessments',
+                nav_tasks: 'Tasks',
+                nav_homeoffice: 'Home Office Checks',
+                nav_monitoring: 'Monitoring',
                 nav_contact: "Contact",
                 nav_login: "Log in",
                 nav_request: "Request Access",
@@ -1507,13 +1544,42 @@
                 why_comp3_desc: "Technicians and managers access inspections, tasks, and reports from any device.",
                 why_comp4_title: "Digital reporting, ready for audits",
                 why_comp4_desc: "Generate standardised documentation instantly, aligned with DACH requirements.",
+                modal_title: 'Request access',
+                modal_desc: 'Our team will review your request and share the next steps.',
+                modal_name: 'Full name',
+                modal_name_placeholder: 'Your full name',
+                modal_email: 'Work email',
+                modal_email_placeholder: 'you@company.com',
+                modal_phone: 'Phone number <span class="optional">(optional)</span>',
+                modal_phone_placeholder: '+49 123 456 7890',
+                modal_company: 'Company name <span class="optional">(optional)</span>',
+                modal_company_placeholder: 'Your company',
+                modal_use_case: 'What do you want to use Inspektra for?',
+                modal_use_oms: 'OMS inspections',
+                modal_use_inhouse: 'In-house inspections (e.g., PAT, new device checks)',
+                modal_use_both: 'Both OMS + in-house inspections',
+                modal_use_not_sure: 'Not sure yet',
                 modal_submit: "Submit request",
-                form_consent: "By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used."
+                form_consent: "By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used.",
+                footer_tagline: 'Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Legal',
+                footer_privacy: 'Privacy Policy',
+                footer_imprint: 'Legal Notice',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. All rights reserved.'
             },
             de: {
                 announcement: "Die Inspektra-Anmeldeseite ist jetzt unter <strong>app.inspektra.de</strong>",
                 nav_why: "Warum Inspektra",
                 nav_features: "Funktionen",
+                nav_dashboard: 'Dashboard',
+                nav_assets: 'Betriebsmittel',
+                nav_locations: 'Standorte',
+                nav_inspections: 'Prüfungen',
+                nav_risk: 'Gefährdungsbeurteilung',
+                nav_tasks: 'Aufgaben',
+                nav_homeoffice: 'Homeoffices',
+                nav_monitoring: 'Monitoring',
                 nav_contact: "Kontakt",
                 nav_login: "Anmelden",
                 nav_request: "Zugang anfragen",
@@ -1543,12 +1609,33 @@
                 why_comp3_desc: "Techniker und Verantwortliche greifen von jedem Gerät auf Prüfungen, Aufgaben und Berichte zu.",
                 why_comp4_title: "Digitale Prüfberichte, auditbereit",
                 why_comp4_desc: "Erstellen Sie standardisierte Dokumentation – sofort und nach DACH-Vorgaben.",
+                modal_title: 'Zugang anfragen',
+                modal_desc: 'Unser Team wird Ihre Anfrage prüfen und sich bei Ihnen melden.',
+                modal_name: 'Vollständiger Name',
+                modal_name_placeholder: 'Ihr vollständiger Name',
+                modal_email: 'Geschäftliche E-Mail',
+                modal_email_placeholder: 'sie@unternehmen.de',
+                modal_phone: 'Telefonnummer <span class="optional">(optional)</span>',
+                modal_phone_placeholder: '+49 123 456 7890',
+                modal_company: 'Firmenname <span class="optional">(optional)</span>',
+                modal_company_placeholder: 'Ihr Unternehmen',
+                modal_use_case: 'Wofür möchten Sie Inspektra nutzen?',
+                modal_use_oms: 'OMS-Prüfungen',
+                modal_use_inhouse: 'Interne Prüfungen (z.B. Geräteprüfung, Neugeräte-Check)',
+                modal_use_both: 'OMS- und interne Prüfungen',
+                modal_use_not_sure: 'Noch nicht sicher',
                 modal_submit: "Anfrage senden",
-                form_consent: "Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden."
+                form_consent: "Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden.",
+                footer_tagline: 'Elektrische Sicherheit. Strukturiert und unter Kontrolle.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Rechtliches',
+                footer_privacy: 'Datenschutzerklärung',
+                footer_imprint: 'Impressum',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. Alle Rechte vorbehalten.'
             }
         };
 
-        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+        let currentLang = localStorage.getItem('inspektra-lang') || 'de';
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -1635,11 +1722,31 @@
         mobileMenuToggle.addEventListener('click', toggleMobileMenu);
         mobileOverlay.addEventListener('click', closeMobileMenu);
 
+        // Close menu on nav link click (exclude dropdown toggle)
+        navWrapper.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 968) {
+                    closeMobileMenu();
+                }
+            });
+        });
+
         document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 968) {
                     e.preventDefault();
-                    toggle.parentElement.classList.toggle('open');
+                    const parent = toggle.parentElement;
+                    const rect = toggle.getBoundingClientRect();
+                    // Check if click is on the right side (arrow area - approx 60px)
+                    const isArrowClick = (e.clientX - rect.left) > (rect.width - 60);
+                    
+                    if (isArrowClick) {
+                        // Toggle behavior
+                        parent.classList.toggle('open');
+                    } else {
+                        // Navigation behavior
+                        window.location.href = toggle.getAttribute('href');
+                    }
                 }
             });
         });

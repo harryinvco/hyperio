@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - Inspektra</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <style>
         :root {
             --glass-bg: rgba(255, 255, 255, 0.7);
@@ -761,7 +759,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="inspektra-logo.svg" alt="Inspektra" height="48">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="36">
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
@@ -770,6 +768,9 @@
             </button>
             <div class="mobile-menu-overlay" id="mobileOverlay"></div>
             <div class="nav-wrapper" id="navWrapper">
+                <div class="mobile-nav-logo">
+                    <img src="inspektra-logo.svg" alt="Inspektra" height="32">
+                </div>
                 <ul class="nav-links">
                     <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
                     <li class="dropdown">
@@ -788,23 +789,35 @@
                     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                 </ul>
                 <div class="nav-cta-mobile">
-                    <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                     <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                </div>
-            </div>
-            <div class="nav-cta">
-                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
-                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                <div class="lang-dropdown">
-                    <button class="lang-current" id="langToggle" aria-label="Change language">
-                        <span class="flag-icon flag-en"></span>
-                    </button>
-                    <div class="lang-menu" id="langMenu">
-                        <button class="lang-option active" data-lang="en">
+                    
+                    <!-- Mobile Language Selector -->
+                    <div class="lang-selector-mobile">
+                        <button class="lang-option" data-lang="en">
                             <span class="flag-icon flag-en"></span>
                             <span>English</span>
                         </button>
-                        <button class="lang-option" data-lang="de">
+                        <button class="lang-option active" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-de"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option active" data-lang="de">
                             <span class="flag-icon flag-de"></span>
                             <span>Deutsch</span>
                         </button>
@@ -956,7 +969,7 @@
                     <a href="index.html" class="logo">
                         <img src="inspektra-logo.svg" alt="Inspektra" height="32" style="filter: brightness(0) invert(1);">
                     </a>
-                    <p>Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
+                    <p data-i18n="footer_tagline">Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="nav-col">
@@ -971,7 +984,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Inspektra. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Inspektra. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -999,11 +1012,31 @@
         mobileMenuToggle.addEventListener('click', toggleMobileMenu);
         mobileOverlay.addEventListener('click', closeMobileMenu);
 
+        // Close menu on nav link click (exclude dropdown toggle)
+        navWrapper.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 968) {
+                    closeMobileMenu();
+                }
+            });
+        });
+
         document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 968) {
                     e.preventDefault();
-                    toggle.parentElement.classList.toggle('open');
+                    const parent = toggle.parentElement;
+                    const rect = toggle.getBoundingClientRect();
+                    // Check if click is on the right side (arrow area - approx 60px)
+                    const isArrowClick = (e.clientX - rect.left) > (rect.width - 60);
+                    
+                    if (isArrowClick) {
+                        // Toggle behavior
+                        parent.classList.toggle('open');
+                    } else {
+                        // Navigation behavior
+                        window.location.href = toggle.getAttribute('href');
+                    }
                 }
             });
         });
@@ -1153,7 +1186,13 @@
                 modal_company: 'Company name',
                 modal_company_placeholder: 'Your company',
                 modal_submit: 'Submit request',
-                form_consent: 'By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used.'
+                form_consent: 'By submitting this form, I consent to the storage of the information I have provided so that my enquiry can be responded to. The Privacy Policy explains which information is collected and how it is used.',
+                footer_tagline: 'Electrical safety. Organised and under control.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Legal',
+                footer_privacy: 'Privacy Policy',
+                footer_imprint: 'Legal Notice',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. All rights reserved.'
             },
             de: {
                 announcement: 'Die Inspektra Login-Seite befindet sich jetzt unter <strong>app.inspektra.de</strong>',
@@ -1197,11 +1236,17 @@
                 modal_company: 'Firmenname',
                 modal_company_placeholder: 'Ihr Unternehmen',
                 modal_submit: 'Anfrage senden',
-                form_consent: 'Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden.'
+                form_consent: 'Mit der Übermittlung stimme ich zu, dass die von mir übermittelten Informationen gespeichert werden, damit meine Anfrage beantwortet werden kann. In der Datenschutzerklärung erfahre ich, welche Informationen erhoben werden und wie diese genutzt werden.',
+                footer_tagline: 'Elektrische Sicherheit. Strukturiert und unter Kontrolle.<br>Powered by OMS Prüfservice.',
+                footer_legal: 'Rechtliches',
+                footer_privacy: 'Datenschutzerklärung',
+                footer_imprint: 'Impressum',
+                footer_support: 'Support',
+                footer_copyright: '© 2025 Inspektra. Alle Rechte vorbehalten.'
             }
         };
 
-        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+        let currentLang = localStorage.getItem('inspektra-lang') || 'de';
 
         function setLanguage(lang) {
             currentLang = lang;

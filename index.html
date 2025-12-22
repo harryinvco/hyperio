@@ -14,10 +14,8 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 <body>
 
@@ -34,7 +32,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <img src="inspektra-logo.svg" alt="Inspektra" height="48">
+                <img src="inspektra-logo.svg" alt="Inspektra" height="36">
             </a>
 
             <!-- Mobile Menu Toggle -->
@@ -49,6 +47,9 @@
 
             <!-- Navigation -->
             <div class="nav-wrapper" id="navWrapper">
+                <div class="mobile-nav-logo">
+                    <img src="inspektra-logo.svg" alt="Inspektra" height="32">
+                </div>
                 <ul class="nav-links">
                     <li><a href="why-inspektra.html" data-i18n="nav_why">Why Inspektra</a></li>
                     <li class="dropdown">
@@ -67,23 +68,35 @@
                     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                 </ul>
                 <div class="nav-cta-mobile">
-                    <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                    <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
                     <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                </div>
-            </div>
-            <div class="nav-cta">
-                <a href="#" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
-                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
-                <div class="lang-dropdown">
-                    <button class="lang-current" id="langToggle" aria-label="Change language">
-                        <span class="flag-icon flag-en"></span>
-                    </button>
-                    <div class="lang-menu" id="langMenu">
-                        <button class="lang-option active" data-lang="en">
+                    
+                    <!-- Mobile Language Selector -->
+                    <div class="lang-selector-mobile">
+                        <button class="lang-option" data-lang="en">
                             <span class="flag-icon flag-en"></span>
                             <span>English</span>
                         </button>
                         <button class="lang-option" data-lang="de">
+                            <span class="flag-icon flag-de"></span>
+                            <span>Deutsch</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.inspektra.de" class="btn btn-secondary" data-i18n="nav_login">Log in</a>
+                <a href="#" class="btn btn-primary" data-i18n="nav_request">Request Access</a>
+                <div class="lang-dropdown">
+                    <button class="lang-current" id="langToggle" aria-label="Change language">
+                        <span class="flag-icon flag-de"></span>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-option" data-lang="en">
+                            <span class="flag-icon flag-en"></span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option active" data-lang="de">
                             <span class="flag-icon flag-de"></span>
                             <span>Deutsch</span>
                         </button>
@@ -95,6 +108,7 @@
 
     <header class="hero hero-modern">
         <div class="hero-bg-glow"></div>
+
         <div class="container">
             <div class="hero-content-centered">
                 <h1 data-i18n="hero_title">Move electrical safety forward.</h1>
@@ -106,6 +120,11 @@
             </div>
             <div class="hero-screenshot-wrapper">
                 <div class="hero-screenshot-glow"></div>
+
+                <!-- Floating Badge Elements -->
+                <img src="Element 1.png" alt="Scan label" class="floating-element floating-element-1">
+                <img src="Element 2.png" alt="Digital asset info" class="floating-element floating-element-2">
+
                 <div class="hero-screenshot-frame">
                     <div class="browser-bar">
                         <div class="browser-dots">
@@ -115,7 +134,7 @@
                         </div>
                         <div class="browser-url">app.inspektra.de</div>
                     </div>
-                    <img src="Feautures- Micropages Images/Dashboard (1).jpg" alt="Inspektra Dashboard" class="hero-dashboard-img">
+                    <img src="Feautures- Micropages Images - German/Dashboard (1).jpg" alt="Inspektra Dashboard" class="hero-dashboard-img" data-i18n-img-en="Feautures- Micropages Images/Dashboard (1).jpg" data-i18n-img-de="Feautures- Micropages Images - German/Dashboard (1).jpg">
                 </div>
             </div>
         </div>
@@ -307,7 +326,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Dashboard (1).png" alt="Dashboard">
+                                <img src="Home - Feautures Images - German/Android Medium - Dashboard (1).png" alt="Dashboard" data-i18n-img-en="Home - Feautures Images/Android Medium - Dashboard (1).png" data-i18n-img-de="Home - Feautures Images - German/Android Medium - Dashboard (1).png">
                             </div>
                         </div>
                     </div>
@@ -323,7 +342,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Asset page inner page.png" alt="Assets">
+                                <img src="Home - Feautures Images - German/Android Medium - Asset page inner page.png" alt="Assets" data-i18n-img-en="Home - Feautures Images/Android Medium - Asset page inner page.png" data-i18n-img-de="Home - Feautures Images - German/Android Medium - Asset page inner page.png">
                             </div>
                         </div>
                     </div>
@@ -339,7 +358,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Locations (1).png" alt="Locations">
+                                <img src="Home - Feautures Images - German/Android Medium - Locations (1).png" alt="Locations" data-i18n-img-en="Home - Feautures Images/Android Medium - Locations (1).png" data-i18n-img-de="Home - Feautures Images - German/Android Medium - Locations (1).png">
                             </div>
                         </div>
                     </div>
@@ -355,7 +374,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Test result.png" alt="Inspections">
+                                <img src="Home - Feautures Images - German/Android Medium - Test result.png" alt="Inspections" data-i18n-img-en="Home - Feautures Images/Android Medium - Test result.png" data-i18n-img-de="Home - Feautures Images - German/Android Medium - Test result.png">
                             </div>
                         </div>
                     </div>
@@ -371,7 +390,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Risk assessment (1).png" alt="Risk Assessments">
+                                <img src="Home - Feautures Images - German/Android Medium - Risk assessment (1).png" alt="Risk Assessments" data-i18n-img-en="Home - Feautures Images/Android Medium - Risk assessment (1).png" data-i18n-img-de="Home - Feautures Images - German/Android Medium - Risk assessment (1).png">
                             </div>
                         </div>
                     </div>
@@ -387,7 +406,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Tasks (1).png" alt="Tasks">
+                                <img src="Home - Feautures Images - German/Android Medium - Tasks (1).png" alt="Tasks" data-i18n-img-en="Home - Feautures Images/Android Medium - Tasks (1).png" data-i18n-img-de="Home - Feautures Images - German/Android Medium - Tasks (1).png">
                             </div>
                         </div>
                     </div>
@@ -403,7 +422,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Public home office (1).png" alt="Home Office">
+                                <img src="Home - Feautures Images - German/Android Medium - Public home office (1).png" alt="Home Office" data-i18n-img-en="Home - Feautures Images/Android Medium - Public home office (1).png" data-i18n-img-de="Home - Feautures Images - German/Android Medium - Public home office (1).png">
                             </div>
                         </div>
                     </div>
@@ -419,7 +438,7 @@
                         </div>
                         <div class="feature-device">
                             <div class="device-frame">
-                                <img src="Home - Feautures Images/Android Medium - Events.png" alt="Monitoring">
+                                <img src="Home - Feautures Images - German/Events.png" alt="Monitoring" data-i18n-img-en="Home - Feautures Images/Android Medium - Events.png" data-i18n-img-de="Home - Feautures Images - German/Events.png">
                             </div>
                         </div>
                     </div>
@@ -460,7 +479,7 @@
                     </div>
                 </div>
                 <div class="security-visual">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.15);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10" stroke-width="1.5"></polyline></svg>
+                    <img src="security_section.png" alt="Security" class="security-image">
                 </div>
             </div>
         </div>
@@ -708,7 +727,7 @@
         mobileOverlay.addEventListener('click', closeMobileMenu);
 
         // Close menu on nav link click
-        navWrapper.querySelectorAll('a').forEach(link => {
+        navWrapper.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 968) {
                     closeMobileMenu();
@@ -722,7 +741,17 @@
                 if (window.innerWidth <= 968) {
                     e.preventDefault();
                     const parent = toggle.parentElement;
-                    parent.classList.toggle('open');
+                    const rect = toggle.getBoundingClientRect();
+                    // Check if click is on the right side (arrow area - approx 60px)
+                    const isArrowClick = (e.clientX - rect.left) > (rect.width - 60);
+                    
+                    if (isArrowClick) {
+                        // Toggle behavior
+                        parent.classList.toggle('open');
+                    } else {
+                        // Navigation behavior
+                        window.location.href = toggle.getAttribute('href');
+                    }
                 }
             });
         });
@@ -1156,8 +1185,8 @@
             }
         };
 
-        // Initialize language from localStorage or default to 'en'
-        let currentLang = localStorage.getItem('inspektra-lang') || 'en';
+        // Initialize language from localStorage or default to 'de'
+        let currentLang = localStorage.getItem('inspektra-lang') || 'de';
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -1187,6 +1216,14 @@
                 const key = el.dataset.i18nPlaceholder;
                 if (translations[lang] && translations[lang][key]) {
                     el.placeholder = translations[lang][key];
+                }
+            });
+
+            // Update images based on language
+            document.querySelectorAll('[data-i18n-img-' + lang + ']').forEach(el => {
+                const imgSrc = el.getAttribute('data-i18n-img-' + lang);
+                if (imgSrc) {
+                    el.src = imgSrc;
                 }
             });
 
