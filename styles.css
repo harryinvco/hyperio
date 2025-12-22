@@ -422,6 +422,7 @@ a {
 
 .logo img {
     display: block;
+    height: 36px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 2px 8px rgba(0, 95, 173, 0.15));
 }
@@ -796,7 +797,9 @@ a {
 
 @media (max-width: 968px) {
     .floating-element {
-        transform: scale(0.25);
+        width: 80px;
+        height: auto;
+        animation: none;
     }
 
     .floating-element-1 {
@@ -812,33 +815,33 @@ a {
 
 @media (max-width: 600px) {
     .floating-element {
-        transform: scale(0.18);
+        width: 50px;
     }
 
     .floating-element-1 {
         top: -2%;
-        right: -5px;
+        right: 0px;
     }
 
     .floating-element-2 {
         bottom: 3%;
-        left: -5px;
+        left: 0px;
     }
 }
 
 @media (max-width: 480px) {
     .floating-element {
-        transform: scale(0.12);
+        width: 35px;
     }
 
     .floating-element-1 {
         top: 0%;
-        right: 0px;
+        right: 5px;
     }
 
     .floating-element-2 {
         bottom: 5%;
-        left: 0px;
+        left: 5px;
     }
 }
 
