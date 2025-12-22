@@ -98,6 +98,14 @@
             margin-bottom: 4px;
         }
 
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .legal-page {
                 padding: 100px 0 60px;
@@ -189,155 +197,334 @@
     <main class="legal-page">
         <div class="container">
             <div class="legal-content">
-                <h1>Privacy Policy</h1>
 
-                <h2>1. Introduction</h2>
-                <p>With the following information, we would like to provide you, as the "data subject", with an overview of the processing of your personal data by us and your rights under data protection laws. Use of our website is generally possible without providing personal data. However, if you wish to make use of special services offered by our company via our website, the processing of personal data may be required. Where the processing of personal data is necessary and there is no statutory basis for such processing, we generally obtain your consent.</p>
-                <p>The processing of personal data, such as your name, address or email address, is always carried out in accordance with the General Data Protection Regulation (GDPR) and in compliance with the country-specific data protection regulations applicable to OMS Prüfservice GmbH. By means of this Privacy Policy, we would like to inform you about the scope and purpose of the personal data collected, used and processed by us.</p>
-                <p>As the controller, we have implemented numerous technical and organisational measures to ensure the most complete protection possible of personal data processed via this website. Nevertheless, internet-based data transmissions may generally have security vulnerabilities, so absolute protection cannot be guaranteed. For this reason, you are free to transmit personal data to us via alternative means, for example by telephone or post.</p>
-                <p>You can also take simple and effective measures yourself to protect your data from unauthorised third-party access. We therefore provide the following guidance on the secure handling of your data:</p>
-                <ul>
-                    <li>Protect your account (login, user or customer account) and your IT systems (computer, laptop, tablet or mobile device) with secure passwords.</li>
-                    <li>Only you should have access to your passwords.</li>
-                    <li>Ensure that you use each password for only one account.</li>
-                    <li>Do not use the same password for multiple websites, applications or online services.</li>
-                    <li>Especially when using publicly accessible or shared IT systems, always log out after each session.</li>
-                </ul>
-                <p>Passwords should consist of at least 12 characters and should not be easy to guess. They should not contain common words, personal names or names of relatives, but should include a combination of uppercase and lowercase letters, numbers and special characters.</p>
+                <!-- English Version -->
+                <div class="lang-content active" id="content-en">
+                    <h1>Privacy Policy</h1>
 
-                <h2>2. Controller</h2>
-                <p>The controller within the meaning of the GDPR is:</p>
-                <div class="contact-block">
-                    <p><strong>OMS Prüfservice GmbH</strong></p>
-                    <p>Mühlstraße 90</p>
-                    <p>73547 Lorch-Waldhausen</p>
-                    <p>Germany</p>
-                    <p>Phone: +49 (0)7172 / 1839218</p>
-                    <p>Fax: +49 (0)7172 / 18392-22</p>
-                    <p>Representative of the controller: Micha Erz</p>
+                    <h2>1. Introduction</h2>
+                    <p>With the following information, we would like to provide you, as the "data subject", with an overview of the processing of your personal data by us and your rights under data protection laws. Use of our website is generally possible without providing personal data. However, if you wish to make use of special services offered by our company via our website, the processing of personal data may be required. Where the processing of personal data is necessary and there is no statutory basis for such processing, we generally obtain your consent.</p>
+                    <p>The processing of personal data, such as your name, address or email address, is always carried out in accordance with the General Data Protection Regulation (GDPR) and in compliance with the country-specific data protection regulations applicable to OMS Prüfservice GmbH. By means of this Privacy Policy, we would like to inform you about the scope and purpose of the personal data collected, used and processed by us.</p>
+                    <p>As the controller, we have implemented numerous technical and organisational measures to ensure the most complete protection possible of personal data processed via this website. Nevertheless, internet-based data transmissions may generally have security vulnerabilities, so absolute protection cannot be guaranteed. For this reason, you are free to transmit personal data to us via alternative means, for example by telephone or post.</p>
+                    <p>You can also take simple and effective measures yourself to protect your data from unauthorised third-party access. We therefore provide the following guidance on the secure handling of your data:</p>
+                    <ul>
+                        <li>Protect your account (login, user or customer account) and your IT systems (computer, laptop, tablet or mobile device) with secure passwords.</li>
+                        <li>Only you should have access to your passwords.</li>
+                        <li>Ensure that you use each password for only one account.</li>
+                        <li>Do not use the same password for multiple websites, applications or online services.</li>
+                        <li>Especially when using publicly accessible or shared IT systems, always log out after each session.</li>
+                    </ul>
+                    <p>Passwords should consist of at least 12 characters and should not be easy to guess. They should not contain common words, personal names or names of relatives, but should include a combination of uppercase and lowercase letters, numbers and special characters.</p>
+
+                    <h2>2. Controller</h2>
+                    <p>The controller within the meaning of the GDPR is:</p>
+                    <div class="contact-block">
+                        <p><strong>OMS Prüfservice GmbH</strong></p>
+                        <p>Mühlstraße 90</p>
+                        <p>73547 Lorch-Waldhausen</p>
+                        <p>Germany</p>
+                        <p>Phone: +49 (0)7172 / 1839218</p>
+                        <p>Fax: +49 (0)7172 / 18392-22</p>
+                        <p>Representative of the controller: Micha Erz</p>
+                    </div>
+
+                    <h2>3. Data Protection Officer</h2>
+                    <p>You can contact our Data Protection Officer as follows:</p>
+                    <div class="contact-block">
+                        <p><strong>Kai Ochmann</strong></p>
+                        <p>Phone: +49 7134 / 90894-0</p>
+                        <p>Email: <a href="mailto:datenschutz@oms-pruefservice.de">datenschutz@oms-pruefservice.de</a></p>
+                    </div>
+                    <p>You may contact our Data Protection Officer at any time with questions or suggestions regarding data protection.</p>
+
+                    <h2>4. Definitions</h2>
+                    <p>This Privacy Policy is based on the terminology used by the European legislator in the GDPR. To ensure clarity and comprehensibility, the following definitions apply:</p>
+                    <ul>
+                        <li><strong>Personal data:</strong> Any information relating to an identified or identifiable natural person.</li>
+                        <li><strong>Data subject:</strong> Any identified or identifiable natural person whose personal data is processed by the controller.</li>
+                        <li><strong>Processing:</strong> Any operation performed on personal data, with or without automated means.</li>
+                        <li><strong>Restriction of processing:</strong> The marking of stored personal data with the aim of restricting future processing.</li>
+                        <li><strong>Profiling:</strong> Any automated processing used to evaluate personal aspects relating to a natural person.</li>
+                        <li><strong>Pseudonymisation:</strong> Processing personal data so that it can no longer be attributed to a specific data subject without additional information.</li>
+                        <li><strong>Processor:</strong> A natural or legal person that processes personal data on behalf of the controller.</li>
+                        <li><strong>Recipient:</strong> A natural or legal person to whom personal data is disclosed.</li>
+                        <li><strong>Third party:</strong> Any entity other than the data subject, controller, processor, or authorised persons.</li>
+                        <li><strong>Consent:</strong> Any freely given, specific, informed and unambiguous indication of the data subject's wishes.</li>
+                    </ul>
+
+                    <h2>5. Legal Basis for Processing</h2>
+                    <p>Processing is carried out on the following legal bases:</p>
+                    <ul>
+                        <li>Art. 6(1)(a) GDPR in conjunction with § 25(1) TTDSG for consent-based processing.</li>
+                        <li>Art. 6(1)(b) GDPR for contract performance or pre-contractual measures.</li>
+                        <li>Art. 6(1)(c) GDPR for compliance with legal obligations.</li>
+                        <li>Art. 6(1)(d) GDPR to protect vital interests.</li>
+                        <li>Art. 6(1)(f) GDPR for legitimate interests, provided the data subject's rights do not prevail.</li>
+                    </ul>
+                    <p>Our services are generally intended for adults. Persons under 16 may not submit personal data without parental consent. We do not knowingly collect or process data from children.</p>
+
+                    <h2>6. Transfer of Data to Third Parties</h2>
+                    <p>Personal data is only transferred to third parties if:</p>
+                    <ul>
+                        <li>You have given explicit consent (Art. 6(1)(a) GDPR),</li>
+                        <li>The transfer is necessary to protect legitimate interests (Art. 6(1)(f) GDPR),</li>
+                        <li>There is a legal obligation (Art. 6(1)(c) GDPR), or</li>
+                        <li>It is required for contractual performance (Art. 6(1)(b) GDPR).</li>
+                    </ul>
+                    <p>Where data is transferred to third countries, appropriate safeguards are applied, including EU Standard Contractual Clauses or adequacy decisions under Art. 45 GDPR. Transfers to the USA occur only where the recipient is certified under the EU-US Data Privacy Framework.</p>
+
+                    <h2>7. Technology</h2>
+
+                    <h3>7.1 SSL/TLS Encryption</h3>
+                    <p>This website uses SSL/TLS encryption to protect confidential content such as login data or contact requests.</p>
+
+                    <h3>7.2 Data Collection When Visiting the Website</h3>
+                    <p>When using the website for informational purposes only, server log files may collect:</p>
+                    <ul>
+                        <li>Browser type and version</li>
+                        <li>Operating system</li>
+                        <li>Referrer URL</li>
+                        <li>Subpages accessed</li>
+                        <li>Date and time of access</li>
+                        <li>IP address</li>
+                        <li>Internet service provider</li>
+                    </ul>
+                    <p>This data is processed on the basis of Art. 6(1)(f) GDPR for system security, functionality and statistical evaluation.</p>
+
+                    <h2>8. Cookies</h2>
+
+                    <h3>8.1 General Information</h3>
+                    <p>Cookies are small files stored on your device to improve usability and functionality.</p>
+
+                    <h3>8.2 Legal Basis</h3>
+                    <ul>
+                        <li><strong>Technically necessary cookies:</strong> Art. 6(1)(f) GDPR</li>
+                        <li><strong>All other cookies:</strong> Art. 6(1)(a) GDPR via consent banner</li>
+                    </ul>
+
+                    <h3>8.3 Browser Settings</h3>
+                    <p>You may delete or block cookies via your browser settings at any time.</p>
+
+                    <h2>9. Website Content</h2>
+
+                    <h3>9.1 User Registration</h3>
+                    <p>Registration involves the processing of personal data for internal purposes. IP address, date and time of registration are stored for security reasons. Legal basis: Art. 6(1)(f) GDPR.</p>
+
+                    <h3>9.2 Contact Requests</h3>
+                    <p>Personal data submitted via contact forms or email is processed solely to respond to your enquiry. Legal basis: Art. 6(1)(f) GDPR, or Art. 6(1)(b) GDPR where contractual.</p>
+
+                    <h2>10. Web Analytics</h2>
+
+                    <h3>10.1 Google Analytics (Universal)</h3>
+                    <p>Google Analytics is used only with explicit consent (Art. 6(1)(a) GDPR). IP anonymisation is enabled. Data may be transferred to the USA under the EU-US Data Privacy Framework.</p>
+
+                    <h2>11. Plugins and Services</h2>
+
+                    <h3>11.1 Google Web Fonts</h3>
+                    <p>Fonts are hosted locally to avoid data transfers.</p>
+
+                    <h3>11.2 Google Tag Manager</h3>
+                    <p>Used only with explicit consent (Art. 6(1)(a) GDPR). Google LLC is certified under the EU-US Data Privacy Framework.</p>
+
+                    <h2>12. Rights of the Data Subject</h2>
+                    <p>You have the following rights under the GDPR:</p>
+                    <ul>
+                        <li>Right to confirmation (Art. 15)</li>
+                        <li>Right of access (Art. 15)</li>
+                        <li>Right to rectification (Art. 16)</li>
+                        <li>Right to erasure (Art. 17)</li>
+                        <li>Right to restriction (Art. 18)</li>
+                        <li>Right to data portability (Art. 20)</li>
+                        <li>Right to object (Art. 21)</li>
+                        <li>Right to withdraw consent</li>
+                        <li>Right to lodge a complaint with a supervisory authority</li>
+                    </ul>
+
+                    <h2>13. Routine Storage and Deletion</h2>
+                    <p>Personal data is stored only for as long as necessary or required by law, after which it is deleted or restricted.</p>
+
+                    <h2>14. Storage Duration</h2>
+                    <p>The storage duration is determined by statutory retention periods. Data is deleted once these periods expire unless required for contractual purposes.</p>
+
+                    <h2>15. Validity and Amendments</h2>
+                    <p>This Privacy Policy is currently valid and dated April 2024.</p>
+                    <p>It may be updated due to legal or technical changes. The latest version is available at: <a href="https://www.inspektra.de/privacy">www.inspektra.de/privacy</a></p>
                 </div>
 
-                <h2>3. Data Protection Officer</h2>
-                <p>You can contact our Data Protection Officer as follows:</p>
-                <div class="contact-block">
-                    <p><strong>Kai Ochmann</strong></p>
-                    <p>Phone: +49 7134 / 90894-0</p>
-                    <p>Email: <a href="mailto:datenschutz@oms-pruefservice.de">datenschutz@oms-pruefservice.de</a></p>
+                <!-- German Version -->
+                <div class="lang-content" id="content-de">
+                    <h1>Datenschutzerklärung</h1>
+
+                    <h2>1. Einleitung</h2>
+                    <p>Mit den folgenden Informationen möchten wir Ihnen als "betroffener Person" einen Überblick über die Verarbeitung Ihrer personenbezogenen Daten durch uns und Ihre Rechte aus den Datenschutzgesetzen geben. Eine Nutzung unserer Internetseiten ist grundsätzlich ohne Eingabe personenbezogener Daten möglich. Sofern Sie besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchten, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung von Ihnen ein.</p>
+                    <p>Die Verarbeitung von personenbezogenen Daten, beispielsweise Ihres Namens, der Anschrift oder der E-Mail-Adresse, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung (DS-GVO) und in Übereinstimmung mit den für die "OMS Prüfservice GmbH" geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchten wir Sie über Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren.</p>
+                    <p>Wir haben als für die Verarbeitung Verantwortliche zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, sodass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es Ihnen frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch oder per Post, an uns zu übermitteln.</p>
+                    <p>Auch Sie können einfache und leicht umzusetzende Maßnahmen ergreifen, um sich gegen den unbefugten Zugang Dritter zu Ihren Daten zu schützen. Daher möchten wir Ihnen an dieser Stelle einige Hinweise zum sicheren Umgang mit Ihren Daten geben:</p>
+                    <ul>
+                        <li>Schützen Sie Ihren Account (Login, Nutzer- oder Kundenkonto) und Ihr IT-System (Computer, Laptop, Tablet oder Mobile-Gerät) mit sicheren Passwörtern.</li>
+                        <li>Nur Sie sollten Zugang zu den Passwörtern haben.</li>
+                        <li>Stellen Sie sicher, dass Sie Ihre Passwörter immer nur für einen Account (Login, Nutzer- oder Kundenkonto) nutzen.</li>
+                        <li>Verwenden Sie ein Passwort nicht für verschiedene Webseiten, Anwendungen oder Online-Services.</li>
+                        <li>Insbesondere bei der Nutzung von öffentlich zugänglichen oder gemeinsam mit anderen Personen genutzten IT-Systemen gilt: Sie sollten sich unbedingt nach jeder Anmeldung auf einer Webseite, einer Anwendung oder einem Online-Service wieder abmelden.</li>
+                    </ul>
+                    <p>Passwörter sollten aus mindestens 12 Zeichen bestehen und so gewählt werden, dass sie nicht leicht erraten werden können. Daher sollten sie keine gängigen Wörter aus dem Alltag, den eigenen Namen oder Namen von Verwandten, sondern Groß- und Kleinschreibung, Zahlen und Sonderzeichen enthalten.</p>
+
+                    <h2>2. Verantwortlicher</h2>
+                    <p>Verantwortlicher im Sinne der DS-GVO ist die:</p>
+                    <div class="contact-block">
+                        <p><strong>OMS Prüfservice GmbH</strong></p>
+                        <p>Mühlstraße 90</p>
+                        <p>73547 Lorch-Waldhausen</p>
+                        <p>Deutschland</p>
+                        <p>Telefon: +49 (0)7172 / 1839218</p>
+                        <p>Telefax: +49 (0)7172 / 18392-22</p>
+                        <p>Vertreter des Verantwortlichen: Micha Erz</p>
+                    </div>
+
+                    <h2>3. Datenschutzbeauftragter</h2>
+                    <p>Den Datenschutzbeauftragten erreichen Sie wie folgt:</p>
+                    <div class="contact-block">
+                        <p><strong>Kai Ochmann</strong></p>
+                        <p>Telefon: +49 7134 / 90894-0</p>
+                        <p>E-Mail: <a href="mailto:datenschutz@oms-pruefservice.de">datenschutz@oms-pruefservice.de</a></p>
+                    </div>
+                    <p>Sie können sich jederzeit bei allen Fragen und Anregungen zum Datenschutz direkt an unseren Datenschutzbeauftragten wenden.</p>
+
+                    <h2>4. Begriffsbestimmungen</h2>
+                    <p>Die Datenschutzerklärung beruht auf den Begrifflichkeiten, die durch den Europäischen Richtlinien- und Verordnungsgeber beim Erlass der Datenschutz-Grundverordnung (DS-GVO) verwendet wurden. Unsere Datenschutzerklärung soll sowohl für die Öffentlichkeit als auch für unsere Kunden und Geschäftspartner einfach lesbar und verständlich sein. Um dies zu gewährleisten, möchten wir vorab die verwendeten Begrifflichkeiten erläutern.</p>
+                    <p>Wir verwenden in dieser Datenschutzerklärung unter anderem die folgenden Begriffe:</p>
+                    <ul>
+                        <li><strong>Personenbezogene Daten:</strong> Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen. Als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung oder zu einem oder mehreren besonderen Merkmalen identifiziert werden kann.</li>
+                        <li><strong>Betroffene Person:</strong> Betroffene Person ist jede identifizierte oder identifizierbare natürliche Person, deren personenbezogene Daten von dem für die Verarbeitung Verantwortlichen (unser Unternehmen) verarbeitet werden.</li>
+                        <li><strong>Verarbeitung:</strong> Verarbeitung ist jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.</li>
+                        <li><strong>Einschränkung der Verarbeitung:</strong> Einschränkung der Verarbeitung ist die Markierung gespeicherter personenbezogener Daten mit dem Ziel, ihre künftige Verarbeitung einzuschränken.</li>
+                        <li><strong>Profiling:</strong> Profiling ist jede Art der automatisierten Verarbeitung personenbezogener Daten, die darin besteht, dass diese personenbezogenen Daten verwendet werden, um bestimmte persönliche Aspekte, die sich auf eine natürliche Person beziehen, zu bewerten.</li>
+                        <li><strong>Pseudonymisierung:</strong> Pseudonymisierung ist die Verarbeitung personenbezogener Daten in einer Weise, auf welche die personenbezogenen Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können.</li>
+                        <li><strong>Auftragsverarbeiter:</strong> Auftragsverarbeiter ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.</li>
+                        <li><strong>Empfänger:</strong> Empfänger ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, der personenbezogene Daten offengelegt werden, unabhängig davon, ob es sich bei ihr um einen Dritten handelt oder nicht.</li>
+                        <li><strong>Dritter:</strong> Dritter ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle außer der betroffenen Person, dem Verantwortlichen, dem Auftragsverarbeiter und den Personen, die unter der unmittelbaren Verantwortung des Verantwortlichen oder des Auftragsverarbeiters befugt sind, die personenbezogenen Daten zu verarbeiten.</li>
+                        <li><strong>Einwilligung:</strong> Einwilligung ist jede von der betroffenen Person freiwillig für den bestimmten Fall in informierter Weise und unmissverständlich abgegebene Willensbekundung in Form einer Erklärung oder einer sonstigen eindeutigen bestätigenden Handlung, mit der die betroffene Person zu verstehen gibt, dass Sie mit der Verarbeitung der Sie betreffenden personenbezogenen Daten einverstanden ist.</li>
+                    </ul>
+
+                    <h2>5. Rechtsgrundlage der Verarbeitung</h2>
+                    <p>Art. 6 Abs. 1 lit. a) DS-GVO (i.V.m. § 25 Abs. 1 TTDSG) dient unserem Unternehmen als Rechtsgrundlage für Verarbeitungsvorgänge, bei denen wir eine Einwilligung für einen bestimmten Verarbeitungszweck einholen.</p>
+                    <p>Ist die Verarbeitung personenbezogener Daten zur Erfüllung eines Vertrags, dessen Vertragspartei Sie sind, erforderlich, wie dies beispielsweise bei Verarbeitungsvorgängen der Fall ist, die für eine Lieferung von Waren oder die Erbringung einer sonstigen Leistung oder Gegenleistung notwendig sind, so beruht die Verarbeitung auf Art. 6 Abs. 1 lit. b) DS-GVO. Gleiches gilt für solche Verarbeitungsvorgänge die zur Durchführung vorvertraglicher Maßnahmen erforderlich sind, etwa in Fällen von Anfragen zu unseren Produkten oder Leistungen.</p>
+                    <p>Unterliegt unser Unternehmen einer rechtlichen Verpflichtung durch welche eine Verarbeitung von personenbezogenen Daten erforderlich wird, wie beispielsweise zur Erfüllung steuerlicher Pflichten, so basiert die Verarbeitung auf Art. 6 Abs. 1 lit. c) DS-GVO.</p>
+                    <p>In seltenen Fällen könnte die Verarbeitung von personenbezogenen Daten erforderlich werden, um lebenswichtige Interessen der betroffenen Person oder einer anderen natürlichen Person zu schützen. Dann würde die Verarbeitung auf Art. 6 Abs. 1 lit. d) DS-GVO beruhen.</p>
+                    <p>Letztlich könnten Verarbeitungsvorgänge auf Art. 6 Abs. 1 lit. f) DS-GVO beruhen. Auf dieser Rechtsgrundlage basieren Verarbeitungsvorgänge, die von keiner der vorgenannten Rechtsgrundlagen erfasst werden, wenn die Verarbeitung zur Wahrung eines berechtigten Interesses unseres Unternehmens oder eines Dritten erforderlich ist, sofern die Interessen, Grundrechte und Grundfreiheiten des Betroffenen nicht überwiegen.</p>
+                    <p>Unser Angebot richtet sich grundsätzlich an Erwachsene. Personen unter 16 Jahren dürfen ohne Zustimmung der Eltern oder Erziehungsberechtigten keine personenbezogenen Daten an uns übermitteln. Wir fordern keine personenbezogenen Daten von Kindern und Jugendlichen an, sammeln diese nicht und geben sie nicht an Dritte weiter.</p>
+
+                    <h2>6. Übermittlung von Daten an Dritte</h2>
+                    <p>Eine Übermittlung Ihrer personenbezogenen Daten an Dritte zu anderen als den im Folgenden aufgeführten Zwecken findet nicht statt.</p>
+                    <p>Wir geben Ihre personenbezogenen Daten nur an Dritte weiter, wenn:</p>
+                    <ul>
+                        <li>Sie uns Ihre nach Art. 6 Abs. 1 lit. a) DS-GVO ausdrückliche Einwilligung dazu erteilt haben,</li>
+                        <li>die Weitergabe nach Art. 6 Abs. 1 lit. f) DS-GVO zur Wahrung unserer berechtigten Interessen zulässig ist und kein Grund zur Annahme besteht, dass Sie ein überwiegendes schutzwürdiges Interesse an der Nichtweitergabe Ihrer Daten haben,</li>
+                        <li>für den Fall, dass für die Weitergabe nach Art. 6 Abs. 1 lit. c) DS-GVO eine gesetzliche Verpflichtung besteht, sowie</li>
+                        <li>dies gesetzlich zulässig und nach Art. 6 Abs. 1 lit. b) DS-GVO für die Abwicklung von Vertragsverhältnissen mit Ihnen erforderlich ist.</li>
+                    </ul>
+                    <p>Um Ihre Daten zu schützen und uns gegebenenfalls eine Datenübermittlung in Drittländer (außerhalb der EU/des EWR) zu ermöglichen, haben wir Vereinbarungen zur Auftragsverarbeitung auf Grundlage der Standardvertragsklauseln der Europäischen Kommission abgeschlossen.</p>
+                    <p>Im Rahmen der in dieser Datenschutzerklärung beschriebenen Verarbeitungsvorgänge können personenbezogene Daten in die USA übermittelt werden. Unternehmen in den USA verfügen nur dann über ein angemessenes Datenschutzniveau, sofern sie sich unter dem EU-US Data Privacy Framework zertifiziert haben und somit der Angemessenheitsbeschluss der EU-Kommission gem. Art. 45 DS-GVO greift.</p>
+
+                    <h2>7. Technik</h2>
+
+                    <h3>7.1 SSL/TLS-Verschlüsselung</h3>
+                    <p>Diese Seite nutzt zur Gewährleistung der Sicherheit der Datenverarbeitung und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen, Login-Daten oder Kontaktanfragen, die Sie an uns als Betreiber senden, eine SSL-bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass in der Adresszeile des Browsers statt einem "http://" ein "https://" steht und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
+
+                    <h3>7.2 Datenerfassung beim Besuch der Internetseite</h3>
+                    <p>Bei der lediglich informatorischen Nutzung unserer Webseite, also bei Nichtregistrierung oder anderweitiger Übermittlung von Informationen an uns, erheben wir nur solche Daten, die Ihr Browser an unseren Server übermittelt (in sog. "Server-Logfiles"). Erfasst werden können die:</p>
+                    <ul>
+                        <li>verwendeten Browsertypen und Versionen,</li>
+                        <li>das vom zugreifenden System verwendete Betriebssystem,</li>
+                        <li>die Internetseite, von welcher ein zugreifendes System auf unsere Internetseite gelangt (sogenannte Referrer),</li>
+                        <li>die Unterwebseiten, welche über ein zugreifendes System auf unserer Internetseite angesteuert werden,</li>
+                        <li>das Datum und die Uhrzeit eines Zugriffs auf die Internetseite,</li>
+                        <li>eine Internet-Protokoll-Adresse (IP-Adresse) und,</li>
+                        <li>der Internet-Service-Provider des zugreifenden Systems.</li>
+                    </ul>
+                    <p>Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. f) DS-GVO. Unser berechtigtes Interesse folgt aus oben aufgelisteten Zwecken zur Datenerhebung.</p>
+
+                    <h2>8. Cookies</h2>
+
+                    <h3>8.1 Allgemeines zu Cookies</h3>
+                    <p>Bei Cookies handelt es sich um kleine Dateien, die Ihr Browser automatisch erstellt und die auf Ihrem IT-System (Laptop, Tablet, Smartphone o.Ä.) gespeichert werden, wenn Sie unsere Seite besuchen.</p>
+                    <p>Der Einsatz von Cookies dient dazu, die Nutzung unseres Angebots für Sie angenehmer zu gestalten. So setzen wir sogenannte Session-Cookies ein, um zu erkennen, dass Sie einzelne Seiten unserer Webseite bereits besucht haben. Diese werden nach Verlassen unserer Seite automatisch gelöscht.</p>
+
+                    <h3>8.2 Rechtsgrundlage für die Verwendung von Cookies</h3>
+                    <p>Die durch die Cookies verarbeiteten Daten, die für die ordnungsmäßige Funktion der Webseite benötigt werden, sind damit zur Wahrung unserer berechtigten Interessen sowie der Dritter nach Art. 6 Abs. 1 lit. f) DS-GVO erforderlich.</p>
+                    <p>Für alle anderen Cookies gilt, dass Sie über unser Opt-in Cookie-Banner Ihre Einwilligung hierzu im Sinne von Art. 6 Abs. 1 lit. a) DS-GVO abgegeben haben.</p>
+
+                    <h3>8.3 Hinweise zur Vermeidung von Cookies in gängigen Browsern</h3>
+                    <p>Über die Einstellungen Ihres verwendeten Browsers haben Sie jederzeit die Möglichkeit Cookies zu löschen, nur ausgewählte Cookies zuzulassen oder Cookies vollständig zu deaktivieren.</p>
+
+                    <h2>9. Inhalte unserer Internetseite</h2>
+
+                    <h3>9.1 Registrierung als Benutzer</h3>
+                    <p>Sie haben die Möglichkeit, sich auf unserer Internetseite unter Angabe von personenbezogenen Daten zu registrieren. Die von Ihnen eingegebenen personenbezogenen Daten werden ausschließlich für die interne Verwendung bei uns und für eigene Zwecke erhoben und gespeichert.</p>
+                    <p>Durch eine Registrierung auf unserer Internetseite wird ferner die von Ihrem Internet-Service-Provider (ISP) vergebene IP-Adresse, das Datum sowie die Uhrzeit der Registrierung gespeichert. Die Speicherung dieser Daten erfolgt vor dem Hintergrund, dass nur so der Missbrauch unserer Dienste verhindert werden kann.</p>
+                    <p>Die Verarbeitung Ihrer Daten erfolgt im Interesse einer komfortablen und einfachen Nutzung unserer Internetseite. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f) DS-GVO dar.</p>
+
+                    <h3>9.2 Kontaktaufnahme / Kontaktformular</h3>
+                    <p>Im Rahmen der Kontaktaufnahme mit uns (z.B. per Kontaktformular oder E-Mail) werden personenbezogene Daten erhoben. Diese Daten werden ausschließlich zum Zwecke der Beantwortung Ihres Anliegens bzw. für die Kontaktaufnahme und die damit verbundene technische Administration gespeichert und verwendet.</p>
+                    <p>Rechtsgrundlage für die Verarbeitung der Daten ist unser berechtigtes Interesse an der Beantwortung Ihres Anliegens gemäß Art. 6 Abs. 1 lit. f) DS-GVO. Zielt Ihre Kontaktaufnahme auf den Abschluss eines Vertrages ab, so ist zusätzliche Rechtsgrundlage für die Verarbeitung Art. 6 Abs. 1 lit. b) DS-GVO.</p>
+
+                    <h2>10. Webanalyse</h2>
+
+                    <h3>10.1 Google Analytics Universal</h3>
+                    <p>Auf unseren Webseiten nutzen wir Google Analytics, ein Webanalysedienst der Google Ireland Limited. In diesem Zusammenhang werden pseudonymisierte Nutzungsprofile erstellt und Cookies verwendet.</p>
+                    <p>Die IP-Adressen werden anonymisiert, so dass eine Zuordnung nicht möglich ist (IP-Masking). Diese Verarbeitungsvorgänge erfolgen ausschließlich bei Erteilung der ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a) DS-GVO.</p>
+                    <p>Das Mutterunternehmen Google LLC ist als US-Unternehmen unter dem EU-US Data Privacy Framework zertifiziert. Es liegt hiermit ein Angemessenheitsbeschluss gem. Art. 45 DS-GVO vor.</p>
+
+                    <h2>11. Plugins und andere Dienste</h2>
+
+                    <h3>11.1 Google WebFonts</h3>
+                    <p>Zur Vermeidung von Datenweitergaben haben wir die Google WebFonts lokal auf unseren Webservern implementiert.</p>
+
+                    <h3>11.2 Google Tag Manager</h3>
+                    <p>Auf dieser Website verwenden wir den Google Tag Manager Dienst. Diese Verarbeitungsvorgänge erfolgen ausschließlich bei Erteilung einer ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a) DS-GVO.</p>
+                    <p>Das Mutterunternehmen Google LLC ist als US-Unternehmen unter dem EU-US Data Privacy Framework zertifiziert. Es liegt hiermit ein Angemessenheitsbeschluss gem. Art. 45 DS-GVO vor.</p>
+
+                    <h2>12. Ihre Rechte als betroffene Person</h2>
+
+                    <h3>12.1 Recht auf Bestätigung</h3>
+                    <p>Sie haben das Recht, von uns eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten verarbeitet werden.</p>
+
+                    <h3>12.2 Recht auf Auskunft Art. 15 DS-GVO</h3>
+                    <p>Sie haben das Recht, jederzeit von uns unentgeltliche Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten sowie eine Kopie dieser Daten nach Maßgabe der gesetzlichen Bestimmungen zu erhalten.</p>
+
+                    <h3>12.3 Recht auf Berichtigung Art. 16 DS-GVO</h3>
+                    <p>Sie haben das Recht, die Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen.</p>
+
+                    <h3>12.4 Löschung Art. 17 DS-GVO</h3>
+                    <p>Sie haben das Recht, von uns zu verlangen, dass die Sie betreffenden personenbezogenen Daten unverzüglich gelöscht werden, sofern einer der gesetzlich vorgesehenen Gründe zutrifft.</p>
+
+                    <h3>12.5 Einschränkung der Verarbeitung Art. 18 DS-GVO</h3>
+                    <p>Sie haben das Recht, von uns die Einschränkung der Verarbeitung zu verlangen, wenn eine der gesetzlichen Voraussetzungen gegeben ist.</p>
+
+                    <h3>12.6 Datenübertragbarkeit Art. 20 DS-GVO</h3>
+                    <p>Sie haben das Recht, die Sie betreffenden personenbezogenen Daten, welche uns durch Sie bereitgestellt wurden, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.</p>
+
+                    <h3>12.7 Widerspruch Art. 21 DS-GVO</h3>
+                    <p>Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten Widerspruch einzulegen.</p>
+
+                    <h3>12.8 Widerruf einer datenschutzrechtlichen Einwilligung</h3>
+                    <p>Sie haben das Recht, eine Einwilligung zur Verarbeitung personenbezogener Daten jederzeit mit Wirkung für die Zukunft zu widerrufen.</p>
+
+                    <h3>12.9 Beschwerde bei einer Aufsichtsbehörde</h3>
+                    <p>Sie haben das Recht, sich bei einer für Datenschutz zuständigen Aufsichtsbehörde über unsere Verarbeitung personenbezogener Daten zu beschweren.</p>
+
+                    <h2>13. Routinemäßige Speicherung, Löschung und Sperrung von personenbezogenen Daten</h2>
+                    <p>Wir verarbeiten und speichern Ihre personenbezogenen Daten nur für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist oder sofern dies durch die Rechtsvorschriften, welchen unser Unternehmen unterliegt, vorgesehen wurde.</p>
+                    <p>Entfällt der Speicherungszweck oder läuft eine vorgeschriebene Speicherfrist ab, werden die personenbezogenen Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.</p>
+
+                    <h2>14. Dauer der Speicherung von personenbezogenen Daten</h2>
+                    <p>Das Kriterium für die Dauer der Speicherung von personenbezogenen Daten ist die jeweilige gesetzliche Aufbewahrungsfrist. Nach Ablauf der Frist werden die entsprechenden Daten routinemäßig gelöscht, sofern sie nicht mehr zur Vertragserfüllung oder Vertragsanbahnung erforderlich sind.</p>
+
+                    <h2>15. Aktualität und Änderung der Datenschutzerklärung</h2>
+                    <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand: April 2024.</p>
+                    <p>Durch die Weiterentwicklung unserer Internetseiten und Angebote oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Webseite unter <a href="https://www.inspektra.de/privacy">www.inspektra.de/privacy</a> von Ihnen abgerufen und ausgedruckt werden.</p>
                 </div>
-                <p>You may contact our Data Protection Officer at any time with questions or suggestions regarding data protection.</p>
 
-                <h2>4. Definitions</h2>
-                <p>This Privacy Policy is based on the terminology used by the European legislator in the GDPR. To ensure clarity and comprehensibility, the following definitions apply:</p>
-                <ul>
-                    <li><strong>Personal data:</strong> Any information relating to an identified or identifiable natural person.</li>
-                    <li><strong>Data subject:</strong> Any identified or identifiable natural person whose personal data is processed by the controller.</li>
-                    <li><strong>Processing:</strong> Any operation performed on personal data, with or without automated means.</li>
-                    <li><strong>Restriction of processing:</strong> The marking of stored personal data with the aim of restricting future processing.</li>
-                    <li><strong>Profiling:</strong> Any automated processing used to evaluate personal aspects relating to a natural person.</li>
-                    <li><strong>Pseudonymisation:</strong> Processing personal data so that it can no longer be attributed to a specific data subject without additional information.</li>
-                    <li><strong>Processor:</strong> A natural or legal person that processes personal data on behalf of the controller.</li>
-                    <li><strong>Recipient:</strong> A natural or legal person to whom personal data is disclosed.</li>
-                    <li><strong>Third party:</strong> Any entity other than the data subject, controller, processor, or authorised persons.</li>
-                    <li><strong>Consent:</strong> Any freely given, specific, informed and unambiguous indication of the data subject's wishes.</li>
-                </ul>
-
-                <h2>5. Legal Basis for Processing</h2>
-                <p>Processing is carried out on the following legal bases:</p>
-                <ul>
-                    <li>Art. 6(1)(a) GDPR in conjunction with § 25(1) TTDSG for consent-based processing.</li>
-                    <li>Art. 6(1)(b) GDPR for contract performance or pre-contractual measures.</li>
-                    <li>Art. 6(1)(c) GDPR for compliance with legal obligations.</li>
-                    <li>Art. 6(1)(d) GDPR to protect vital interests.</li>
-                    <li>Art. 6(1)(f) GDPR for legitimate interests, provided the data subject's rights do not prevail.</li>
-                </ul>
-                <p>Our services are generally intended for adults. Persons under 16 may not submit personal data without parental consent. We do not knowingly collect or process data from children.</p>
-
-                <h2>6. Transfer of Data to Third Parties</h2>
-                <p>Personal data is only transferred to third parties if:</p>
-                <ul>
-                    <li>You have given explicit consent (Art. 6(1)(a) GDPR),</li>
-                    <li>The transfer is necessary to protect legitimate interests (Art. 6(1)(f) GDPR),</li>
-                    <li>There is a legal obligation (Art. 6(1)(c) GDPR), or</li>
-                    <li>It is required for contractual performance (Art. 6(1)(b) GDPR).</li>
-                </ul>
-                <p>Where data is transferred to third countries, appropriate safeguards are applied, including EU Standard Contractual Clauses or adequacy decisions under Art. 45 GDPR. Transfers to the USA occur only where the recipient is certified under the EU-US Data Privacy Framework.</p>
-
-                <h2>7. Technology</h2>
-
-                <h3>7.1 SSL/TLS Encryption</h3>
-                <p>This website uses SSL/TLS encryption to protect confidential content such as login data or contact requests.</p>
-
-                <h3>7.2 Data Collection When Visiting the Website</h3>
-                <p>When using the website for informational purposes only, server log files may collect:</p>
-                <ul>
-                    <li>Browser type and version</li>
-                    <li>Operating system</li>
-                    <li>Referrer URL</li>
-                    <li>Subpages accessed</li>
-                    <li>Date and time of access</li>
-                    <li>IP address</li>
-                    <li>Internet service provider</li>
-                </ul>
-                <p>This data is processed on the basis of Art. 6(1)(f) GDPR for system security, functionality and statistical evaluation.</p>
-
-                <h2>8. Cookies</h2>
-
-                <h3>8.1 General Information</h3>
-                <p>Cookies are small files stored on your device to improve usability and functionality.</p>
-
-                <h3>8.2 Legal Basis</h3>
-                <ul>
-                    <li><strong>Technically necessary cookies:</strong> Art. 6(1)(f) GDPR</li>
-                    <li><strong>All other cookies:</strong> Art. 6(1)(a) GDPR via consent banner</li>
-                </ul>
-
-                <h3>8.3 Browser Settings</h3>
-                <p>You may delete or block cookies via your browser settings at any time.</p>
-
-                <h2>9. Website Content</h2>
-
-                <h3>9.1 User Registration</h3>
-                <p>Registration involves the processing of personal data for internal purposes. IP address, date and time of registration are stored for security reasons. Legal basis: Art. 6(1)(f) GDPR.</p>
-
-                <h3>9.2 Contact Requests</h3>
-                <p>Personal data submitted via contact forms or email is processed solely to respond to your enquiry. Legal basis: Art. 6(1)(f) GDPR, or Art. 6(1)(b) GDPR where contractual.</p>
-
-                <h2>10. Web Analytics</h2>
-
-                <h3>10.1 Google Analytics (Universal)</h3>
-                <p>Google Analytics is used only with explicit consent (Art. 6(1)(a) GDPR). IP anonymisation is enabled. Data may be transferred to the USA under the EU-US Data Privacy Framework.</p>
-
-                <h2>11. Plugins and Services</h2>
-
-                <h3>11.1 Google Web Fonts</h3>
-                <p>Fonts are hosted locally to avoid data transfers.</p>
-
-                <h3>11.2 Google Tag Manager</h3>
-                <p>Used only with explicit consent (Art. 6(1)(a) GDPR). Google LLC is certified under the EU-US Data Privacy Framework.</p>
-
-                <h2>12. Rights of the Data Subject</h2>
-                <p>You have the following rights under the GDPR:</p>
-                <ul>
-                    <li>Right to confirmation (Art. 15)</li>
-                    <li>Right of access (Art. 15)</li>
-                    <li>Right to rectification (Art. 16)</li>
-                    <li>Right to erasure (Art. 17)</li>
-                    <li>Right to restriction (Art. 18)</li>
-                    <li>Right to data portability (Art. 20)</li>
-                    <li>Right to object (Art. 21)</li>
-                    <li>Right to withdraw consent</li>
-                    <li>Right to lodge a complaint with a supervisory authority</li>
-                </ul>
-
-                <h2>13. Routine Storage and Deletion</h2>
-                <p>Personal data is stored only for as long as necessary or required by law, after which it is deleted or restricted.</p>
-
-                <h2>14. Storage Duration</h2>
-                <p>The storage duration is determined by statutory retention periods. Data is deleted once these periods expire unless required for contractual purposes.</p>
-
-                <h2>15. Validity and Amendments</h2>
-                <p>This Privacy Policy is currently valid and dated April 2024.</p>
-                <p>It may be updated due to legal or technical changes. The latest version is available at: <a href="https://www.inspektra.de/privacy">www.inspektra.de/privacy</a></p>
             </div>
         </div>
     </main>
@@ -409,6 +596,54 @@
 
             document.addEventListener('click', () => {
                 langMenu.classList.remove('active');
+            });
+        }
+
+        // Language Content Switching
+        const langOptions = document.querySelectorAll('.lang-option');
+        const contentEn = document.getElementById('content-en');
+        const contentDe = document.getElementById('content-de');
+        const flagIcon = document.querySelector('.lang-current .flag-icon');
+
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('inspektra-lang') || 'en';
+        switchLanguage(savedLang);
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.dataset.lang;
+                switchLanguage(lang);
+                localStorage.setItem('inspektra-lang', lang);
+
+                // Update active state
+                langOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+
+                // Close menu
+                langMenu.classList.remove('active');
+            });
+        });
+
+        function switchLanguage(lang) {
+            if (lang === 'de') {
+                contentEn.classList.remove('active');
+                contentDe.classList.add('active');
+                if (flagIcon) {
+                    flagIcon.className = 'flag-icon flag-de';
+                }
+                document.documentElement.lang = 'de';
+            } else {
+                contentDe.classList.remove('active');
+                contentEn.classList.add('active');
+                if (flagIcon) {
+                    flagIcon.className = 'flag-icon flag-en';
+                }
+                document.documentElement.lang = 'en';
+            }
+
+            // Update active lang option
+            langOptions.forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === lang);
             });
         }
     </script>
