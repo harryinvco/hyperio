@@ -796,7 +796,49 @@ a {
 
 @media (max-width: 968px) {
     .floating-element {
-        display: none;
+        transform: scale(0.4);
+    }
+
+    .floating-element-1 {
+        top: -3%;
+        right: -15px;
+    }
+
+    .floating-element-2 {
+        bottom: 2%;
+        left: -15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .floating-element {
+        transform: scale(0.3);
+    }
+
+    .floating-element-1 {
+        top: -2%;
+        right: -10px;
+    }
+
+    .floating-element-2 {
+        bottom: 3%;
+        left: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-element {
+        transform: scale(0.22);
+    }
+
+    .floating-element-1 {
+        top: 0%;
+        right: -5px;
+    }
+
+    .floating-element-2 {
+        bottom: 5%;
+        left: -5px;
     }
 }
 
@@ -4853,7 +4895,7 @@ body.menu-open {
     }
 
     .logo img {
-        height: 40px !important;
+        height: 32px !important;
     }
 
     /* Hero */
@@ -4989,6 +5031,11 @@ body.menu-open {
     /* Nav wrapper full width on very small screens */
     .nav-wrapper {
         max-width: 100%;
+    }
+
+    /* Smaller logo on small screens */
+    .logo img {
+        height: 28px !important;
     }
 
     /* Typography */
