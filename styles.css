@@ -3483,7 +3483,6 @@ footer {
 }
 
 .footer-bottom {
-    border-top: 1px solid #1E293B;
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
@@ -3497,15 +3496,6 @@ footer {
     font-size: 14px;
     letter-spacing: -0.015em;
     color: #94A3B8;
-}
-
-.social-icons a {
-    color: #94A3B8;
-    transition: color 0.2s ease;
-}
-
-.social-icons a:hover {
-    color: white;
 }
 
 /* Responsive Adjustments */
