@@ -5779,18 +5779,11 @@ body.menu-open {
 
 .modal-content {
     padding: 32px;
-    padding-bottom: 0;
 }
 
 .modal-form .btn-full {
-    position: sticky;
-    bottom: 0;
-    margin: 20px -32px 0;
-    width: calc(100% + 64px);
-    border-radius: 0;
-    padding: 18px 24px;
-    z-index: 10;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 16px 24px;
 }
 
 .modal-header {
@@ -5936,28 +5929,25 @@ body.menu-open {
 }
 
 /* Mobile Optimizations for Modal */
-@media (max-width: 540px) {
+@media (max-width: 600px) {
     .modal-overlay {
         padding: 0;
-        align-items: flex-end;
+        align-items: stretch;
     }
 
     .modal-container {
+        width: 100%;
         max-width: 100%;
-        max-height: 95vh;
-        max-height: 95dvh;
-        border-radius: 20px 20px 0 0;
-        transform: translateY(100%);
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+        transform: translateY(0);
+        display: flex;
+        flex-direction: column;
     }
 
     .modal-container::before {
-        content: '';
-        display: block;
-        width: 40px;
-        height: 4px;
-        background: var(--border-color);
-        border-radius: 2px;
-        margin: 12px auto 0;
+        display: none;
     }
 
     .modal-overlay.active .modal-container {
@@ -5965,73 +5955,138 @@ body.menu-open {
     }
 
     .modal-close {
-        top: 20px;
+        position: fixed;
+        top: 12px;
         right: 12px;
         width: 36px;
         height: 36px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 100;
     }
 
     .modal-close svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
 
     .modal-content {
-        padding: 16px 20px 24px;
-        padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+        flex: 1;
+        padding: 50px 16px 20px;
+        padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .modal-header {
-        margin-bottom: 20px;
-        padding-right: 36px;
+        margin-bottom: 16px;
+        text-align: center;
+        padding-right: 0;
     }
 
     .modal-header h2 {
         font-size: 1.25rem;
+        margin-bottom: 4px;
     }
 
     .modal-header p {
-        font-size: 0.9rem;
+        font-size: 0.8125rem;
+        color: #6B7280;
+        line-height: 1.4;
     }
 
     .modal-form .form-group {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .modal-form label {
         font-size: 0.8125rem;
-        margin-bottom: 6px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        color: #374151;
+        display: block;
+    }
+
+    .modal-form label .optional {
+        font-size: 0.6875rem;
+        color: #9CA3AF;
+        font-weight: 400;
     }
 
     .modal-form input[type="text"],
     .modal-form input[type="email"],
     .modal-form input[type="tel"] {
-        padding: 10px 14px;
-        font-size: 16px; /* Prevents zoom on iOS */
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1.5px solid #E5E7EB;
+        background: #fff;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .modal-form input[type="text"]:focus,
+    .modal-form input[type="email"]:focus,
+    .modal-form input[type="tel"]:focus {
+        outline: none;
+        border-color: #005FAD;
     }
 
     .radio-group {
-        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 4px;
     }
 
     .radio-option {
-        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: #F9FAFB;
+        border: 1.5px solid #E5E7EB;
+        cursor: pointer;
+    }
+
+    .radio-option:has(input:checked) {
+        background: #EFF6FF;
+        border-color: #005FAD;
     }
 
     .radio-label {
-        font-size: 0.85rem;
-        line-height: 1.4;
+        font-size: 0.8125rem;
+        line-height: 1.3;
+        color: #374151;
     }
 
     .modal-form .btn-full {
-        margin: 20px -20px 0;
-        width: calc(100% + 40px);
-        padding: 16px 24px;
-        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-        font-size: 1rem;
+        display: block;
+        width: 100%;
+        margin-top: 16px;
+        padding: 14px 20px;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        border-radius: 10px;
+        background: #005FAD;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .form-consent {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        color: #9CA3AF !important;
+        margin-top: 10px !important;
+        text-align: center;
     }
 
     .form-success {
-        padding: 32px 16px;
+        padding: 40px 16px;
+        text-align: center;
     }
 }
