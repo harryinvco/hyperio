@@ -797,7 +797,7 @@ a {
 
 @media (max-width: 968px) {
     .floating-element {
-        width: 80px;
+        width: 140px;
         height: auto;
         animation: none;
     }
@@ -815,7 +815,7 @@ a {
 
 @media (max-width: 600px) {
     .floating-element {
-        width: 50px;
+        width: 110px;
     }
 
     .floating-element-1 {
@@ -831,7 +831,7 @@ a {
 
 @media (max-width: 480px) {
     .floating-element {
-        width: 35px;
+        width: 85px;
     }
 
     .floating-element-1 {
