@@ -796,49 +796,49 @@ a {
 
 @media (max-width: 968px) {
     .floating-element {
-        transform: scale(0.4);
+        transform: scale(0.25);
     }
 
     .floating-element-1 {
         top: -3%;
-        right: -15px;
+        right: -10px;
     }
 
     .floating-element-2 {
         bottom: 2%;
-        left: -15px;
+        left: -10px;
     }
 }
 
 @media (max-width: 600px) {
     .floating-element {
-        transform: scale(0.3);
+        transform: scale(0.18);
     }
 
     .floating-element-1 {
         top: -2%;
-        right: -10px;
+        right: -5px;
     }
 
     .floating-element-2 {
         bottom: 3%;
-        left: -10px;
+        left: -5px;
     }
 }
 
 @media (max-width: 480px) {
     .floating-element {
-        transform: scale(0.22);
+        transform: scale(0.12);
     }
 
     .floating-element-1 {
         top: 0%;
-        right: -5px;
+        right: 0px;
     }
 
     .floating-element-2 {
         bottom: 5%;
-        left: -5px;
+        left: 0px;
     }
 }
 
