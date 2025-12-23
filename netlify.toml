@@ -2,18 +2,6 @@
   publish = "."
   # No build command needed - static HTML site
 
-# Redirect /admin to /admin/ for Decap CMS
-[[redirects]]
-  from = "/admin"
-  to = "/admin/"
-  status = 301
-
-# SPA fallback for admin panel
-[[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200
-
 # Headers for security
 [[headers]]
   for = "/*"
@@ -21,9 +9,3 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-
-# Allow Decap CMS to load in iframe for OAuth
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
